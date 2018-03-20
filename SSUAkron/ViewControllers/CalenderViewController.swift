@@ -8,17 +8,23 @@
 
 import UIKit
 
+
+
 class CalenderViewController: UIViewController {
 
+    @IBOutlet weak var mainScrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        addBlurStatusBar(view: self)
         
+
+        mainScrollView.showsVerticalScrollIndicator = false
         
         var colors = [UIColor.init(red: 1, green: 0.7, blue: 0.7, alpha: 1), UIColor.blue, UIColor.orange]
         var cat = ["تجمع نسائي", "تجمع رجال " , "تجمع للاطفال"]
+        
         for i in 0...2 {
-            let card = CardHighlight(frame: CGRect(x: 15, y: 30 + (210 * CGFloat(i)), width: view.frame.width - 30 , height: 200))
+            let card = CardHighlight(frame: CGRect(x: 15, y: 30 + (250 * CGFloat(i)), width: view.frame.width - 30 , height: 240))
 
             card.backgroundColor = colors[i]
             card.icon = UIImage(named: "ssa")
@@ -33,7 +39,10 @@ class CalenderViewController: UIViewController {
             card.shouldPresent(cardContentVC, from: self, fullscreen: false)
             
             
-            self.view.addSubview(card)
+            mainScrollView.addSubview(card)
+        
+            wrapContent(view: mainScrollView)
+        
         }
         
         
@@ -42,6 +51,10 @@ class CalenderViewController: UIViewController {
         
     }
 
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle  {
+        return .lightContent
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

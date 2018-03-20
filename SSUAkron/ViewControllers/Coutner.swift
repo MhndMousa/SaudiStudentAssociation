@@ -13,6 +13,7 @@ class CounterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateSalary()
+        addBlurStatusBar(view: self)
         
     }
     
@@ -43,6 +44,10 @@ class CounterViewController: UIViewController {
         }
     }
 
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
 }
 
 

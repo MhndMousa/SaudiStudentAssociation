@@ -28,6 +28,7 @@
 		597950A7205B1B9400807FD1 /* Player_by_Patric_Piemonte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597950A6205B1B9300807FD1 /* Player_by_Patric_Piemonte.swift */; };
 		59DDB6A4205FA33D001DF580 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6A3205FA33D001DF580 /* StoreViewController.swift */; };
 		59DDB6A6205FA360001DF580 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6A5205FA360001DF580 /* CalenderViewController.swift */; };
+		59DDB6BE2060E104001DF580 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6BD2060E104001DF580 /* Global.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		597950A6205B1B9300807FD1 /* Player_by_Patric_Piemonte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player_by_Patric_Piemonte.swift; sourceTree = "<group>"; };
 		59DDB6A3205FA33D001DF580 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		59DDB6A5205FA360001DF580 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
+		59DDB6BD2060E104001DF580 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				59795089205B1B0000807FD1 /* LaunchScreen.storyboard */,
 				5979508C205B1B0000807FD1 /* Info.plist */,
 				59795084205B1B0000807FD1 /* SSUAkron.xcdatamodeld */,
+				59DDB6BD2060E104001DF580 /* Global.swift */,
 			);
 			path = SSUAkron;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				59795080205B1B0000807FD1 /* Home.swift in Sources */,
 				59DDB6A6205FA360001DF580 /* CalenderViewController.swift in Sources */,
 				5979507E205B1B0000807FD1 /* AppDelegate.swift in Sources */,
+				59DDB6BE2060E104001DF580 /* Global.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

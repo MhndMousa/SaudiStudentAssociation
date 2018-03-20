@@ -10,19 +10,21 @@ import UIKit
 
 class StoreViewController: UIViewController {
 
-    @IBOutlet weak var scrollview: UIScrollView!
+
+    
     var imageArray = [UIImage]()
     
-    
-    
 
+    @IBOutlet weak var mainScrollView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        addBlurStatusBar(view: self)
         
+        mainScrollView.showsVerticalScrollIndicator = false
         
         imageArray = [#imageLiteral(resourceName: "car1"),#imageLiteral(resourceName: "car3"),#imageLiteral(resourceName: "car2")]
-
+        
+        
         for i in 0..<imageArray.count {
             
             let card = CardArticle(frame: CGRect(x: 15, y: 30 + (250 * CGFloat(i)), width: view.frame.width - 30 , height: 240))
@@ -39,29 +41,10 @@ class StoreViewController: UIViewController {
             
             let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "StoreCard")
             card.shouldPresent(cardContentVC, from: self, fullscreen: false)
-            self.view.addSubview(card)
+            mainScrollView.addSubview(card)
+            wrapContent(view: mainScrollView)
             
-
         }
-
-        
-//        scrollview?.frame = view.frame
-//        for i in 0..<imageArray.count{
-//            let imageView = UIImageView()
-//            imageView.image = imageArray[i]
-//            imageView.contentMode = .scaleAspectFit
-//
-//            let x = self.view.frame.width * CGFloat(i)
-//            imageView.frame = CGRect(x: x, y: 0,
-//                                     width: self.view.frame.width,
-//                                     height: 400 )
-//
-//            scrollview?.contentSize.width = (scrollview?.frame.width)! * CGFloat(i + 1)
-//            scrollview?.addSubview(imageView)
-//        }
-        
-        
-        
      
         
         
@@ -70,6 +53,10 @@ class StoreViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

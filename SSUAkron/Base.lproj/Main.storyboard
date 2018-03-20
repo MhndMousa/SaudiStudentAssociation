@@ -18,10 +18,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--StoreCard-->
         <scene sceneID="IoO-0g-Dli">
             <objects>
-                <viewController storyboardIdentifier="StoreCard" id="8o3-Us-K0H" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StoreCard" title="StoreCard" id="8o3-Us-K0H" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="84L-MC-o3I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,10 +54,10 @@
             </objects>
             <point key="canvasLocation" x="-2178.4000000000001" y="350.37481259370315"/>
         </scene>
-        <!--Content VC-->
+        <!--EventCard-->
         <scene sceneID="tYv-UH-x70">
             <objects>
-                <viewController storyboardIdentifier="EventCard" title="Content VC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P3c-Yu-pAD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventCard" title="EventCard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P3c-Yu-pAD" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0YU-H2-Xt0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="-1242.4000000000001" y="349.47526236881561"/>
         </scene>
-        <!--White VC-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="White VC" id="BYZ-38-t0r" customClass="HomeViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,17 +152,28 @@
             </objects>
             <point key="canvasLocation" x="-191.19999999999999" y="1510.7946026986508"/>
         </scene>
-        <!--Red VC-->
+        <!--Store-->
         <scene sceneID="rJk-T6-fbZ">
             <objects>
-                <viewController title="Red VC" id="Zhg-5V-ggg" customClass="StoreViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Zhg-5V-ggg" customClass="StoreViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1ct-mZ-FBu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RK2-cm-Bdp">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pAt-n8-1fH">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                    </scrollView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.18019044400000001" green="0.55229383710000002" blue="0.65157169100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="pAt-n8-1fH" firstAttribute="leading" secondItem="RK2-cm-Bdp" secondAttribute="leading" id="7D9-Er-aAK"/>
+                                    <constraint firstItem="pAt-n8-1fH" firstAttribute="top" secondItem="RK2-cm-Bdp" secondAttribute="top" id="8Jh-pZ-hky"/>
+                                    <constraint firstAttribute="bottom" secondItem="pAt-n8-1fH" secondAttribute="bottom" id="rzm-iT-hP5"/>
+                                    <constraint firstAttribute="trailing" secondItem="pAt-n8-1fH" secondAttribute="trailing" id="zDX-jc-icU"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -175,6 +186,9 @@
                         <viewLayoutGuide key="safeArea" id="pgF-lg-978"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Store" image="ic_store_mall_directory" selectedImage="ic_store_mall_directory" id="Gmt-dU-QH4"/>
+                    <connections>
+                        <outlet property="mainScrollView" destination="pAt-n8-1fH" id="hwh-dm-EWD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T0V-YY-f4J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -201,17 +215,28 @@
             </objects>
             <point key="canvasLocation" x="-191" y="412"/>
         </scene>
-        <!--Green VC-->
+        <!--Calander-->
         <scene sceneID="0oh-sA-JgF">
             <objects>
-                <viewController title="Green VC" id="XyH-D1-oJU" customClass="CalenderViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XyH-D1-oJU" customClass="CalenderViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Kgp-5o-JIU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTi-5s-8nx">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dhf-rd-VNj">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                    </scrollView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.18019044400000001" green="0.55229383710000002" blue="0.65157169100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Dhf-rd-VNj" firstAttribute="top" secondItem="YTi-5s-8nx" secondAttribute="top" id="dWY-NF-Ocr"/>
+                                    <constraint firstItem="Dhf-rd-VNj" firstAttribute="leading" secondItem="YTi-5s-8nx" secondAttribute="leading" id="ryG-sP-Z6f"/>
+                                    <constraint firstAttribute="bottom" secondItem="Dhf-rd-VNj" secondAttribute="bottom" id="xea-Wf-Tl6"/>
+                                    <constraint firstAttribute="trailing" secondItem="Dhf-rd-VNj" secondAttribute="trailing" id="z4k-lo-yEJ"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -224,15 +249,18 @@
                         <viewLayoutGuide key="safeArea" id="Pmk-5t-mpY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Calander" image="ic_date_range" selectedImage="ic_date_range" id="2SO-nl-hCp"/>
+                    <connections>
+                        <outlet property="mainScrollView" destination="Dhf-rd-VNj" id="DcZ-sh-OHD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qkR-Af-mN2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1248.8" y="1510.7946026986508"/>
         </scene>
-        <!--Blue VC-->
+        <!--Salary-->
         <scene sceneID="8Rr-WY-3YR">
             <objects>
-                <viewController storyboardIdentifier="blueVC" title="Blue VC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wgj-KI-5bK" customClass="CounterViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="blueVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wgj-KI-5bK" customClass="CounterViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OGI-yf-5Gc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
