@@ -24,6 +24,19 @@ func wrapContent(view: UIScrollView)  {
     view.contentSize = contentRect.size
 }
 
+
+func wrapContent(cell: UITableViewCell) ->CGFloat {
+    var contentRect = CGRect.zero
+    
+    for subview in cell.subviews {
+        contentRect = contentRect.union(subview.frame )
+    }
+    
+    contentRect.size.height += UITabBar().frame.size.height + 10
+    return contentRect.size.height
+}
+
+
 func addBlurStatusBar(view: UIViewController) {
     let statusBarHeight = UIApplication.shared.statusBarFrame.height
     let blur = UIBlurEffect(style: .dark)
