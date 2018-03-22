@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>953925673380-ib621504t3q69b81k9cj0rnkcc9pmbfm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.953925673380-ib621504t3q69b81k9cj0rnkcc9pmbfm</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAksFJh6mX9UT_Js1-PwbhKbaa_jia7IZs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>953925673380</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.mhnd.SSUAkron</string>
+	<key>PROJECT_ID</key>
+	<string>ssuakron</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ssuakron.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:953925673380:ios:737982d7eb4a523a</string>
+	<key>DATABASE_URL</key>
+	<string>https://ssuakron.firebaseio.com</string>
+</dict>
+</plist>

@@ -30,6 +30,7 @@
 		59DDB6A4205FA33D001DF580 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6A3205FA33D001DF580 /* StoreViewController.swift */; };
 		59DDB6A6205FA360001DF580 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6A5205FA360001DF580 /* CalenderViewController.swift */; };
 		59DDB6BE2060E104001DF580 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6BD2060E104001DF580 /* Global.swift */; };
+		59E24C32206372A800B04928 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59E24C31206372A800B04928 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		59DDB6A3205FA33D001DF580 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		59DDB6A5205FA360001DF580 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		59DDB6BD2060E104001DF580 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		59E24C31206372A800B04928 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E64B43DE83D8B272E5D1859 /* Pods_SSUAkron.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSUAkron.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C61FE7349C2795879C2A83A /* Pods-SSUAkron.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSUAkron.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSUAkron/Pods-SSUAkron.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +116,7 @@
 		5979507C205B1B0000807FD1 /* SSUAkron */ = {
 			isa = PBXGroup;
 			children = (
+				59E24C31206372A800B04928 /* GoogleService-Info.plist */,
 				59DDB6A1205FA2E3001DF580 /* ViewControllers */,
 				5979507D205B1B0000807FD1 /* AppDelegate.swift */,
 				59795081205B1B0000807FD1 /* Main.storyboard */,
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				595AA08C205C7ECA009D3D09 /* NotoKufiArabic-Bold.ttf in Resources */,
+				59E24C32206372A800B04928 /* GoogleService-Info.plist in Resources */,
 				595AA08D205C7ECA009D3D09 /* NotoKufiArabic-Regular.ttf in Resources */,
 				5979508B205B1B0000807FD1 /* LaunchScreen.storyboard in Resources */,
 				59795088205B1B0000807FD1 /* Assets.xcassets in Resources */,
