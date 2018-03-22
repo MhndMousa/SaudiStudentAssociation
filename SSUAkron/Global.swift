@@ -8,6 +8,9 @@
 
 import Foundation
 import UIKit
+import Firebase
+
+
 
 func wrapContent(view: UIScrollView)  {
     
