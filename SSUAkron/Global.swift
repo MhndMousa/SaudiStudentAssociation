@@ -10,22 +10,19 @@ import Foundation
 import UIKit
 import Firebase
 
+var ref : DatabaseReference! =  Database.database().reference()
 
 
 func wrapContent(view: UIScrollView)  {
-    
-    
     var contentRect = CGRect.zero
-    
+
     for subview in view.subviews {
         contentRect = contentRect.union(subview.frame )
     }
+    
     contentRect.size.height += UITabBar().frame.size.height + 10
-    
     view.contentSize = contentRect.size
-    
 }
-
 
 func addBlurStatusBar(view: UIViewController) {
     let statusBarHeight = UIApplication.shared.statusBarFrame.height
@@ -35,4 +32,3 @@ func addBlurStatusBar(view: UIViewController) {
         view.view.addSubview(blurStatusBar)
     
 }
-
