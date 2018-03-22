@@ -92,7 +92,7 @@ class TableViewController: UITableViewController, UINavigationBarDelegate {
         card.hasParallax = true
         let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "EventCard")
         
-        card.shouldPresent(cardContentVC, from: self, fullscreen: false)
+        card.shouldPresent(cardContentVC, from: self, fullscreen: true)
         
         cell.addSubview(card)
         
