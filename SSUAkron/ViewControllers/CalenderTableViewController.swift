@@ -65,20 +65,16 @@ class TableViewController: UITableViewController {
     
     // MARK: - Table view data source
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 20
     }
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        if cell == nil{
         let card = CardHighlight(frame: CGRect(x: 10, y: 30 , width: view.frame.width - 20 , height: 240))
         
         card.backgroundColor = .black
@@ -92,9 +88,10 @@ class TableViewController: UITableViewController {
         let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "EventCard")
         
         card.shouldPresent(cardContentVC, from: self, fullscreen: true)
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         cell.addSubview(card)
-        cell.isUserInteractionEnabled = false
+    }
         
         
         return cell
@@ -104,7 +101,6 @@ class TableViewController: UITableViewController {
 //        return wrapContent(cell: self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath))
         return 320
     }
-
     
     
 }

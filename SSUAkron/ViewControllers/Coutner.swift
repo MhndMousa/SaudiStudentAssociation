@@ -7,15 +7,27 @@
 //
 
 import UIKit
+import MKRingProgressView
 
 class CounterViewController: UIViewController {
+    @IBOutlet weak var ringView: MKRingProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         updateSalary()
         addBlurStatusBar(view: self)
+        ringView?.progress = 0.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { // change 2 to desired number of seconds
+            CATransaction.begin()
+            CATransaction.setAnimationDuration(1.0)
+            self.ringView?.progress = 1.0
+            print("something")
+            CATransaction.commit()
+        }
+
         
     }
+    
     
     
     @IBOutlet weak var dateCounter: UILabel!
@@ -34,20 +46,18 @@ class CounterViewController: UIViewController {
             num = num + 86400
         }
         
-        
-        if d.interval(ofComponent: .day, fromDate: Date() ) == 0 {
-            dateCounter?.text = "يوم الراتب"
-            daysLabel.isHidden = true
-        }else{
-            dateCounter?.text = String(s)
-            daysLabel.isHidden = false
-        }
+        dateCounter?.text = String(s)
+//        if d.interval(ofComponent: .day, fromDate: Date() ) == 0 {
+//            dateCounter?.text = "يوم الراتب"
+//            daysLabel.isHidden = true
+//        }else{
+//            dateCounter?.text = String(s)
+//            daysLabel?.isHidden = false
+//        }
     }
 
     
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
-    }
+    
 }
 
 

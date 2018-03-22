@@ -163,10 +163,10 @@
                         <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.10000000000000001"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9hf-8h-mP9" kind="relationship" relationship="viewControllers" id="I5c-t7-bmb"/>
                         <segue destination="QXJ-DL-Dao" kind="relationship" relationship="viewControllers" id="JlU-L0-6Kz"/>
-                        <segue destination="Wgj-KI-5bK" kind="relationship" relationship="viewControllers" id="rgE-ir-vTR"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="RTz-o4-cjE"/>
+                        <segue destination="9hf-8h-mP9" kind="relationship" relationship="viewControllers" id="I5c-t7-bmb"/>
+                        <segue destination="Wgj-KI-5bK" kind="relationship" relationship="viewControllers" id="rgE-ir-vTR"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MrT-Fg-iwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -177,7 +177,7 @@
         <scene sceneID="daa-T8-Ya9">
             <objects>
                 <tableViewController id="qjq-Qo-TNd" customClass="StoreTableViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EUp-ar-C0p">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EUp-ar-C0p">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -207,7 +207,7 @@
         <scene sceneID="Ojr-jN-ald">
             <objects>
                 <tableViewController id="ygp-SZ-rjq" customClass="TableViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eDI-Lz-PbC">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eDI-Lz-PbC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -231,6 +231,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mK0-Vo-GHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2225" y="1544"/>
+        </scene>
+        <!--Counter View Controller-->
+        <scene sceneID="rqy-eb-SWx">
+            <objects>
+                <viewController id="c6f-Zx-Yhu" customClass="CounterViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oLK-o2-yQQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYr-rV-P5d" customClass="MKRingProgressView" customModule="MKRingProgressView">
+                                <rect key="frame" x="20" y="70" width="335" height="547"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.091076456010341644" green="0.26392638683319092" blue="0.50962167978286743" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.88946801424026489" green="0.96869510412216187" blue="0.97386306524276733" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="ringWidth">
+                                        <real key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bv9-5c-M83" firstAttribute="trailing" secondItem="cYr-rV-P5d" secondAttribute="trailing" constant="20" id="8bc-Fy-aTn"/>
+                            <constraint firstItem="cYr-rV-P5d" firstAttribute="leading" secondItem="bv9-5c-M83" secondAttribute="leading" constant="20" id="R7k-6w-XIQ"/>
+                            <constraint firstItem="cYr-rV-P5d" firstAttribute="centerY" secondItem="bv9-5c-M83" secondAttribute="centerY" id="RVQ-oL-S02"/>
+                            <constraint firstItem="bv9-5c-M83" firstAttribute="bottom" secondItem="cYr-rV-P5d" secondAttribute="bottom" constant="50" id="zjB-Fg-tuT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bv9-5c-M83"/>
+                    </view>
+                    <connections>
+                        <outlet property="ringView" destination="cYr-rV-P5d" id="q4T-uV-8nc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yxE-fL-aZp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4054" y="1108"/>
         </scene>
         <!--Salary-->
         <scene sceneID="8Rr-WY-3YR">
@@ -261,15 +302,33 @@
                                         <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="692-cc-Uvt" customClass="MKRingProgressView" customModule="MKRingProgressView">
+                                        <rect key="frame" x="20" y="63" width="335" height="547"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                                <color key="value" red="0.091076456010341644" green="0.26392638683319092" blue="0.50962167978286743" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                                <color key="value" red="0.88946801424026489" green="0.96869510412216187" blue="0.97386306524276733" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="ringWidth">
+                                                <real key="value" value="30"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.086791582405567169" green="0.48432129621505737" blue="0.66587328910827637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="unT-1K-P7M" firstAttribute="centerX" secondItem="RuH-2R-wuk" secondAttribute="centerX" id="0NG-jV-JAG"/>
                                     <constraint firstItem="aBT-XB-23y" firstAttribute="centerX" secondItem="RuH-2R-wuk" secondAttribute="centerX" id="0OB-L5-kpQ"/>
                                     <constraint firstItem="OPY-kO-SIA" firstAttribute="centerX" secondItem="RuH-2R-wuk" secondAttribute="centerX" id="MVt-aD-coG"/>
+                                    <constraint firstItem="692-cc-Uvt" firstAttribute="leading" secondItem="RuH-2R-wuk" secondAttribute="leading" constant="20" id="Wyo-1K-aRs"/>
                                     <constraint firstItem="OPY-kO-SIA" firstAttribute="top" secondItem="RuH-2R-wuk" secondAttribute="top" constant="36" id="Yr6-aa-Ztw"/>
+                                    <constraint firstAttribute="bottom" secondItem="692-cc-Uvt" secondAttribute="bottom" constant="8" id="cGK-nz-wbK"/>
                                     <constraint firstItem="unT-1K-P7M" firstAttribute="top" secondItem="RuH-2R-wuk" secondAttribute="top" constant="127" id="gXN-tS-m1s"/>
+                                    <constraint firstAttribute="trailing" secondItem="692-cc-Uvt" secondAttribute="trailing" constant="20" id="i7u-bu-fCN"/>
                                     <constraint firstItem="aBT-XB-23y" firstAttribute="top" secondItem="RuH-2R-wuk" secondAttribute="top" constant="300.5" id="uDY-K8-LlI"/>
+                                    <constraint firstItem="692-cc-Uvt" firstAttribute="top" secondItem="RuH-2R-wuk" secondAttribute="top" constant="63" id="wRR-rN-Rty"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -314,6 +373,9 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Gaj-uQ-Qex">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="ygp-SZ-rjq" kind="relationship" relationship="rootViewController" id="SNZ-zg-yUz"/>
                     </connections>
@@ -337,6 +399,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="34"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>

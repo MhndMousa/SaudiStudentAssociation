@@ -14,13 +14,14 @@ class StoreTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBlurStatusBar(view: self)
+//        addBlurStatusBar(view: self)
         imageArray = [#imageLiteral(resourceName: "car1"),#imageLiteral(resourceName: "car3"),#imageLiteral(resourceName: "car2")]
         
         
         
+        
         tableView.refreshControl = refresher
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
+//        self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
         
     }
     
@@ -66,7 +67,7 @@ class StoreTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return imageArray.count
+        return 20
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -75,7 +76,7 @@ class StoreTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
+        if cell == nil{
         let card = CardArticle(frame: CGRect(x: 15, y: 30, width: view.frame.width - 30 , height: 240))
         
         card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
@@ -90,10 +91,10 @@ class StoreTableViewController: UITableViewController {
         
         let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "StoreCard")
         card.shouldPresent(cardContentVC, from: self, fullscreen: false)
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         cell.addSubview(card)
-        
-        cell.isUserInteractionEnabled = false
+        }
         
         
         return cell
@@ -116,21 +117,10 @@ class StoreTableViewController: UITableViewController {
     
     
     
-    
-    
-    
-    
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
     
     
     
