@@ -167,7 +167,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.18019044400000001" green="0.55229383710000002" blue="0.65157169100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.086791582405567169" green="0.48432129621505737" blue="0.66587328910827637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="pAt-n8-1fH" firstAttribute="leading" secondItem="RK2-cm-Bdp" secondAttribute="leading" id="7D9-Er-aAK"/>
                                     <constraint firstItem="pAt-n8-1fH" firstAttribute="top" secondItem="RK2-cm-Bdp" secondAttribute="top" id="8Jh-pZ-hky"/>
@@ -205,11 +205,11 @@
                         <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.10000000000000001"/>
                     </tabBar>
                     <connections>
+                        <segue destination="iVD-jb-7g8" kind="relationship" relationship="viewControllers" id="yHa-GY-uXy"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="RTz-o4-cjE"/>
                         <segue destination="XyH-D1-oJU" kind="relationship" relationship="viewControllers" id="gci-k7-7BK"/>
                         <segue destination="Zhg-5V-ggg" kind="relationship" relationship="viewControllers" id="2tn-dw-w3z"/>
                         <segue destination="Wgj-KI-5bK" kind="relationship" relationship="viewControllers" id="rgE-ir-vTR"/>
-                        <segue destination="iVD-jb-7g8" kind="relationship" relationship="viewControllers" id="yHa-GY-uXy"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MrT-Fg-iwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -231,7 +231,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" red="0.18019044400000001" green="0.55229383710000002" blue="0.65157169100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.086791582405567169" green="0.48432129621505737" blue="0.66587328910827637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="Dhf-rd-VNj" firstAttribute="top" secondItem="YTi-5s-8nx" secondAttribute="top" id="dWY-NF-Ocr"/>
                                     <constraint firstItem="Dhf-rd-VNj" firstAttribute="leading" secondItem="YTi-5s-8nx" secondAttribute="leading" id="ryG-sP-Z6f"/>
@@ -317,7 +317,7 @@
                                         <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.18019044399261475" green="0.55229383707046509" blue="0.65157169103622437" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.086791582405567169" green="0.48432129621505737" blue="0.66587328910827637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="unT-1K-P7M" firstAttribute="centerX" secondItem="RuH-2R-wuk" secondAttribute="centerX" id="0NG-jV-JAG"/>
                                     <constraint firstItem="aBT-XB-23y" firstAttribute="centerX" secondItem="RuH-2R-wuk" secondAttribute="centerX" id="0OB-L5-kpQ"/>
@@ -364,7 +364,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                         <textAttributes key="largeTitleTextAttributes">
-                            <fontDescription key="fontDescription" name="NotoKufiArabic-Bold" family="Noto Kufi Arabic" pointSize="34"/>
+                            <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="34"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
