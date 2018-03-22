@@ -11,7 +11,8 @@
 		595AA08C205C7ECA009D3D09 /* NotoKufiArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 595AA087205C5A86009D3D09 /* NotoKufiArabic-Bold.ttf */; };
 		595AA08D205C7ECA009D3D09 /* NotoKufiArabic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 595AA086205C5A86009D3D09 /* NotoKufiArabic-Regular.ttf */; };
 		595AA091205CA4AE009D3D09 /* Coutner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595AA090205CA4AE009D3D09 /* Coutner.swift */; };
-		596259712063959E00DD7CAA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596259702063959E00DD7CAA /* TableViewController.swift */; };
+		596259712063959E00DD7CAA /* CalenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596259702063959E00DD7CAA /* CalenderTableViewController.swift */; };
+		596259852063CAED00DD7CAA /* StoreTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596259842063CAED00DD7CAA /* StoreTableViewController.swift */; };
 		5979507E205B1B0000807FD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979507D205B1B0000807FD1 /* AppDelegate.swift */; };
 		59795080205B1B0000807FD1 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979507F205B1B0000807FD1 /* Home.swift */; };
 		59795083205B1B0000807FD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59795081205B1B0000807FD1 /* Main.storyboard */; };
@@ -39,7 +40,8 @@
 		595AA086205C5A86009D3D09 /* NotoKufiArabic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoKufiArabic-Regular.ttf"; sourceTree = "<group>"; };
 		595AA087205C5A86009D3D09 /* NotoKufiArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoKufiArabic-Bold.ttf"; sourceTree = "<group>"; };
 		595AA090205CA4AE009D3D09 /* Coutner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coutner.swift; sourceTree = "<group>"; };
-		596259702063959E00DD7CAA /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		596259702063959E00DD7CAA /* CalenderTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderTableViewController.swift; sourceTree = "<group>"; };
+		596259842063CAED00DD7CAA /* StoreTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTableViewController.swift; sourceTree = "<group>"; };
 		5979507A205B1B0000807FD1 /* SSUAkron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSUAkron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5979507D205B1B0000807FD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5979507F205B1B0000807FD1 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -152,7 +154,8 @@
 		59DDB6A1205FA2E3001DF580 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				596259702063959E00DD7CAA /* TableViewController.swift */,
+				596259842063CAED00DD7CAA /* StoreTableViewController.swift */,
+				596259702063959E00DD7CAA /* CalenderTableViewController.swift */,
 				5979507F205B1B0000807FD1 /* Home.swift */,
 				595AA090205CA4AE009D3D09 /* Coutner.swift */,
 				59DDB6A3205FA33D001DF580 /* StoreViewController.swift */,
@@ -313,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				596259712063959E00DD7CAA /* TableViewController.swift in Sources */,
+				596259712063959E00DD7CAA /* CalenderTableViewController.swift in Sources */,
 				597950A7205B1B9400807FD1 /* Player_by_Patric_Piemonte.swift in Sources */,
 				5979509D205B1B8300807FD1 /* Animator.swift in Sources */,
 				5979509E205B1B8300807FD1 /* CardGroupSliding.swift in Sources */,
@@ -325,6 +328,7 @@
 				597950A3205B1B8300807FD1 /* CardGroup.swift in Sources */,
 				597950A4205B1B8300807FD1 /* CardPlayer.swift in Sources */,
 				595AA091205CA4AE009D3D09 /* Coutner.swift in Sources */,
+				596259852063CAED00DD7CAA /* StoreTableViewController.swift in Sources */,
 				597950A5205B1B8300807FD1 /* CardArticle.swift in Sources */,
 				59795086205B1B0000807FD1 /* SSUAkron.xcdatamodeld in Sources */,
 				59795080205B1B0000807FD1 /* Home.swift in Sources */,

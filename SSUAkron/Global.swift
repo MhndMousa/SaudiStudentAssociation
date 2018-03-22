@@ -45,3 +45,4 @@ func addBlurStatusBar(view: UIViewController) {
         view.view.addSubview(blurStatusBar)
     
 }
+

@@ -9,13 +9,12 @@
 import UIKit
 import Firebase
 
-class TableViewController: UITableViewController, UINavigationBarDelegate {
+class TableViewController: UITableViewController {
     var colors = [UIColor.init(red: 1, green: 0.7, blue: 0.7, alpha: 1), UIColor.blue, UIColor.orange]
     var cat = ["تجمع نسائي", "تجمع رجال " , "تجمع للاطفال"]
     
     
     
-    @IBOutlet weak var cardCell: CardHighlight!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -95,6 +94,8 @@ class TableViewController: UITableViewController, UINavigationBarDelegate {
         card.shouldPresent(cardContentVC, from: self, fullscreen: true)
         
         cell.addSubview(card)
+        cell.isUserInteractionEnabled = false
+        
         
         return cell
         

@@ -1,34 +1,31 @@
 //
-//  StoreViewController.swift
+//  StoreTableViewController.swift
 //  SSUAkron
 //
-//  Created by Muhannad Mousa on 3/19/18.
+//  Created by Muhannad Mousa on 3/22/18.
 //  Copyright © 2018 Muhannad Mousa. All rights reserved.
 //
 
 import UIKit
 
-class StoreViewController: UITableViewController {
+class StoreTableViewController: UITableViewController {
 
-
-    
     var imageArray = [UIImage]()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
         addBlurStatusBar(view: self)
         imageArray = [#imageLiteral(resourceName: "car1"),#imageLiteral(resourceName: "car3"),#imageLiteral(resourceName: "car2")]
+        
+        
+        
         tableView.refreshControl = refresher
         self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
-
-        
         
     }
-
     
     
-    
+    // MARK: - Refresher data source
     
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -62,35 +59,24 @@ class StoreViewController: UITableViewController {
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-    
+
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return imageArray.count
     }
-    
+
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 300
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        let card = CardArticle(frame: CGRect(x: 10, y: 30 , width: view.frame.width - 20 , height: 240))
+        let card = CardArticle(frame: CGRect(x: 15, y: 30, width: view.frame.width - 30 , height: 240))
         
         card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
         card.backgroundImage = imageArray[1]
@@ -107,20 +93,95 @@ class StoreViewController: UITableViewController {
         
         cell.addSubview(card)
         
-        return cell
+        cell.isUserInteractionEnabled = false
         
-    }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        //        return wrapContent(cell: self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath))
-        return 320
+        
+        return cell
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    
+    
+    
+    
+    
+    
+    /*
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+
+        // Configure the cell...
+
+        return cell
+    }
+    */
+
+    /*
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    */
+
+    /*
+    // Override to support editing the table view.
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // Delete the row from the data source
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } else if editingStyle == .insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        }    
+    }
+    */
+
+    /*
+    // Override to support rearranging the table view.
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+
+    }
+    */
+
+    /*
+    // Override to support conditional rearranging of the table view.
+    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the item to be re-orderable.
+        return true
+    }
+    */
 
     /*
     // MARK: - Navigation
