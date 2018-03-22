@@ -10,7 +10,11 @@ import UIKit
 import Firebase
 
 class TableViewController: UITableViewController, UINavigationBarDelegate {
- 
+    var colors = [UIColor.init(red: 1, green: 0.7, blue: 0.7, alpha: 1), UIColor.blue, UIColor.orange]
+    var cat = ["تجمع نسائي", "تجمع رجال " , "تجمع للاطفال"]
+    
+    
+    
     @IBOutlet weak var cardCell: CardHighlight!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,7 +79,23 @@ class TableViewController: UITableViewController, UINavigationBarDelegate {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
-        var cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let card = CardHighlight(frame: CGRect(x: 10, y: 30 , width: view.frame.width - 20 , height: 240))
+        
+        card.backgroundColor = .black
+        card.icon = UIImage(named: "ssa")
+        card.title = "ايفينت"
+        card.itemTitle = "cat[indexPath]"
+        card.itemSubtitle = "نوع الايفينت"
+        card.textColor = UIColor.white
+        
+        card.hasParallax = true
+        let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "EventCard")
+        
+        card.shouldPresent(cardContentVC, from: self, fullscreen: false)
+        
+        cell.addSubview(card)
+        
         return cell
         
     }
