@@ -10,6 +10,8 @@ import UIKit
 import Firebase
 
 class TableViewController: UITableViewController {
+    
+    var events = NSDictionary()
     var colors = [UIColor.init(red: 1, green: 0.7, blue: 0.7, alpha: 1), UIColor.blue, UIColor.orange]
     var cat = ["تجمع نسائي", "تجمع رجال " , "تجمع للاطفال"]
     
@@ -48,14 +50,15 @@ class TableViewController: UITableViewController {
         
         ref.child("Store").observeSingleEvent(of: .value, with: { (snapshot) in
         
-            let value = snapshot.value as! NSDictionary
-            let one = value["time"] as? String ?? ""
+            self.events = snapshot.value as! NSDictionary
+            let one = self.events["time"] as? String ?? ""
             print(one)
              self.refresher.endRefreshing()
         })  { (error) in
             print(error.localizedDescription)
              self.refresher.endRefreshing()
         }
+    
     }
     
     
@@ -74,7 +77,7 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        if cell == nil{
+        
         let card = CardHighlight(frame: CGRect(x: 10, y: 30 , width: view.frame.width - 20 , height: 240))
         
         card.backgroundColor = .black
@@ -91,7 +94,7 @@ class TableViewController: UITableViewController {
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         cell.addSubview(card)
-    }
+    
         
         
         return cell

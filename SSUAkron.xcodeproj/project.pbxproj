@@ -97,6 +97,15 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		596259862065B44300DD7CAA /* Unused */ = {
+			isa = PBXGroup;
+			children = (
+				59DDB6A3205FA33D001DF580 /* StoreViewController.swift */,
+				59DDB6A5205FA360001DF580 /* CalenderViewController.swift */,
+			);
+			path = Unused;
+			sourceTree = "<group>";
+		};
 		59795071205B1B0000807FD1 = {
 			isa = PBXGroup;
 			children = (
@@ -154,12 +163,11 @@
 		59DDB6A1205FA2E3001DF580 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				596259862065B44300DD7CAA /* Unused */,
 				596259842063CAED00DD7CAA /* StoreTableViewController.swift */,
 				596259702063959E00DD7CAA /* CalenderTableViewController.swift */,
 				5979507F205B1B0000807FD1 /* Home.swift */,
 				595AA090205CA4AE009D3D09 /* Coutner.swift */,
-				59DDB6A3205FA33D001DF580 /* StoreViewController.swift */,
-				59DDB6A5205FA360001DF580 /* CalenderViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

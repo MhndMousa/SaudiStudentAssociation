@@ -21,7 +21,7 @@ class StoreTableViewController: UITableViewController {
         
         
         tableView.refreshControl = refresher
-//        self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
         
     }
     
@@ -76,7 +76,7 @@ class StoreTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        if cell == nil{
+        
         let card = CardArticle(frame: CGRect(x: 15, y: 30, width: view.frame.width - 30 , height: 240))
         
         card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
@@ -94,7 +94,7 @@ class StoreTableViewController: UITableViewController {
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         cell.addSubview(card)
-        }
+        
         
         
         return cell
