@@ -26,10 +26,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="car3" translatesAutoresizingMaskIntoConstraints="NO" id="fGP-CM-wdk">
-                                <rect key="frame" x="0.0" y="468" width="375" height="199"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="السعر" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdY-Mu-dND">
                                 <rect key="frame" x="16" y="73" width="38" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -45,8 +41,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ارسال رسالة" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTg-Ex-SIK">
+                                <rect key="frame" x="264" y="72" width="79" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.24881355087143039" green="0.43345730402941451" blue="0.77916798857868019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Swipable photos " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bxE-VA-nFO">
+                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="tB1-Ad-8Zw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bxE-VA-nFO" firstAttribute="trailing" secondItem="Nlp-MW-J7I" secondAttribute="trailing" id="9Bc-f3-iH0"/>
+                            <constraint firstItem="bxE-VA-nFO" firstAttribute="bottom" secondItem="Nlp-MW-J7I" secondAttribute="bottom" id="XHG-bv-Uoo"/>
+                            <constraint firstItem="bxE-VA-nFO" firstAttribute="leading" secondItem="Nlp-MW-J7I" secondAttribute="leading" id="jnN-bZ-u8x"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Nlp-MW-J7I"/>
                     </view>
                 </viewController>
@@ -96,13 +115,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="معلومات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11H-cj-CKM">
-                                <rect key="frame" x="33" y="504" width="299" height="136"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bkX-UA-PBc">
                                 <rect key="frame" x="0.0" y="219" width="375" height="249"/>
                             </mapView>
@@ -120,11 +132,21 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="معلومات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11H-cj-CKM">
+                                <rect key="frame" x="37.5" y="498" width="300" height="100"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Ubo-Qh-Ogo"/>
+                                    <constraint firstAttribute="width" constant="300" id="V9O-PH-pbC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5km-6S-37C" secondAttribute="trailing" constant="20" symbolic="YES" id="5CU-h7-oFq"/>
-                            <constraint firstItem="11H-cj-CKM" firstAttribute="top" secondItem="bkX-UA-PBc" secondAttribute="bottom" constant="36" id="6B1-hV-Zi7"/>
                             <constraint firstItem="5km-6S-37C" firstAttribute="top" secondItem="zje-wM-Jdk" secondAttribute="top" constant="57" id="CGq-dH-tbW"/>
                             <constraint firstItem="zje-wM-Jdk" firstAttribute="trailing" secondItem="LG7-6Z-N1I" secondAttribute="trailing" constant="27" id="Dm4-A4-hIv"/>
                             <constraint firstItem="zje-wM-Jdk" firstAttribute="trailing" secondItem="qLU-Mj-w0Q" secondAttribute="trailing" constant="33" id="GJf-Rn-zNQ"/>
@@ -132,11 +154,11 @@
                             <constraint firstItem="bkX-UA-PBc" firstAttribute="centerX" secondItem="zje-wM-Jdk" secondAttribute="centerX" id="K51-Kb-ck3"/>
                             <constraint firstItem="qLU-Mj-w0Q" firstAttribute="top" secondItem="zje-wM-Jdk" secondAttribute="top" constant="57" id="LJk-0W-kHs"/>
                             <constraint firstItem="qLU-Mj-w0Q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0YU-H2-Xt0" secondAttribute="leading" constant="20" symbolic="YES" id="PIm-eu-HAN"/>
+                            <constraint firstItem="11H-cj-CKM" firstAttribute="top" secondItem="bkX-UA-PBc" secondAttribute="bottom" constant="30" id="Qct-68-Oxw"/>
                             <constraint firstItem="LG7-6Z-N1I" firstAttribute="top" secondItem="qLU-Mj-w0Q" secondAttribute="bottom" constant="83" id="ac8-IX-vPy"/>
                             <constraint firstItem="zuv-mS-Eiu" firstAttribute="top" secondItem="5km-6S-37C" secondAttribute="bottom" constant="83" id="cUH-9s-qgI"/>
                             <constraint firstItem="5km-6S-37C" firstAttribute="leading" secondItem="zje-wM-Jdk" secondAttribute="leading" constant="41" id="gU0-Pc-5bN"/>
                             <constraint firstItem="bkX-UA-PBc" firstAttribute="centerY" secondItem="zje-wM-Jdk" secondAttribute="centerY" id="p9G-or-2aV"/>
-                            <constraint firstItem="zje-wM-Jdk" firstAttribute="bottom" secondItem="11H-cj-CKM" secondAttribute="bottom" constant="142" id="tqK-zv-jzQ"/>
                             <constraint firstItem="bkX-UA-PBc" firstAttribute="trailing" secondItem="zje-wM-Jdk" secondAttribute="trailing" id="tuO-BX-bOs"/>
                             <constraint firstItem="zuv-mS-Eiu" firstAttribute="leading" secondItem="zje-wM-Jdk" secondAttribute="leading" constant="16" id="w39-LF-dwb"/>
                             <constraint firstItem="bkX-UA-PBc" firstAttribute="top" secondItem="LG7-6Z-N1I" secondAttribute="bottom" constant="8" id="y59-Ha-djB"/>
@@ -427,7 +449,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="car3" width="1904" height="950"/>
         <image name="ic_date_range" width="24" height="24"/>
         <image name="ic_home" width="24" height="24"/>
         <image name="ic_info" width="24" height="24"/>

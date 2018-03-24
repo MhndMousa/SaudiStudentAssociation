@@ -94,6 +94,7 @@ import UIKit
         titleLbl.numberOfLines = 2
         titleLbl.baselineAdjustment = .none
         
+        
         subtitleLbl.text = subtitle
         subtitleLbl.textColor = textColor
 //        subtitleLbl.font = UIFont.systemFont(ofSize: subtitleSize, weight: .medium)
@@ -114,7 +115,8 @@ import UIKit
         super.layout(animating: animating)
         
         let gimme  = LayoutHelper(rect: backgroundIV.bounds)
-        
+        print(gimme)
+        print("---------------------------------")
         categoryLbl.frame = CGRect(x: insets,
                                    y: insets,
                                    width: gimme.X(80),
@@ -124,8 +126,12 @@ import UIKit
                                 y: gimme.Y(1, from: categoryLbl),
                                 width: gimme.X(80),
                                 height: gimme.Y(17))
+//        titleLbl.frame = CGRect(x: gimme.X(75) ,
+//                                y: gimme.Y(1, from: categoryLbl),
+//                                width: gimme.X(80),
+//                                height: gimme.Y(17))
         
-        subtitleLbl.frame = CGRect(x: insets,
+        subtitleLbl.frame = CGRect(x: gimme.X(10),
                                    y: gimme.RevY(0, height: gimme.Y(14)) - insets,
                                    width: gimme.X(80),
                                    height: gimme.Y(14))

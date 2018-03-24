@@ -12,12 +12,12 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addBlurStatusBar(view: self)
-        
         
     }
     
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .default
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

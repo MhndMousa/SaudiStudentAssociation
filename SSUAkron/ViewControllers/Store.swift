@@ -76,7 +76,7 @@ class StoreTableViewController: UITableViewController {
         card.category = "سيارة"
         
         card.textColor = UIColor.white
-        card.hasParallax = true
+
         
         let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "StoreCard")
         card.shouldPresent(cardContentVC, from: self, fullscreen: false)

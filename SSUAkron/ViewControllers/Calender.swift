@@ -70,7 +70,7 @@ class TableViewController: UITableViewController {
         return 320
     }
 
-    
+    var ss = 1
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -80,14 +80,33 @@ class TableViewController: UITableViewController {
         card.backgroundColor = UIColor(red: 10/255, green: 94/255, blue: 200/255, alpha: 1)
         card.icon = UIImage(named: "ssa")
         
-        card.title = "مسابقة شهر\n رمضان"
-        card.itemTitle = "مباراة بين الفريق الفلاني وبرشلونة"
-        card.itemSubtitle = "ايفينت رياضي"
-        card.buttonText = "المزيد"
-        card.textColor = UIColor(white: 0.9, alpha: 1)
-        card.textColor = UIColor.white
+        switch ss {
+        case 1:
+            card.title = "مسابقة \n النادي السعودي"
+            card.itemTitle = "مباراة بين الفريق الفلاني وبرشلونة"
+            card.itemSubtitle = "ايفينت رياضي"
+            card.buttonText = "المزيد"
+            card.textColor = UIColor.white
+            ss = 2
+        case 2:
         
-        card.hasParallax = true
+            card.title = "افطار صائم"
+            card.itemTitle = "تجمع الاسبوعي للافطار الجماعي"
+            card.itemSubtitle = "ايفينت جماعي"
+            card.buttonText = "المزيد"
+            card.backgroundColor = UIColor(red: 60/255, green: 30/255, blue: 80/255, alpha: 1)
+            card.textColor = UIColor.white
+            ss = 3
+        default:
+            card.title = "حاجة ثانية "
+            card.itemTitle = "وصف وصف وصف وصف"
+            card.itemSubtitle = "ايفينت نسائي"
+            card.buttonText = "المزيد"
+            card.backgroundColor = UIColor(red: 1, green: 0.7, blue: 0.7, alpha: 1)
+            card.textColor = UIColor(white: 0.9, alpha: 1)
+            ss = 1
+        }
+
         let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "EventCard")
         
         card.shouldPresent(cardContentVC, from: self, fullscreen: true)
