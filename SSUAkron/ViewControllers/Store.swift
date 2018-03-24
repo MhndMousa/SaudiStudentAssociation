@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class StoreTableViewController: UITableViewController {
 
-    var fetchedInformation = NSDictionary()
+    var fetchedInformation = [CardInformaion]()
     var imageArray = [UIImage]()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,23 +48,36 @@ class StoreTableViewController: UITableViewController {
     
     @objc func requestData() {
 
+        fetchedInformation.removeAll()
+        print("Event count Before: " + String (fetchedInformation.count))
         
-        ref.child("Store").observeSingleEvent(of: .value, with: { (snapshot) in
+        // TODO: Change the refrence to the Calander Event child in firebase
+        ref.child("Store").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
+            for child in snapshot.children.allObjects as! [DataSnapshot]{
+                var dic  = child.value! as! [String: Any]
+                let card = CardInformaion()
+                
+                //TODO: Add the rest of the data that populates the card
+                card.title = dic["title"] as! Int
+                self.fetchedInformation.insert(card, at: 0)
+                
+                //                print(dic)
+                //                print(self.events.count)
+                
+            }
+            print("in store")
             
-
+            //
+            print("Event count After: " + String (self.fetchedInformation.count))
             
-            self.fetchedInformation = snapshot.value as! NSDictionary
-            print(snapshot.value)
-            print(self.fetchedInformation)
-            self.tableView.reloadData()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1 , execute: {
                 self.refresher.endRefreshing()
+                self.tableView.reloadData()
             })
-            
-        })  { (error) in
-            print(error.localizedDescription)
-            self.refresher.endRefreshing()
-        }
+        })
+        
+        
+        
     }
     
 
@@ -72,24 +86,26 @@ class StoreTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardArticleCell
         
+        if cell == CardArticleCell(){
+            
+        }else{
+            cell.card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
+            cell.card.backgroundImage = imageArray[0]
+            
+            cell.card.title = "كامري"
+            cell.card.subtitle = "وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف"
+            cell.card.category = "سيارة"
+            
+            cell.card.textColor = UIColor.white
+            
+            
+            let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "StoreCard")
+            cell.card.shouldPresent(cardContentVC, from: self, fullscreen: false)
+            cell.selectionStyle = UITableViewCellSelectionStyle.none
+            
+            //        cell.addSubview(card)
+        }
 
-        
-        cell.card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
-        cell.card.backgroundImage = imageArray[0]
-        
-        cell.card.title = "كامري"
-        cell.card.subtitle = "وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف"
-        cell.card.category = "سيارة"
-        
-        cell.card.textColor = UIColor.white
-
-        
-        let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "StoreCard")
-        cell.card.shouldPresent(cardContentVC, from: self, fullscreen: false)
-        cell.selectionStyle = UITableViewCellSelectionStyle.none
-        
-//        cell.addSubview(card)
-        
         
         
         return cell
