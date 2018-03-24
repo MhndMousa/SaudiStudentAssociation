@@ -39,13 +39,6 @@ class TableViewController: UITableViewController {
 
     
     @objc func requestData() {
-
-//        print("stuff")
-//        let deadline = DispatchTime.now() + .milliseconds(1000)
-//        DispatchQueue.main.asyncAfter(deadline: deadline) {
-//
-//        }
-        
     
         
         ref.child("Store").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -72,25 +65,33 @@ class TableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 20
     }
-    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        //        return wrapContent(cell: self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath))
+        return 320
+    }
+
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        let card = CardHighlight(frame: CGRect(x: 10, y: 30 , width: view.frame.width - 20 , height: 240))
-        
-        card.backgroundColor = .black
+        let card = CardHighlight(frame: CGRect(x: 10, y: 15 , width: view.frame.width - 20 , height: 290))
+    
+        card.backgroundColor = UIColor(red: 10/255, green: 94/255, blue: 200/255, alpha: 1)
         card.icon = UIImage(named: "ssa")
-        card.title = "ايفينت"
-        card.itemTitle = "cat[indexPath]"
-        card.itemSubtitle = "نوع الايفينت"
+        
+        card.title = "مسابقة شهر\n رمضان"
+        card.itemTitle = "مباراة بين الفريق الفلاني وبرشلونة"
+        card.itemSubtitle = "ايفينت رياضي"
+        card.buttonText = "المزيد"
+        card.textColor = UIColor(white: 0.9, alpha: 1)
         card.textColor = UIColor.white
         
         card.hasParallax = true
         let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "EventCard")
         
         card.shouldPresent(cardContentVC, from: self, fullscreen: true)
+        card.buttonTapped()
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         cell.addSubview(card)
@@ -99,10 +100,6 @@ class TableViewController: UITableViewController {
         
         return cell
         
-    }
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return wrapContent(cell: self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath))
-        return 320
     }
     
     

@@ -127,6 +127,8 @@ import UIKit
     var backgroundIV = UIImageView()
     var insets = CGFloat()
     var isPresenting = false
+    var notoFontBold = "NotoKufiArabic-Bold"
+    var notoFont = "NotoKufiArabic"
     
     //MARK: - View Life Cycle
     

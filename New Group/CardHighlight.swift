@@ -22,7 +22,7 @@ import UIKit
     /**
      Max font size the title label.
      */
-    @IBInspectable public var titleSize:CGFloat = 23
+    @IBInspectable public var titleSize:CGFloat = 20
     /**
      Text of the title label of the item at the bottom.
      */
@@ -34,7 +34,7 @@ import UIKit
     /**
      Max font size the subtitle label of the item at the bottom.
      */
-    @IBInspectable public var itemTitleSize: CGFloat = 16
+    @IBInspectable public var itemTitleSize: CGFloat = 17
     /**
      Text of the subtitle label of the item at the bottom.
      */
@@ -82,7 +82,8 @@ import UIKit
     private var itemSubtitleLbl = UILabel()
     private var lightColor = UIColor(red: 239/255, green: 239/255, blue: 244/255, alpha: 1)
     private var bgIconIV = UIImageView()
-    
+//    private var notoFontBold = "NotoKufiArabic-Bold"
+//    private var notoFont = "NotoKufiArabic"
     fileprivate var btnWidth = CGFloat()
     
     // View Life Cycle
@@ -105,7 +106,7 @@ import UIKit
         backgroundIV.addSubview(titleLbl)
         backgroundIV.addSubview(itemTitleLbl)
         backgroundIV.addSubview(itemSubtitleLbl)
-        backgroundIV.addSubview(actionBtn)
+//        backgroundIV.addSubview(actionBtn)
         
         if backgroundImage == nil {  backgroundIV.addSubview(bgIconIV); }
         else { bgIconIV.alpha = 0 }
@@ -125,7 +126,8 @@ import UIKit
         
         titleLbl.text = title.uppercased()
         titleLbl.textColor = textColor
-        titleLbl.font = UIFont.systemFont(ofSize: titleSize, weight: .heavy)
+//        titleLbl.font = UIFont.systemFont(ofSize: titleSize, weight: .heavy)
+        titleLbl.font = UIFont(name: notoFontBold, size: titleSize)
         titleLbl.adjustsFontSizeToFitWidth = true
         titleLbl.lineHeight(0.85)
         titleLbl.minimumScaleFactor = 0.1
@@ -135,7 +137,8 @@ import UIKit
         
         itemTitleLbl.textColor = textColor
         itemTitleLbl.text = itemTitle
-        itemTitleLbl.font = UIFont.boldSystemFont(ofSize: itemTitleSize)
+//        itemTitleLbl.font = UIFont.boldSystemFont(ofSize: itemTitleSize)
+        itemTitleLbl.font = UIFont(name: notoFontBold, size: itemTitleSize)
         itemTitleLbl.adjustsFontSizeToFitWidth = true
         itemTitleLbl.minimumScaleFactor = 0.1
         itemTitleLbl.lineBreakMode = .byTruncatingTail
@@ -143,7 +146,8 @@ import UIKit
 
         itemSubtitleLbl.textColor = textColor
         itemSubtitleLbl.text = itemSubtitle
-        itemSubtitleLbl.font = UIFont.systemFont(ofSize: itemSubtitleSize)
+//        itemSubtitleLbl.font = UIFont.systemFont(ofSize: itemSubtitleSize)
+        itemSubtitleLbl.font = UIFont(name: notoFont, size: itemSubtitleSize)
         itemSubtitleLbl.adjustsFontSizeToFitWidth = true
         itemSubtitleLbl.minimumScaleFactor = 0.1
         itemSubtitleLbl.lineBreakMode = .byTruncatingTail

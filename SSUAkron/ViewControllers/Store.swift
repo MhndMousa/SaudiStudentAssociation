@@ -39,14 +39,7 @@ class StoreTableViewController: UITableViewController {
     
     
     @objc func requestData() {
-        
-        //        print("stuff")
-        //        let deadline = DispatchTime.now() + .milliseconds(1000)
-        //        DispatchQueue.main.asyncAfter(deadline: deadline) {
-        //
-        //        }
-        
-        
+
         
         ref.child("Store").observeSingleEvent(of: .value, with: { (snapshot) in
             
@@ -60,10 +53,6 @@ class StoreTableViewController: UITableViewController {
         }
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -71,13 +60,13 @@ class StoreTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 300
+        return 320
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
-        let card = CardArticle(frame: CGRect(x: 15, y: 30, width: view.frame.width - 30 , height: 240))
+        let card = CardArticle(frame: CGRect(x: 10, y: 15, width: view.frame.width - 20 , height: 290))
         
         card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
         card.backgroundImage = imageArray[1]
