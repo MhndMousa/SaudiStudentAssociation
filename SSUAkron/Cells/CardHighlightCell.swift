@@ -22,5 +22,11 @@ class CardHighlightCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.card = nil
+        //set cell to initial state here
+        //set like button to initial state - title, font, color, etc.
+    }
     
 }
