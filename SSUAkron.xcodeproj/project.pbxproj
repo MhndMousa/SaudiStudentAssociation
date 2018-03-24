@@ -13,6 +13,10 @@
 		595AA091205CA4AE009D3D09 /* Coutner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595AA090205CA4AE009D3D09 /* Coutner.swift */; };
 		596259712063959E00DD7CAA /* Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596259702063959E00DD7CAA /* Calender.swift */; };
 		596259852063CAED00DD7CAA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596259842063CAED00DD7CAA /* Store.swift */; };
+		5962598B2065F98F00DD7CAA /* CardHighlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596259892065F98F00DD7CAA /* CardHighlightCell.swift */; };
+		5962598C2065F98F00DD7CAA /* CardHighlightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5962598A2065F98F00DD7CAA /* CardHighlightCell.xib */; };
+		5962599020660A7200DD7CAA /* CardArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5962598E20660A7200DD7CAA /* CardArticleCell.swift */; };
+		5962599120660A7200DD7CAA /* CardArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5962598F20660A7200DD7CAA /* CardArticleCell.xib */; };
 		5979507E205B1B0000807FD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979507D205B1B0000807FD1 /* AppDelegate.swift */; };
 		59795080205B1B0000807FD1 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979507F205B1B0000807FD1 /* Home.swift */; };
 		59795083205B1B0000807FD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59795081205B1B0000807FD1 /* Main.storyboard */; };
@@ -42,6 +46,10 @@
 		595AA090205CA4AE009D3D09 /* Coutner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coutner.swift; sourceTree = "<group>"; };
 		596259702063959E00DD7CAA /* Calender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calender.swift; sourceTree = "<group>"; };
 		596259842063CAED00DD7CAA /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		596259892065F98F00DD7CAA /* CardHighlightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHighlightCell.swift; sourceTree = "<group>"; };
+		5962598A2065F98F00DD7CAA /* CardHighlightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardHighlightCell.xib; sourceTree = "<group>"; };
+		5962598E20660A7200DD7CAA /* CardArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardArticleCell.swift; sourceTree = "<group>"; };
+		5962598F20660A7200DD7CAA /* CardArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardArticleCell.xib; sourceTree = "<group>"; };
 		5979507A205B1B0000807FD1 /* SSUAkron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSUAkron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5979507D205B1B0000807FD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5979507F205B1B0000807FD1 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -106,6 +114,17 @@
 			path = Unused;
 			sourceTree = "<group>";
 		};
+		5962598D2066032C00DD7CAA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				596259892065F98F00DD7CAA /* CardHighlightCell.swift */,
+				5962598A2065F98F00DD7CAA /* CardHighlightCell.xib */,
+				5962598E20660A7200DD7CAA /* CardArticleCell.swift */,
+				5962598F20660A7200DD7CAA /* CardArticleCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		59795071205B1B0000807FD1 = {
 			isa = PBXGroup;
 			children = (
@@ -129,7 +148,7 @@
 		5979507C205B1B0000807FD1 /* SSUAkron */ = {
 			isa = PBXGroup;
 			children = (
-				59E24C31206372A800B04928 /* GoogleService-Info.plist */,
+				5962598D2066032C00DD7CAA /* Cells */,
 				59DDB6A1205FA2E3001DF580 /* ViewControllers */,
 				5979507D205B1B0000807FD1 /* AppDelegate.swift */,
 				59795081205B1B0000807FD1 /* Main.storyboard */,
@@ -138,6 +157,7 @@
 				5979508C205B1B0000807FD1 /* Info.plist */,
 				59795084205B1B0000807FD1 /* SSUAkron.xcdatamodeld */,
 				59DDB6BD2060E104001DF580 /* Global.swift */,
+				59E24C31206372A800B04928 /* GoogleService-Info.plist */,
 			);
 			path = SSUAkron;
 			sourceTree = "<group>";
@@ -250,7 +270,9 @@
 			files = (
 				595AA08C205C7ECA009D3D09 /* NotoKufiArabic-Bold.ttf in Resources */,
 				59E24C32206372A800B04928 /* GoogleService-Info.plist in Resources */,
+				5962599120660A7200DD7CAA /* CardArticleCell.xib in Resources */,
 				595AA08D205C7ECA009D3D09 /* NotoKufiArabic-Regular.ttf in Resources */,
+				5962598C2065F98F00DD7CAA /* CardHighlightCell.xib in Resources */,
 				5979508B205B1B0000807FD1 /* LaunchScreen.storyboard in Resources */,
 				59795088205B1B0000807FD1 /* Assets.xcassets in Resources */,
 				59795083205B1B0000807FD1 /* Main.storyboard in Resources */,
@@ -326,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5962599020660A7200DD7CAA /* CardArticleCell.swift in Sources */,
 				596259712063959E00DD7CAA /* Calender.swift in Sources */,
 				597950A7205B1B9400807FD1 /* Player_by_Patric_Piemonte.swift in Sources */,
 				5979509D205B1B8300807FD1 /* Animator.swift in Sources */,
@@ -341,6 +364,7 @@
 				596259852063CAED00DD7CAA /* Store.swift in Sources */,
 				597950A5205B1B8300807FD1 /* CardArticle.swift in Sources */,
 				59795086205B1B0000807FD1 /* SSUAkron.xcdatamodeld in Sources */,
+				5962598B2065F98F00DD7CAA /* CardHighlightCell.swift in Sources */,
 				59795080205B1B0000807FD1 /* Home.swift in Sources */,
 				59DDB6A6205FA360001DF580 /* CalenderViewController.swift in Sources */,
 				5979507E205B1B0000807FD1 /* AppDelegate.swift in Sources */,

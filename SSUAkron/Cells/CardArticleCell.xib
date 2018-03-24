@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="342" id="KGk-i7-Jjw" customClass="CardArticleCell" customModule="SSUAkron" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="371" height="342"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="371" height="341.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bNl-Jt-OZe" customClass="CardArticle" customModule="SSUAkron" customModuleProvider="target">
+                        <rect key="frame" x="10" y="10" width="351" height="300"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="300" id="dZI-dm-Z5q"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="bNl-Jt-OZe" secondAttribute="trailing" constant="10" id="456-TM-sXi"/>
+                    <constraint firstItem="bNl-Jt-OZe" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="Rwr-yb-YQq"/>
+                    <constraint firstItem="bNl-Jt-OZe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="VTf-VB-HMa"/>
+                    <constraint firstItem="bNl-Jt-OZe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="kVf-DV-6Sl"/>
+                    <constraint firstAttribute="bottom" secondItem="bNl-Jt-OZe" secondAttribute="bottom" constant="10" id="xnz-VA-PP7"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="card" destination="bNl-Jt-OZe" id="OMg-Ob-jG2"/>
+            </connections>
+            <point key="canvasLocation" x="18.5" y="201"/>
+        </tableViewCell>
+    </objects>
+</document>
