@@ -59,6 +59,8 @@ class StoreTableViewController: UITableViewController {
                 
                 //TODO: Add the rest of the data that populates the card
                 card.title = dic["title"] as! Int
+                card.itemTitle = dic["itemTitle"] as! Int
+                card.itemSubtitle = dic["itemSubtitle"] as! Int
                 self.fetchedInformation.insert(card, at: 0)
                 
                 //                print(dic)

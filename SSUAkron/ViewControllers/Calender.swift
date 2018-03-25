@@ -55,8 +55,13 @@ class TableViewController: UITableViewController {
                 var dic  = child.value! as! [String: Any]
                 let card = CardInformaion()
                 
+                
+                
                 //TODO: Add the rest of the data that populates the card
-                card.title = dic["title"] as! Int
+                card.title = dic["title"] as? Int ?? 0
+                card.itemTitle = dic["itemTitle"] as? Int ?? 0
+                card.itemSubtitle = dic["itemSubtitle"] as? Int ?? 0
+                
                 self.events.insert(card, at: 0)
                 
                 //                print(dic)
@@ -157,7 +162,13 @@ class TableViewController: UITableViewController {
 //        requestData()
 //        print("cout: " + String(self.events.count))
         
-        cell.card?.title = String( self.events[indexPath.row].title!)
+        cell.card?.title = String( describing: self.events[indexPath.row].title!)
+        cell.card?.itemTitle = String( describing: self.events[indexPath.row].itemTitle!)
+        cell.card?.itemSubtitle = String( describing: self.events[indexPath.row].itemSubtitle!)
+        
+        let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "EventCard")
+        cell.card?.shouldPresent(cardContentVC, from: self, fullscreen: true)
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         return cell
         
