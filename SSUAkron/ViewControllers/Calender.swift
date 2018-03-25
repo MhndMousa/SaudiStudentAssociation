@@ -11,13 +11,16 @@ import Firebase
 
 class TableViewController: UITableViewController {
 
+    
     var events = [CardInformaion]()
     var colors = [UIColor.init(red: 1, green: 0.7, blue: 0.7, alpha: 1), UIColor.blue, UIColor.orange]
     var cat = ["تجمع نسائي", "تجمع رجال " , "تجمع للاطفال"]
     
+    
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.register(UINib(nibName: "CardHighlightCell", bundle: nil), forCellReuseIdentifier: "cell")
         
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +50,7 @@ class TableViewController: UITableViewController {
    
 
         events.removeAll()
+        
         print("Event count Before: " + String (events.count))
         
         // TODO: Change the refrence to the Calander Event child in firebase
@@ -61,18 +65,27 @@ class TableViewController: UITableViewController {
                 card.title = dic["title"] as? Int ?? 0
                 card.itemTitle = dic["itemTitle"] as? Int ?? 0
                 card.itemSubtitle = dic["itemSubtitle"] as? Int ?? 0
+
+                let photoRef = Storage.storage().reference().root().child("a3716125247_16.jpg")
+                
+                // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+                photoRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+                    if let error = error {
+                    } else {
+                        let image = UIImage(data: data!)
+                        card.image = image!
+                    }
+                }
                 
                 self.events.insert(card, at: 0)
-                
                 //                print(dic)
                 //                print(self.events.count)
                 
             }
-            print("in store")
             
-            //
             print("Event count After: " + String (self.events.count))
             
+            //end refresh after 1 second
             DispatchQueue.main.asyncAfter(deadline: .now() + 1 , execute: {
                 self.refresher.endRefreshing()
                 self.tableView.reloadData()
@@ -92,7 +105,6 @@ class TableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-//        return events.count
         return events.count
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -102,10 +114,8 @@ class TableViewController: UITableViewController {
 
     var ss = 1
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       
         
-//        print(init(descriping:indexPath))
-        print(indexPath.row)
+//        print(indexPath.row)
         var cell: CardHighlightCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardHighlightCell
 
 //            ui.delegate = self
@@ -165,6 +175,11 @@ class TableViewController: UITableViewController {
         cell.card?.title = String( describing: self.events[indexPath.row].title!)
         cell.card?.itemTitle = String( describing: self.events[indexPath.row].itemTitle!)
         cell.card?.itemSubtitle = String( describing: self.events[indexPath.row].itemSubtitle!)
+        DispatchQueue.main.async {
+        cell.card?.icon = self.events[indexPath.row].image
+        }
+       
+        
         
         let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "EventCard")
         cell.card?.shouldPresent(cardContentVC, from: self, fullscreen: true)

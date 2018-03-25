@@ -12,5 +12,5 @@ class CardInformaion: NSObject {
     var title: Int?
     var itemTitle: Int?
     var itemSubtitle: Int?
-
+    var image: UIImage?
 }
