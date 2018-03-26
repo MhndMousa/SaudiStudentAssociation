@@ -33,6 +33,7 @@
 		597950A4205B1B8300807FD1 /* CardPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979509B205B1B8200807FD1 /* CardPlayer.swift */; };
 		597950A5205B1B8300807FD1 /* CardArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979509C205B1B8300807FD1 /* CardArticle.swift */; };
 		597950A7205B1B9400807FD1 /* Player_by_Patric_Piemonte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597950A6205B1B9300807FD1 /* Player_by_Patric_Piemonte.swift */; };
+		59B261FE2068C92A00F1E9E7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B261FD2068C92A00F1E9E7 /* Post.swift */; };
 		59DDB6A4205FA33D001DF580 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6A3205FA33D001DF580 /* StoreViewController.swift */; };
 		59DDB6A6205FA360001DF580 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6A5205FA360001DF580 /* CalenderViewController.swift */; };
 		59DDB6BE2060E104001DF580 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6BD2060E104001DF580 /* Global.swift */; };
@@ -69,6 +70,7 @@
 		5979509B205B1B8200807FD1 /* CardPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlayer.swift; sourceTree = "<group>"; };
 		5979509C205B1B8300807FD1 /* CardArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardArticle.swift; sourceTree = "<group>"; };
 		597950A6205B1B9300807FD1 /* Player_by_Patric_Piemonte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player_by_Patric_Piemonte.swift; sourceTree = "<group>"; };
+		59B261FD2068C92A00F1E9E7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		59DDB6A3205FA33D001DF580 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		59DDB6A5205FA360001DF580 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		59DDB6BD2060E104001DF580 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				596259702063959E00DD7CAA /* Calender.swift */,
 				5979507F205B1B0000807FD1 /* Home.swift */,
 				595AA090205CA4AE009D3D09 /* Coutner.swift */,
+				59B261FD2068C92A00F1E9E7 /* Post.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				597950A2205B1B8300807FD1 /* CardHighlight.swift in Sources */,
 				597950A3205B1B8300807FD1 /* CardGroup.swift in Sources */,
 				597950A4205B1B8300807FD1 /* CardPlayer.swift in Sources */,
+				59B261FE2068C92A00F1E9E7 /* Post.swift in Sources */,
 				595AA091205CA4AE009D3D09 /* Coutner.swift in Sources */,
 				596259852063CAED00DD7CAA /* Store.swift in Sources */,
 				597950A5205B1B8300807FD1 /* CardArticle.swift in Sources */,

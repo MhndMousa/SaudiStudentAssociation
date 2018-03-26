@@ -29,7 +29,17 @@ class StoreTableViewController: UITableViewController {
         
         
         tableView.refreshControl = refresher
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
+        
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [
+            .font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!
+            ,.foregroundColor : UIColor.white
+        ]
+        
+   
+
+        
+        
+        
         
     }
     
@@ -58,9 +68,9 @@ class StoreTableViewController: UITableViewController {
                 let card = CardInformaion()
                 
                 //TODO: Add the rest of the data that populates the card
-                card.title = dic["title"] as! Int
-                card.itemTitle = dic["itemTitle"] as! Int
-                card.itemSubtitle = dic["itemSubtitle"] as! Int
+                card.title = dic["title"] as? Int
+                card.itemTitle = dic["itemTitle"] as? Int
+                card.itemSubtitle = dic["itemSubtitle"] as? Int
                 self.fetchedInformation.insert(card, at: 0)
                 
                 //                print(dic)
@@ -74,10 +84,10 @@ class StoreTableViewController: UITableViewController {
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1 , execute: {
                 self.refresher.endRefreshing()
-                self.tableView.reloadData()
             })
+            
+            self.tableView.reloadData()
         })
-        
         
         
     }

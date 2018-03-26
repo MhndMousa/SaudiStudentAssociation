@@ -63,11 +63,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="bxE-VA-nFO" firstAttribute="trailing" secondItem="Nlp-MW-J7I" secondAttribute="trailing" id="9Bc-f3-iH0"/>
-                            <constraint firstItem="bxE-VA-nFO" firstAttribute="bottom" secondItem="Nlp-MW-J7I" secondAttribute="bottom" id="XHG-bv-Uoo"/>
-                            <constraint firstItem="bxE-VA-nFO" firstAttribute="leading" secondItem="Nlp-MW-J7I" secondAttribute="leading" id="jnN-bZ-u8x"/>
+                            <constraint firstItem="bxE-VA-nFO" firstAttribute="trailing" secondItem="gSb-1s-9yR" secondAttribute="trailing" id="9Bc-f3-iH0"/>
+                            <constraint firstItem="bxE-VA-nFO" firstAttribute="bottom" secondItem="gSb-1s-9yR" secondAttribute="bottom" id="XHG-bv-Uoo"/>
+                            <constraint firstItem="bxE-VA-nFO" firstAttribute="leading" secondItem="gSb-1s-9yR" secondAttribute="leading" id="jnN-bZ-u8x"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="Nlp-MW-J7I"/>
+                        <viewLayoutGuide key="safeArea" id="gSb-1s-9yR"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeM-eP-S3G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -95,7 +95,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="bkX-UA-PBc">
-                                <rect key="frame" x="0.0" y="219" width="375" height="249"/>
+                                <rect key="frame" x="0.0" y="219" width="375" height="229"/>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LG7-6Z-N1I">
                                 <rect key="frame" x="263" y="181" width="85" height="30"/>
@@ -112,7 +112,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="معلومات" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="11H-cj-CKM">
-                                <rect key="frame" x="37.5" y="498" width="300" height="100"/>
+                                <rect key="frame" x="37.5" y="478" width="300" height="100"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Ubo-Qh-Ogo"/>
@@ -125,25 +125,25 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5km-6S-37C" secondAttribute="trailing" constant="20" symbolic="YES" id="5CU-h7-oFq"/>
-                            <constraint firstItem="5km-6S-37C" firstAttribute="top" secondItem="zje-wM-Jdk" secondAttribute="top" constant="57" id="CGq-dH-tbW"/>
-                            <constraint firstItem="zje-wM-Jdk" firstAttribute="trailing" secondItem="LG7-6Z-N1I" secondAttribute="trailing" constant="27" id="Dm4-A4-hIv"/>
-                            <constraint firstItem="zje-wM-Jdk" firstAttribute="trailing" secondItem="qLU-Mj-w0Q" secondAttribute="trailing" constant="33" id="GJf-Rn-zNQ"/>
-                            <constraint firstItem="bkX-UA-PBc" firstAttribute="leading" secondItem="zje-wM-Jdk" secondAttribute="leading" id="HVq-Dn-OD7"/>
-                            <constraint firstItem="bkX-UA-PBc" firstAttribute="centerX" secondItem="zje-wM-Jdk" secondAttribute="centerX" id="K51-Kb-ck3"/>
-                            <constraint firstItem="qLU-Mj-w0Q" firstAttribute="top" secondItem="zje-wM-Jdk" secondAttribute="top" constant="57" id="LJk-0W-kHs"/>
-                            <constraint firstItem="qLU-Mj-w0Q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0YU-H2-Xt0" secondAttribute="leading" constant="20" symbolic="YES" id="PIm-eu-HAN"/>
+                            <constraint firstItem="0mj-mD-bHH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5km-6S-37C" secondAttribute="trailing" constant="20" symbolic="YES" id="5CU-h7-oFq"/>
+                            <constraint firstItem="5km-6S-37C" firstAttribute="top" secondItem="0mj-mD-bHH" secondAttribute="top" constant="57" id="CGq-dH-tbW"/>
+                            <constraint firstItem="0mj-mD-bHH" firstAttribute="trailing" secondItem="LG7-6Z-N1I" secondAttribute="trailing" constant="27" id="Dm4-A4-hIv"/>
+                            <constraint firstItem="0mj-mD-bHH" firstAttribute="trailing" secondItem="qLU-Mj-w0Q" secondAttribute="trailing" constant="33" id="GJf-Rn-zNQ"/>
+                            <constraint firstItem="bkX-UA-PBc" firstAttribute="leading" secondItem="0mj-mD-bHH" secondAttribute="leading" id="HVq-Dn-OD7"/>
+                            <constraint firstItem="bkX-UA-PBc" firstAttribute="centerX" secondItem="0mj-mD-bHH" secondAttribute="centerX" id="K51-Kb-ck3"/>
+                            <constraint firstItem="qLU-Mj-w0Q" firstAttribute="top" secondItem="0mj-mD-bHH" secondAttribute="top" constant="57" id="LJk-0W-kHs"/>
+                            <constraint firstItem="qLU-Mj-w0Q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0mj-mD-bHH" secondAttribute="leading" constant="20" symbolic="YES" id="PIm-eu-HAN"/>
                             <constraint firstItem="11H-cj-CKM" firstAttribute="top" secondItem="bkX-UA-PBc" secondAttribute="bottom" constant="30" id="Qct-68-Oxw"/>
                             <constraint firstItem="LG7-6Z-N1I" firstAttribute="top" secondItem="qLU-Mj-w0Q" secondAttribute="bottom" constant="83" id="ac8-IX-vPy"/>
                             <constraint firstItem="zuv-mS-Eiu" firstAttribute="top" secondItem="5km-6S-37C" secondAttribute="bottom" constant="83" id="cUH-9s-qgI"/>
-                            <constraint firstItem="5km-6S-37C" firstAttribute="leading" secondItem="zje-wM-Jdk" secondAttribute="leading" constant="41" id="gU0-Pc-5bN"/>
-                            <constraint firstItem="bkX-UA-PBc" firstAttribute="centerY" secondItem="zje-wM-Jdk" secondAttribute="centerY" id="p9G-or-2aV"/>
-                            <constraint firstItem="bkX-UA-PBc" firstAttribute="trailing" secondItem="zje-wM-Jdk" secondAttribute="trailing" id="tuO-BX-bOs"/>
-                            <constraint firstItem="zuv-mS-Eiu" firstAttribute="leading" secondItem="zje-wM-Jdk" secondAttribute="leading" constant="16" id="w39-LF-dwb"/>
+                            <constraint firstItem="5km-6S-37C" firstAttribute="leading" secondItem="0mj-mD-bHH" secondAttribute="leading" constant="41" id="gU0-Pc-5bN"/>
+                            <constraint firstItem="bkX-UA-PBc" firstAttribute="centerY" secondItem="0YU-H2-Xt0" secondAttribute="centerY" id="p9G-or-2aV"/>
+                            <constraint firstItem="bkX-UA-PBc" firstAttribute="trailing" secondItem="0mj-mD-bHH" secondAttribute="trailing" id="tuO-BX-bOs"/>
+                            <constraint firstItem="zuv-mS-Eiu" firstAttribute="leading" secondItem="0mj-mD-bHH" secondAttribute="leading" constant="16" id="w39-LF-dwb"/>
                             <constraint firstItem="bkX-UA-PBc" firstAttribute="top" secondItem="LG7-6Z-N1I" secondAttribute="bottom" constant="8" id="y59-Ha-djB"/>
-                            <constraint firstItem="11H-cj-CKM" firstAttribute="centerX" secondItem="zje-wM-Jdk" secondAttribute="centerX" id="zbw-8a-CpY"/>
+                            <constraint firstItem="11H-cj-CKM" firstAttribute="centerX" secondItem="0mj-mD-bHH" secondAttribute="centerX" id="zbw-8a-CpY"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="zje-wM-Jdk"/>
+                        <viewLayoutGuide key="safeArea" id="0mj-mD-bHH"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRL-gm-rd6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -164,7 +164,7 @@
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <viewLayoutGuide key="safeArea" id="yNG-JN-LtR"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="ic_home" selectedImage="ic_home" id="ag9-md-rDq"/>
                     <connections>
@@ -223,11 +223,41 @@
                             <outlet property="delegate" destination="qjq-Qo-TNd" id="WGq-hP-ZQE"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="السوق" id="XRs-Qp-xdC"/>
+                    <navigationItem key="navigationItem" title="السوق" id="XRs-Qp-xdC">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="OZK-7y-KIa">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="hxm-a3-pIQ" kind="show" id="jCB-38-nla"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8V-TL-JGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2224.8000000000002" y="411.544227886057"/>
+        </scene>
+        <!--اضافة سلعة-->
+        <scene sceneID="bOU-n8-DME">
+            <objects>
+                <viewController id="hxm-a3-pIQ" customClass="PostViewContoller" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g0c-OW-94h">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9we-PI-CW7">
+                                <rect key="frame" x="0.0" y="128.5" width="375" height="510.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fa8-y3-5sn"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="اضافة سلعة" id="Tyl-Du-CEg"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MHr-U9-Aj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3127.1999999999998" y="413.3433283358321"/>
         </scene>
         <!--الفعاليات-->
         <scene sceneID="Ojr-jN-ald">
@@ -349,12 +379,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RuH-2R-wuk" firstAttribute="leading" secondItem="jpI-Nx-qPC" secondAttribute="leading" id="mEb-9b-7Bm"/>
+                            <constraint firstItem="RuH-2R-wuk" firstAttribute="leading" secondItem="eCS-Xm-0tW" secondAttribute="leading" id="mEb-9b-7Bm"/>
                             <constraint firstItem="RuH-2R-wuk" firstAttribute="top" secondItem="OGI-yf-5Gc" secondAttribute="top" id="naA-1B-Bag"/>
-                            <constraint firstItem="RuH-2R-wuk" firstAttribute="bottom" secondItem="jpI-Nx-qPC" secondAttribute="bottom" id="o10-49-Mn1"/>
-                            <constraint firstItem="RuH-2R-wuk" firstAttribute="trailing" secondItem="jpI-Nx-qPC" secondAttribute="trailing" id="yLc-HZ-gG6"/>
+                            <constraint firstItem="RuH-2R-wuk" firstAttribute="bottom" secondItem="eCS-Xm-0tW" secondAttribute="bottom" id="o10-49-Mn1"/>
+                            <constraint firstItem="RuH-2R-wuk" firstAttribute="trailing" secondItem="eCS-Xm-0tW" secondAttribute="trailing" id="yLc-HZ-gG6"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="jpI-Nx-qPC"/>
+                        <viewLayoutGuide key="safeArea" id="eCS-Xm-0tW"/>
                     </view>
                     <navigationItem key="navigationItem" title="المتبقي على الراتب" id="Ya1-UT-6eE"/>
                     <connections>
@@ -471,4 +501,5 @@
         <image name="ic_store_mall_directory" width="24" height="24"/>
         <image name="ssa" width="960" height="833"/>
     </resources>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

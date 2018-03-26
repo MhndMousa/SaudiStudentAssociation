@@ -90,8 +90,9 @@ class TableViewController: UITableViewController {
             //end refresh after 1 second
             DispatchQueue.main.asyncAfter(deadline: .now() + 1 , execute: {
                 self.refresher.endRefreshing()
-                self.tableView.reloadData()
             })
+            
+            self.tableView.reloadData()
         })
         
         
