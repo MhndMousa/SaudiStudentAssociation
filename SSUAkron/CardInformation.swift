@@ -13,4 +13,5 @@ class CardInformaion: NSObject {
     var itemTitle: Int?
     var itemSubtitle: Int?
     var image: UIImage?
+    var backgroundColor: UIColor?
 }

@@ -10,13 +10,19 @@ import UIKit
 import MKRingProgressView
 
 
+
 class CounterViewController: UIViewController {
     @IBOutlet weak var ringView: MKRingProgressView!
     @IBOutlet weak var dateCounter: UILabel!
     @IBOutlet weak var daysLabel: UILabel!
+    
+    @IBOutlet weak var stackView: UIStackView!
+    
+    @IBOutlet weak var circle: UIView!
+    @IBOutlet weak var imageView: UIImageView!
     var s : Int = 0
     var isSalaryUpdated: Bool = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         updateSalary()
@@ -26,6 +32,22 @@ class CounterViewController: UIViewController {
                 self.updateCircle()
             })
         }
+        
+//        circle.layer.cornerRadius = circle.frame.height / 2 +
+    
+        let render = UIGraphicsImageRenderer(size: CGSize(width: ringView.frame.width, height: ringView.frame.height))
+        let img = render.image { (ctx) in
+            
+            ctx.cgContext.setFillColor(UIColor.white.cgColor)
+      
+            
+            let rectangle = CGRect(x: 0, y: 0, width: ringView.frame.width, height: ringView.frame.width)
+            ctx.cgContext.addEllipse(in: rectangle)
+            ctx.cgContext.drawPath(using: .fill)
+            }
+        imageView.image =  img
+        
+        
     }
 
     // converts number of a range of two numbers into another range of  two numbers

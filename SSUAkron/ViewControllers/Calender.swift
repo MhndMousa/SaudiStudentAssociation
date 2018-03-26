@@ -13,7 +13,7 @@ class TableViewController: UITableViewController {
 
     
     var events = [CardInformaion]()
-    var colors = [UIColor.init(red: 1, green: 0.7, blue: 0.7, alpha: 1), UIColor.blue, UIColor.orange]
+    var colors = ["pink" :UIColor.init(red: 1, green: 0.7, blue: 0.7, alpha: 1), "blue" : UIColor.blue, "orange" : UIColor.orange, "white" : UIColor.white]
     var cat = ["تجمع نسائي", "تجمع رجال " , "تجمع للاطفال"]
     
     
@@ -65,6 +65,8 @@ class TableViewController: UITableViewController {
                 card.title = dic["title"] as? Int ?? 0
                 card.itemTitle = dic["itemTitle"] as? Int ?? 0
                 card.itemSubtitle = dic["itemSubtitle"] as? Int ?? 0
+                let backgroundColor = dic["backgroundColor"] as? String ?? "white"
+                card.backgroundColor = self.colors[backgroundColor]
 
                 let photoRef = Storage.storage().reference().root().child("a3716125247_16.jpg")
                 
@@ -172,19 +174,20 @@ class TableViewController: UITableViewController {
 //        requestData()
 //        print("cout: " + String(self.events.count))
         
+        cell.card?.shadowOpacity = 0
         cell.card?.title = String( describing: self.events[indexPath.row].title!)
         cell.card?.itemTitle = String( describing: self.events[indexPath.row].itemTitle!)
         cell.card?.itemSubtitle = String( describing: self.events[indexPath.row].itemSubtitle!)
+        cell.card?.backgroundColor = self.events[indexPath.row].backgroundColor!
         DispatchQueue.main.async {
         cell.card?.icon = self.events[indexPath.row].image
         }
+        
        
-        
-        
         let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "EventCard")
         cell.card?.shouldPresent(cardContentVC, from: self, fullscreen: true)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
-        
+        cell.backgroundColor = UIColor(hex: "efeff4")
         return cell
         
     }

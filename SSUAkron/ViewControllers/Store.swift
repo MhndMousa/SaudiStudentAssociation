@@ -87,10 +87,12 @@ class StoreTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardArticleCell
+        cell.backgroundColor = UIColor(hex: "efeff4")
         
         if cell == CardArticleCell(){
             
         }else{
+            
             cell.card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
             cell.card.backgroundImage = imageArray[0]
             
@@ -109,6 +111,7 @@ class StoreTableViewController: UITableViewController {
         }
 
         
+        cell.card.shadowOpacity = 0
         
         return cell
     }
@@ -143,3 +146,6 @@ class StoreTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 }
+
+
+
