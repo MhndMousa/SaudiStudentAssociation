@@ -14,7 +14,7 @@ class TableViewController: UITableViewController {
     
     var events = [CardInformaion]()
     var colors = ["pink" :UIColor.init(red: 1, green: 0.7, blue: 0.7, alpha: 1), "blue" : UIColor.blue, "orange" : UIColor.orange, "white" : UIColor.white]
-    var cat = ["تجمع نسائي", "تجمع رجال " , "تجمع للاطفال"]
+    var eventType = ["تجمع نسائي", "تجمع رجال " , "تجمع للاطفال"]
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -48,33 +48,38 @@ class TableViewController: UITableViewController {
 
     
     @objc func requestData() {
-        print("Event count Before: " + String (events.count))
+//        print("Event count Before: " + String (events.count))
         events.removeAll()
         ref.child("Store").observe(.childAdded) { (snapshot) in
             
             var dic  = snapshot.value! as! [String: Any]
             let card = CardInformaion()
-
+            let storageRef =  Storage.storage().reference()
             //TODO: Add the rest of the data that populates the card
             card.title = dic["title"] as? Int ?? 0
             card.itemTitle = dic["itemTitle"] as? Int ?? 0
             card.itemSubtitle = dic["itemSubtitle"] as? Int ?? 0
-            let backgroundColor = dic["backgroundColor"] as? String ?? "white"
+            let backgroundColor = dic["backgroundColor"] as? String ?? "pink"
             card.backgroundColor = self.colors[backgroundColor]
             
-            let photoRef = Storage.storage().reference().root().child("a3716125247_16.jpg")
-            
+            let photoRef = storageRef.child("test/a3716125247_16.jpg")
+
             //Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
                 photoRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-                    if let error = error {
+                    if  error != nil{
                     } else {
+//                        print (data)
+                        
+                        
+                        
+                        
                         let image = UIImage(data: data!)
                         card.image = image!
                     }
                 }
             
             self.events.insert(card, at: 0)
-            printFuocused(a: self.events)
+//            printFuocused(a: self.events)
             self.tableView.reloadData()
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
@@ -172,8 +177,12 @@ class TableViewController: UITableViewController {
         
         
        
-        let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "EventCard")
-        cell.card?.shouldPresent(cardContentVC, from: self, fullscreen: true)
+
+        let cardVC = EventInformation()
+        
+        cardVC.date?.text = "sasd"
+        
+        cell.card?.shouldPresent(cardVC, from: self, fullscreen: true)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.backgroundColor = UIColor(hex: "efeff4")
         return cell
