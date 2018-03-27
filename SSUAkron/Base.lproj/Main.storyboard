@@ -150,7 +150,7 @@
             </objects>
             <point key="canvasLocation" x="-1242.4000000000001" y="349.47526236881561"/>
         </scene>
-        <!--Home-->
+        <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
@@ -166,7 +166,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="yNG-JN-LtR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="ic_home" selectedImage="ic_home" id="ag9-md-rDq"/>
+                    <tabBarItem key="tabBarItem" title="" image="ic_home" selectedImage="ic_home" id="ag9-md-rDq">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <connections>
                         <outlet property="dateCounter" destination="unT-1K-P7M" id="kF4-g7-tFU"/>
                     </connections>
@@ -400,11 +402,13 @@
             </objects>
             <point key="canvasLocation" x="-2247.1999999999998" y="1509.8950524737631"/>
         </scene>
-        <!--Calander-->
+        <!--Navigation Controller-->
         <scene sceneID="EKp-6G-rzi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QXJ-DL-Dao" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Calander" image="ic_date_range" id="6yc-Jd-Bm3"/>
+                    <tabBarItem key="tabBarItem" title="" image="ic_date_range" id="6yc-Jd-Bm3">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="faW-7j-byS">
                         <rect key="frame" x="0.0" y="20" width="375" height="108.5"/>
@@ -428,11 +432,13 @@
             </objects>
             <point key="canvasLocation" x="1030" y="1510"/>
         </scene>
-        <!--Store-->
+        <!--Navigation Controller-->
         <scene sceneID="v2V-n9-Tub">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9hf-8h-mP9" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Store" image="ic_store_mall_directory" id="shs-YB-9MH"/>
+                    <tabBarItem key="tabBarItem" title="" image="ic_store_mall_directory" id="shs-YB-9MH">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jPJ-GZ-NW3">
                         <rect key="frame" x="0.0" y="20" width="375" height="108.5"/>
@@ -456,11 +462,12 @@
             </objects>
             <point key="canvasLocation" x="1249" y="412"/>
         </scene>
-        <!--Salary-->
+        <!--Navigation Controller-->
         <scene sceneID="Zbv-Td-pke">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aSL-M9-t1x" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Salary" image="ic_info" selectedImage="ic_info" id="qYp-CA-5mc">
+                    <tabBarItem key="tabBarItem" title="" image="ic_info" selectedImage="ic_info" id="qYp-CA-5mc">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
                     </tabBarItem>
                     <toolbarItems/>

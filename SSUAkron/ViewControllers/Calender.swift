@@ -20,12 +20,13 @@ class TableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.register(UINib(nibName: "CardHighlightCell", bundle: nil), forCellReuseIdentifier: "cell")
         
+        requestData()
 
     }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        requestData()
+//        requestData()
         tableView.refreshControl = refresher
         self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
 
@@ -47,30 +48,23 @@ class TableViewController: UITableViewController {
 
     
     @objc func requestData() {
-   
-
-        events.removeAll()
-        
         print("Event count Before: " + String (events.count))
-        
-        // TODO: Change the refrence to the Calander Event child in firebase
-        ref.child("Store").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
-            for child in snapshot.children.allObjects as! [DataSnapshot]{
-                var dic  = child.value! as! [String: Any]
-                let card = CardInformaion()
-                
-                
-                
-                //TODO: Add the rest of the data that populates the card
-                card.title = dic["title"] as? Int ?? 0
-                card.itemTitle = dic["itemTitle"] as? Int ?? 0
-                card.itemSubtitle = dic["itemSubtitle"] as? Int ?? 0
-                let backgroundColor = dic["backgroundColor"] as? String ?? "white"
-                card.backgroundColor = self.colors[backgroundColor]
+        events.removeAll()
+        ref.child("Store").observe(.childAdded) { (snapshot) in
+            
+            var dic  = snapshot.value! as! [String: Any]
+            let card = CardInformaion()
 
-                let photoRef = Storage.storage().reference().root().child("a3716125247_16.jpg")
-                
-                // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+            //TODO: Add the rest of the data that populates the card
+            card.title = dic["title"] as? Int ?? 0
+            card.itemTitle = dic["itemTitle"] as? Int ?? 0
+            card.itemSubtitle = dic["itemSubtitle"] as? Int ?? 0
+            let backgroundColor = dic["backgroundColor"] as? String ?? "white"
+            card.backgroundColor = self.colors[backgroundColor]
+            
+            let photoRef = Storage.storage().reference().root().child("a3716125247_16.jpg")
+            
+            //Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
                 photoRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
                     if let error = error {
                     } else {
@@ -78,25 +72,15 @@ class TableViewController: UITableViewController {
                         card.image = image!
                     }
                 }
-                
-                self.events.insert(card, at: 0)
-                //                print(dic)
-                //                print(self.events.count)
-                
-            }
             
-            print("Event count After: " + String (self.events.count))
+            self.events.insert(card, at: 0)
+            printFuocused(a: self.events)
+            self.tableView.reloadData()
             
-            //end refresh after 1 second
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1 , execute: {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 self.refresher.endRefreshing()
             })
-            
-            self.tableView.reloadData()
-        })
-        
-        
-        
+        }
     }
     
     
@@ -118,7 +102,6 @@ class TableViewController: UITableViewController {
     var ss = 1
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-//        print(indexPath.row)
         var cell: CardHighlightCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardHighlightCell
 
 //            ui.delegate = self
@@ -176,13 +159,17 @@ class TableViewController: UITableViewController {
 //        print("cout: " + String(self.events.count))
         
         cell.card?.shadowOpacity = 0
-        cell.card?.title = String( describing: self.events[indexPath.row].title!)
-        cell.card?.itemTitle = String( describing: self.events[indexPath.row].itemTitle!)
-        cell.card?.itemSubtitle = String( describing: self.events[indexPath.row].itemSubtitle!)
-        cell.card?.backgroundColor = self.events[indexPath.row].backgroundColor!
+        let event = self.events[indexPath.row]
+        cell.card?.icon = UIImage(named: "ssa")
+        
         DispatchQueue.main.async {
-        cell.card?.icon = self.events[indexPath.row].image
+        cell.card?.title = String( describing: event.title!)
+        cell.card?.itemTitle = String( describing: event.itemTitle!)
+        cell.card?.itemSubtitle = String( describing: event.itemSubtitle!)
+        cell.card?.backgroundColor = event.backgroundColor!
+        cell.card?.icon = event.image
         }
+        
         
        
         let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "EventCard")
