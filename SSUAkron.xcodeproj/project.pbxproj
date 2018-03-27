@@ -11,7 +11,6 @@
 		595AA08C205C7ECA009D3D09 /* NotoKufiArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 595AA087205C5A86009D3D09 /* NotoKufiArabic-Bold.ttf */; };
 		595AA08D205C7ECA009D3D09 /* NotoKufiArabic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 595AA086205C5A86009D3D09 /* NotoKufiArabic-Regular.ttf */; };
 		595AA091205CA4AE009D3D09 /* Coutner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595AA090205CA4AE009D3D09 /* Coutner.swift */; };
-		596259712063959E00DD7CAA /* Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596259702063959E00DD7CAA /* Calender.swift */; };
 		596259852063CAED00DD7CAA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596259842063CAED00DD7CAA /* Store.swift */; };
 		5962598B2065F98F00DD7CAA /* CardHighlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596259892065F98F00DD7CAA /* CardHighlightCell.swift */; };
 		5962598C2065F98F00DD7CAA /* CardHighlightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5962598A2065F98F00DD7CAA /* CardHighlightCell.xib */; };
@@ -34,6 +33,9 @@
 		597950A5205B1B8300807FD1 /* CardArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979509C205B1B8300807FD1 /* CardArticle.swift */; };
 		597950A7205B1B9400807FD1 /* Player_by_Patric_Piemonte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597950A6205B1B9300807FD1 /* Player_by_Patric_Piemonte.swift */; };
 		59B261FE2068C92A00F1E9E7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B261FD2068C92A00F1E9E7 /* Post.swift */; };
+		59B26202206A08C400F1E9E7 /* Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B26201206A08C400F1E9E7 /* Calender.swift */; };
+		59B26206206A091100F1E9E7 /* EventInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B26204206A091100F1E9E7 /* EventInformation.swift */; };
+		59B26207206A091100F1E9E7 /* EventInformation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59B26205206A091100F1E9E7 /* EventInformation.xib */; };
 		59DDB6A4205FA33D001DF580 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6A3205FA33D001DF580 /* StoreViewController.swift */; };
 		59DDB6A6205FA360001DF580 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6A5205FA360001DF580 /* CalenderViewController.swift */; };
 		59DDB6BE2060E104001DF580 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6BD2060E104001DF580 /* Global.swift */; };
@@ -46,7 +48,6 @@
 		595AA086205C5A86009D3D09 /* NotoKufiArabic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoKufiArabic-Regular.ttf"; sourceTree = "<group>"; };
 		595AA087205C5A86009D3D09 /* NotoKufiArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoKufiArabic-Bold.ttf"; sourceTree = "<group>"; };
 		595AA090205CA4AE009D3D09 /* Coutner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coutner.swift; sourceTree = "<group>"; };
-		596259702063959E00DD7CAA /* Calender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calender.swift; sourceTree = "<group>"; };
 		596259842063CAED00DD7CAA /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		596259892065F98F00DD7CAA /* CardHighlightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHighlightCell.swift; sourceTree = "<group>"; };
 		5962598A2065F98F00DD7CAA /* CardHighlightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardHighlightCell.xib; sourceTree = "<group>"; };
@@ -71,6 +72,9 @@
 		5979509C205B1B8300807FD1 /* CardArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardArticle.swift; sourceTree = "<group>"; };
 		597950A6205B1B9300807FD1 /* Player_by_Patric_Piemonte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player_by_Patric_Piemonte.swift; sourceTree = "<group>"; };
 		59B261FD2068C92A00F1E9E7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		59B26201206A08C400F1E9E7 /* Calender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calender.swift; sourceTree = "<group>"; };
+		59B26204206A091100F1E9E7 /* EventInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInformation.swift; sourceTree = "<group>"; };
+		59B26205206A091100F1E9E7 /* EventInformation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventInformation.xib; sourceTree = "<group>"; };
 		59DDB6A3205FA33D001DF580 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		59DDB6A5205FA360001DF580 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		59DDB6BD2060E104001DF580 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -185,12 +189,22 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		59B26203206A08F200F1E9E7 /* ContentCards */ = {
+			isa = PBXGroup;
+			children = (
+				59B26204206A091100F1E9E7 /* EventInformation.swift */,
+				59B26205206A091100F1E9E7 /* EventInformation.xib */,
+			);
+			path = ContentCards;
+			sourceTree = "<group>";
+		};
 		59DDB6A1205FA2E3001DF580 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				59B26203206A08F200F1E9E7 /* ContentCards */,
 				596259862065B44300DD7CAA /* Unused */,
 				596259842063CAED00DD7CAA /* Store.swift */,
-				596259702063959E00DD7CAA /* Calender.swift */,
+				59B26201206A08C400F1E9E7 /* Calender.swift */,
 				5979507F205B1B0000807FD1 /* Home.swift */,
 				595AA090205CA4AE009D3D09 /* Coutner.swift */,
 				59B261FD2068C92A00F1E9E7 /* Post.swift */,
@@ -274,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59B26207206A091100F1E9E7 /* EventInformation.xib in Resources */,
 				595AA08C205C7ECA009D3D09 /* NotoKufiArabic-Bold.ttf in Resources */,
 				59E24C32206372A800B04928 /* GoogleService-Info.plist in Resources */,
 				5962599120660A7200DD7CAA /* CardArticleCell.xib in Resources */,
@@ -355,7 +370,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5962599020660A7200DD7CAA /* CardArticleCell.swift in Sources */,
-				596259712063959E00DD7CAA /* Calender.swift in Sources */,
 				597950A7205B1B9400807FD1 /* Player_by_Patric_Piemonte.swift in Sources */,
 				5979509D205B1B8300807FD1 /* Animator.swift in Sources */,
 				5979509E205B1B8300807FD1 /* CardGroupSliding.swift in Sources */,
@@ -372,11 +386,13 @@
 				597950A5205B1B8300807FD1 /* CardArticle.swift in Sources */,
 				59795086205B1B0000807FD1 /* SSUAkron.xcdatamodeld in Sources */,
 				5962598B2065F98F00DD7CAA /* CardHighlightCell.swift in Sources */,
+				59B26206206A091100F1E9E7 /* EventInformation.swift in Sources */,
 				59795080205B1B0000807FD1 /* Home.swift in Sources */,
 				59DDB6A6205FA360001DF580 /* CalenderViewController.swift in Sources */,
 				5979507E205B1B0000807FD1 /* AppDelegate.swift in Sources */,
 				59E425D320663DF30097E08A /* CardInformation.swift in Sources */,
 				59DDB6BE2060E104001DF580 /* Global.swift in Sources */,
+				59B26202206A08C400F1E9E7 /* Calender.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

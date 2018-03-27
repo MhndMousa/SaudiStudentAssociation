@@ -77,7 +77,7 @@
         <!--EventCard-->
         <scene sceneID="tYv-UH-x70">
             <objects>
-                <viewController storyboardIdentifier="EventCard" title="EventCard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P3c-Yu-pAD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventCard" title="EventCard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P3c-Yu-pAD" customClass="EventInformation" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0YU-H2-Xt0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,14 +125,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="0mj-mD-bHH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5km-6S-37C" secondAttribute="trailing" constant="20" symbolic="YES" id="5CU-h7-oFq"/>
+                            <constraint firstItem="0mj-mD-bHH" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="5km-6S-37C" secondAttribute="trailing" symbolic="YES" id="5CU-h7-oFq"/>
                             <constraint firstItem="5km-6S-37C" firstAttribute="top" secondItem="0mj-mD-bHH" secondAttribute="top" constant="57" id="CGq-dH-tbW"/>
                             <constraint firstItem="0mj-mD-bHH" firstAttribute="trailing" secondItem="LG7-6Z-N1I" secondAttribute="trailing" constant="27" id="Dm4-A4-hIv"/>
                             <constraint firstItem="0mj-mD-bHH" firstAttribute="trailing" secondItem="qLU-Mj-w0Q" secondAttribute="trailing" constant="33" id="GJf-Rn-zNQ"/>
                             <constraint firstItem="bkX-UA-PBc" firstAttribute="leading" secondItem="0mj-mD-bHH" secondAttribute="leading" id="HVq-Dn-OD7"/>
                             <constraint firstItem="bkX-UA-PBc" firstAttribute="centerX" secondItem="0mj-mD-bHH" secondAttribute="centerX" id="K51-Kb-ck3"/>
                             <constraint firstItem="qLU-Mj-w0Q" firstAttribute="top" secondItem="0mj-mD-bHH" secondAttribute="top" constant="57" id="LJk-0W-kHs"/>
-                            <constraint firstItem="qLU-Mj-w0Q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0mj-mD-bHH" secondAttribute="leading" constant="20" symbolic="YES" id="PIm-eu-HAN"/>
+                            <constraint firstItem="qLU-Mj-w0Q" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0mj-mD-bHH" secondAttribute="leading" symbolic="YES" id="PIm-eu-HAN"/>
                             <constraint firstItem="11H-cj-CKM" firstAttribute="top" secondItem="bkX-UA-PBc" secondAttribute="bottom" constant="30" id="Qct-68-Oxw"/>
                             <constraint firstItem="LG7-6Z-N1I" firstAttribute="top" secondItem="qLU-Mj-w0Q" secondAttribute="bottom" constant="83" id="ac8-IX-vPy"/>
                             <constraint firstItem="zuv-mS-Eiu" firstAttribute="top" secondItem="5km-6S-37C" secondAttribute="bottom" constant="83" id="cUH-9s-qgI"/>
@@ -145,6 +145,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0mj-mD-bHH"/>
                     </view>
+                    <connections>
+                        <outlet property="date" destination="qLU-Mj-w0Q" id="2D8-R7-eX4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRL-gm-rd6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

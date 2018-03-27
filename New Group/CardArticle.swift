@@ -115,8 +115,8 @@ import UIKit
         super.layout(animating: animating)
         
         let gimme  = LayoutHelper(rect: backgroundIV.bounds)
-        print(gimme)
-        print("---------------------------------")
+//        print(gimme)
+//        print("---------------------------------")
         categoryLbl.frame = CGRect(x: insets,
                                    y: insets,
                                    width: gimme.X(80),
