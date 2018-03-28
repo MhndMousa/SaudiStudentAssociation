@@ -13,7 +13,7 @@ import UIKit
     /**
      Text of the title label.
      */
-    @IBInspectable public var title: String = "welcome \nto \ncards !" {
+    @IBInspectable public var title: String = "...." {
         didSet{
             titleLbl.text = title.uppercased()
             titleLbl.lineHeight(0.70)
@@ -26,7 +26,7 @@ import UIKit
     /**
      Text of the title label of the item at the bottom.
      */
-    @IBInspectable public var itemTitle: String = "Flappy Bird" {
+    @IBInspectable public var itemTitle: String = "،،" {
         didSet{
             itemTitleLbl.text = itemTitle
         }
@@ -38,7 +38,7 @@ import UIKit
     /**
      Text of the subtitle label of the item at the bottom.
      */
-    @IBInspectable public var itemSubtitle: String = "Flap that !" {
+    @IBInspectable public var itemSubtitle: String = "،،" {
         didSet{
             itemSubtitleLbl.text = itemSubtitle
         }
@@ -177,6 +177,7 @@ import UIKit
                               height: gimme.Y(25))
         
         titleLbl.frame.origin = CGPoint(x: insets, y: gimme.Y(5, from: iconIV))
+        print(insets)
         titleLbl.frame.size.width = (originalFrame.width * 0.65) + ((backgroundIV.bounds.width - originalFrame.width)/3)
         titleLbl.frame.size.height = gimme.Y(35)
         

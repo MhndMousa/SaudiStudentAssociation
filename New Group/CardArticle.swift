@@ -14,7 +14,7 @@ import UIKit
     /**
      Text of the title label.
      */
-    @IBInspectable public var title: String = "The Art of the Impossible" {
+    @IBInspectable public var title: String = "،،،" {
         didSet{
             titleLbl.text = title
         }
@@ -26,7 +26,7 @@ import UIKit
     /**
      Text of the subtitle label.
      */
-    @IBInspectable public var subtitle: String = "Inside the extraordinary world of Monument Valley 2" {
+    @IBInspectable public var subtitle: String = "،.......،،،" {
         didSet{
             subtitleLbl.text = subtitle
         }
@@ -38,7 +38,7 @@ import UIKit
     /**
      Text of the category label.
      */
-    @IBInspectable public var category: String = "world premiere" {
+    @IBInspectable public var category: String = ".." {
         didSet{
             categoryLbl.text = category.uppercased()
         }
