@@ -7,14 +7,33 @@
 //
 
 import UIKit
+import MapKit
 
 class EventInformation: UIViewController {
 
-    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var descriptionView: UITextView!
+    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var signUpButton: UIButton!
+    @IBAction func signUpClicked(_ sender: UIButton) {
+    
+        sender.tap()
+    }
+    
+    @IBOutlet weak var rightContainerConstraint: NSLayoutConstraint!
+    @IBOutlet weak var leftContainerConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
+        signUpButton.layer.cornerRadius = 5
+        
+        mapView.centerCoordinate = CLLocationCoordinate2DMake(39.659996, -86.197870)
+        mapView.isScrollEnabled = true
+        mapView.camera.altitude = 2000
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,4 +52,34 @@ class EventInformation: UIViewController {
     }
     */
 
+}
+
+
+
+
+
+extension UIButton{
+    func pulse()  {
+        let pulse = CASpringAnimation(keyPath: "transform.scale")
+        pulse.duration = 0.3
+        pulse.fromValue = 0.96
+        pulse.toValue = 1
+        pulse.autoreverses = true
+        pulse.repeatCount  = 1
+        pulse.initialVelocity = 0.6
+        pulse.damping = 1
+        
+        layer.add(pulse, forKey: nil)
+    }
+    
+    
+    func tap()  {
+        UIButton.animate(withDuration: 0.3, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        }) { _ in
+            UIButton.animate(withDuration: 0.3, animations: {
+                self.transform = CGAffineTransform.identity
+            })
+        }
+    }
 }

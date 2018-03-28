@@ -89,18 +89,20 @@ class TableViewController: UITableViewController {
         let event = self.events[indexPath.row]
         
         cell.card?.shadowOpacity = 0
-        cell.card?.icon = UIImage(named: "ssa")
+        
         
         DispatchQueue.main.async {
+            cell.card?.textColor = .white
             cell.card?.title = String( describing: event.title!)
             cell.card?.itemTitle = String( describing: event.itemTitle!)
             cell.card?.itemSubtitle = String( describing: event.itemSubtitle!)
             cell.card?.backgroundColor = event.backgroundColor!
             cell.card?.icon = event.image
-            
-            cardVC.date?.text = String(describing: indexPath.row)
+            cardVC.dateLabel?.text = String(describing: indexPath.row)
             
         }
+        
+
         
         cell.card?.shouldPresent(cardVC, from: self, fullscreen: true)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
