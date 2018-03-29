@@ -28,11 +28,9 @@ class EventInformation: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        signUpButton.layer.cornerRadius = 5
+        signUpButton.layer.cornerRadius = 7
         
         mapView.centerCoordinate = CLLocationCoordinate2DMake(39.659996, -86.197870)
-        mapView.isScrollEnabled = true
         mapView.camera.altitude = 2000
     }
 

@@ -16,6 +16,7 @@
 		5962598C2065F98F00DD7CAA /* CardHighlightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5962598A2065F98F00DD7CAA /* CardHighlightCell.xib */; };
 		5962599020660A7200DD7CAA /* CardArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5962598E20660A7200DD7CAA /* CardArticleCell.swift */; };
 		5962599120660A7200DD7CAA /* CardArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5962598F20660A7200DD7CAA /* CardArticleCell.xib */; };
+		596CDA7F206C29D40043A157 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596CDA7E206C29D40043A157 /* Login.swift */; };
 		5979507E205B1B0000807FD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979507D205B1B0000807FD1 /* AppDelegate.swift */; };
 		59795080205B1B0000807FD1 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979507F205B1B0000807FD1 /* Home.swift */; };
 		59795083205B1B0000807FD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59795081205B1B0000807FD1 /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		5962598A2065F98F00DD7CAA /* CardHighlightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardHighlightCell.xib; sourceTree = "<group>"; };
 		5962598E20660A7200DD7CAA /* CardArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardArticleCell.swift; sourceTree = "<group>"; };
 		5962598F20660A7200DD7CAA /* CardArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardArticleCell.xib; sourceTree = "<group>"; };
+		596CDA7E206C29D40043A157 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		5979507A205B1B0000807FD1 /* SSUAkron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSUAkron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5979507D205B1B0000807FD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5979507F205B1B0000807FD1 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				5979507F205B1B0000807FD1 /* Home.swift */,
 				595AA090205CA4AE009D3D09 /* Coutner.swift */,
 				59B261FD2068C92A00F1E9E7 /* Post.swift */,
+				596CDA7E206C29D40043A157 /* Login.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/MKRingProgressView/MKRingProgressView.framework",
+				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -354,6 +358,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MKRingProgressView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -382,6 +387,7 @@
 				597950A4205B1B8300807FD1 /* CardPlayer.swift in Sources */,
 				59B261FE2068C92A00F1E9E7 /* Post.swift in Sources */,
 				595AA091205CA4AE009D3D09 /* Coutner.swift in Sources */,
+				596CDA7F206C29D40043A157 /* Login.swift in Sources */,
 				596259852063CAED00DD7CAA /* Store.swift in Sources */,
 				597950A5205B1B8300807FD1 /* CardArticle.swift in Sources */,
 				59795086205B1B0000807FD1 /* SSUAkron.xcdatamodeld in Sources */,

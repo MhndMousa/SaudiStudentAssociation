@@ -8,7 +8,8 @@ target 'SSUAkron' do
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
   pod 'Firebase/Database'
-  pod 'MKRingProgressView'  
+  pod 'MKRingProgressView'
+  pod 'TransitionButton'
   # Pods for SSUAkron
 
 end

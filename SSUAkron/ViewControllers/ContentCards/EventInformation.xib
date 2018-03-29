@@ -60,7 +60,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="KbZ-DF-AuI" secondAttribute="height" multiplier="1:1" id="cah-Xf-HDh"/>
                             </constraints>
-                            <mutableString key="text">وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف </mutableString>
+                            <string key="text">وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف </string>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -70,24 +70,43 @@
                             <color key="backgroundColor" red="0.086791582405567169" green="0.48432129621505737" blue="0.66587328910827637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
                             <state key="normal" title="تسجيل">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
                             <connections>
                                 <action selector="signUpClicked:" destination="-1" eventType="touchUpInside" id="daI-le-lvV"/>
                             </connections>
                         </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السعر:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcf-5Z-ZqT">
+                            <rect key="frame" x="277" y="70" width="56" height="50"/>
+                            <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
+                            <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCw-4R-3oa">
+                            <rect key="frame" x="232" y="72" width="45" height="50"/>
+                            <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
+                            <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="KbZ-DF-AuI" secondAttribute="bottom" id="0eK-br-m2t"/>
                         <constraint firstItem="gYc-SS-4Fd" firstAttribute="top" secondItem="ggW-nu-xWo" secondAttribute="top" id="22R-SQ-sUJ"/>
+                        <constraint firstItem="MCw-4R-3oa" firstAttribute="top" secondItem="VlI-LG-aFh" secondAttribute="bottom" constant="22" id="2Tg-4u-Pey"/>
                         <constraint firstItem="VlI-LG-aFh" firstAttribute="top" secondItem="ggW-nu-xWo" secondAttribute="top" id="Bpl-Se-XIR"/>
                         <constraint firstItem="VlI-LG-aFh" firstAttribute="height" secondItem="2J4-on-bx9" secondAttribute="height" id="ITa-jc-wBw"/>
+                        <constraint firstItem="hcf-5Z-ZqT" firstAttribute="height" secondItem="2J4-on-bx9" secondAttribute="height" id="Kri-iI-OFu"/>
                         <constraint firstItem="2J4-on-bx9" firstAttribute="top" secondItem="ggW-nu-xWo" secondAttribute="top" id="Tuy-eL-gR7"/>
+                        <constraint firstItem="hcf-5Z-ZqT" firstAttribute="top" secondItem="2J4-on-bx9" secondAttribute="bottom" constant="20" id="UrV-B3-RH9"/>
                         <constraint firstAttribute="trailing" secondItem="KbZ-DF-AuI" secondAttribute="trailing" id="X8V-zm-tEj"/>
                         <constraint firstItem="gYc-SS-4Fd" firstAttribute="leading" secondItem="ggW-nu-xWo" secondAttribute="leading" id="XVc-Hw-fGE"/>
+                        <constraint firstAttribute="trailing" secondItem="hcf-5Z-ZqT" secondAttribute="trailing" id="bpz-8k-WG7"/>
                         <constraint firstItem="2J4-on-bx9" firstAttribute="leading" secondItem="VlI-LG-aFh" secondAttribute="trailing" constant="16" id="jwI-xY-ze3"/>
+                        <constraint firstItem="hcf-5Z-ZqT" firstAttribute="leading" secondItem="MCw-4R-3oa" secondAttribute="trailing" id="mNI-ie-3Pe"/>
                         <constraint firstItem="KbZ-DF-AuI" firstAttribute="leading" secondItem="ggW-nu-xWo" secondAttribute="leading" id="o5u-4N-ALX"/>
+                        <constraint firstItem="KbZ-DF-AuI" firstAttribute="top" secondItem="hcf-5Z-ZqT" secondAttribute="bottom" constant="-1" id="oNQ-ui-LkB"/>
+                        <constraint firstItem="MCw-4R-3oa" firstAttribute="height" secondItem="hcf-5Z-ZqT" secondAttribute="height" id="w8R-wc-zbR"/>
                         <constraint firstAttribute="trailing" secondItem="2J4-on-bx9" secondAttribute="trailing" id="x9l-AN-n8l"/>
                         <constraint firstItem="gYc-SS-4Fd" firstAttribute="height" secondItem="2J4-on-bx9" secondAttribute="height" id="xuL-oD-8C8"/>
                     </constraints>

@@ -26,13 +26,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SSUAkron/ViewControllers/ContentCards/EventInformation.swift"
-            timestampString = "543924148.848419"
+            timestampString = "543957487.281196"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "EventInformation"
             landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SSUAkron.EventInformation.containerView.getter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIView&gt;"
+                  moduleName = "SSUAkron"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mhnd/code/porject/Akron-SSU/SSUAkron/ViewControllers/ContentCards/EventInformation.swift"
+                  timestampString = "543955982.614706"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "79">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SSUAkron.EventInformation.containerView.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.UIView&gt;"
+                  moduleName = "SSUAkron"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mhnd/code/porject/Akron-SSU/SSUAkron/ViewControllers/ContentCards/EventInformation.swift"
+                  timestampString = "543955982.72487"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "86">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SSUAkron.EventInformation.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; SSUAkron.EventInformation"
+                  moduleName = "SSUAkron"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mhnd/code/porject/Akron-SSU/SSUAkron/ViewControllers/ContentCards/EventInformation.swift"
+                  timestampString = "543955982.733161"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "77">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SSUAkron.EventInformation.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;SSUAkron.EventInformation&gt;"
+                  moduleName = "SSUAkron"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Mhnd/code/porject/Akron-SSU/SSUAkron/ViewControllers/ContentCards/EventInformation.swift"
+                  timestampString = "543955982.73972"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "46">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
