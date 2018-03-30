@@ -128,12 +128,11 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M5f-Lr-q0t">
-                    <rect key="frame" x="5" y="20" width="180" height="150"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5f-Lr-q0t" userLabel="تسجيل">
+                    <rect key="frame" x="10" y="20" width="172.5" height="150"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGb-Pb-0ih">
-                            <rect key="frame" x="62" y="109" width="46" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGb-Pb-0ih">
+                            <rect key="frame" x="10" y="110" width="152.5" height="30"/>
                             <color key="backgroundColor" red="0.086791582409999998" green="0.48432129619999997" blue="0.66587328909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <state key="normal" title="تسجيل">
                                 <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -142,25 +141,28 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="WGb-Pb-0ih" firstAttribute="leading" secondItem="M5f-Lr-q0t" secondAttribute="leading" constant="10" id="0Ih-B9-9Uj"/>
                         <constraint firstAttribute="height" constant="150" id="8Gy-bq-vT6"/>
+                        <constraint firstAttribute="bottom" secondItem="WGb-Pb-0ih" secondAttribute="bottom" constant="10" id="NC7-Kr-kBZ"/>
+                        <constraint firstAttribute="trailing" secondItem="WGb-Pb-0ih" secondAttribute="trailing" constant="10" id="ahI-WV-OTb"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4JN-RG-nmG" userLabel="السعر">
-                    <rect key="frame" x="190" y="20" width="180" height="72.5"/>
+                    <rect key="frame" x="192.5" y="20" width="172.5" height="72.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cHV-mm-aAb" userLabel="السعر">
-                            <rect key="frame" x="0.0" y="0.0" width="180" height="72.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="172.5" height="72.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="السعر" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AW-2f-Cbk">
-                                    <rect key="frame" x="0.0" y="0.0" width="180" height="52"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="السعر" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AW-2f-Cbk">
+                                    <rect key="frame" x="0.0" y="0.0" width="172.5" height="38"/>
+                                    <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
+                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfM-Oq-EYi">
-                                    <rect key="frame" x="0.0" y="52" width="180" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfM-Oq-EYi">
+                                    <rect key="frame" x="0.0" y="38" width="172.5" height="34.5"/>
+                                    <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
+                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -175,21 +177,21 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QpV-XX-qBt" userLabel="التاريخ">
-                    <rect key="frame" x="190" y="97.5" width="180" height="72.5"/>
+                    <rect key="frame" x="192.5" y="97.5" width="172.5" height="72.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6YP-jl-zIH" userLabel="التاريخ">
-                            <rect key="frame" x="0.0" y="0.0" width="180" height="72.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="172.5" height="72.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="التاريخ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luj-sQ-Gb5">
-                                    <rect key="frame" x="0.0" y="0.0" width="180" height="52"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="التاريخ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luj-sQ-Gb5">
+                                    <rect key="frame" x="0.0" y="0.0" width="172.5" height="38"/>
+                                    <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
+                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="الوقت" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEf-hM-P6A">
-                                    <rect key="frame" x="0.0" y="52" width="180" height="20.5"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="الوقت" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEf-hM-P6A">
+                                    <rect key="frame" x="0.0" y="38" width="172.5" height="34.5"/>
+                                    <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
+                                    <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -204,19 +206,63 @@
                         <constraint firstItem="6YP-jl-zIH" firstAttribute="top" secondItem="QpV-XX-qBt" secondAttribute="top" id="vcZ-g7-pcj"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V4J-kr-Zoo" userLabel="وصف">
+                    <rect key="frame" x="10" y="180" width="355" height="233.5"/>
+                    <subviews>
+                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PIh-20-pfg">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="233.5"/>
+                        </mapView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="PIh-20-pfg" firstAttribute="top" secondItem="V4J-kr-Zoo" secondAttribute="top" id="9Jd-4k-iIk"/>
+                        <constraint firstAttribute="trailing" secondItem="PIh-20-pfg" secondAttribute="trailing" id="bAo-DQ-BZK"/>
+                        <constraint firstItem="PIh-20-pfg" firstAttribute="leading" secondItem="V4J-kr-Zoo" secondAttribute="leading" id="cmE-yl-DQ1"/>
+                        <constraint firstAttribute="bottom" secondItem="PIh-20-pfg" secondAttribute="bottom" id="ufN-mk-nyB"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OT7-Ml-Tx4" userLabel="ماب">
+                    <rect key="frame" x="10" y="423.5" width="355" height="233.5"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nCi-0D-9fm">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="233.5"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="nCi-0D-9fm" secondAttribute="trailing" id="1gh-5w-rV7"/>
+                        <constraint firstAttribute="bottom" secondItem="nCi-0D-9fm" secondAttribute="bottom" id="bNJ-pk-DnX"/>
+                        <constraint firstItem="nCi-0D-9fm" firstAttribute="top" secondItem="OT7-Ml-Tx4" secondAttribute="top" id="tfn-8c-zyt"/>
+                        <constraint firstItem="nCi-0D-9fm" firstAttribute="leading" secondItem="OT7-Ml-Tx4" secondAttribute="leading" id="ykt-LN-MzJ"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="QpV-XX-qBt" firstAttribute="width" secondItem="M5f-Lr-q0t" secondAttribute="width" id="1jD-Oq-AuR"/>
-                <constraint firstItem="OGW-Vx-gg4" firstAttribute="trailing" secondItem="4JN-RG-nmG" secondAttribute="trailing" constant="5" id="8Ns-hw-COk"/>
-                <constraint firstItem="4JN-RG-nmG" firstAttribute="leading" secondItem="M5f-Lr-q0t" secondAttribute="trailing" constant="5" id="KZC-mg-4GL"/>
+                <constraint firstItem="OGW-Vx-gg4" firstAttribute="trailing" secondItem="4JN-RG-nmG" secondAttribute="trailing" constant="10" id="8Ns-hw-COk"/>
+                <constraint firstItem="V4J-kr-Zoo" firstAttribute="leading" secondItem="OGW-Vx-gg4" secondAttribute="leading" constant="10" id="CBo-Sr-jrY"/>
+                <constraint firstItem="V4J-kr-Zoo" firstAttribute="top" secondItem="M5f-Lr-q0t" secondAttribute="bottom" constant="10" id="Gmz-zd-Vpr"/>
+                <constraint firstItem="M5f-Lr-q0t" firstAttribute="top" secondItem="OGW-Vx-gg4" secondAttribute="top" id="GqN-tB-1Nj"/>
+                <constraint firstItem="OT7-Ml-Tx4" firstAttribute="leading" secondItem="OGW-Vx-gg4" secondAttribute="leading" constant="10" id="HFf-fP-qzl"/>
+                <constraint firstItem="4JN-RG-nmG" firstAttribute="leading" secondItem="M5f-Lr-q0t" secondAttribute="trailing" constant="10" id="KZC-mg-4GL"/>
                 <constraint firstItem="4JN-RG-nmG" firstAttribute="top" secondItem="OGW-Vx-gg4" secondAttribute="top" id="OaV-cS-xhu"/>
+                <constraint firstItem="OGW-Vx-gg4" firstAttribute="bottom" secondItem="OT7-Ml-Tx4" secondAttribute="bottom" constant="10" id="VI5-2E-D16"/>
+                <constraint firstItem="OGW-Vx-gg4" firstAttribute="trailing" secondItem="V4J-kr-Zoo" secondAttribute="trailing" constant="10" id="Vcu-oh-mbu"/>
+                <constraint firstItem="OT7-Ml-Tx4" firstAttribute="top" secondItem="V4J-kr-Zoo" secondAttribute="bottom" constant="10" id="b16-71-vmg"/>
                 <constraint firstItem="QpV-XX-qBt" firstAttribute="top" secondItem="4JN-RG-nmG" secondAttribute="bottom" constant="5" id="b6h-26-htu"/>
+                <constraint firstItem="OT7-Ml-Tx4" firstAttribute="height" secondItem="V4J-kr-Zoo" secondAttribute="height" id="fNE-NE-vfl"/>
                 <constraint firstItem="M5f-Lr-q0t" firstAttribute="width" secondItem="4JN-RG-nmG" secondAttribute="width" id="g57-Jy-zI8"/>
+                <constraint firstItem="OGW-Vx-gg4" firstAttribute="trailing" secondItem="OT7-Ml-Tx4" secondAttribute="trailing" constant="10" id="kOo-lL-sNu"/>
                 <constraint firstItem="QpV-XX-qBt" firstAttribute="height" secondItem="4JN-RG-nmG" secondAttribute="height" id="kX9-Mn-9hT"/>
-                <constraint firstItem="OGW-Vx-gg4" firstAttribute="trailing" secondItem="QpV-XX-qBt" secondAttribute="trailing" constant="5" id="ucH-yN-vfw"/>
-                <constraint firstItem="QpV-XX-qBt" firstAttribute="leading" secondItem="M5f-Lr-q0t" secondAttribute="trailing" constant="5" id="wRv-l2-qQb"/>
-                <constraint firstItem="M5f-Lr-q0t" firstAttribute="leading" secondItem="OGW-Vx-gg4" secondAttribute="leading" constant="5" id="xhz-di-42C"/>
+                <constraint firstItem="OGW-Vx-gg4" firstAttribute="trailing" secondItem="QpV-XX-qBt" secondAttribute="trailing" constant="10" id="ucH-yN-vfw"/>
+                <constraint firstItem="QpV-XX-qBt" firstAttribute="leading" secondItem="M5f-Lr-q0t" secondAttribute="trailing" constant="10" id="wRv-l2-qQb"/>
+                <constraint firstItem="M5f-Lr-q0t" firstAttribute="leading" secondItem="OGW-Vx-gg4" secondAttribute="leading" constant="10" id="xhz-di-42C"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="OGW-Vx-gg4"/>
             <point key="canvasLocation" x="-601.5" y="-26.5"/>
