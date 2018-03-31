@@ -36,11 +36,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzM-Fa-rgC" userLabel="تسجيل">
-                    <rect key="frame" x="10" y="20" width="172.5" height="150"/>
+                    <rect key="frame" x="10" y="30" width="172.5" height="150"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3h-UJ-GNT">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3h-UJ-GNT">
                             <rect key="frame" x="10" y="90" width="153" height="50"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.086791582409999998" green="0.48432129619999997" blue="0.66587328909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
                             <state key="normal" title="تسجيل">
@@ -53,11 +52,14 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="Z3h-UJ-GNT" firstAttribute="leading" secondItem="tzM-Fa-rgC" secondAttribute="leading" constant="10" id="Uha-W2-Omj"/>
+                        <constraint firstAttribute="bottom" secondItem="Z3h-UJ-GNT" secondAttribute="bottom" constant="10" id="ZbD-0J-UKs"/>
                         <constraint firstAttribute="height" constant="150" id="eaz-Zq-aun"/>
+                        <constraint firstAttribute="trailing" secondItem="Z3h-UJ-GNT" secondAttribute="trailing" constant="10" id="nWM-Tu-H10"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6IR-hY-JAv" userLabel="التاريخ">
-                    <rect key="frame" x="192.5" y="98.5" width="172.5" height="71.5"/>
+                    <rect key="frame" x="192.5" y="108.5" width="172.5" height="71.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RHg-cM-Bfc" userLabel="التاريخ">
                             <rect key="frame" x="0.0" y="0.0" width="172.5" height="71.5"/>
@@ -86,7 +88,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDc-vd-MRS" userLabel="السعر">
-                    <rect key="frame" x="192.5" y="20" width="172.5" height="71.5"/>
+                    <rect key="frame" x="192.5" y="30" width="172.5" height="71.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0CC-8b-gMU" userLabel="السعر">
                             <rect key="frame" x="0.0" y="0.0" width="172.5" height="71.5"/>
@@ -115,7 +117,7 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8t-J6-eXZ" userLabel="وصف">
-                    <rect key="frame" x="10" y="423.5" width="355" height="233.5"/>
+                    <rect key="frame" x="10" y="428.5" width="355" height="228.5"/>
                     <subviews>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JdC-5F-jP0">
                             <rect key="frame" x="0.0" y="0.0" width="355" height="234"/>
@@ -130,10 +132,10 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0a-3Z-xGX" userLabel="ماب">
-                    <rect key="frame" x="10" y="180" width="355" height="233.5"/>
+                    <rect key="frame" x="10" y="190" width="355" height="228.5"/>
                     <subviews>
                         <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="H21-gc-qlB">
-                            <rect key="frame" x="0.0" y="0.0" width="355" height="233.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="228.5"/>
                         </mapView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -156,12 +158,12 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="L8t-J6-eXZ" secondAttribute="bottom" constant="10" id="OxB-mw-g9q"/>
                 <constraint firstItem="f0a-3Z-xGX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Sdc-1O-Plr"/>
                 <constraint firstItem="L8t-J6-eXZ" firstAttribute="height" secondItem="f0a-3Z-xGX" secondAttribute="height" id="UQ0-BM-EcO"/>
-                <constraint firstItem="tzM-Fa-rgC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="XKk-fs-MiS"/>
+                <constraint firstItem="tzM-Fa-rgC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="XKk-fs-MiS"/>
                 <constraint firstItem="L8t-J6-eXZ" firstAttribute="width" secondItem="f0a-3Z-xGX" secondAttribute="width" id="Znd-Hh-Lgo"/>
                 <constraint firstItem="6IR-hY-JAv" firstAttribute="leading" secondItem="tzM-Fa-rgC" secondAttribute="trailing" constant="10" id="bbU-uj-dJt"/>
                 <constraint firstItem="6IR-hY-JAv" firstAttribute="width" secondItem="tzM-Fa-rgC" secondAttribute="width" id="cJ6-Lf-q23"/>
                 <constraint firstItem="6IR-hY-JAv" firstAttribute="top" secondItem="zDc-vd-MRS" secondAttribute="bottom" constant="7.5" id="eT3-8g-Eda"/>
-                <constraint firstItem="zDc-vd-MRS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kqx-0c-3EH"/>
+                <constraint firstItem="zDc-vd-MRS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="kqx-0c-3EH"/>
                 <constraint firstItem="zDc-vd-MRS" firstAttribute="leading" secondItem="tzM-Fa-rgC" secondAttribute="trailing" constant="10" id="owZ-is-VwC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zDc-vd-MRS" secondAttribute="trailing" constant="10" id="pHm-KS-g1U"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6IR-hY-JAv" secondAttribute="trailing" constant="10" id="shT-aX-Inz"/>
