@@ -5,7 +5,6 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,14 +16,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EventInformation" customModule="SSUAkron" customModuleProvider="target">
             <connections>
-                <outlet property="containerView" destination="ggW-nu-xWo" id="JB0-x4-fYN"/>
-                <outlet property="dateLabel" destination="VlI-LG-aFh" id="5ox-bE-eMg"/>
-                <outlet property="descriptionView" destination="KbZ-DF-AuI" id="3xX-kF-rgq"/>
-                <outlet property="leftContainerConstraint" destination="bi7-XP-6pr" id="qbb-88-syb"/>
-                <outlet property="mapView" destination="3ny-u7-Q1r" id="JVL-k7-SCv"/>
-                <outlet property="rightContainerConstraint" destination="SP0-FS-UDI" id="xnc-rN-c4y"/>
-                <outlet property="signUpButton" destination="gYc-SS-4Fd" id="wRS-2A-pxN"/>
-                <outlet property="timeLabel" destination="2J4-on-bx9" id="faf-Ka-hok"/>
+                <outlet property="contContainer" destination="zDc-vd-MRS" id="0Lk-ue-s9t"/>
+                <outlet property="costLabel" destination="CLE-KU-1f3" id="XQv-Rv-DII"/>
+                <outlet property="dateContainer" destination="6IR-hY-JAv" id="gsS-aH-PHf"/>
+                <outlet property="dateLabel" destination="YPM-o2-keo" id="1vU-xB-VfW"/>
+                <outlet property="descriptionContainer" destination="L8t-J6-eXZ" id="5ZA-o8-mEn"/>
+                <outlet property="descriptionView" destination="JdC-5F-jP0" id="ddh-1K-F5d"/>
+                <outlet property="mapContainer" destination="f0a-3Z-xGX" id="mcq-mp-gNS"/>
+                <outlet property="mapView" destination="H21-gc-qlB" id="pfB-yl-hNz"/>
+                <outlet property="signUpButton" destination="Z3h-UJ-GNT" id="X1m-Eg-zen"/>
+                <outlet property="signupContainer" destination="tzM-Fa-rgC" id="SVm-2I-UyG"/>
+                <outlet property="timeLabel" destination="Zvi-zN-ON5" id="ODT-pR-F53"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,134 +35,41 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3ny-u7-Q1r">
-                    <rect key="frame" x="0.0" y="480" width="375" height="187"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="3ny-u7-Q1r" secondAttribute="height" multiplier="375:187" id="xvd-el-6H6"/>
-                    </constraints>
-                </mapView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggW-nu-xWo" userLabel="Container">
-                    <rect key="frame" x="21" y="28" width="333" height="452"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="التاريخ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VlI-LG-aFh">
-                            <rect key="frame" x="213" y="0.0" width="52.5" height="50"/>
-                            <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
-                            <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الوقت" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2J4-on-bx9">
-                            <rect key="frame" x="281.5" y="0.0" width="51.5" height="50"/>
-                            <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
-                            <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="KbZ-DF-AuI">
-                            <rect key="frame" x="0.0" y="119" width="333" height="333"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="KbZ-DF-AuI" secondAttribute="height" multiplier="1:1" id="cah-Xf-HDh"/>
-                            </constraints>
-                            <string key="text">وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف </string>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="headTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYc-SS-4Fd">
-                            <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
-                            <color key="backgroundColor" red="0.086791582405567169" green="0.48432129621505737" blue="0.66587328910827637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
-                            <state key="normal" title="تسجيل">
-                                <color key="titleColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="signUpClicked:" destination="-1" eventType="touchUpInside" id="daI-le-lvV"/>
-                            </connections>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السعر:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcf-5Z-ZqT">
-                            <rect key="frame" x="277" y="70" width="56" height="50"/>
-                            <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
-                            <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCw-4R-3oa">
-                            <rect key="frame" x="232" y="72" width="45" height="50"/>
-                            <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
-                            <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="KbZ-DF-AuI" secondAttribute="bottom" id="0eK-br-m2t"/>
-                        <constraint firstItem="gYc-SS-4Fd" firstAttribute="top" secondItem="ggW-nu-xWo" secondAttribute="top" id="22R-SQ-sUJ"/>
-                        <constraint firstItem="MCw-4R-3oa" firstAttribute="top" secondItem="VlI-LG-aFh" secondAttribute="bottom" constant="22" id="2Tg-4u-Pey"/>
-                        <constraint firstItem="VlI-LG-aFh" firstAttribute="top" secondItem="ggW-nu-xWo" secondAttribute="top" id="Bpl-Se-XIR"/>
-                        <constraint firstItem="VlI-LG-aFh" firstAttribute="height" secondItem="2J4-on-bx9" secondAttribute="height" id="ITa-jc-wBw"/>
-                        <constraint firstItem="hcf-5Z-ZqT" firstAttribute="height" secondItem="2J4-on-bx9" secondAttribute="height" id="Kri-iI-OFu"/>
-                        <constraint firstItem="2J4-on-bx9" firstAttribute="top" secondItem="ggW-nu-xWo" secondAttribute="top" id="Tuy-eL-gR7"/>
-                        <constraint firstItem="hcf-5Z-ZqT" firstAttribute="top" secondItem="2J4-on-bx9" secondAttribute="bottom" constant="20" id="UrV-B3-RH9"/>
-                        <constraint firstAttribute="trailing" secondItem="KbZ-DF-AuI" secondAttribute="trailing" id="X8V-zm-tEj"/>
-                        <constraint firstItem="gYc-SS-4Fd" firstAttribute="leading" secondItem="ggW-nu-xWo" secondAttribute="leading" id="XVc-Hw-fGE"/>
-                        <constraint firstAttribute="trailing" secondItem="hcf-5Z-ZqT" secondAttribute="trailing" id="bpz-8k-WG7"/>
-                        <constraint firstItem="2J4-on-bx9" firstAttribute="leading" secondItem="VlI-LG-aFh" secondAttribute="trailing" constant="16" id="jwI-xY-ze3"/>
-                        <constraint firstItem="hcf-5Z-ZqT" firstAttribute="leading" secondItem="MCw-4R-3oa" secondAttribute="trailing" id="mNI-ie-3Pe"/>
-                        <constraint firstItem="KbZ-DF-AuI" firstAttribute="leading" secondItem="ggW-nu-xWo" secondAttribute="leading" id="o5u-4N-ALX"/>
-                        <constraint firstItem="KbZ-DF-AuI" firstAttribute="top" secondItem="hcf-5Z-ZqT" secondAttribute="bottom" constant="-1" id="oNQ-ui-LkB"/>
-                        <constraint firstItem="MCw-4R-3oa" firstAttribute="height" secondItem="hcf-5Z-ZqT" secondAttribute="height" id="w8R-wc-zbR"/>
-                        <constraint firstAttribute="trailing" secondItem="2J4-on-bx9" secondAttribute="trailing" id="x9l-AN-n8l"/>
-                        <constraint firstItem="gYc-SS-4Fd" firstAttribute="height" secondItem="2J4-on-bx9" secondAttribute="height" id="xuL-oD-8C8"/>
-                    </constraints>
-                </view>
-            </subviews>
-            <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="3ny-u7-Q1r" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="72A-u6-2aI"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3ny-u7-Q1r" secondAttribute="trailing" id="Ruy-Y7-Tpk"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ggW-nu-xWo" secondAttribute="trailing" constant="21" id="SP0-FS-UDI"/>
-                <constraint firstItem="ggW-nu-xWo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="ZMz-tD-XF7"/>
-                <constraint firstItem="ggW-nu-xWo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="21" id="bi7-XP-6pr"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="3ny-u7-Q1r" secondAttribute="bottom" id="eZW-oj-qlT"/>
-                <constraint firstItem="3ny-u7-Q1r" firstAttribute="top" secondItem="ggW-nu-xWo" secondAttribute="bottom" id="nag-Tz-MgI"/>
-            </constraints>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="-145.5" y="-25.5"/>
-        </view>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="rhB-P7-M1f">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5f-Lr-q0t" userLabel="تسجيل">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzM-Fa-rgC" userLabel="تسجيل">
                     <rect key="frame" x="10" y="20" width="172.5" height="150"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGb-Pb-0ih">
-                            <rect key="frame" x="10" y="110" width="152.5" height="30"/>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3h-UJ-GNT">
+                            <rect key="frame" x="10" y="90" width="153" height="50"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" red="0.086791582409999998" green="0.48432129619999997" blue="0.66587328909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
                             <state key="normal" title="تسجيل">
                                 <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </state>
+                            <connections>
+                                <action selector="signUpClicked:" destination="-1" eventType="touchUpInside" id="CIW-Pl-gDT"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="WGb-Pb-0ih" firstAttribute="leading" secondItem="M5f-Lr-q0t" secondAttribute="leading" constant="10" id="0Ih-B9-9Uj"/>
-                        <constraint firstAttribute="height" constant="150" id="8Gy-bq-vT6"/>
-                        <constraint firstAttribute="bottom" secondItem="WGb-Pb-0ih" secondAttribute="bottom" constant="10" id="NC7-Kr-kBZ"/>
-                        <constraint firstAttribute="trailing" secondItem="WGb-Pb-0ih" secondAttribute="trailing" constant="10" id="ahI-WV-OTb"/>
+                        <constraint firstAttribute="height" constant="150" id="eaz-Zq-aun"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4JN-RG-nmG" userLabel="السعر">
-                    <rect key="frame" x="192.5" y="20" width="172.5" height="72.5"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6IR-hY-JAv" userLabel="التاريخ">
+                    <rect key="frame" x="192.5" y="98.5" width="172.5" height="71.5"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cHV-mm-aAb" userLabel="السعر">
-                            <rect key="frame" x="0.0" y="0.0" width="172.5" height="72.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RHg-cM-Bfc" userLabel="التاريخ">
+                            <rect key="frame" x="0.0" y="0.0" width="172.5" height="71.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="السعر" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AW-2f-Cbk">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="التاريخ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPM-o2-keo">
                                     <rect key="frame" x="0.0" y="0.0" width="172.5" height="38"/>
                                     <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
                                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfM-Oq-EYi">
-                                    <rect key="frame" x="0.0" y="38" width="172.5" height="34.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="الوقت" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zvi-zN-ON5">
+                                    <rect key="frame" x="0.0" y="38" width="172.5" height="33.5"/>
                                     <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
                                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                     <nil key="highlightedColor"/>
@@ -170,26 +79,26 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="cHV-mm-aAb" firstAttribute="leading" secondItem="4JN-RG-nmG" secondAttribute="leading" id="CoO-mV-jHM"/>
-                        <constraint firstAttribute="bottom" secondItem="cHV-mm-aAb" secondAttribute="bottom" id="Jpq-zn-RfZ"/>
-                        <constraint firstAttribute="trailing" secondItem="cHV-mm-aAb" secondAttribute="trailing" id="pbx-bU-pBg"/>
-                        <constraint firstItem="cHV-mm-aAb" firstAttribute="top" secondItem="4JN-RG-nmG" secondAttribute="top" id="xJ4-X2-7HN"/>
+                        <constraint firstItem="RHg-cM-Bfc" firstAttribute="top" secondItem="6IR-hY-JAv" secondAttribute="top" id="10t-LV-tg3"/>
+                        <constraint firstAttribute="bottom" secondItem="RHg-cM-Bfc" secondAttribute="bottom" id="12o-X6-JUa"/>
+                        <constraint firstAttribute="trailing" secondItem="RHg-cM-Bfc" secondAttribute="trailing" id="Obn-ac-5tI"/>
+                        <constraint firstItem="RHg-cM-Bfc" firstAttribute="leading" secondItem="6IR-hY-JAv" secondAttribute="leading" id="fxQ-Tt-7hm"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QpV-XX-qBt" userLabel="التاريخ">
-                    <rect key="frame" x="192.5" y="97.5" width="172.5" height="72.5"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDc-vd-MRS" userLabel="السعر">
+                    <rect key="frame" x="192.5" y="20" width="172.5" height="71.5"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6YP-jl-zIH" userLabel="التاريخ">
-                            <rect key="frame" x="0.0" y="0.0" width="172.5" height="72.5"/>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0CC-8b-gMU" userLabel="السعر">
+                            <rect key="frame" x="0.0" y="0.0" width="172.5" height="71.5"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="التاريخ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luj-sQ-Gb5">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="السعر" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5FE-nX-gco">
                                     <rect key="frame" x="0.0" y="0.0" width="172.5" height="38"/>
                                     <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
                                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="الوقت" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEf-hM-P6A">
-                                    <rect key="frame" x="0.0" y="38" width="172.5" height="34.5"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CLE-KU-1f3">
+                                    <rect key="frame" x="0.0" y="38" width="172.5" height="33.5"/>
                                     <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="20"/>
                                     <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                                     <nil key="highlightedColor"/>
@@ -199,73 +108,69 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="6YP-jl-zIH" secondAttribute="bottom" id="FH1-je-ufX"/>
-                        <constraint firstAttribute="trailing" secondItem="6YP-jl-zIH" secondAttribute="trailing" id="H2H-vv-oqn"/>
-                        <constraint firstAttribute="height" constant="72.5" id="jNk-Pl-dG3"/>
-                        <constraint firstItem="6YP-jl-zIH" firstAttribute="leading" secondItem="QpV-XX-qBt" secondAttribute="leading" id="m5E-OW-qMo"/>
-                        <constraint firstItem="6YP-jl-zIH" firstAttribute="top" secondItem="QpV-XX-qBt" secondAttribute="top" id="vcZ-g7-pcj"/>
+                        <constraint firstItem="0CC-8b-gMU" firstAttribute="top" secondItem="zDc-vd-MRS" secondAttribute="top" id="DKb-F0-sNw"/>
+                        <constraint firstAttribute="bottom" secondItem="0CC-8b-gMU" secondAttribute="bottom" id="Vbl-uN-ut5"/>
+                        <constraint firstItem="0CC-8b-gMU" firstAttribute="leading" secondItem="zDc-vd-MRS" secondAttribute="leading" id="hUE-FZ-tbE"/>
+                        <constraint firstAttribute="trailing" secondItem="0CC-8b-gMU" secondAttribute="trailing" id="mlP-BJ-vgO"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V4J-kr-Zoo" userLabel="وصف">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8t-J6-eXZ" userLabel="وصف">
+                    <rect key="frame" x="10" y="423.5" width="355" height="233.5"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JdC-5F-jP0">
+                            <rect key="frame" x="0.0" y="0.0" width="355" height="234"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f0a-3Z-xGX" userLabel="ماب">
                     <rect key="frame" x="10" y="180" width="355" height="233.5"/>
                     <subviews>
-                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PIh-20-pfg">
+                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="H21-gc-qlB">
                             <rect key="frame" x="0.0" y="0.0" width="355" height="233.5"/>
                         </mapView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="PIh-20-pfg" firstAttribute="top" secondItem="V4J-kr-Zoo" secondAttribute="top" id="9Jd-4k-iIk"/>
-                        <constraint firstAttribute="trailing" secondItem="PIh-20-pfg" secondAttribute="trailing" id="bAo-DQ-BZK"/>
-                        <constraint firstItem="PIh-20-pfg" firstAttribute="leading" secondItem="V4J-kr-Zoo" secondAttribute="leading" id="cmE-yl-DQ1"/>
-                        <constraint firstAttribute="bottom" secondItem="PIh-20-pfg" secondAttribute="bottom" id="ufN-mk-nyB"/>
-                    </constraints>
-                </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OT7-Ml-Tx4" userLabel="ماب">
-                    <rect key="frame" x="10" y="423.5" width="355" height="233.5"/>
-                    <subviews>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nCi-0D-9fm">
-                            <rect key="frame" x="0.0" y="0.0" width="355" height="233.5"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="nCi-0D-9fm" secondAttribute="trailing" id="1gh-5w-rV7"/>
-                        <constraint firstAttribute="bottom" secondItem="nCi-0D-9fm" secondAttribute="bottom" id="bNJ-pk-DnX"/>
-                        <constraint firstItem="nCi-0D-9fm" firstAttribute="top" secondItem="OT7-Ml-Tx4" secondAttribute="top" id="tfn-8c-zyt"/>
-                        <constraint firstItem="nCi-0D-9fm" firstAttribute="leading" secondItem="OT7-Ml-Tx4" secondAttribute="leading" id="ykt-LN-MzJ"/>
+                        <constraint firstAttribute="bottom" secondItem="H21-gc-qlB" secondAttribute="bottom" id="2yG-x5-LCt"/>
+                        <constraint firstItem="H21-gc-qlB" firstAttribute="leading" secondItem="f0a-3Z-xGX" secondAttribute="leading" id="Rl7-Gy-e1D"/>
+                        <constraint firstItem="H21-gc-qlB" firstAttribute="top" secondItem="f0a-3Z-xGX" secondAttribute="top" id="RwP-t6-EOt"/>
+                        <constraint firstAttribute="trailing" secondItem="H21-gc-qlB" secondAttribute="trailing" id="lnT-0p-dVM"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="QpV-XX-qBt" firstAttribute="width" secondItem="M5f-Lr-q0t" secondAttribute="width" id="1jD-Oq-AuR"/>
-                <constraint firstItem="OGW-Vx-gg4" firstAttribute="trailing" secondItem="4JN-RG-nmG" secondAttribute="trailing" constant="10" id="8Ns-hw-COk"/>
-                <constraint firstItem="V4J-kr-Zoo" firstAttribute="leading" secondItem="OGW-Vx-gg4" secondAttribute="leading" constant="10" id="CBo-Sr-jrY"/>
-                <constraint firstItem="V4J-kr-Zoo" firstAttribute="top" secondItem="M5f-Lr-q0t" secondAttribute="bottom" constant="10" id="Gmz-zd-Vpr"/>
-                <constraint firstItem="M5f-Lr-q0t" firstAttribute="top" secondItem="OGW-Vx-gg4" secondAttribute="top" id="GqN-tB-1Nj"/>
-                <constraint firstItem="OT7-Ml-Tx4" firstAttribute="leading" secondItem="OGW-Vx-gg4" secondAttribute="leading" constant="10" id="HFf-fP-qzl"/>
-                <constraint firstItem="4JN-RG-nmG" firstAttribute="leading" secondItem="M5f-Lr-q0t" secondAttribute="trailing" constant="10" id="KZC-mg-4GL"/>
-                <constraint firstItem="4JN-RG-nmG" firstAttribute="top" secondItem="OGW-Vx-gg4" secondAttribute="top" id="OaV-cS-xhu"/>
-                <constraint firstItem="OGW-Vx-gg4" firstAttribute="bottom" secondItem="OT7-Ml-Tx4" secondAttribute="bottom" constant="10" id="VI5-2E-D16"/>
-                <constraint firstItem="OGW-Vx-gg4" firstAttribute="trailing" secondItem="V4J-kr-Zoo" secondAttribute="trailing" constant="10" id="Vcu-oh-mbu"/>
-                <constraint firstItem="OT7-Ml-Tx4" firstAttribute="top" secondItem="V4J-kr-Zoo" secondAttribute="bottom" constant="10" id="b16-71-vmg"/>
-                <constraint firstItem="QpV-XX-qBt" firstAttribute="top" secondItem="4JN-RG-nmG" secondAttribute="bottom" constant="5" id="b6h-26-htu"/>
-                <constraint firstItem="OT7-Ml-Tx4" firstAttribute="height" secondItem="V4J-kr-Zoo" secondAttribute="height" id="fNE-NE-vfl"/>
-                <constraint firstItem="M5f-Lr-q0t" firstAttribute="width" secondItem="4JN-RG-nmG" secondAttribute="width" id="g57-Jy-zI8"/>
-                <constraint firstItem="OGW-Vx-gg4" firstAttribute="trailing" secondItem="OT7-Ml-Tx4" secondAttribute="trailing" constant="10" id="kOo-lL-sNu"/>
-                <constraint firstItem="QpV-XX-qBt" firstAttribute="height" secondItem="4JN-RG-nmG" secondAttribute="height" id="kX9-Mn-9hT"/>
-                <constraint firstItem="OGW-Vx-gg4" firstAttribute="trailing" secondItem="QpV-XX-qBt" secondAttribute="trailing" constant="10" id="ucH-yN-vfw"/>
-                <constraint firstItem="QpV-XX-qBt" firstAttribute="leading" secondItem="M5f-Lr-q0t" secondAttribute="trailing" constant="10" id="wRv-l2-qQb"/>
-                <constraint firstItem="M5f-Lr-q0t" firstAttribute="leading" secondItem="OGW-Vx-gg4" secondAttribute="leading" constant="10" id="xhz-di-42C"/>
+                <constraint firstItem="L8t-J6-eXZ" firstAttribute="top" secondItem="f0a-3Z-xGX" secondAttribute="bottom" constant="10" id="03R-5n-h5H"/>
+                <constraint firstItem="f0a-3Z-xGX" firstAttribute="top" secondItem="6IR-hY-JAv" secondAttribute="bottom" constant="10" id="68U-p7-ZAG"/>
+                <constraint firstItem="zDc-vd-MRS" firstAttribute="height" secondItem="6IR-hY-JAv" secondAttribute="height" id="9Xn-EE-TcM"/>
+                <constraint firstItem="f0a-3Z-xGX" firstAttribute="top" secondItem="tzM-Fa-rgC" secondAttribute="bottom" constant="10" id="Gux-rf-TBm"/>
+                <constraint firstItem="zDc-vd-MRS" firstAttribute="width" secondItem="tzM-Fa-rgC" secondAttribute="width" id="KB8-mp-GjK"/>
+                <constraint firstItem="tzM-Fa-rgC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="LN2-Vd-jLe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="L8t-J6-eXZ" secondAttribute="bottom" constant="10" id="OxB-mw-g9q"/>
+                <constraint firstItem="f0a-3Z-xGX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="Sdc-1O-Plr"/>
+                <constraint firstItem="L8t-J6-eXZ" firstAttribute="height" secondItem="f0a-3Z-xGX" secondAttribute="height" id="UQ0-BM-EcO"/>
+                <constraint firstItem="tzM-Fa-rgC" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="XKk-fs-MiS"/>
+                <constraint firstItem="L8t-J6-eXZ" firstAttribute="width" secondItem="f0a-3Z-xGX" secondAttribute="width" id="Znd-Hh-Lgo"/>
+                <constraint firstItem="6IR-hY-JAv" firstAttribute="leading" secondItem="tzM-Fa-rgC" secondAttribute="trailing" constant="10" id="bbU-uj-dJt"/>
+                <constraint firstItem="6IR-hY-JAv" firstAttribute="width" secondItem="tzM-Fa-rgC" secondAttribute="width" id="cJ6-Lf-q23"/>
+                <constraint firstItem="6IR-hY-JAv" firstAttribute="top" secondItem="zDc-vd-MRS" secondAttribute="bottom" constant="7.5" id="eT3-8g-Eda"/>
+                <constraint firstItem="zDc-vd-MRS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="kqx-0c-3EH"/>
+                <constraint firstItem="zDc-vd-MRS" firstAttribute="leading" secondItem="tzM-Fa-rgC" secondAttribute="trailing" constant="10" id="owZ-is-VwC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zDc-vd-MRS" secondAttribute="trailing" constant="10" id="pHm-KS-g1U"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6IR-hY-JAv" secondAttribute="trailing" constant="10" id="shT-aX-Inz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f0a-3Z-xGX" secondAttribute="trailing" constant="10" id="tpy-sg-OaM"/>
+                <constraint firstItem="L8t-J6-eXZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="10" id="zDj-dK-5Rd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="L8t-J6-eXZ" secondAttribute="trailing" constant="10" id="zZa-W2-cjf"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="OGW-Vx-gg4"/>
-            <point key="canvasLocation" x="-601.5" y="-26.5"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-145.5" y="-25.5"/>
         </view>
     </objects>
 </document>

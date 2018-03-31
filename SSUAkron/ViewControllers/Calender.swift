@@ -85,13 +85,16 @@ class TableViewController: UITableViewController {
         
         let cell: CardHighlightCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardHighlightCell
 
-        let cardVC = EventInformation()
-        let event = self.events[indexPath.row]
         
         cell.card?.shadowOpacity = 0
         
+        let cardVC = EventInformation()
+        let event = self.events[indexPath.row]
+        
+        
         
         DispatchQueue.main.async {
+            
             cell.card?.textColor = .white
             cell.card?.title = String( describing: event.title!)
             cell.card?.itemTitle = String( describing: event.itemTitle!)
@@ -103,7 +106,7 @@ class TableViewController: UITableViewController {
         }
         
 
-        
+
         cell.card?.shouldPresent(cardVC, from: self, fullscreen: true)
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.backgroundColor = UIColor(hex: "efeff4")

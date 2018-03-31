@@ -11,7 +11,15 @@ import MapKit
 
 class EventInformation: UIViewController {
 
-    @IBOutlet weak var containerView: UIView!
+    
+    
+    @IBOutlet weak var signupContainer: UIView!
+    @IBOutlet weak var dateContainer: UIView!
+    @IBOutlet weak var contContainer: UIView!
+    @IBOutlet weak var mapContainer: UIView!
+    @IBOutlet weak var descriptionContainer: UIView!
+    
+    @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var descriptionView: UITextView!
@@ -22,13 +30,24 @@ class EventInformation: UIViewController {
         sender.tap()
     }
     
-    @IBOutlet weak var rightContainerConstraint: NSLayoutConstraint!
-    @IBOutlet weak var leftContainerConstraint: NSLayoutConstraint!
+    
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        DispatchQueue.main.async {
+            super.viewDidLoad()
+        }
+        
+        self.view.setNeedsDisplay()
         
         signUpButton.layer.cornerRadius = 7
+        
+        signupContainer.layer.cornerRadius = 7
+        dateContainer.layer.cornerRadius = 7
+        mapContainer.layer.cornerRadius = 7
+        contContainer.layer.cornerRadius = 7
+        descriptionContainer.layer.cornerRadius = 7
+        mapView.layer.cornerRadius = 7
+        descriptionView.layer.cornerRadius = 7
         
         mapView.centerCoordinate = CLLocationCoordinate2DMake(39.659996, -86.197870)
         mapView.camera.altitude = 2000
