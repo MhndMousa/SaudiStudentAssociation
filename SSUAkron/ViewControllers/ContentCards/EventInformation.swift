@@ -30,27 +30,26 @@ class EventInformation: UIViewController {
         sender.tap()
     }
     
-    
+    func loadData()  {
+        signUpButton?.layer.cornerRadius = 7
+        
+        signupContainer?.layer.cornerRadius = 7
+        dateContainer?.layer.cornerRadius = 7
+        mapContainer?.layer.cornerRadius = 7
+        contContainer?.layer.cornerRadius = 7
+        descriptionContainer?.layer.cornerRadius = 7
+        mapView?.layer.cornerRadius = 7
+        descriptionView?.layer.cornerRadius = 7
+        
+        mapView?.centerCoordinate = CLLocationCoordinate2DMake(39.659996, -86.197870)
+        mapView?.camera.altitude = 2000
+    }
     
     override func viewDidLoad() {
-        DispatchQueue.main.async {
-            super.viewDidLoad()
-        }
+        super.viewDidLoad()
+        loadData()
+            
         
-        self.view.setNeedsDisplay()
-        
-        signUpButton.layer.cornerRadius = 7
-        
-        signupContainer.layer.cornerRadius = 7
-        dateContainer.layer.cornerRadius = 7
-        mapContainer.layer.cornerRadius = 7
-        contContainer.layer.cornerRadius = 7
-        descriptionContainer.layer.cornerRadius = 7
-        mapView.layer.cornerRadius = 7
-        descriptionView.layer.cornerRadius = 7
-        
-        mapView.centerCoordinate = CLLocationCoordinate2DMake(39.659996, -86.197870)
-        mapView.camera.altitude = 2000
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,10 +90,10 @@ extension UIButton{
     
     
     func tap()  {
-        UIButton.animate(withDuration: 0.3, animations: {
-            self.transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        UIButton.animate(withDuration: 0.1, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.97, y: 0.97)
         }) { _ in
-            UIButton.animate(withDuration: 0.3, animations: {
+            UIButton.animate(withDuration: 0.1, animations: {
                 self.transform = CGAffineTransform.identity
             })
         }

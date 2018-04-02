@@ -17,11 +17,12 @@ class TableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.register(UINib(nibName: "CardHighlightCell", bundle: nil), forCellReuseIdentifier: "cell")
-        requestData()
+    
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        requestData()
         tableView.refreshControl = refresher
         self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
     }
@@ -88,10 +89,11 @@ class TableViewController: UITableViewController {
         
         cell.card?.shadowOpacity = 0
         
-        let cardVC = EventInformation()
+//        let cardVC = EventInformation()
         let event = self.events[indexPath.row]
         
-        
+//        let cardVC = UIViewController(nibName: "EventCard", bundle: nil) as! EventInformation
+        let cardVC = storyboard?.instantiateViewController(withIdentifier: "EventCard") as! EventInformation
         
         DispatchQueue.main.async {
             
@@ -103,11 +105,16 @@ class TableViewController: UITableViewController {
             cell.card?.icon = event.image
             cardVC.dateLabel?.text = String(describing: indexPath.row)
             
+            cardVC.loadViewIfNeeded()
+            cardVC.viewDidLayoutSubviews()
+//            cardVC.layout
         }
         
 
 
         cell.card?.shouldPresent(cardVC, from: self, fullscreen: true)
+        
+        
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.backgroundColor = UIColor(hex: "efeff4")
         return cell

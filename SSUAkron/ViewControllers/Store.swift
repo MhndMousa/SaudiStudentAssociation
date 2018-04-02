@@ -14,6 +14,7 @@ class StoreTableViewController: UITableViewController {
     var fetchedInformation = [CardInformaion]()
     var imageArray = [UIImage]()
     
+    @IBOutlet weak var costLabel: UILabel!
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.register(UINib(nibName: "CardArticleCell", bundle: nil), forCellReuseIdentifier: "cell")
          requestData()
@@ -99,12 +100,12 @@ class StoreTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardArticleCell
         cell.backgroundColor = UIColor(hex: "efeff4")
         
-        if cell == CardArticleCell(){
-            
-        }else{
+        let cardContentVC = self.storyboard!.instantiateViewController(withIdentifier: "StoreCard")
+   
+        DispatchQueue.main.async {
             
             cell.card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
-            cell.card.backgroundImage = imageArray[0]
+            cell.card.backgroundImage = self.imageArray[0]
             
             cell.card.title = "كامري"
             cell.card.subtitle = "وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف"
@@ -113,12 +114,12 @@ class StoreTableViewController: UITableViewController {
             cell.card.textColor = UIColor.white
             
             
-            let cardContentVC = storyboard!.instantiateViewController(withIdentifier: "StoreCard")
+            self.costLabel?.text = String(describing: indexPath.row)
             cell.card.shouldPresent(cardContentVC, from: self, fullscreen: false)
-            cell.selectionStyle = UITableViewCellSelectionStyle.none
             
-            //        cell.addSubview(card)
         }
+        
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
 
         
         cell.card.shadowOpacity = 0

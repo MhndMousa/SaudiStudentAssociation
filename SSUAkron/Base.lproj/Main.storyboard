@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -21,7 +22,7 @@
         <!--StoreCard-->
         <scene sceneID="IoO-0g-Dli">
             <objects>
-                <viewController storyboardIdentifier="StoreCard" title="StoreCard" id="8o3-Us-K0H" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StoreCard" title="StoreCard" id="8o3-Us-K0H" customClass="StoreTableViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="84L-MC-o3I">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -68,15 +69,209 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gSb-1s-9yR"/>
                     </view>
+                    <connections>
+                        <outlet property="costLabel" destination="YdY-Mu-dND" id="8Ny-Bq-a6j"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeM-eP-S3G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2178.4000000000001" y="350.37481259370315"/>
         </scene>
+        <!--Event Information-->
+        <scene sceneID="Vxu-hk-oKL">
+            <objects>
+                <viewController storyboardIdentifier="EventCard" id="7Oy-4m-wXw" customClass="EventInformation" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8xZ-5Q-c8u">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" restorationIdentifier="EventCard" translatesAutoresizingMaskIntoConstraints="NO" id="3m3-ob-adQ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rwb-gr-8kR" userLabel="تسجيل">
+                                        <rect key="frame" x="20" y="30" width="162.5" height="150"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHB-bJ-lzK">
+                                                <rect key="frame" x="10" y="95" width="142.5" height="45"/>
+                                                <color key="backgroundColor" red="0.086791582409999998" green="0.48432129619999997" blue="0.66587328909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+                                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="تسجيل">
+                                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="حالة التسجيل" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Nb-xP-sxs">
+                                                <rect key="frame" x="10" y="10" width="142.5" height="45"/>
+                                                <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jIW-Bq-GeE" userLabel="no">
+                                                <rect key="frame" x="10" y="55" width="67.5" height="30"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rLi-PC-UCY" userLabel="yes">
+                                                <rect key="frame" x="85.5" y="55" width="67" height="30"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="84w-Vg-w9s"/>
+                                            <constraint firstItem="oHB-bJ-lzK" firstAttribute="leading" secondItem="rwb-gr-8kR" secondAttribute="leading" constant="10" id="B2a-LY-ten"/>
+                                            <constraint firstItem="7Nb-xP-sxs" firstAttribute="top" secondItem="rwb-gr-8kR" secondAttribute="top" constant="10" id="CI1-GC-UIR"/>
+                                            <constraint firstItem="oHB-bJ-lzK" firstAttribute="top" secondItem="rLi-PC-UCY" secondAttribute="bottom" constant="10" id="CjA-G6-xXt"/>
+                                            <constraint firstAttribute="trailing" secondItem="rLi-PC-UCY" secondAttribute="trailing" constant="10" id="DQ2-fl-YKh"/>
+                                            <constraint firstItem="rLi-PC-UCY" firstAttribute="height" secondItem="jIW-Bq-GeE" secondAttribute="height" id="IZI-fI-lii"/>
+                                            <constraint firstItem="jIW-Bq-GeE" firstAttribute="leading" secondItem="rwb-gr-8kR" secondAttribute="leading" constant="10" id="JAf-JP-liL"/>
+                                            <constraint firstItem="7Nb-xP-sxs" firstAttribute="leading" secondItem="rwb-gr-8kR" secondAttribute="leading" constant="10" id="MlC-yu-Bll"/>
+                                            <constraint firstItem="rLi-PC-UCY" firstAttribute="top" secondItem="7Nb-xP-sxs" secondAttribute="bottom" id="Qdd-CD-Shz"/>
+                                            <constraint firstItem="jIW-Bq-GeE" firstAttribute="top" secondItem="7Nb-xP-sxs" secondAttribute="bottom" id="Rgt-po-mLx"/>
+                                            <constraint firstItem="rLi-PC-UCY" firstAttribute="leading" secondItem="jIW-Bq-GeE" secondAttribute="trailing" constant="8" symbolic="YES" id="TXA-am-t9E"/>
+                                            <constraint firstAttribute="bottom" secondItem="oHB-bJ-lzK" secondAttribute="bottom" constant="10" id="U9Y-5i-Aj9"/>
+                                            <constraint firstItem="oHB-bJ-lzK" firstAttribute="height" secondItem="7Nb-xP-sxs" secondAttribute="height" id="VZd-SF-XMJ"/>
+                                            <constraint firstItem="rLi-PC-UCY" firstAttribute="width" secondItem="jIW-Bq-GeE" secondAttribute="width" id="XVP-1c-ZJB"/>
+                                            <constraint firstAttribute="trailing" secondItem="7Nb-xP-sxs" secondAttribute="trailing" constant="10" id="hnL-0B-agD"/>
+                                            <constraint firstAttribute="trailing" secondItem="oHB-bJ-lzK" secondAttribute="trailing" constant="10" id="xfd-Ns-hok"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sFg-fj-FFa" userLabel="التاريخ">
+                                        <rect key="frame" x="192.5" y="108.5" width="162.5" height="71.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vAG-vV-2B4" userLabel="التاريخ">
+                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="71.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="التاريخ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n9S-kp-8tU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="39"/>
+                                                        <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="الوقت" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfv-sW-kPF">
+                                                        <rect key="frame" x="0.0" y="39" width="162.5" height="32.5"/>
+                                                        <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="vAG-vV-2B4" secondAttribute="trailing" id="NQS-5B-LdG"/>
+                                            <constraint firstItem="vAG-vV-2B4" firstAttribute="leading" secondItem="sFg-fj-FFa" secondAttribute="leading" id="k13-yI-HHU"/>
+                                            <constraint firstAttribute="bottom" secondItem="vAG-vV-2B4" secondAttribute="bottom" id="mZZ-bU-4mO"/>
+                                            <constraint firstItem="vAG-vV-2B4" firstAttribute="top" secondItem="sFg-fj-FFa" secondAttribute="top" id="tsW-h8-TQE"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uHN-KH-3Sr" userLabel="السعر">
+                                        <rect key="frame" x="192.5" y="30" width="162.5" height="71.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Eqk-Ln-S6j" userLabel="السعر">
+                                                <rect key="frame" x="0.0" y="0.0" width="162.5" height="71.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="السعر" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7KJ-0f-dEg">
+                                                        <rect key="frame" x="0.0" y="0.0" width="162.5" height="39"/>
+                                                        <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIa-Oc-d6Y">
+                                                        <rect key="frame" x="0.0" y="39" width="162.5" height="32.5"/>
+                                                        <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Eqk-Ln-S6j" secondAttribute="trailing" id="QxB-2B-KlZ"/>
+                                            <constraint firstItem="Eqk-Ln-S6j" firstAttribute="top" secondItem="uHN-KH-3Sr" secondAttribute="top" id="bdX-Vm-a24"/>
+                                            <constraint firstAttribute="bottom" secondItem="Eqk-Ln-S6j" secondAttribute="bottom" id="eOS-sv-h3j"/>
+                                            <constraint firstItem="Eqk-Ln-S6j" firstAttribute="leading" secondItem="uHN-KH-3Sr" secondAttribute="leading" id="vA3-WP-7ZW"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Rh-h2-SZL" userLabel="وصف">
+                                        <rect key="frame" x="20" y="428.5" width="335" height="228.5"/>
+                                        <subviews>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="gTe-bD-RKz">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="228.5"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <mutableString key="text">وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف </mutableString>
+                                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="gTe-bD-RKz" firstAttribute="leading" secondItem="2Rh-h2-SZL" secondAttribute="leading" id="0w8-Xs-0xK"/>
+                                            <constraint firstAttribute="trailing" secondItem="gTe-bD-RKz" secondAttribute="trailing" id="9qm-Qk-8PT"/>
+                                            <constraint firstItem="gTe-bD-RKz" firstAttribute="top" secondItem="2Rh-h2-SZL" secondAttribute="top" id="WoC-a0-B9k"/>
+                                            <constraint firstAttribute="bottom" secondItem="gTe-bD-RKz" secondAttribute="bottom" id="jJi-dN-H8A"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NOn-3D-NJ6" userLabel="ماب">
+                                        <rect key="frame" x="20" y="190" width="335" height="228.5"/>
+                                        <subviews>
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="IQF-Gc-4C4">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="228.5"/>
+                                            </mapView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="IQF-Gc-4C4" firstAttribute="top" secondItem="NOn-3D-NJ6" secondAttribute="top" id="Tfy-LA-aa1"/>
+                                            <constraint firstAttribute="trailing" secondItem="IQF-Gc-4C4" secondAttribute="trailing" id="g2h-Mh-Kad"/>
+                                            <constraint firstAttribute="bottom" secondItem="IQF-Gc-4C4" secondAttribute="bottom" id="gOR-AT-xTB"/>
+                                            <constraint firstItem="IQF-Gc-4C4" firstAttribute="leading" secondItem="NOn-3D-NJ6" secondAttribute="leading" id="xsJ-y8-wso"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="NOn-3D-NJ6" firstAttribute="top" secondItem="sFg-fj-FFa" secondAttribute="bottom" constant="10" id="1Ku-CU-w0I"/>
+                                    <constraint firstItem="NOn-3D-NJ6" firstAttribute="leading" secondItem="7gf-6u-6rP" secondAttribute="leading" constant="20" id="1qW-KJ-beS"/>
+                                    <constraint firstItem="sFg-fj-FFa" firstAttribute="leading" secondItem="rwb-gr-8kR" secondAttribute="trailing" constant="10" id="AKf-em-ahV"/>
+                                    <constraint firstItem="rwb-gr-8kR" firstAttribute="leading" secondItem="7gf-6u-6rP" secondAttribute="leading" constant="20" id="CP5-wo-aqQ"/>
+                                    <constraint firstItem="7gf-6u-6rP" firstAttribute="trailing" secondItem="NOn-3D-NJ6" secondAttribute="trailing" constant="20" id="D8J-bO-Fte"/>
+                                    <constraint firstItem="sFg-fj-FFa" firstAttribute="top" secondItem="uHN-KH-3Sr" secondAttribute="bottom" constant="7.5" id="KQG-z4-LWC"/>
+                                    <constraint firstItem="NOn-3D-NJ6" firstAttribute="top" secondItem="rwb-gr-8kR" secondAttribute="bottom" constant="10" id="Lli-nB-EFD"/>
+                                    <constraint firstItem="uHN-KH-3Sr" firstAttribute="width" secondItem="rwb-gr-8kR" secondAttribute="width" id="O4i-4Z-DLa"/>
+                                    <constraint firstItem="uHN-KH-3Sr" firstAttribute="top" secondItem="7gf-6u-6rP" secondAttribute="top" constant="10" id="Q89-SK-hIG"/>
+                                    <constraint firstItem="7gf-6u-6rP" firstAttribute="trailing" secondItem="2Rh-h2-SZL" secondAttribute="trailing" constant="20" id="SJK-b0-gZh"/>
+                                    <constraint firstItem="2Rh-h2-SZL" firstAttribute="top" secondItem="NOn-3D-NJ6" secondAttribute="bottom" constant="10" id="Sns-W3-ib1"/>
+                                    <constraint firstItem="2Rh-h2-SZL" firstAttribute="height" secondItem="NOn-3D-NJ6" secondAttribute="height" id="WDD-Ln-sTG"/>
+                                    <constraint firstItem="2Rh-h2-SZL" firstAttribute="leading" secondItem="7gf-6u-6rP" secondAttribute="leading" constant="20" id="YZS-Of-jiX"/>
+                                    <constraint firstItem="7gf-6u-6rP" firstAttribute="bottom" secondItem="2Rh-h2-SZL" secondAttribute="bottom" constant="10" id="eFc-6o-71O"/>
+                                    <constraint firstItem="7gf-6u-6rP" firstAttribute="trailing" secondItem="sFg-fj-FFa" secondAttribute="trailing" constant="20" id="iET-77-TV8"/>
+                                    <constraint firstItem="uHN-KH-3Sr" firstAttribute="height" secondItem="sFg-fj-FFa" secondAttribute="height" id="o8G-4q-9vB"/>
+                                    <constraint firstItem="uHN-KH-3Sr" firstAttribute="leading" secondItem="rwb-gr-8kR" secondAttribute="trailing" constant="10" id="qME-dg-zk7"/>
+                                    <constraint firstItem="rwb-gr-8kR" firstAttribute="top" secondItem="7gf-6u-6rP" secondAttribute="top" constant="10" id="qfG-NN-RKi"/>
+                                    <constraint firstItem="7gf-6u-6rP" firstAttribute="trailing" secondItem="uHN-KH-3Sr" secondAttribute="trailing" constant="20" id="qiO-YF-ttc"/>
+                                    <constraint firstItem="sFg-fj-FFa" firstAttribute="width" secondItem="rwb-gr-8kR" secondAttribute="width" id="qvH-TG-RiO"/>
+                                    <constraint firstItem="2Rh-h2-SZL" firstAttribute="width" secondItem="NOn-3D-NJ6" secondAttribute="width" id="spl-mu-FV0"/>
+                                </constraints>
+                                <viewLayoutGuide key="safeArea" id="7gf-6u-6rP"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="3m3-ob-adQ" firstAttribute="leading" secondItem="Yhl-La-1ID" secondAttribute="leading" id="AJ4-01-nHs"/>
+                            <constraint firstAttribute="trailing" secondItem="3m3-ob-adQ" secondAttribute="trailing" id="FKI-yJ-LnJ"/>
+                            <constraint firstItem="3m3-ob-adQ" firstAttribute="top" secondItem="8xZ-5Q-c8u" secondAttribute="top" id="Uia-AO-UTM"/>
+                            <constraint firstItem="Yhl-La-1ID" firstAttribute="bottom" secondItem="3m3-ob-adQ" secondAttribute="bottom" id="bMK-a5-DVc"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Yhl-La-1ID"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X3L-cB-IxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1239" y="-352"/>
+        </scene>
         <!--EventCard-->
         <scene sceneID="tYv-UH-x70">
             <objects>
-                <viewController storyboardIdentifier="EventCard" title="EventCard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P3c-Yu-pAD" customClass="EventInformation" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="EventCard" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P3c-Yu-pAD" customClass="EventInformation" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0YU-H2-Xt0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
