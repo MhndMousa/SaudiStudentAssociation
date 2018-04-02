@@ -100,21 +100,23 @@ class StoreTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardArticleCell
         cell.backgroundColor = UIColor(hex: "efeff4")
         
-        let cardContentVC = self.storyboard!.instantiateViewController(withIdentifier: "StoreCard")
+        let cardContentVC = self.storyboard!.instantiateViewController(withIdentifier: "StoreCard") as! StoreInformation
+        
    
+        
         DispatchQueue.main.async {
             
-            cell.card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
-            cell.card.backgroundImage = self.imageArray[0]
+            cell.card?.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
+            cell.card?.backgroundImage = self.imageArray[0]
             
-            cell.card.title = "كامري"
-            cell.card.subtitle = "وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف"
-            cell.card.category = "سيارة"
+            cell.card?.title = "كامري"
+            cell.card?.subtitle = "وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف"
+            cell.card?.category = "سيارة"
             
-            cell.card.textColor = UIColor.white
+            cell.card?.textColor = UIColor.white
             
             
-            self.costLabel?.text = String(describing: indexPath.row)
+            cardContentVC.costLabel?.text = String(describing: indexPath.row)
             cell.card.shouldPresent(cardContentVC, from: self, fullscreen: false)
             
         }
