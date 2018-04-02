@@ -11,7 +11,7 @@ import MapKit
 
 class EventInformation: UIViewController {
 
-    
+    var radius : CGFloat = 12
     
     @IBOutlet weak var signupContainer: UIView!
     @IBOutlet weak var dateContainer: UIView!
@@ -31,15 +31,16 @@ class EventInformation: UIViewController {
     }
     
     func loadData()  {
-        signUpButton?.layer.cornerRadius = 7
         
-        signupContainer?.layer.cornerRadius = 7
-        dateContainer?.layer.cornerRadius = 7
-        mapContainer?.layer.cornerRadius = 7
-        contContainer?.layer.cornerRadius = 7
-        descriptionContainer?.layer.cornerRadius = 7
-        mapView?.layer.cornerRadius = 7
-        descriptionView?.layer.cornerRadius = 7
+        signUpButton.layer.cornerRadius = radius
+        
+        signupContainer.layer.cornerRadius = radius
+        dateContainer.layer.cornerRadius = radius
+        mapContainer.layer.cornerRadius = radius
+        contContainer.layer.cornerRadius = radius
+        descriptionContainer.layer.cornerRadius = radius
+        mapView.layer.cornerRadius = radius
+        descriptionView.layer.cornerRadius = radius
         
         mapView?.centerCoordinate = CLLocationCoordinate2DMake(39.659996, -86.197870)
         mapView?.camera.altitude = 2000
