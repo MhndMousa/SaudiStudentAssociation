@@ -18,7 +18,7 @@ class StoreTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.register(UINib(nibName: "CardArticleCell", bundle: nil), forCellReuseIdentifier: "cell")
          requestData()
-        print("viewWillApear Loaded")
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -69,9 +69,9 @@ class StoreTableViewController: UITableViewController {
                 let card = CardInformaion()
                 
                 //TODO: Add the rest of the data that populates the card
-                card.title = dic["title"] as? Int
-                card.itemTitle = dic["itemTitle"] as? Int
-                card.itemSubtitle = dic["itemSubtitle"] as? Int
+                card.title = dic["title"] as? String
+                card.itemTitle = dic["itemTitle"] as? String
+                card.itemSubtitle = dic["itemSubtitle"] as? String
                 self.fetchedInformation.insert(card, at: 0)
                 
                 //                print(dic)
@@ -100,8 +100,8 @@ class StoreTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardArticleCell
         cell.backgroundColor = UIColor(hex: "efeff4")
         
-        let cardContentVC = self.storyboard!.instantiateViewController(withIdentifier: "StoreCard") as! StoreInformation
-        
+//        let cardContentVC = self.storyboard!.instantiateViewController(withIdentifier: "StoreCard")
+        let cardContentVC = StoreInformation()
    
         
         DispatchQueue.main.async {
@@ -117,7 +117,7 @@ class StoreTableViewController: UITableViewController {
             
             
             cardContentVC.costLabel?.text = String(describing: indexPath.row)
-            cell.card.shouldPresent(cardContentVC, from: self, fullscreen: false)
+            cell.card.shouldPresent(cardContentVC, from: self, fullscreen: true)
             
         }
         

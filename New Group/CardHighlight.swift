@@ -177,7 +177,7 @@ import UIKit
                               height: gimme.Y(25))
         
         titleLbl.frame.origin = CGPoint(x: insets, y: gimme.Y(5, from: iconIV))
-        print(insets)
+//        print(insets)
         titleLbl.frame.size.width = (originalFrame.width * 0.65) + ((backgroundIV.bounds.width - originalFrame.width)/3)
         titleLbl.frame.size.height = gimme.Y(35)
         

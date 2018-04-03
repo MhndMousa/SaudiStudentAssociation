@@ -129,7 +129,7 @@ internal class DetailViewController: UIViewController {
            
             scrollView.frame = view.bounds
             scrollView.frame.origin.y = 0
-            print(scrollView.frame)
+//            print(scrollView.frame)
             
         } else {
             scrollView.frame.size = CGSize(width: LayoutHelper.XScreen(85), height: LayoutHelper.YScreen(100) - 20)

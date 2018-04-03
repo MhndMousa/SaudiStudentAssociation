@@ -33,6 +33,7 @@
 		597950A4205B1B8300807FD1 /* CardPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979509B205B1B8200807FD1 /* CardPlayer.swift */; };
 		597950A5205B1B8300807FD1 /* CardArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979509C205B1B8300807FD1 /* CardArticle.swift */; };
 		597950A7205B1B9400807FD1 /* Player_by_Patric_Piemonte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597950A6205B1B9300807FD1 /* Player_by_Patric_Piemonte.swift */; };
+		5987BF6C2073DE4F00D36360 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5987BF6B2073DE4F00D36360 /* MapPin.swift */; };
 		59B261FE2068C92A00F1E9E7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B261FD2068C92A00F1E9E7 /* Post.swift */; };
 		59B26202206A08C400F1E9E7 /* Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B26201206A08C400F1E9E7 /* Calender.swift */; };
 		59B26206206A091100F1E9E7 /* EventInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B26204206A091100F1E9E7 /* EventInformation.swift */; };
@@ -75,6 +76,7 @@
 		5979509B205B1B8200807FD1 /* CardPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlayer.swift; sourceTree = "<group>"; };
 		5979509C205B1B8300807FD1 /* CardArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardArticle.swift; sourceTree = "<group>"; };
 		597950A6205B1B9300807FD1 /* Player_by_Patric_Piemonte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player_by_Patric_Piemonte.swift; sourceTree = "<group>"; };
+		5987BF6B2073DE4F00D36360 /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		59B261FD2068C92A00F1E9E7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		59B26201206A08C400F1E9E7 /* Calender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calender.swift; sourceTree = "<group>"; };
 		59B26204206A091100F1E9E7 /* EventInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInformation.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				59DDB6BD2060E104001DF580 /* Global.swift */,
 				59E24C31206372A800B04928 /* GoogleService-Info.plist */,
 				59E425D220663DF30097E08A /* CardInformation.swift */,
+				5987BF6B2073DE4F00D36360 /* MapPin.swift */,
 			);
 			path = SSUAkron;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				5962599020660A7200DD7CAA /* CardArticleCell.swift in Sources */,
 				597950A7205B1B9400807FD1 /* Player_by_Patric_Piemonte.swift in Sources */,
 				5979509D205B1B8300807FD1 /* Animator.swift in Sources */,
+				5987BF6C2073DE4F00D36360 /* MapPin.swift in Sources */,
 				5979509E205B1B8300807FD1 /* CardGroupSliding.swift in Sources */,
 				5979509F205B1B8300807FD1 /* DetailViewController.swift in Sources */,
 				597950A0205B1B8300807FD1 /* LayoutHelper.swift in Sources */,

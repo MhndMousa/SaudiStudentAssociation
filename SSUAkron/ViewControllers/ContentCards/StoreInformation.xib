@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +19,7 @@
             <connections>
                 <outlet property="DescriptionContainer" destination="Y9f-Vi-Gq6" id="Tas-UK-39k"/>
                 <outlet property="costLabel" destination="8kE-7I-uoj" id="Tfr-fw-IMa"/>
-                <outlet property="costView" destination="X3w-pa-af4" id="IIa-hy-ww8"/>
+                <outlet property="costView" destination="C9S-Rc-MYD" id="jmY-Sn-mrO"/>
                 <outlet property="descriptionView" destination="WcJ-y2-2wA" id="iQF-6q-YLK"/>
                 <outlet property="messageButton" destination="12f-8G-QjR" id="olk-CX-Br1"/>
                 <outlet property="messageView" destination="19e-5t-aUH" id="qR4-Ko-MJ1"/>

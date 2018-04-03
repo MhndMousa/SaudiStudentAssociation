@@ -54,10 +54,10 @@ class StoreViewController: UITableViewController {
             
             let value = snapshot.value as! NSDictionary
             let one = value["time"] as? String ?? ""
-            print(one)
+//            print(one)
             self.refresher.endRefreshing()
         })  { (error) in
-            print(error.localizedDescription)
+//            print(error.localizedDescription)
             self.refresher.endRefreshing()
         }
     }

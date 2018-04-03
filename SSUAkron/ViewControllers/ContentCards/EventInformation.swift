@@ -9,9 +9,11 @@
 import UIKit
 import MapKit
 
+
 class EventInformation: UIViewController {
 
     var radius : CGFloat = 12
+    @IBOutlet var bigAssView: UIView!
     
     @IBOutlet weak var signupContainer: UIView!
     @IBOutlet weak var dateContainer: UIView!
@@ -30,6 +32,25 @@ class EventInformation: UIViewController {
         sender.tap()
     }
     
+    func openMapForPlace(c : CLLocationCoordinate2D) {
+        
+        let latitude: CLLocationDegrees = c.latitude
+        let longitude: CLLocationDegrees = c.longitude
+        
+        let regionDistance:CLLocationDistance = 10000
+        let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        let options = [
+            MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center),
+            MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)
+        ]
+        let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = "Place Name"
+        mapItem.openInMaps(launchOptions: options)
+    }
+    
+    
     func loadData()  {
         
         signUpButton.layer.cornerRadius = radius
@@ -42,14 +63,31 @@ class EventInformation: UIViewController {
         mapView.layer.cornerRadius = radius
         descriptionView.layer.cornerRadius = radius
         
-        mapView?.centerCoordinate = CLLocationCoordinate2DMake(39.659996, -86.197870)
+        let center = CLLocationCoordinate2DMake(39.659996, -86.197870)
+        mapView?.centerCoordinate = center
+        
+        
+        
+        mapView.addAnnotation(MapPin(coordinate: center, title: "Home", subtitle: "My homie"))
+        
         mapView?.camera.altitude = 2000
+        
+        bigAssView.setNeedsLayout()
+        bigAssView.setNeedsDisplay()
+//        print("bigass")
+        
     }
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        print("loaded")
+        loadData()
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
-            
         
     }
 

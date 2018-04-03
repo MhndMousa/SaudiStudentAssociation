@@ -12,7 +12,7 @@ import Firebase
 class TableViewController: UITableViewController {
 
     var events = [CardInformaion]()
-    var colors = ["pink" :UIColor.init(red: 1, green: 0.7, blue: 0.7, alpha: 1), "blue" : UIColor.blue, "orange" : UIColor.orange, "white" : UIColor.white]
+    var colors = ["pink" :UIColor.init(red: 1, green: 0.7, blue: 0.7, alpha: 1), "blue" : UIColor.blue, "orange" : UIColor.orange, "white" : UIColor.white, "black" : UIColor.black]
     var eventType = ["تجمع نسائي", "تجمع رجال " , "تجمع للاطفال"]
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,10 +45,13 @@ class TableViewController: UITableViewController {
             let storageRef =  Storage.storage().reference()
             
             //TODO: Add the rest of the data that populates the card
-            card.title = dic["title"] as? Int ?? 0
-            card.itemTitle = dic["itemTitle"] as? Int ?? 0
-            card.itemSubtitle = dic["itemSubtitle"] as? Int ?? 0
+            card.title = dic["title"] as? String ?? ""
+            card.itemTitle = dic["itemTitle"] as? String ?? ""
+            card.itemSubtitle = dic["itemSubtitle"] as? String ?? ""
             let backgroundColor = dic["backgroundColor"] as? String ?? "pink"
+            let textColor = dic["textColor"] as? String ?? "white"
+            
+            card.textColor = self.colors[textColor]
             card.backgroundColor = self.colors[backgroundColor]
             
             let photoRef = storageRef.child("test/a3716125247_16.jpg")
@@ -89,11 +92,11 @@ class TableViewController: UITableViewController {
         
         cell.card?.shadowOpacity = 0
         
-//        let cardVC = EventInformation()
+        let cardVC = EventInformation()
         let event = self.events[indexPath.row]
         
 //        let cardVC = UIViewController(nibName: "EventCard", bundle: nil) as! EventInformation
-        let cardVC = storyboard?.instantiateViewController(withIdentifier: "EventCard") as! EventInformation
+//        let cardVC = storyboard?.instantiateViewController(withIdentifier: "EventCard") as! EventInformation
         
         DispatchQueue.main.async {
             
@@ -103,11 +106,11 @@ class TableViewController: UITableViewController {
             cell.card?.itemSubtitle = String( describing: event.itemSubtitle!)
             cell.card?.backgroundColor = event.backgroundColor!
             cell.card?.icon = event.image
+            cell.card?.textColor = event.textColor!
             cardVC.dateLabel?.text = String(describing: indexPath.row)
             
             cardVC.loadViewIfNeeded()
             cardVC.viewDidLayoutSubviews()
-//            cardVC.layout
         }
         
 

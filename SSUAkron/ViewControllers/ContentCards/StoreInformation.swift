@@ -10,7 +10,7 @@ import UIKit
 
 class StoreInformation: UIViewController {
 
-    @IBOutlet weak var costView: UILabel!
+    @IBOutlet weak var costView: UIView!
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var typeView: UIView!
     @IBOutlet weak var photosView: UIView!

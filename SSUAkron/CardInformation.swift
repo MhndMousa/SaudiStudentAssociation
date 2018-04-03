@@ -9,9 +9,10 @@
 import UIKit
 
 class CardInformaion: NSObject {
-    var title: Int?
-    var itemTitle: Int?
-    var itemSubtitle: Int?
+    var title: String?
+    var itemTitle: String?
+    var itemSubtitle: String?
     var image: UIImage?
     var backgroundColor: UIColor?
+    var textColor: UIColor?
 }
