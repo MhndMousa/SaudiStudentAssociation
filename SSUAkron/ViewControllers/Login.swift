@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
         let button = TransitionButton(frame: CGRect(x: self.view.frame.width / 2 - 50 , y: self.view.frame.height - 100, width: 100, height: 40))
         self.view.addSubview(button)
         
-        button.backgroundColor = UIColor(hex: "167CAA")
+        button.backgroundColor = UIColor(hex: "1B7EA8")
         button.setTitle("تسجيل دخول", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.cornerRadius = 20
