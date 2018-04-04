@@ -380,7 +380,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lb4-eF-hdT">
                                 <rect key="frame" x="30" y="133.5" width="315" height="400"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYY-oM-ufy">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="البريد الالكتروني " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYY-oM-ufy">
                                         <rect key="frame" x="10" y="272" width="295" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -388,7 +388,7 @@
                                             <constraint firstAttribute="height" constant="40" id="jwC-YC-Abf"/>
                                         </constraints>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ssa" translatesAutoresizingMaskIntoConstraints="NO" id="GAL-X4-vVq">
@@ -398,11 +398,11 @@
                                             <constraint firstAttribute="width" constant="200" id="cgn-pl-4LT"/>
                                         </constraints>
                                     </imageView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aQJ-oP-YSN">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="كلمة المرور" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aQJ-oP-YSN">
                                         <rect key="frame" x="10" y="330" width="295" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
