@@ -2,7 +2,6 @@
 # platform :ios, '9.0'
 
 target 'SSUAkron' do
-  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
@@ -10,6 +9,8 @@ target 'SSUAkron' do
   pod 'Firebase/Database'
   pod 'MKRingProgressView'
   pod 'TransitionButton'
-  # Pods for SSUAkron
+  pod 'Eureka'
+  pod 'ImageRow', '~> 3.0'
+  pod 'GooglePlacesRow'
 
 end
