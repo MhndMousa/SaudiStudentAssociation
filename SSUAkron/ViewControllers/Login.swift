@@ -11,18 +11,26 @@ import TransitionButton
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var usernameTextField: UITextField!
+    @IBOutlet weak var passwordTextFeild: UITextField!
     
+    @IBOutlet weak var rectangleView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let button = TransitionButton(frame: CGRect(x: self.view.frame.width / 2 - 50, y: self.view.frame.height - 200, width: 100, height: 40))
+        
+        rectangleView.layer.cornerRadius = 20
+        usernameTextField.layer.cornerRadius = 5
+        passwordTextFeild.layer.cornerRadius = 5
+        
+        let button = TransitionButton(frame: CGRect(x: self.view.frame.width / 2 - 50 , y: self.view.frame.height - 100, width: 100, height: 40))
         self.view.addSubview(button)
         
-        button.backgroundColor = .white
+        button.backgroundColor = UIColor(hex: "167CAA")
         button.setTitle("تسجيل دخول", for: .normal)
-        button.setTitleColor(.blue, for: .normal)
+        button.setTitleColor(.white, for: .normal)
         button.cornerRadius = 20
-        button.spinnerColor = .blue
+        button.spinnerColor = .white
         button.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
         
             
