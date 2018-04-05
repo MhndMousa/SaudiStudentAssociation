@@ -513,7 +513,16 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fa8-y3-5sn"/>
                     </view>
-                    <navigationItem key="navigationItem" title="اضافة سلعة" largeTitleDisplayMode="never" id="Tyl-Du-CEg"/>
+                    <navigationItem key="navigationItem" title="اضافة سلعة" largeTitleDisplayMode="never" id="Tyl-Du-CEg">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="ic_check" id="BTb-kB-nz4">
+                            <connections>
+                                <action selector="submitTapped:" destination="hxm-a3-pIQ" id="Fju-Qz-DKs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="submitButton" destination="BTb-kB-nz4" id="dyF-my-Bcf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHr-U9-Aj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -546,7 +555,7 @@
                     <navigationItem key="navigationItem" title="الفعاليات" id="Fp0-N1-E7u">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ErR-Uh-eG7">
                             <connections>
-                                <segue destination="fMH-S8-cgD" kind="show" id="oY6-jP-r3O"/>
+                                <segue destination="fMH-S8-cgD" kind="show" id="hEz-xC-PhV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -555,7 +564,7 @@
             </objects>
             <point key="canvasLocation" x="2944.8000000000002" y="1507.1964017991006"/>
         </scene>
-        <!--Event Post Form View Controller-->
+        <!--اضافة فعالية-->
         <scene sceneID="yUE-6x-vIj">
             <objects>
                 <viewController id="fMH-S8-cgD" customClass="EventPostFormViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
@@ -565,7 +574,17 @@
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="d5n-Kw-LUI"/>
                     </view>
-                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="NtU-BW-6Qq"/>
+                    <navigationItem key="navigationItem" title="اضافة فعالية" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="NtU-BW-6Qq">
+                        <barButtonItem key="backBarButtonItem" title="رجوع" id="dei-3S-RpY"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="ic_check" id="BtN-yy-htt">
+                            <connections>
+                                <action selector="submitTapped:" destination="fMH-S8-cgD" id="Agz-p0-sEl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="submitButton" destination="BtN-yy-htt" id="gye-RO-VyX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSs-CV-VmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -812,6 +831,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_check" width="24" height="24"/>
         <image name="ic_date_range" width="24" height="24"/>
         <image name="ic_home" width="24" height="24"/>
         <image name="ic_info" width="24" height="24"/>

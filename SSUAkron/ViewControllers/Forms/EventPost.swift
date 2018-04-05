@@ -15,6 +15,12 @@ import MapKit
 class EventPostFormViewController: FormViewController, CLLocationManagerDelegate {
     
     
+    @IBOutlet weak var submitButton: UIBarButtonItem!
+    @IBAction func submitTapped(_ sender: Any) {
+        print("tapped")
+
+    }
+    
     var randomArray = ["فعالية رياضية" , "فعالية نسائية", "فعالية اجتماعية", "فعاليات اخرى"]
     override func viewDidLoad() {
         super.viewDidLoad()

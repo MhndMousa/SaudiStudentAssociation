@@ -13,20 +13,17 @@ import ImageRow
 import MapKit
 class StorePostFormViewController: FormViewController, CLLocationManagerDelegate {
     
+    @IBOutlet weak var submitButton: UIBarButtonItem!
+    @IBAction func submitTapped(_ sender: Any) {
+        print("tapped")
+  }
     
     var randomArray = ["مركبة" , "اثاث منزل", "الكترونيات", "ملتزمات دراسية", "اخرى"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let locationManager = CLLocationManager()
         
-        locationManager.delegate = self;
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
-
-        let coordinates = locationManager.location?.coordinate
-
+        
         form +++ Section()
             <<< TextRow(){ row in
                 row.title = "العنوان"
