@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		51D8E251D50306494D205B06 /* Pods_SSUAkron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E64B43DE83D8B272E5D1859 /* Pods_SSUAkron.framework */; };
+		592453B92075E05000D0A1A9 /* CustomCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592453B82075E05000D0A1A9 /* CustomCells.swift */; };
+		592453BD2075E7A000D0A1A9 /* EventPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592453BC2075E7A000D0A1A9 /* EventPost.swift */; };
 		595AA08C205C7ECA009D3D09 /* NotoKufiArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 595AA087205C5A86009D3D09 /* NotoKufiArabic-Bold.ttf */; };
 		595AA08D205C7ECA009D3D09 /* NotoKufiArabic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 595AA086205C5A86009D3D09 /* NotoKufiArabic-Regular.ttf */; };
 		595AA091205CA4AE009D3D09 /* Coutner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595AA090205CA4AE009D3D09 /* Coutner.swift */; };
@@ -34,7 +36,7 @@
 		597950A5205B1B8300807FD1 /* CardArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979509C205B1B8300807FD1 /* CardArticle.swift */; };
 		597950A7205B1B9400807FD1 /* Player_by_Patric_Piemonte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597950A6205B1B9300807FD1 /* Player_by_Patric_Piemonte.swift */; };
 		5987BF6C2073DE4F00D36360 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5987BF6B2073DE4F00D36360 /* MapPin.swift */; };
-		59B261FE2068C92A00F1E9E7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B261FD2068C92A00F1E9E7 /* Post.swift */; };
+		59B261FE2068C92A00F1E9E7 /* StorePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B261FD2068C92A00F1E9E7 /* StorePost.swift */; };
 		59B26202206A08C400F1E9E7 /* Calender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B26201206A08C400F1E9E7 /* Calender.swift */; };
 		59B26206206A091100F1E9E7 /* EventInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B26204206A091100F1E9E7 /* EventInformation.swift */; };
 		59B26207206A091100F1E9E7 /* EventInformation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59B26205206A091100F1E9E7 /* EventInformation.xib */; };
@@ -49,6 +51,8 @@
 
 /* Begin PBXFileReference section */
 		4557988D8C3ACDABD4CE712A /* Pods-SSUAkron.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSUAkron.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSUAkron/Pods-SSUAkron.debug.xcconfig"; sourceTree = "<group>"; };
+		592453B82075E05000D0A1A9 /* CustomCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCells.swift; sourceTree = "<group>"; };
+		592453BC2075E7A000D0A1A9 /* EventPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPost.swift; sourceTree = "<group>"; };
 		595AA086205C5A86009D3D09 /* NotoKufiArabic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoKufiArabic-Regular.ttf"; sourceTree = "<group>"; };
 		595AA087205C5A86009D3D09 /* NotoKufiArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoKufiArabic-Bold.ttf"; sourceTree = "<group>"; };
 		595AA090205CA4AE009D3D09 /* Coutner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coutner.swift; sourceTree = "<group>"; };
@@ -77,7 +81,7 @@
 		5979509C205B1B8300807FD1 /* CardArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardArticle.swift; sourceTree = "<group>"; };
 		597950A6205B1B9300807FD1 /* Player_by_Patric_Piemonte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player_by_Patric_Piemonte.swift; sourceTree = "<group>"; };
 		5987BF6B2073DE4F00D36360 /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
-		59B261FD2068C92A00F1E9E7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		59B261FD2068C92A00F1E9E7 /* StorePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePost.swift; sourceTree = "<group>"; };
 		59B26201206A08C400F1E9E7 /* Calender.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calender.swift; sourceTree = "<group>"; };
 		59B26204206A091100F1E9E7 /* EventInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInformation.swift; sourceTree = "<group>"; };
 		59B26205206A091100F1E9E7 /* EventInformation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventInformation.xib; sourceTree = "<group>"; };
@@ -110,6 +114,15 @@
 				6E64B43DE83D8B272E5D1859 /* Pods_SSUAkron.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		592453BB2075E72300D0A1A9 /* Forms */ = {
+			isa = PBXGroup;
+			children = (
+				59B261FD2068C92A00F1E9E7 /* StorePost.swift */,
+				592453BC2075E7A000D0A1A9 /* EventPost.swift */,
+			);
+			path = Forms;
 			sourceTree = "<group>";
 		};
 		595AA089205C5AA6009D3D09 /* Fonts */ = {
@@ -176,6 +189,7 @@
 				59E24C31206372A800B04928 /* GoogleService-Info.plist */,
 				59E425D220663DF30097E08A /* CardInformation.swift */,
 				5987BF6B2073DE4F00D36360 /* MapPin.swift */,
+				592453B82075E05000D0A1A9 /* CustomCells.swift */,
 			);
 			path = SSUAkron;
 			sourceTree = "<group>";
@@ -212,13 +226,13 @@
 		59DDB6A1205FA2E3001DF580 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				592453BB2075E72300D0A1A9 /* Forms */,
 				59B26203206A08F200F1E9E7 /* ContentCards */,
 				596259862065B44300DD7CAA /* Unused */,
 				596259842063CAED00DD7CAA /* Store.swift */,
 				59B26201206A08C400F1E9E7 /* Calender.swift */,
 				5979507F205B1B0000807FD1 /* Home.swift */,
 				595AA090205CA4AE009D3D09 /* Coutner.swift */,
-				59B261FD2068C92A00F1E9E7 /* Post.swift */,
 				596CDA7E206C29D40043A157 /* Login.swift */,
 			);
 			path = ViewControllers;
@@ -400,10 +414,12 @@
 				59BE991720721FEC00EB00BA /* StoreInformation.swift in Sources */,
 				59DDB6A4205FA33D001DF580 /* StoreViewController.swift in Sources */,
 				597950A1205B1B8300807FD1 /* Card.swift in Sources */,
+				592453B92075E05000D0A1A9 /* CustomCells.swift in Sources */,
 				597950A2205B1B8300807FD1 /* CardHighlight.swift in Sources */,
 				597950A3205B1B8300807FD1 /* CardGroup.swift in Sources */,
 				597950A4205B1B8300807FD1 /* CardPlayer.swift in Sources */,
-				59B261FE2068C92A00F1E9E7 /* Post.swift in Sources */,
+				59B261FE2068C92A00F1E9E7 /* StorePost.swift in Sources */,
+				592453BD2075E7A000D0A1A9 /* EventPost.swift in Sources */,
 				595AA091205CA4AE009D3D09 /* Coutner.swift in Sources */,
 				596CDA7F206C29D40043A157 /* Login.swift in Sources */,
 				596259852063CAED00DD7CAA /* Store.swift in Sources */,

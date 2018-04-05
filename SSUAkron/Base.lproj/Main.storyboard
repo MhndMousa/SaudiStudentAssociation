@@ -505,7 +505,7 @@
         <!--اضافة سلعة-->
         <scene sceneID="bOU-n8-DME">
             <objects>
-                <viewController id="hxm-a3-pIQ" customClass="PostViewContoller" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hxm-a3-pIQ" customClass="StorePostFormViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g0c-OW-94h">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -513,7 +513,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fa8-y3-5sn"/>
                     </view>
-                    <navigationItem key="navigationItem" title="اضافة سلعة" id="Tyl-Du-CEg"/>
+                    <navigationItem key="navigationItem" title="اضافة سلعة" largeTitleDisplayMode="never" id="Tyl-Du-CEg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHr-U9-Aj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -543,11 +543,33 @@
                             <outlet property="delegate" destination="ygp-SZ-rjq" id="6dX-kX-AVC"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="الفعاليات" id="Fp0-N1-E7u"/>
+                    <navigationItem key="navigationItem" title="الفعاليات" id="Fp0-N1-E7u">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ErR-Uh-eG7">
+                            <connections>
+                                <segue destination="fMH-S8-cgD" kind="show" id="oY6-jP-r3O"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mK0-Vo-GHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2944.8000000000002" y="1507.1964017991006"/>
+        </scene>
+        <!--Event Post Form View Controller-->
+        <scene sceneID="yUE-6x-vIj">
+            <objects>
+                <viewController id="fMH-S8-cgD" customClass="EventPostFormViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2u3-Ja-Jkw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="d5n-Kw-LUI"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="NtU-BW-6Qq"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MSs-CV-VmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3774" y="1507"/>
         </scene>
         <!--المتبقي على الراتب-->
         <scene sceneID="8Rr-WY-3YR">
@@ -669,7 +691,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="faW-7j-byS">
-                        <rect key="frame" x="0.0" y="20" width="375" height="108.5"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.086274509803921567" green="0.48627450980392156" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -699,7 +721,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jPJ-GZ-NW3">
-                        <rect key="frame" x="0.0" y="20" width="375" height="108.5"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.086274509803921567" green="0.48627450980392156" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -730,7 +752,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="0RQ-Ma-PqZ">
-                        <rect key="frame" x="0.0" y="20" width="375" height="108.5"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.086791582405567169" green="0.48432129621505737" blue="0.66587328910827637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -767,7 +789,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="4Qc-4V-gA8">
-                        <rect key="frame" x="0.0" y="20" width="375" height="108.5"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.070183776319026947" green="0.47544276714324951" blue="0.67418622970581055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
