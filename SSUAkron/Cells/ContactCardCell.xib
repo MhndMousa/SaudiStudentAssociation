@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoKufiArabic-Regular.ttf">
+            <string>NotoKufiArabic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ContactCardCell" customModule="SSUAkron" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="111" height="200"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="111" height="200"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aeK-Yy-XJU">
+                        <rect key="frame" x="5" y="10" width="101" height="101"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unknown_Person" translatesAutoresizingMaskIntoConstraints="NO" id="Hjc-Uq-gb0">
+                                <rect key="frame" x="0.0" y="0.0" width="101" height="101"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Hjc-Uq-gb0" secondAttribute="bottom" id="1h3-bb-49d"/>
+                            <constraint firstAttribute="trailing" secondItem="Hjc-Uq-gb0" secondAttribute="trailing" id="AND-pq-eyb"/>
+                            <constraint firstItem="Hjc-Uq-gb0" firstAttribute="leading" secondItem="aeK-Yy-XJU" secondAttribute="leading" id="HTO-h6-kVE"/>
+                            <constraint firstAttribute="width" secondItem="aeK-Yy-XJU" secondAttribute="height" multiplier="1:1" id="kDG-Qn-ym3"/>
+                            <constraint firstItem="Hjc-Uq-gb0" firstAttribute="top" secondItem="aeK-Yy-XJU" secondAttribute="top" id="nqI-X1-VHz"/>
+                        </constraints>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="مهند النمر" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hk3-bz-m8S">
+                        <rect key="frame" x="5" y="116" width="101" height="23"/>
+                        <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="12"/>
+                        <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الرئيس الرياضي" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4x-zu-jHd">
+                        <rect key="frame" x="5" y="139" width="101" height="23"/>
+                        <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="12"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="hk3-bz-m8S" firstAttribute="top" secondItem="aeK-Yy-XJU" secondAttribute="bottom" constant="5" id="4g1-x4-JXF"/>
+                <constraint firstAttribute="trailing" secondItem="hk3-bz-m8S" secondAttribute="trailing" constant="5" id="EFq-hD-82a"/>
+                <constraint firstItem="x4x-zu-jHd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="FmM-6O-zfK"/>
+                <constraint firstAttribute="trailing" secondItem="aeK-Yy-XJU" secondAttribute="trailing" constant="5" id="GzX-3C-38n"/>
+                <constraint firstAttribute="trailing" secondItem="x4x-zu-jHd" secondAttribute="trailing" constant="5" id="kn8-iD-xMu"/>
+                <constraint firstItem="aeK-Yy-XJU" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="kvc-yq-B0B"/>
+                <constraint firstItem="x4x-zu-jHd" firstAttribute="top" secondItem="hk3-bz-m8S" secondAttribute="bottom" id="nv7-uQ-gdR"/>
+                <constraint firstItem="hk3-bz-m8S" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="ogh-DJ-c3a"/>
+                <constraint firstItem="aeK-Yy-XJU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="qvx-30-Xl6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="130" height="201"/>
+            <connections>
+                <outlet property="cellView" destination="aeK-Yy-XJU" id="XbU-M6-z8r"/>
+                <outlet property="imageView" destination="Hjc-Uq-gb0" id="El8-ZA-uB4"/>
+                <outlet property="jobLabel" destination="x4x-zu-jHd" id="cKp-ql-3Oi"/>
+                <outlet property="nameLabel" destination="hk3-bz-m8S" id="d9j-GH-mMm"/>
+            </connections>
+            <point key="canvasLocation" x="-52" y="-297"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Unknown_Person" width="542" height="560"/>
+    </resources>
+</document>
