@@ -11,17 +11,25 @@ import MapKit
 
 
 
-class HomeViewController: UIViewController {
+class HomeViewController: UICollectionViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let locationManager = CLLocationManager()
-        locationManager.requestAlwaysAuthorization()
+        self.collectionView?.register(UINib(nibName: "ContactCardCell", bundle: nil), forCellWithReuseIdentifier: "cell")
     }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .default
+    }
+
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell : ContactCardCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! ContactCardCell
+
+        
+        return cell
     }
 
     override func didReceiveMemoryWarning() {
