@@ -42,6 +42,8 @@
 		59B26207206A091100F1E9E7 /* EventInformation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59B26205206A091100F1E9E7 /* EventInformation.xib */; };
 		59BE991720721FEC00EB00BA /* StoreInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE991520721FEC00EB00BA /* StoreInformation.swift */; };
 		59BE991820721FEC00EB00BA /* StoreInformation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59BE991620721FEC00EB00BA /* StoreInformation.xib */; };
+		59C23B912077423500B21E0B /* ContactCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C23B8F2077423500B21E0B /* ContactCardCell.swift */; };
+		59C23B922077423500B21E0B /* ContactCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59C23B902077423500B21E0B /* ContactCardCell.xib */; };
 		59DDB6A4205FA33D001DF580 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6A3205FA33D001DF580 /* StoreViewController.swift */; };
 		59DDB6A6205FA360001DF580 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6A5205FA360001DF580 /* CalenderViewController.swift */; };
 		59DDB6BE2060E104001DF580 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6BD2060E104001DF580 /* Global.swift */; };
@@ -87,6 +89,8 @@
 		59B26205206A091100F1E9E7 /* EventInformation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventInformation.xib; sourceTree = "<group>"; };
 		59BE991520721FEC00EB00BA /* StoreInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInformation.swift; sourceTree = "<group>"; };
 		59BE991620721FEC00EB00BA /* StoreInformation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreInformation.xib; sourceTree = "<group>"; };
+		59C23B8F2077423500B21E0B /* ContactCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCardCell.swift; sourceTree = "<group>"; };
+		59C23B902077423500B21E0B /* ContactCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCardCell.xib; sourceTree = "<group>"; };
 		59DDB6A3205FA33D001DF580 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		59DDB6A5205FA360001DF580 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		59DDB6BD2060E104001DF580 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -150,6 +154,8 @@
 				5962598A2065F98F00DD7CAA /* CardHighlightCell.xib */,
 				5962598E20660A7200DD7CAA /* CardArticleCell.swift */,
 				5962598F20660A7200DD7CAA /* CardArticleCell.xib */,
+				59C23B8F2077423500B21E0B /* ContactCardCell.swift */,
+				59C23B902077423500B21E0B /* ContactCardCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -318,6 +324,7 @@
 				595AA08C205C7ECA009D3D09 /* NotoKufiArabic-Bold.ttf in Resources */,
 				59E24C32206372A800B04928 /* GoogleService-Info.plist in Resources */,
 				5962599120660A7200DD7CAA /* CardArticleCell.xib in Resources */,
+				59C23B922077423500B21E0B /* ContactCardCell.xib in Resources */,
 				59BE991820721FEC00EB00BA /* StoreInformation.xib in Resources */,
 				595AA08D205C7ECA009D3D09 /* NotoKufiArabic-Regular.ttf in Resources */,
 				5962598C2065F98F00DD7CAA /* CardHighlightCell.xib in Resources */,
@@ -410,6 +417,7 @@
 				5987BF6C2073DE4F00D36360 /* MapPin.swift in Sources */,
 				5979509E205B1B8300807FD1 /* CardGroupSliding.swift in Sources */,
 				5979509F205B1B8300807FD1 /* DetailViewController.swift in Sources */,
+				59C23B912077423500B21E0B /* ContactCardCell.swift in Sources */,
 				597950A0205B1B8300807FD1 /* LayoutHelper.swift in Sources */,
 				59BE991720721FEC00EB00BA /* StoreInformation.swift in Sources */,
 				59DDB6A4205FA33D001DF580 /* StoreViewController.swift in Sources */,

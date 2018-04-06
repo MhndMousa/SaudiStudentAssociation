@@ -13,6 +13,20 @@ import ImageRow
 import MapKit
 class StorePostFormViewController: FormViewController, CLLocationManagerDelegate {
     
+    
+    @IBOutlet weak var cancel: UIBarButtonItem!
+    @IBAction func cancelTapped(_ sender: Any) {
+        let alert = UIAlertController(title: "هل متاكد من اغلاق الاعلان", message: "في حال اغلاقك الصفحة سوف تخسر جميع المعلومات المدخلة حالياً", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "اغلاق", style: .destructive, handler: { alert in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "اكمل التعديل", style: .default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     @IBOutlet weak var submitButton: UIBarButtonItem!
     @IBAction func submitTapped(_ sender: Any) {
         print("tapped")

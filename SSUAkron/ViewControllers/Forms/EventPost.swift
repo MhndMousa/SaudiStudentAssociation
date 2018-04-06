@@ -17,7 +17,7 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
     
     @IBOutlet weak var dismissButton: UIBarButtonItem!
     @IBAction func dismissTapped(_ sender: Any) {
-        let alert = UIAlertController(title: "هل متاكد من اغلاق الاعلان", message: "في حال اغلاقك الصفحة سوف تخسر جميع المعلومات المدخلة حالياً", preferredStyle: UIAlertControllerStyle.actionSheet)
+        let alert = UIAlertController(title: "هل متاكد من اغلاق الاعلان", message: "في حال اغلاقك الصفحة سوف تخسر جميع المعلومات المدخلة حالياً", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "اغلاق", style: .destructive, handler: { alert in
             self.dismiss(animated: true, completion: nil)
         }))

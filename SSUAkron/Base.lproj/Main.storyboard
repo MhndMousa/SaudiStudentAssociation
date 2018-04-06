@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QXJ-DL-Dao">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XpQ-fp-l17">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-Thin</string>
-        </array>
         <array key="NotoKufiArabic-Regular.ttf">
             <string>NotoKufiArabic</string>
         </array>
@@ -347,10 +344,10 @@
             </objects>
             <point key="canvasLocation" x="-1262" y="-372"/>
         </scene>
-        <!--Home View Controller-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -370,7 +367,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="748" y="1509.8950524737631"/>
+            <point key="canvasLocation" x="812" y="1510"/>
+        </scene>
+        <!--مدينة انديانا-->
+        <scene sceneID="fJE-fe-P1u">
+            <objects>
+                <collectionViewController id="Zch-5V-9uF" customClass="HomeViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="zjv-JR-8L6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kLD-sg-9vQ">
+                            <size key="itemSize" width="111" height="185"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="rUy-rt-Cj9" customClass="ContactCardCell" customModule="SSUAkron" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="111" height="185"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="111" height="185"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="Zch-5V-9uF" id="1bQ-Z9-aAe"/>
+                            <outlet property="delegate" destination="Zch-5V-9uF" id="NQr-GA-gp6"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="مدينة انديانا" prompt="النادي السعودي " id="dsM-8D-fDI"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zye-Zw-TuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-191.19999999999999" y="2410.344827586207"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="O4M-tM-rQA">
@@ -496,14 +528,14 @@
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="OZK-7y-KIa">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="hxm-a3-pIQ" kind="show" id="jCB-38-nla"/>
+                                <segue destination="UfN-tH-xRc" kind="show" id="jCB-38-nla"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8V-TL-JGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2224.8000000000002" y="411.544227886057"/>
+            <point key="canvasLocation" x="2945" y="412"/>
         </scene>
         <!--اضافة سلعة-->
         <scene sceneID="bOU-n8-DME">
@@ -517,6 +549,11 @@
                         <viewLayoutGuide key="safeArea" id="fa8-y3-5sn"/>
                     </view>
                     <navigationItem key="navigationItem" title="اضافة سلعة" largeTitleDisplayMode="never" id="Tyl-Du-CEg">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="ic_close" id="cAk-HC-YKk">
+                            <connections>
+                                <action selector="cancelTapped:" destination="hxm-a3-pIQ" id="H5Q-7q-hAR"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="ic_check" id="BTb-kB-nz4">
                             <connections>
                                 <action selector="submitTapped:" destination="hxm-a3-pIQ" id="Fju-Qz-DKs"/>
@@ -524,12 +561,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="cancel" destination="cAk-HC-YKk" id="SmO-YJ-87R"/>
                         <outlet property="submitButton" destination="BTb-kB-nz4" id="dyF-my-Bcf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHr-U9-Aj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3127.1999999999998" y="413.3433283358321"/>
+            <point key="canvasLocation" x="4980" y="412"/>
         </scene>
         <!--الفعاليات-->
         <scene sceneID="Ojr-jN-ald">
@@ -767,7 +805,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSS-8V-MU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1249" y="412"/>
+            <point key="canvasLocation" x="1969" y="412"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zbv-Td-pke">
@@ -830,7 +868,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qhQ-cQ-bw5"/>
+                        <segue destination="Zch-5V-9uF" kind="relationship" relationship="rootViewController" id="elt-q6-ZS7"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBF-DW-CbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -859,6 +897,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u01-Gj-gf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4082" y="1510"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qC4-wJ-gZu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UfN-tH-xRc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M0x-V3-B4C">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.086791582409999998" green="0.48432129619999997" blue="0.66587328909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hxm-a3-pIQ" kind="relationship" relationship="rootViewController" id="RUW-vE-5cQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GBa-qz-9nl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4041" y="412"/>
         </scene>
     </scenes>
     <resources>
