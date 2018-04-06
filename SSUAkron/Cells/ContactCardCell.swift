@@ -14,10 +14,17 @@ class ContactCardCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var jobLabel: UILabel!
+    @IBOutlet weak var contactButton: UIButton!
     
+    @IBAction func contactButtonClicked(_ sender: UIButton) {
+        sender.tap()
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        contactButton.layer.cornerRadius = 8
+        
+        contactButton.alpha = 0.8
     }
 
     override func prepareForReuse() {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XpQ-fp-l17">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R8h-xr-yqY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -72,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jeM-eP-S3G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2198" y="-371"/>
+            <point key="canvasLocation" x="-188" y="4817"/>
         </scene>
         <!--Event Information-->
         <scene sceneID="Vxu-hk-oKL">
@@ -263,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X3L-cB-IxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3111" y="-371"/>
+            <point key="canvasLocation" x="-1100" y="4817"/>
         </scene>
         <!--EventCard-->
         <scene sceneID="tYv-UH-x70">
@@ -342,7 +342,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sRL-gm-rd6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1262" y="-372"/>
+            <point key="canvasLocation" x="748" y="4815"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -367,28 +367,28 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="812" y="1510"/>
+            <point key="canvasLocation" x="1820" y="4817"/>
         </scene>
         <!--مدينة انديانا-->
         <scene sceneID="fJE-fe-P1u">
             <objects>
-                <collectionViewController id="Zch-5V-9uF" customClass="HomeViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="zjv-JR-8L6">
+                <collectionViewController id="Zch-5V-9uF" customClass="ContactViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="zjv-JR-8L6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kLD-sg-9vQ">
-                            <size key="itemSize" width="111" height="185"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kLD-sg-9vQ">
+                            <size key="itemSize" width="187" height="237"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="20" maxX="10" maxY="20"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="rUy-rt-Cj9" customClass="ContactCardCell" customModule="SSUAkron" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="111" height="185"/>
+                                <rect key="frame" x="10" y="141.5" width="187" height="237"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="111" height="185"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="187" height="237"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </view>
                             </collectionViewCell>
@@ -398,7 +398,7 @@
                             <outlet property="delegate" destination="Zch-5V-9uF" id="NQr-GA-gp6"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="مدينة انديانا" prompt="النادي السعودي " id="dsM-8D-fDI"/>
+                    <navigationItem key="navigationItem" title="مدينة انديانا" prompt="النادي السعودي " largeTitleDisplayMode="never" id="dsM-8D-fDI"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zye-Zw-TuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -489,9 +489,10 @@
                         <color key="selectedImageTintColor" red="0.086791582405567169" green="0.48432129621505737" blue="0.66587328910827637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="XpQ-fp-l17" kind="relationship" relationship="viewControllers" id="RTz-o4-cjE"/>
                         <segue destination="QXJ-DL-Dao" kind="relationship" relationship="viewControllers" id="JlU-L0-6Kz"/>
                         <segue destination="9hf-8h-mP9" kind="relationship" relationship="viewControllers" id="I5c-t7-bmb"/>
+                        <segue destination="zrA-5z-MFP" kind="relationship" relationship="viewControllers" id="8Ub-RX-T4W"/>
+                        <segue destination="XpQ-fp-l17" kind="relationship" relationship="viewControllers" id="RTz-o4-cjE"/>
                         <segue destination="aSL-M9-t1x" kind="relationship" relationship="viewControllers" id="rgE-ir-vTR"/>
                     </connections>
                 </tabBarController>
@@ -535,7 +536,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q8V-TL-JGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2945" y="412"/>
+            <point key="canvasLocation" x="2057" y="412"/>
         </scene>
         <!--اضافة سلعة-->
         <scene sceneID="bOU-n8-DME">
@@ -567,7 +568,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MHr-U9-Aj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4980" y="412"/>
+            <point key="canvasLocation" x="4092" y="412"/>
         </scene>
         <!--الفعاليات-->
         <scene sceneID="Ojr-jN-ald">
@@ -603,7 +604,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mK0-Vo-GHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2944.8000000000002" y="1507.1964017991006"/>
+            <point key="canvasLocation" x="2057" y="1506"/>
         </scene>
         <!--اضافة فعالية-->
         <scene sceneID="yUE-6x-vIj">
@@ -634,7 +635,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSs-CV-VmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4980" y="1506.296851574213"/>
+            <point key="canvasLocation" x="4092" y="1505"/>
         </scene>
         <!--المتبقي على الراتب-->
         <scene sceneID="8Rr-WY-3YR">
@@ -745,7 +746,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMK-Fq-GHk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2247.1999999999998" y="1509.8950524737631"/>
+            <point key="canvasLocation" x="-1292" y="2338"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EKp-6G-rzi">
@@ -775,7 +776,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quG-rc-Lo0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1968.8" y="1509.8950524737631"/>
+            <point key="canvasLocation" x="1081" y="1510"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v2V-n9-Tub">
@@ -805,13 +806,13 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSS-8V-MU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1969" y="412"/>
+            <point key="canvasLocation" x="1081" y="412"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zbv-Td-pke">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aSL-M9-t1x" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ic_info" selectedImage="ic_info" id="qYp-CA-5mc">
+                    <tabBarItem key="tabBarItem" title="" image="ic_attach_money" id="qYp-CA-5mc">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
                     </tabBarItem>
@@ -838,6 +839,35 @@
             </objects>
             <point key="canvasLocation" x="-1292" y="1509"/>
         </scene>
+        <!--الرسائل-->
+        <scene sceneID="wfj-b3-xke">
+            <objects>
+                <tableViewController id="fxR-ux-Pu6" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6hd-Iw-Vsy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TE4-OD-N06">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TE4-OD-N06" id="4G5-JA-Oza">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fxR-ux-Pu6" id="xFy-7b-bQV"/>
+                            <outlet property="delegate" destination="fxR-ux-Pu6" id="lRm-RC-Ri9"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="الرسائل" id="K0M-cg-hgQ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t0H-W5-ERs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="746.39999999999998" y="-820.83958020989508"/>
+        </scene>
         <!--Storyboard Reference-->
         <scene sceneID="hjL-sP-yd9">
             <objects>
@@ -849,7 +879,7 @@
         <scene sceneID="MVL-Ie-Uf4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XpQ-fp-l17" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ic_home" selectedImage="ic_home" id="ag9-md-rDq">
+                    <tabBarItem key="tabBarItem" title="" image="ic_contact_mail" id="ag9-md-rDq">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -896,7 +926,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u01-Gj-gf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4082" y="1510"/>
+            <point key="canvasLocation" x="3193" y="1510"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qC4-wJ-gZu">
@@ -922,15 +952,47 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GBa-qz-9nl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4041" y="412"/>
+            <point key="canvasLocation" x="3153" y="412"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5jz-rh-bpI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zrA-5z-MFP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="ic_message" badgeValue="3" id="rmG-M9-vPh">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                        <color key="badgeColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="tBg-sy-Qsr">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.070183776319026947" green="0.47544276714324951" blue="0.67418622970581055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="NotoKufiArabic-Bold" family="Noto Kufi Arabic" pointSize="34"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fxR-ux-Pu6" kind="relationship" relationship="rootViewController" id="3js-Lp-DIB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vji-0a-pDY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-192.80000000000001" y="-820.83958020989508"/>
         </scene>
     </scenes>
     <resources>
+        <image name="ic_attach_money" width="24" height="24"/>
         <image name="ic_check" width="24" height="24"/>
         <image name="ic_close" width="24" height="24"/>
+        <image name="ic_contact_mail" width="24" height="24"/>
         <image name="ic_date_range" width="24" height="24"/>
-        <image name="ic_home" width="24" height="24"/>
-        <image name="ic_info" width="24" height="24"/>
+        <image name="ic_message" width="24" height="24"/>
         <image name="ic_store_mall_directory" width="24" height="24"/>
         <image name="ssa" width="960" height="833"/>
     </resources>

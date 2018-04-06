@@ -32,6 +32,8 @@ class EventInformation: UIViewController {
         sender.tap()
     }
     
+    
+    // TODO: Connect this to a button in the card
     func openMapForPlace(c : CLLocationCoordinate2D) {
         
         let latitude: CLLocationDegrees = c.latitude
@@ -74,39 +76,20 @@ class EventInformation: UIViewController {
         
         bigAssView.setNeedsLayout()
         bigAssView.setNeedsDisplay()
-//        print("bigass")
-        
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        print("loaded")
         loadData()
-        
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 
