@@ -8,6 +8,7 @@
 
 import UIKit
 import TransitionButton
+import Firebase
 
 class LoginViewController: UIViewController {
 
@@ -17,8 +18,12 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        initView()
         
+    }
+    
+    
+    func initView(){
         rectangleView.layer.cornerRadius = 20
         usernameTextField.layer.cornerRadius = 5
         passwordTextFeild.layer.cornerRadius = 5
@@ -33,12 +38,13 @@ class LoginViewController: UIViewController {
         button.spinnerColor = .white
         button.addTarget(self, action: #selector(buttonAction(_:)), for: .touchUpInside)
         
-            
         
-        // Do any additional setup after loading the view.
     }
-    
     @IBAction func buttonAction(_ button: TransitionButton) {
+        login(button)
+    }
+
+    func login(_ button : TransitionButton){
         button.startAnimation() // 2: Then start the animation when the user tap the button
         let qualityOfServiceClass = DispatchQoS.QoSClass.background
         let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
@@ -58,21 +64,9 @@ class LoginViewController: UIViewController {
             })
         })
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+
