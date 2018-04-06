@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eh5-fw-BJC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QXJ-DL-Dao">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Thin</string>
+        </array>
         <array key="NotoKufiArabic-Regular.ttf">
             <string>NotoKufiArabic</string>
         </array>
@@ -555,7 +558,7 @@
                     <navigationItem key="navigationItem" title="الفعاليات" id="Fp0-N1-E7u">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ErR-Uh-eG7">
                             <connections>
-                                <segue destination="fMH-S8-cgD" kind="show" id="hEz-xC-PhV"/>
+                                <segue destination="7ik-aY-kDI" kind="presentation" id="hEz-xC-PhV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -575,7 +578,11 @@
                         <viewLayoutGuide key="safeArea" id="d5n-Kw-LUI"/>
                     </view>
                     <navigationItem key="navigationItem" title="اضافة فعالية" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="NtU-BW-6Qq">
-                        <barButtonItem key="backBarButtonItem" title="رجوع" id="dei-3S-RpY"/>
+                        <barButtonItem key="leftBarButtonItem" image="ic_close" id="Y8I-sP-nyo">
+                            <connections>
+                                <action selector="dismissTapped:" destination="fMH-S8-cgD" id="LZL-1P-EfZ"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="ic_check" id="BtN-yy-htt">
                             <connections>
                                 <action selector="submitTapped:" destination="fMH-S8-cgD" id="Agz-p0-sEl"/>
@@ -583,12 +590,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dismissButton" destination="Y8I-sP-nyo" id="bpb-If-Bfm"/>
                         <outlet property="submitButton" destination="BtN-yy-htt" id="gye-RO-VyX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSs-CV-VmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3774" y="1507"/>
+            <point key="canvasLocation" x="4980" y="1506.296851574213"/>
         </scene>
         <!--المتبقي على الراتب-->
         <scene sceneID="8Rr-WY-3YR">
@@ -829,9 +837,33 @@
             </objects>
             <point key="canvasLocation" x="-191.19999999999999" y="1509.8950524737631"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="c8m-GF-s7G">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7ik-aY-kDI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="09n-5B-uxV">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.086791582409999998" green="0.48432129619999997" blue="0.66587328909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="fMH-S8-cgD" kind="relationship" relationship="rootViewController" id="lGO-xj-yY3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u01-Gj-gf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4082" y="1510"/>
+        </scene>
     </scenes>
     <resources>
         <image name="ic_check" width="24" height="24"/>
+        <image name="ic_close" width="24" height="24"/>
         <image name="ic_date_range" width="24" height="24"/>
         <image name="ic_home" width="24" height="24"/>
         <image name="ic_info" width="24" height="24"/>

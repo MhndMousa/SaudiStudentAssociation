@@ -15,6 +15,19 @@ import MapKit
 class EventPostFormViewController: FormViewController, CLLocationManagerDelegate {
     
     
+    @IBOutlet weak var dismissButton: UIBarButtonItem!
+    @IBAction func dismissTapped(_ sender: Any) {
+        let alert = UIAlertController(title: "هل متاكد من اغلاق الاعلان", message: "في حال اغلاقك الصفحة سوف تخسر جميع المعلومات المدخلة حالياً", preferredStyle: UIAlertControllerStyle.actionSheet)
+        alert.addAction(UIAlertAction(title: "اغلاق", style: .destructive, handler: { alert in
+            self.dismiss(animated: true, completion: nil)
+        }))
+        
+        alert.addAction(UIAlertAction(title: "اكمل التعديل", style: .default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+    
     @IBOutlet weak var submitButton: UIBarButtonItem!
     @IBAction func submitTapped(_ sender: Any) {
         print("tapped")
@@ -30,9 +43,8 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
         locationManager.delegate = self;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
         
-        let coordinates = locationManager.location?.coordinate
+       
         
         form +++ Section()
             
@@ -55,6 +67,12 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
                 $0.title = "المبلغ"
                 $0.placeholder = "ادخل المبلغ بالدولار"
             }
+            <<< IntRow(){
+                $0.title = "عدد المقاعدة المتاحة"
+                $0.placeholder = "0"
+            }
+            
+            
         
     
             
@@ -70,8 +88,12 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
             }
             <<< LocationRow(){row in
                 row.title = "موقع الفعالية"
+                
                 DispatchQueue.main.async {
-                    row.value = CLLocation(latitude: (coordinates?.latitude)!, longitude: (coordinates?.longitude)!)
+                    locationManager.startUpdatingLocation()
+                    if let coordinates = locationManager.location?.coordinate{
+                          row.value = CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
+                    }
                 }
             }
             <<< ImageRow(){

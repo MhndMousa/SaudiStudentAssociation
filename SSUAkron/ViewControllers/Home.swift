@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import MapKit
+
+
 
 class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let locationManager = CLLocationManager()
+        locationManager.requestAlwaysAuthorization()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{

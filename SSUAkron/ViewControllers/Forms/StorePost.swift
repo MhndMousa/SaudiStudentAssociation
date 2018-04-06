@@ -16,6 +16,7 @@ class StorePostFormViewController: FormViewController, CLLocationManagerDelegate
     @IBOutlet weak var submitButton: UIBarButtonItem!
     @IBAction func submitTapped(_ sender: Any) {
         print("tapped")
+        
   }
     
     var randomArray = ["مركبة" , "اثاث منزل", "الكترونيات", "ملتزمات دراسية", "اخرى"]
