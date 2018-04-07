@@ -10,6 +10,7 @@
 		51D8E251D50306494D205B06 /* Pods_SSUAkron.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E64B43DE83D8B272E5D1859 /* Pods_SSUAkron.framework */; };
 		592453B92075E05000D0A1A9 /* CustomCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592453B82075E05000D0A1A9 /* CustomCells.swift */; };
 		592453BD2075E7A000D0A1A9 /* EventPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592453BC2075E7A000D0A1A9 /* EventPost.swift */; };
+		5925AEB8207828AA00EF6D8D /* SignupForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5925AEB7207828AA00EF6D8D /* SignupForm.swift */; };
 		595AA08C205C7ECA009D3D09 /* NotoKufiArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 595AA087205C5A86009D3D09 /* NotoKufiArabic-Bold.ttf */; };
 		595AA08D205C7ECA009D3D09 /* NotoKufiArabic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 595AA086205C5A86009D3D09 /* NotoKufiArabic-Regular.ttf */; };
 		595AA091205CA4AE009D3D09 /* Coutner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595AA090205CA4AE009D3D09 /* Coutner.swift */; };
@@ -56,6 +57,7 @@
 		4557988D8C3ACDABD4CE712A /* Pods-SSUAkron.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSUAkron.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SSUAkron/Pods-SSUAkron.debug.xcconfig"; sourceTree = "<group>"; };
 		592453B82075E05000D0A1A9 /* CustomCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCells.swift; sourceTree = "<group>"; };
 		592453BC2075E7A000D0A1A9 /* EventPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPost.swift; sourceTree = "<group>"; };
+		5925AEB7207828AA00EF6D8D /* SignupForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupForm.swift; sourceTree = "<group>"; };
 		595AA086205C5A86009D3D09 /* NotoKufiArabic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoKufiArabic-Regular.ttf"; sourceTree = "<group>"; };
 		595AA087205C5A86009D3D09 /* NotoKufiArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoKufiArabic-Bold.ttf"; sourceTree = "<group>"; };
 		595AA090205CA4AE009D3D09 /* Coutner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coutner.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				59B261FD2068C92A00F1E9E7 /* StorePost.swift */,
 				592453BC2075E7A000D0A1A9 /* EventPost.swift */,
+				5925AEB7207828AA00EF6D8D /* SignupForm.swift */,
 			);
 			path = Forms;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				595AA091205CA4AE009D3D09 /* Coutner.swift in Sources */,
 				596CDA7F206C29D40043A157 /* Login.swift in Sources */,
 				596259852063CAED00DD7CAA /* Store.swift in Sources */,
+				5925AEB8207828AA00EF6D8D /* SignupForm.swift in Sources */,
 				597950A5205B1B8300807FD1 /* CardArticle.swift in Sources */,
 				59795086205B1B0000807FD1 /* SSUAkron.xcdatamodeld in Sources */,
 				5962598B2065F98F00DD7CAA /* CardHighlightCell.swift in Sources */,
