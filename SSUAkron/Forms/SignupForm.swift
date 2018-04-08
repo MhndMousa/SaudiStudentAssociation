@@ -23,6 +23,10 @@ class SignupForm: FormViewController {
             if error != nil{
              print(error)
             }else{
+                
+                let userDefault = UserDefaults.standard
+                userDefault.setValue(email, forKey: "email")
+                userDefault.setValue(password, forKey: "password")
                 let secondVC = self.storyboard!.instantiateViewController(withIdentifier: "main")
                 self.present(secondVC, animated: true, completion: nil)
             }
@@ -31,10 +35,9 @@ class SignupForm: FormViewController {
     @IBAction func submitTapped(_ sender: Any) {
         let valuesDictionary = form.values()
         print(valuesDictionary)
-        for value in valuesDictionary {
-            if value.value == nil{
-                print(value)
-                print("nil")
+        for i in valuesDictionary {
+            if i.value == nil{
+                print(i)
                 return
             }
         }
