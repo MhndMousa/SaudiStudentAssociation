@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double BulletinBoardVersionNumber;
-FOUNDATION_EXPORT const unsigned char BulletinBoardVersionString[];
+FOUNDATION_EXPORT double IQKeyboardManagerSwiftVersionNumber;
+FOUNDATION_EXPORT const unsigned char IQKeyboardManagerSwiftVersionString[];
 

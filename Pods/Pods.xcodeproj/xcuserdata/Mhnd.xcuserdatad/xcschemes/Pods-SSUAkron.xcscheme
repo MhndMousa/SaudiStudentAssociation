@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "97FCD821DF1AA78F29FAD7AB71A41F7C"
+               BlueprintIdentifier = "9D4C52EA199D3D34B31DCA9D85126810"
                BuildableName = "Pods_SSUAkron.framework"
                BlueprintName = "Pods-SSUAkron"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -26,6 +26,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
@@ -36,6 +37,7 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      language = ""
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -45,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "97FCD821DF1AA78F29FAD7AB71A41F7C"
+            BlueprintIdentifier = "9D4C52EA199D3D34B31DCA9D85126810"
             BuildableName = "Pods_SSUAkron.framework"
             BlueprintName = "Pods-SSUAkron"
             ReferencedContainer = "container:Pods.xcodeproj">

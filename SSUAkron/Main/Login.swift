@@ -22,11 +22,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         
         let userDefault = UserDefaults.standard
-        if userDefault.string(forKey: "email") != nil && userDefault.string(forKey: "password") != nil{
-            let email = userDefault.string(forKey: "email")
-            let password = userDefault.string(forKey: "password")
-            login(email: email!, password: password!)
-        }
+//        if userDefault.string(forKey: "email") != nil && userDefault.string(forKey: "password") != nil{
+//            let email = userDefault.string(forKey: "email")
+//            let password = userDefault.string(forKey: "password")
+//            login(email: email!, password: password!)
+//        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -45,7 +45,7 @@
 		59BE991820721FEC00EB00BA /* StoreInformation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59BE991620721FEC00EB00BA /* StoreInformation.xib */; };
 		59C23B912077423500B21E0B /* ContactCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C23B8F2077423500B21E0B /* ContactCardCell.swift */; };
 		59C23B922077423500B21E0B /* ContactCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59C23B902077423500B21E0B /* ContactCardCell.xib */; };
-		59C23B95207757CF00B21E0B /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C23B94207757CF00B21E0B /* UserInformation.swift */; };
+		59C23B95207757CF00B21E0B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C23B94207757CF00B21E0B /* User.swift */; };
 		59DDB6A4205FA33D001DF580 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6A3205FA33D001DF580 /* StoreViewController.swift */; };
 		59DDB6A6205FA360001DF580 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6A5205FA360001DF580 /* CalenderViewController.swift */; };
 		59DDB6BE2060E104001DF580 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6BD2060E104001DF580 /* Global.swift */; };
@@ -94,7 +94,7 @@
 		59BE991620721FEC00EB00BA /* StoreInformation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreInformation.xib; sourceTree = "<group>"; };
 		59C23B8F2077423500B21E0B /* ContactCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCardCell.swift; sourceTree = "<group>"; };
 		59C23B902077423500B21E0B /* ContactCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCardCell.xib; sourceTree = "<group>"; };
-		59C23B94207757CF00B21E0B /* UserInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
+		59C23B94207757CF00B21E0B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		59DDB6A3205FA33D001DF580 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		59DDB6A5205FA360001DF580 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		59DDB6BD2060E104001DF580 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
@@ -192,7 +192,7 @@
 				5962598D2066032C00DD7CAA /* Cells */,
 				59B26203206A08F200F1E9E7 /* ContentCards */,
 				592453BB2075E72300D0A1A9 /* Forms */,
-				59C23B93207756AF00B21E0B /* Information Classes */,
+				59C23B93207756AF00B21E0B /* Objects */,
 				59DDB6A1205FA2E3001DF580 /* Main */,
 				5979507D205B1B0000807FD1 /* AppDelegate.swift */,
 				59DDB6BD2060E104001DF580 /* Global.swift */,
@@ -236,14 +236,14 @@
 			path = ContentCards;
 			sourceTree = "<group>";
 		};
-		59C23B93207756AF00B21E0B /* Information Classes */ = {
+		59C23B93207756AF00B21E0B /* Objects */ = {
 			isa = PBXGroup;
 			children = (
 				59E425D220663DF30097E08A /* CardInformation.swift */,
 				5987BF6B2073DE4F00D36360 /* MapPin.swift */,
-				59C23B94207757CF00B21E0B /* UserInformation.swift */,
+				59C23B94207757CF00B21E0B /* User.swift */,
 			);
-			path = "Information Classes";
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		59DDB6A1205FA2E3001DF580 /* Main */ = {
@@ -279,7 +279,6 @@
 				59795077205B1B0000807FD1 /* Frameworks */,
 				59795078205B1B0000807FD1 /* Resources */,
 				8A9EED780C3FDCDFC4FA7B8B /* [CP] Embed Pods Frameworks */,
-				5C259A19B114F9F6E6B5C7E2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -369,21 +368,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		5C259A19B114F9F6E6B5C7E2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8A9EED780C3FDCDFC4FA7B8B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -395,6 +379,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GooglePlacesRow/GooglePlacesRow.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageRow/ImageRow.framework",
 				"${BUILT_PRODUCTS_DIR}/MKRingProgressView/MKRingProgressView.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
@@ -407,6 +392,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GooglePlacesRow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageRow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MKRingProgressView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
@@ -427,7 +413,7 @@
 			files = (
 				5962599020660A7200DD7CAA /* CardArticleCell.swift in Sources */,
 				597950A7205B1B9400807FD1 /* Player_by_Patric_Piemonte.swift in Sources */,
-				59C23B95207757CF00B21E0B /* UserInformation.swift in Sources */,
+				59C23B95207757CF00B21E0B /* User.swift in Sources */,
 				5979509D205B1B8300807FD1 /* Animator.swift in Sources */,
 				5987BF6C2073DE4F00D36360 /* MapPin.swift in Sources */,
 				5979509E205B1B8300807FD1 /* CardGroupSliding.swift in Sources */,

@@ -713,7 +713,7 @@
                                                 <rect key="frame" x="0.0" y="-40" width="355" height="355"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5wv-Lf-nTd">
-                                                        <rect key="frame" x="136" y="51" width="83.5" height="253"/>
+                                                        <rect key="frame" x="136" y="65.5" width="83.5" height="224"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="dateCounter" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unT-1K-P7M">
                                                                 <rect key="frame" x="0.0" y="0.0" width="83.5" height="177"/>
@@ -722,7 +722,7 @@
                                                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ايام" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aBT-XB-23y">
-                                                                <rect key="frame" x="0.0" y="177" width="83.5" height="76"/>
+                                                                <rect key="frame" x="0.0" y="177" width="83.5" height="47"/>
                                                                 <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="40"/>
                                                                 <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
