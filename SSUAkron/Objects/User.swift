@@ -13,6 +13,7 @@ class User : NSObject{
     var name : String?
     var job : String = "طالب"
     var uid : String?
+    var email: String?
     var phoneNumber: Int?
     var image: UIImage = UIImage(named: "Unknown_Person")!
 }
