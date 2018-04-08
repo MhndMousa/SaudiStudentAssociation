@@ -1,5 +1,5 @@
 //
-//  TableViewController.swift
+//  EventViewController.swift
 //  SSUAkron
 //
 //  Created by Muhannad Mousa on 3/22/18.
@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class TableViewController: UITableViewController {
+class EventViewController: UITableViewController {
 
     var events = [CardInformaion]()
     var colors = ["pink" :UIColor.init(red: 1, green: 0.7, blue: 0.7, alpha: 1), "blue" : UIColor.blue, "orange" : UIColor.orange, "white" : UIColor.white, "black" : UIColor.black]

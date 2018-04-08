@@ -22,7 +22,7 @@ class StoreTableViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-//        addBlurStatusBar(view: self)
+        
         imageArray = [#imageLiteral(resourceName: "car1"),#imageLiteral(resourceName: "car3"),#imageLiteral(resourceName: "car2")]
         
         

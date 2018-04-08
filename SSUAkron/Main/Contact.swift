@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 
 
@@ -16,6 +17,16 @@ class ContactViewController: UICollectionViewController{
     
     var roaster = [User]()
     
+    @IBAction func signOutTapped(_ sender: Any) {
+        do{
+            try Auth.auth().signOut()
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "login")
+            self.present(vc, animated: true, completion: nil)
+            justLoggedOut = true
+        }catch let error as NSError{
+            print(error)
+        }
+    }
     func loadData(){
         for i in 0...10 {
             let a = User()

@@ -1,19 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eh5-fw-BJC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eh5-fw-BJC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-Thin</string>
-        </array>
         <array key="NotoKufiArabic-Regular.ttf">
             <string>NotoKufiArabic</string>
         </array>
@@ -401,11 +398,41 @@
                             <outlet property="delegate" destination="Zch-5V-9uF" id="NQr-GA-gp6"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="مدينة انديانا" prompt="النادي السعودي " largeTitleDisplayMode="never" id="dsM-8D-fDI"/>
+                    <navigationItem key="navigationItem" title="مدينة انديانا" prompt="النادي السعودي " largeTitleDisplayMode="never" id="dsM-8D-fDI">
+                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="a6g-59-aEO">
+                            <connections>
+                                <action selector="signOutTapped:" destination="Zch-5V-9uF" id="NVn-I1-nDx"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="ic_account_circle" id="pT6-1u-vvo">
+                            <connections>
+                                <segue destination="0cb-7j-s6x" kind="presentation" id="khG-9D-vhg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zye-Zw-TuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-191.19999999999999" y="2410.344827586207"/>
+            <point key="canvasLocation" x="2396" y="2342"/>
+        </scene>
+        <!--الملف الشخصي-->
+        <scene sceneID="guz-Jb-roM">
+            <objects>
+                <viewController id="rOX-Ax-fXf" customClass="ProfileViewContoller" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0h7-ld-x9F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="3De-2Q-dS9"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="الملف الشخصي" id="yY9-pZ-Lqf">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="ic_close" id="RoJ-G9-m1y"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="ic_check" id="cIJ-x1-h3H"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gaJ-Wn-RC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4478" y="2342"/>
         </scene>
         <!--Signup Form-->
         <scene sceneID="YZ7-VT-DGT">
@@ -440,7 +467,7 @@
         <!--Login View Controller-->
         <scene sceneID="O4M-tM-rQA">
             <objects>
-                <viewController id="Eh5-fw-BJC" customClass="LoginViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="Eh5-fw-BJC" customClass="LoginViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v3q-R0-nRU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -471,7 +498,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="password"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.086791582405567169" green="0.48432129621505737" blue="0.66587328910827637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -541,7 +568,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MrT-Fg-iwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="148" y="411.544227886057"/>
+            <point key="canvasLocation" x="-433" y="428"/>
         </scene>
         <!--السوق-->
         <scene sceneID="daa-T8-Ya9">
@@ -616,7 +643,7 @@
         <!--الفعاليات-->
         <scene sceneID="Ojr-jN-ald">
             <objects>
-                <tableViewController id="ygp-SZ-rjq" customClass="TableViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ygp-SZ-rjq" customClass="EventViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eDI-Lz-PbC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -647,7 +674,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mK0-Vo-GHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2057" y="1506"/>
+            <point key="canvasLocation" x="2398" y="1227"/>
         </scene>
         <!--اضافة فعالية-->
         <scene sceneID="yUE-6x-vIj">
@@ -678,7 +705,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MSs-CV-VmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4092" y="1505"/>
+            <point key="canvasLocation" x="4431" y="1226"/>
         </scene>
         <!--المتبقي على الراتب-->
         <scene sceneID="8Rr-WY-3YR">
@@ -713,7 +740,7 @@
                                                 <rect key="frame" x="0.0" y="-40" width="355" height="355"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5wv-Lf-nTd">
-                                                        <rect key="frame" x="136" y="65.5" width="83.5" height="224"/>
+                                                        <rect key="frame" x="136" y="51" width="83.5" height="253"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="dateCounter" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unT-1K-P7M">
                                                                 <rect key="frame" x="0.0" y="0.0" width="83.5" height="177"/>
@@ -722,7 +749,7 @@
                                                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ايام" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aBT-XB-23y">
-                                                                <rect key="frame" x="0.0" y="177" width="83.5" height="47"/>
+                                                                <rect key="frame" x="0.0" y="177" width="83.5" height="76"/>
                                                                 <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="40"/>
                                                                 <color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -789,7 +816,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMK-Fq-GHk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1292" y="2338"/>
+            <point key="canvasLocation" x="2358" y="3167"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EKp-6G-rzi">
@@ -819,7 +846,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="quG-rc-Lo0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1081" y="1510"/>
+            <point key="canvasLocation" x="1422" y="1230"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v2V-n9-Tub">
@@ -880,7 +907,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IbP-X1-ay8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1292" y="1509"/>
+            <point key="canvasLocation" x="1420" y="3146"/>
         </scene>
         <!--الرسائل-->
         <scene sceneID="wfj-b3-xke">
@@ -909,7 +936,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t0H-W5-ERs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="746.39999999999998" y="-820.83958020989508"/>
+            <point key="canvasLocation" x="2359" y="-709"/>
         </scene>
         <!--Storyboard Reference-->
         <scene sceneID="hjL-sP-yd9">
@@ -947,7 +974,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBF-DW-CbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-191.19999999999999" y="1509.8950524737631"/>
+            <point key="canvasLocation" x="1420" y="2327"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="c8m-GF-s7G">
@@ -970,7 +997,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u01-Gj-gf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3193" y="1510"/>
+            <point key="canvasLocation" x="3534" y="1230"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qC4-wJ-gZu">
@@ -1027,7 +1054,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vji-0a-pDY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-192.80000000000001" y="-820.83958020989508"/>
+            <point key="canvasLocation" x="1420" y="-709"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="7Sd-dQ-MQG">
@@ -1048,8 +1075,36 @@
             </objects>
             <point key="canvasLocation" x="-2626" y="412"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9a8-if-QzY">
+            <objects>
+                <navigationController storyboardIdentifier="profile" automaticallyAdjustsScrollViewInsets="NO" id="0cb-7j-s6x" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="21i-wO-AYw">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.070183776319026947" green="0.47544276714324951" blue="0.67418622970581055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="34"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rOX-Ax-fXf" kind="relationship" relationship="rootViewController" id="1Cr-V5-HZG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zwm-bv-nfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3492" y="2342"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="ic_account_circle" width="24" height="24"/>
         <image name="ic_attach_money" width="24" height="24"/>
         <image name="ic_check" width="24" height="24"/>
         <image name="ic_close" width="24" height="24"/>

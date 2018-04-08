@@ -10,6 +10,7 @@ import UIKit
 import TransitionButton
 import Firebase
 
+var justLoggedOut = false
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var usernameTextField: UITextField!
@@ -22,11 +23,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewWillAppear(_ animated: Bool) {
         
         let userDefault = UserDefaults.standard
-//        if userDefault.string(forKey: "email") != nil && userDefault.string(forKey: "password") != nil{
-//            let email = userDefault.string(forKey: "email")
-//            let password = userDefault.string(forKey: "password")
-//            login(email: email!, password: password!)
-//        }
+        if !justLoggedOut && userDefault.string(forKey: "email") != nil && userDefault.string(forKey: "password") != nil{
+            let email = userDefault.string(forKey: "email")
+            let password = userDefault.string(forKey: "password")
+            login(email: email!, password: password!)
+        }
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +41,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         usernameTextField.layer.cornerRadius = 5
         passwordTextFeild.layer.cornerRadius = 5
         
-        self.view.addSubview(button)
-        button.frame =  CGRect(x: self.view.frame.width / 2 - 50 , y: self.view.frame.height - 100, width: 100, height: 40)
-
+        
+        button .frame =  CGRect(x: self.view.frame.width / 2 - 50 , y: self.view.frame.height - 100, width: 100, height: 40)
         button.backgroundColor = UIColor(hex: "167CAA")
         button.setTitle("تسجيل دخول", for: .normal)
         button.setTitleColor(.white, for: .normal)
@@ -50,6 +50,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         button.spinnerColor = .white
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
         
+        self.view.addSubview(button)
         
     }
     @IBAction func buttonAction() {
@@ -59,29 +60,32 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
 
     func login(email : String, password : String){
-        button.startAnimation() // 2: Then start the animation when the user tap the button
+        self.button.startAnimation() // 2: Then start the animation when the user tap the button
         let qualityOfServiceClass = DispatchQoS.QoSClass.background
         let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
         backgroundQueue.async(execute: {
-            
             sleep(3) // 3: Do your networking task or background work here.
             
-            DispatchQueue.main.async(execute: { () -> Void in
-                // 4: Stop the animation, here you have three options for the `animationStyle` property:
-                // .expand: useful when the task has been compeletd successfully and you want to expand the button and transit to another view controller in the completion callback
-                // .shake: when you want to reflect to the user that the task did not complete successfly
-                // .normal
-                self.button.stopAnimation(animationStyle: .expand, completion: {
-                    
-                    let userDefault = UserDefaults.standard
-                    userDefault.setValue(email, forKey: "email")
-                    userDefault.setValue(password, forKey: "password")
-                    
-                    
-                    let secondVC = self.storyboard!.instantiateViewController(withIdentifier: "main")
-                    self.present(secondVC, animated: true, completion: nil)
-                })
+            Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+                if error != nil{
+                    DispatchQueue.main.async(execute: { () -> Void in
+                        self.button.stopAnimation(animationStyle: .shake, completion: nil)
+                    })
+                }else{
+                    DispatchQueue.main.async(execute: { () -> Void in
+                            self.button.stopAnimation(animationStyle: .expand, completion: {
+                            
+                            let userDefault = UserDefaults.standard
+                            userDefault.setValue(email, forKey: "email")
+                            userDefault.setValue(password, forKey: "password")
+
+                            let secondVC = self.storyboard!.instantiateViewController(withIdentifier: "main")
+                            self.present(secondVC, animated: true, completion: nil)
+                        })
+                    })
+                }
             })
+ 
         })
     }
     
@@ -99,6 +103,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         return true
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
