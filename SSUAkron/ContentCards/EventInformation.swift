@@ -32,6 +32,21 @@ class EventInformation: UIViewController {
         sender.tap()
     }
     
+
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadData()
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
     
     // TODO: Connect this to a button in the card
     func openMapForPlace(c : CLLocationCoordinate2D) {
@@ -52,7 +67,6 @@ class EventInformation: UIViewController {
         mapItem.openInMaps(launchOptions: options)
     }
     
-    
     func loadData()  {
         
         signUpButton.layer.cornerRadius = radius
@@ -64,6 +78,7 @@ class EventInformation: UIViewController {
         descriptionContainer.layer.cornerRadius = radius
         mapView.layer.cornerRadius = radius
         descriptionView.layer.cornerRadius = radius
+        descriptionView.font = UIFont(name: "NotoKufiArabic", size: 12)
         
         let center = CLLocationCoordinate2DMake(39.659996, -86.197870)
         mapView?.centerCoordinate = center
@@ -77,24 +92,7 @@ class EventInformation: UIViewController {
         bigAssView.setNeedsLayout()
         bigAssView.setNeedsDisplay()
     }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        loadData()
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 }
-
-
-
-
 
 extension UIButton{
     func pulse()  {

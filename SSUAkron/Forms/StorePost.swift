@@ -43,13 +43,19 @@ class StorePostFormViewController: FormViewController, CLLocationManagerDelegate
             <<< TextRow(){ row in
                 row.title = "العنوان"
                 row.placeholder = "اختر عنوان السعلة"
-            }
+                }.cellSetup({ (cell, row) in
+                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                })
             
             <<< PushRow<String>() {
                 $0.title = "نوع السلعة"
                 $0.selectorTitle = "اختر نوع السلعة"
                 $0.options = randomArray
-            }
+                }.cellSetup({ (cell, row) in
+                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                })
             
             <<< ImageRow(){
                 $0.title = "صورة"
@@ -58,19 +64,31 @@ class StorePostFormViewController: FormViewController, CLLocationManagerDelegate
                 }.cellUpdate({ (cell, row) in
                     cell.accessoryView?.layer.cornerRadius = 17
                     cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+                }).cellSetup({ (cell, row) in
+                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
                 })
             <<< TextAreaRow(){
                 $0.placeholder = "وصف السلعة"
-            }
+                }.cellSetup({ (cell, row) in
+                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                })
             
             +++ Section()
             <<< IntRow(){
                 $0.title = "المبلغ"
                 $0.placeholder = "ادخل المبلغ بالدولار"
-            }
+                }.cellSetup({ (cell, row) in
+                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                })
             <<< PickerInlineRow<String>(){
                 $0.title = "اريد الملبغ في"
                 $0.options = ["السعودية", "بلد الدراسة"]
-        }
+                }.cellSetup({ (cell, row) in
+                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                })
     }
 }

@@ -51,26 +51,41 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
             <<< TextRow(){ row in
                 row.title = "العنوان"
                 row.placeholder = "اختر عنوان الفعالية"
-            }
+                }.cellSetup({ (cell, row) in
+                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                })
             
             <<< PushRow<String>() {
                 $0.title = "نوع الفعالية"
                 $0.selectorTitle = "اختر نوع الفعالية"
                 $0.options = randomArray
-            }
+                }.cellSetup({ (cell, row) in
+                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                })
             <<< TextAreaRow(){
                 $0.placeholder = "وصف للفعالية"
-            }
+                }.cellSetup({ (cell, row) in
+                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                })
             
             +++ Section()
             <<< IntRow(){
                 $0.title = "المبلغ"
                 $0.placeholder = "ادخل المبلغ بالدولار"
-            }
+                }.cellSetup({ (cell, row) in
+                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                })
             <<< IntRow(){
                 $0.title = "عدد المقاعدة المتاحة"
                 $0.placeholder = "0"
-            }
+                }.cellSetup({ (cell, row) in
+                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                })
             
             
         
@@ -81,11 +96,17 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
             <<< TextRow(){ row in
                 row.title = "اسم الموقع"
                 row.placeholder = "اختر اسم الموقع"
-            }
+                }.cellSetup({ (cell, row) in
+                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                })
             <<< TextRow(){ row in
                 row.title = "وصف الموقع"
                 row.placeholder = "مثال : الغرفة رفم 4 الطابق 2"
-            }
+                }.cellSetup({ (cell, row) in
+                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                })
             <<< LocationRow(){row in
                 row.title = "موقع الفعالية"
                 
@@ -95,7 +116,10 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
                           row.value = CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
                     }
                 }
-            }
+                }.cellSetup({ (cell, row) in
+                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                })
             <<< ImageRow(){
                 $0.title = "صورة"
                 $0.sourceTypes = [.PhotoLibrary, .Camera]
@@ -103,6 +127,9 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
                 }.cellUpdate({ (cell, row) in
                     cell.accessoryView?.layer.cornerRadius = 17
                     cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+                }).cellSetup({ (cell, row) in
+                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
                 })
         
 

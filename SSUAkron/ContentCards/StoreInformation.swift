@@ -16,8 +16,6 @@ class StoreInformation: UIViewController {
     @IBOutlet weak var photosView: UIView!
     @IBOutlet weak var DescriptionContainer: UIView!
     
-    
-    
     @IBOutlet weak var descriptionView: UITextView!
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
@@ -25,19 +23,13 @@ class StoreInformation: UIViewController {
     @IBOutlet weak var whereToRecieveLabel: UILabel!
     
     @IBAction func messageTapped(_ sender: Any) {
+        // Open a new message with uid of the item poster
     }
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-        costView.layer.cornerRadius = 12
-        messageView.layer.cornerRadius = 12
-        typeView.layer.cornerRadius = 12
-        photosView.layer.cornerRadius = 12
-        descriptionView.layer.cornerRadius = 12
-        DescriptionContainer.layer.cornerRadius = 12
-        messageButton.layer.cornerRadius = 12
-        // Do any additional setup after loading the view.
+       loadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,15 +37,16 @@ class StoreInformation: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func loadData(){
+        costView.layer.cornerRadius = 12
+        messageView.layer.cornerRadius = 12
+        typeView.layer.cornerRadius = 12
+        photosView.layer.cornerRadius = 12
+        descriptionView.layer.cornerRadius = 12
+        DescriptionContainer.layer.cornerRadius = 12
+        messageButton.layer.cornerRadius = 12
+        descriptionView.font = UIFont(name: "NotoKufiArabic", size: 12)
     }
-    */
+
 
 }
