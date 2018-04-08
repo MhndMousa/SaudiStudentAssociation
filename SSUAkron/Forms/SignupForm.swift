@@ -43,9 +43,7 @@ class SignupForm: FormViewController {
         }
         let email = valuesDictionary["email"] as! String
         let password = valuesDictionary["password"] as! String
-        print("before cretion")
         Auth.auth().createUser(withEmail: email, password: password, completion: { user, error in
-            print("in creation")
             if error != nil{
                 print(error)
             } else{
@@ -53,7 +51,6 @@ class SignupForm: FormViewController {
                 self.login(email: email, password: password)
             }
         })
-        print("after creation")
     }
     
     @IBAction func dismissTapped(_ sender: Any) {
