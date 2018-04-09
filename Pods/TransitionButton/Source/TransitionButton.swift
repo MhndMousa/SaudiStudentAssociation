@@ -75,6 +75,11 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
         self.setup()
     }
     
+    open override func layoutSubviews() {
+        super.layoutSubviews()
+        self.spiner.setToFrame(self.frame)
+    }
+    
     private func setup() {
         self.clipsToBounds  = true
         spiner.spinnerColor = spinnerColor
@@ -182,7 +187,7 @@ open class TransitionButton : UIButton, UIViewControllerTransitioningDelegate, C
     private func expand(completion:(()->Void)?, revertDelay: TimeInterval) {
         let expandAnim = CABasicAnimation(keyPath: "transform.scale")
         expandAnim.fromValue            = 1.0
-        expandAnim.toValue              = 35.0
+        expandAnim.toValue              = 26.0
         expandAnim.timingFunction       = expandCurve
         expandAnim.duration             = 0.4
         expandAnim.fillMode             = kCAFillModeForwards

@@ -252,10 +252,10 @@
 		59DDB6A1205FA2E3001DF580 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				596259842063CAED00DD7CAA /* Store.swift */,
-				59B26201206A08C400F1E9E7 /* Calender.swift */,
-				5979507F205B1B0000807FD1 /* Contact.swift */,
 				596CDA7E206C29D40043A157 /* Login.swift */,
+				59B26201206A08C400F1E9E7 /* Calender.swift */,
+				596259842063CAED00DD7CAA /* Store.swift */,
+				5979507F205B1B0000807FD1 /* Contact.swift */,
 				595AA090205CA4AE009D3D09 /* Coutner.swift */,
 			);
 			path = Main;
@@ -282,6 +282,7 @@
 				59795077205B1B0000807FD1 /* Frameworks */,
 				59795078205B1B0000807FD1 /* Resources */,
 				8A9EED780C3FDCDFC4FA7B8B /* [CP] Embed Pods Frameworks */,
+				983C2AA8EA7E36E5EAA70902 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -379,6 +380,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GooglePlacesRow/GooglePlacesRow.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -392,6 +394,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GooglePlacesRow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -405,6 +408,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		983C2AA8EA7E36E5EAA70902 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

@@ -426,8 +426,16 @@
                         <viewLayoutGuide key="safeArea" id="3De-2Q-dS9"/>
                     </view>
                     <navigationItem key="navigationItem" title="الملف الشخصي" id="yY9-pZ-Lqf">
-                        <barButtonItem key="leftBarButtonItem" title="Item" image="ic_close" id="RoJ-G9-m1y"/>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="ic_check" id="cIJ-x1-h3H"/>
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="ic_close" id="RoJ-G9-m1y">
+                            <connections>
+                                <action selector="cancelTapped:" destination="rOX-Ax-fXf" id="VX1-8A-TzQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="ic_check" id="cIJ-x1-h3H">
+                            <connections>
+                                <action selector="submitTapped:" destination="rOX-Ax-fXf" id="YHU-iW-jbg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gaJ-Wn-RC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -522,6 +530,16 @@
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="dQm-Lo-iQx" kind="presentation" id="F9f-jv-OFC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cv-W6-rhU">
+                                <rect key="frame" x="100" y="538" width="47" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="google">
+                                    <color key="titleColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                </state>
+                                <connections>
+                                    <action selector="googleSignInButtonTapped:" destination="Eh5-fw-BJC" eventType="touchUpInside" id="1ii-Dm-NTd"/>
                                 </connections>
                             </button>
                         </subviews>

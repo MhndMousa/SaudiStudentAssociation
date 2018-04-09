@@ -15,7 +15,7 @@ import Firebase
 class ContactViewController: UICollectionViewController{
 
     
-    var roaster = [User]()
+    var roaster = [SaudiUser]()
     
     @IBAction func signOutTapped(_ sender: Any) {
         do{
@@ -27,15 +27,22 @@ class ContactViewController: UICollectionViewController{
             print(error)
         }
     }
+
+    
     func loadData(){
-        for i in 0...10 {
-            let a = User()
-            a.name = String(describing: i)
-            roaster.append(a)
-            if i % 2 == 0{
-                a.job = "شسيب"
+        
+        let db = ref.child("clubs").child("IN").child("indianapolis").child("roaster").observe(.value) { (snapshot) in
+            let value = snapshot.value as! [String: [String: String]]
+            print(value)
+            for child in value.values{
+                let a = SaudiUser()
+                a.name = child["name"]
+                self.roaster.append(a)
+                print(self.roaster)
             }
+            self.collectionView?.reloadData()
         }
+        
     }
     
     override func viewDidLoad() {

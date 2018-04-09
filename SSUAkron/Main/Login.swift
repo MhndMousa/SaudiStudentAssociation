@@ -9,9 +9,10 @@
 import UIKit
 import TransitionButton
 import Firebase
+import GoogleSignIn
 
 var justLoggedOut = false
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextFeild: UITextField!
@@ -19,20 +20,34 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     let button = TransitionButton()
     
     
+    fileprivate func gotToMain(){
+        let secondVC = self.storyboard!.instantiateViewController(withIdentifier: "main")
+        self.present(secondVC, animated: true, completion: nil)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         
         let userDefault = UserDefaults.standard
-        if !justLoggedOut && userDefault.string(forKey: "email") != nil && userDefault.string(forKey: "password") != nil{
-            let email = userDefault.string(forKey: "email")
-            let password = userDefault.string(forKey: "password")
-            login(email: email!, password: password!)
-        }
+//        if !justLoggedOut && userDefault.string(forKey: "email") != nil && userDefault.string(forKey: "password") != nil{
+//            let email = userDefault.string(forKey: "email")
+//            let password = userDefault.string(forKey: "password")
+//            login(email: email!, password: password!)
+//        }
     }
+    @IBAction func googleSignInButtonTapped(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+       
+        print(Auth.auth().currentUser?.email! )
+        gotToMain()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         initView()
         
+        GIDSignIn.sharedInstance().uiDelegate = self
+        
+
     }
     
     
@@ -79,13 +94,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             userDefault.setValue(email, forKey: "email")
                             userDefault.setValue(password, forKey: "password")
 
-                            let secondVC = self.storyboard!.instantiateViewController(withIdentifier: "main")
-                            self.present(secondVC, animated: true, completion: nil)
+                                self.gotToMain()
                         })
                     })
                 }
             })
- 
         })
     }
     

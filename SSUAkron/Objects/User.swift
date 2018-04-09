@@ -9,11 +9,13 @@
 import Foundation
 import UIKit
 
-class User : NSObject{
+class SaudiUser : NSObject{
     var name : String?
     var job : String = "طالب"
     var uid : String?
     var email: String?
-    var phoneNumber: Int?
+    var major: String?
+    var university: String?
+    var phoneNumber: String?
     var image: UIImage = UIImage(named: "Unknown_Person")!
 }

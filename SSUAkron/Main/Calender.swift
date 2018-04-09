@@ -9,17 +9,20 @@
 import UIKit
 import Firebase
 
+var currentUser = SaudiUser()
+
 class EventViewController: UITableViewController {
 
     var events = [CardInformaion]()
     var colors = ["pink" :UIColor.init(red: 1, green: 0.7, blue: 0.7, alpha: 1), "blue" : UIColor.blue, "orange" : UIColor.orange, "white" : UIColor.white, "black" : UIColor.black]
-    var eventType = ["تجمع نسائي", "تجمع رجال " , "تجمع للاطفال"]
     
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.register(UINib(nibName: "CardHighlightCell", bundle: nil), forCellReuseIdentifier: "cell")
-    
+        currentUser = getUserInfo()
     }
-
+    
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         requestData()

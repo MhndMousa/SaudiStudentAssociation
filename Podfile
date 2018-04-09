@@ -12,5 +12,6 @@ target 'SSUAkron' do
   pod 'Eureka'
   pod 'ImageRow', '~> 3.0'
   pod 'GooglePlacesRow'
-  pod 'IQKeyboardManagerSwift'  
+  pod 'IQKeyboardManagerSwift'
+  pod 'GoogleSignIn'  
 end
