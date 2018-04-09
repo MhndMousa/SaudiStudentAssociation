@@ -11,6 +11,7 @@ import UIKit
 import Firebase
 
 var ref : DatabaseReference! =  Database.database().reference()
+let storageRef: StorageReference = Storage.storage().reference()
 
 
 func wrapContent(view: UIScrollView)  {

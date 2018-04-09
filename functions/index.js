@@ -19,7 +19,6 @@ exports.createUserAccount = functions.auth.user().onCreate(event =>{
   return newUserRef.set({
     email: email,
     name: name,
-
-    // password: password
+    uid: uid
   })
 })
