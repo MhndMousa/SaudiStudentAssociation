@@ -12,14 +12,14 @@ exports.createUserAccount = functions.auth.user().onCreate(event =>{
 
   const uid = user.uid
   const email = user.email
-  const displayName = user.displayName || ""
+  const name = user.displayName || ""
 
   // Creates new user in Database
   const newUserRef = ref.child(`/users/${uid}`)
   return newUserRef.set({
     email: email,
-    displayName: displayName,
-    
+    name: name,
+
     // password: password
   })
 })
