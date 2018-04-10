@@ -18,7 +18,7 @@ class EventViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.register(UINib(nibName: "CardHighlightCell", bundle: nil), forCellReuseIdentifier: "cell")
-        currentUser = getUserInfo()
+        refreshCurrentUserInfo()
     }
     
   

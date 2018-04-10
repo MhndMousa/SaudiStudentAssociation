@@ -62,7 +62,9 @@ func refreshCurrentUserInfo() {
 
 func getUserInfo() -> SaudiUser {
     let currentUser = Auth.auth().currentUser
-    let ref = Database.database().reference().child("users").child((currentUser?.uid)!)
+    let uid = (currentUser?.uid)!
+    print(uid)
+    let ref = Database.database().reference().child("users").child(uid)
     let user = SaudiUser()
     ref.observe(.value) { (snapshot) in
         let value = snapshot.value as! [String: Any]

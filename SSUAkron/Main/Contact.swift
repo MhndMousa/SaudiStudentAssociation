@@ -29,14 +29,18 @@ class ContactViewController: UICollectionViewController{
     }
 
     
-    func loadData(){
-        
-        let db = ref.child("clubs").child("IN").child("indianapolis").child("roaster").observe(.value) { (snapshot) in
-            let value = snapshot.value as! [String: [String: String]]
-            print(value)
-            for child in value.values{
+    func reloadData(){
+        roaster.removeAll()
+        _ = ref.child("clubs").child("IN").child("indianapolis").child("roaster").observe(.value) { (snapshot) in
+            let values = snapshot.value as! NSDictionary
+            for value in values.allValues{
+                let child = value as! [String : String]
                 let a = SaudiUser()
                 a.name = child["name"]
+                a.uid = child["uid"]
+                if child["job"] != nil{
+                    a.job = child["job"]!
+                }
                 self.roaster.append(a)
                 print(self.roaster)
             }
@@ -48,7 +52,7 @@ class ContactViewController: UICollectionViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView?.register(UINib(nibName: "ContactCardCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-        loadData()
+        reloadData()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle{

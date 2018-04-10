@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eh5-fw-BJC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eh5-fw-BJC">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Thin</string>
+        </array>
         <array key="NotoKufiArabic-Regular.ttf">
             <string>NotoKufiArabic</string>
         </array>
@@ -481,10 +484,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lb4-eF-hdT">
-                                <rect key="frame" x="30" y="133.5" width="315" height="400"/>
+                                <rect key="frame" x="30" y="60" width="325" height="400"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="البريد الالكتروني " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYY-oM-ufy">
-                                        <rect key="frame" x="10" y="272" width="295" height="40"/>
+                                        <rect key="frame" x="10" y="272" width="305" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -495,14 +498,14 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ssa" translatesAutoresizingMaskIntoConstraints="NO" id="GAL-X4-vVq">
-                                        <rect key="frame" x="57.5" y="30" width="200" height="173.5"/>
+                                        <rect key="frame" x="62.5" y="30" width="200" height="173.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="GAL-X4-vVq" secondAttribute="height" multiplier="960:833" id="bKz-TM-4yv"/>
                                             <constraint firstAttribute="width" constant="200" id="cgn-pl-4LT"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="كلمة المرور" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aQJ-oP-YSN">
-                                        <rect key="frame" x="10" y="330" width="295" height="40"/>
+                                        <rect key="frame" x="10" y="330" width="305" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
@@ -525,44 +528,58 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="035-16-3WT">
-                                <rect key="frame" x="164" y="538.5" width="46" height="30"/>
+                                <rect key="frame" x="24.5" y="470" width="325" height="40"/>
                                 <color key="backgroundColor" red="0.21544662117958069" green="0.60186463594436646" blue="0.5999639630317688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="dQm-Lo-iQx" kind="presentation" id="F9f-jv-OFC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Cv-W6-rhU">
-                                <rect key="frame" x="100" y="538" width="47" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="google">
-                                    <color key="titleColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
-                                </state>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqA-7n-8W4">
+                                <rect key="frame" x="25" y="520" width="325" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUP-3r-jlu" customClass="GIDSignInButton">
+                                <rect key="frame" x="25" y="570" width="325" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="8VW-Pu-Uxx"/>
+                                </constraints>
                                 <connections>
-                                    <action selector="googleSignInButtonTapped:" destination="Eh5-fw-BJC" eventType="touchUpInside" id="1ii-Dm-NTd"/>
+                                    <action selector="googleSignInButtonTapped:" destination="Eh5-fw-BJC" eventType="touchUpInside" id="Qll-td-CAd"/>
                                 </connections>
-                            </button>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="RgY-2S-Haw" firstAttribute="trailing" secondItem="Lb4-eF-hdT" secondAttribute="trailing" constant="20" id="1d8-iI-BuL"/>
                             <constraint firstItem="035-16-3WT" firstAttribute="centerX" secondItem="v3q-R0-nRU" secondAttribute="centerX" id="75L-61-TYj"/>
-                            <constraint firstItem="035-16-3WT" firstAttribute="top" secondItem="Lb4-eF-hdT" secondAttribute="bottom" constant="5" id="PkR-GM-Xbk"/>
-                            <constraint firstItem="Lb4-eF-hdT" firstAttribute="centerX" secondItem="v3q-R0-nRU" secondAttribute="centerX" id="ZTY-jw-yJi"/>
+                            <constraint firstItem="Lb4-eF-hdT" firstAttribute="top" secondItem="RgY-2S-Haw" secondAttribute="top" constant="40" id="780-tU-hV8"/>
+                            <constraint firstItem="zqA-7n-8W4" firstAttribute="centerX" secondItem="RgY-2S-Haw" secondAttribute="centerX" id="DvB-KU-U7c"/>
+                            <constraint firstItem="zqA-7n-8W4" firstAttribute="top" secondItem="035-16-3WT" secondAttribute="bottom" constant="10" id="E8x-wP-BD5"/>
+                            <constraint firstItem="zqA-7n-8W4" firstAttribute="height" secondItem="035-16-3WT" secondAttribute="height" id="FfK-cj-SvE"/>
+                            <constraint firstItem="GUP-3r-jlu" firstAttribute="centerX" secondItem="RgY-2S-Haw" secondAttribute="centerX" id="Gsp-GX-wuT"/>
+                            <constraint firstItem="035-16-3WT" firstAttribute="height" secondItem="GUP-3r-jlu" secondAttribute="height" id="Inf-ZB-LQZ"/>
+                            <constraint firstItem="GUP-3r-jlu" firstAttribute="top" secondItem="zqA-7n-8W4" secondAttribute="bottom" constant="10" id="LMW-gp-oHX"/>
+                            <constraint firstItem="zqA-7n-8W4" firstAttribute="width" secondItem="035-16-3WT" secondAttribute="width" id="Sye-fE-vFY"/>
+                            <constraint firstItem="GUP-3r-jlu" firstAttribute="width" secondItem="Lb4-eF-hdT" secondAttribute="width" id="Z5L-KW-rLY"/>
                             <constraint firstItem="Lb4-eF-hdT" firstAttribute="leading" secondItem="RgY-2S-Haw" secondAttribute="leading" constant="30" id="b6y-Yk-GwQ"/>
-                            <constraint firstItem="RgY-2S-Haw" firstAttribute="trailing" secondItem="Lb4-eF-hdT" secondAttribute="trailing" constant="30" id="qg6-1I-xo2"/>
-                            <constraint firstItem="Lb4-eF-hdT" firstAttribute="centerY" secondItem="v3q-R0-nRU" secondAttribute="centerY" id="tgu-C6-K1A"/>
+                            <constraint firstItem="035-16-3WT" firstAttribute="width" secondItem="GUP-3r-jlu" secondAttribute="width" id="er9-cA-uJv"/>
+                            <constraint firstItem="035-16-3WT" firstAttribute="top" secondItem="Lb4-eF-hdT" secondAttribute="bottom" constant="10" id="rRR-ub-0DM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RgY-2S-Haw"/>
                     </view>
                     <connections>
                         <outlet property="passwordTextFeild" destination="aQJ-oP-YSN" id="ERU-Bw-paJ"/>
                         <outlet property="rectangleView" destination="Lb4-eF-hdT" id="hft-pU-VBP"/>
+                        <outlet property="signUpButton" destination="035-16-3WT" id="fzp-Vi-4fH"/>
+                        <outlet property="transitionButtonContainer" destination="zqA-7n-8W4" id="bFr-6k-1yZ"/>
                         <outlet property="usernameTextField" destination="zYY-oM-ufy" id="CoX-Ba-4pr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xfN-C1-7z4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1969" y="-821"/>
+            <point key="canvasLocation" x="-1970.4000000000001" y="-821.73913043478262"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="gEa-BI-Iuw">
@@ -834,7 +851,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMK-Fq-GHk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2358" y="3167"/>
+            <point key="canvasLocation" x="2358" y="3145"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EKp-6G-rzi">
