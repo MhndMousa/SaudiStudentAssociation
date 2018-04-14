@@ -20,6 +20,12 @@ class ContactViewController: UICollectionViewController{
     @IBAction func signOutTapped(_ sender: Any) {
         do{
             try Auth.auth().signOut()
+            let userDefault = UserDefaults.standard
+            
+//            let email = userDefault.string(forKey: "email")
+//            let password = userDefault.string(forKey: "password")
+            userDefault.removeObject(forKey: "email")
+            userDefault.removeObject(forKey: "password")
             let vc = self.storyboard!.instantiateViewController(withIdentifier: "login")
             self.present(vc, animated: true, completion: nil)
             justLoggedOut = true

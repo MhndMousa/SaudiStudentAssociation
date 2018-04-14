@@ -29,10 +29,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     override func viewWillAppear(_ animated: Bool) {
         
         let userDefault = UserDefaults.standard
-        if !justLoggedOut && userDefault.string(forKey: "email") != nil && userDefault.string(forKey: "password") != nil{
-            let email = userDefault.string(forKey: "email")
-            let password = userDefault.string(forKey: "password")
-            login(email: email!, password: password!)
+        DispatchQueue.global(qos: .background).async {
+            sleep(1)
+            if !justLoggedOut && userDefault.string(forKey: "email") != nil && userDefault.string(forKey: "password") != nil{
+                self.gotToMain()
+            }
+
         }
     }
     @IBAction func googleSignInButtonTapped(_ sender: Any) {
@@ -41,9 +43,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         if Auth.auth().currentUser != nil{
             gotToMain()
         }
-        
-        print(Auth.auth().currentUser?.email! )
-        
+        print(Auth.auth().currentUser?.email!)
     }
     
     override func viewDidLoad() {
