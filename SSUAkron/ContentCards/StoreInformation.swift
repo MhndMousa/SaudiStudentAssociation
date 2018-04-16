@@ -27,6 +27,7 @@ class StoreInformation: UIViewController {
     }
     
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
        loadData()

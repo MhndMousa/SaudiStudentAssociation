@@ -66,27 +66,14 @@ class StoreTableViewController: UITableViewController {
         ref.child("Store").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
             for child in snapshot.children.allObjects as! [DataSnapshot]{
                 var dic  = child.value! as! [String: Any]
-                let card = CardInformaion()
+                let card = CardInformaion(dic as [String : AnyObject])
                 
-                //TODO: Add the rest of the data that populates the card
-                card.title = dic["title"] as? String
-                card.itemTitle = dic["itemTitle"] as? String
-                card.itemSubtitle = dic["itemSubtitle"] as? String
                 self.fetchedInformation.insert(card, at: 0)
                 
-                //                print(dic)
-                //                print(self.events.count)
-                
             }
-            print("in store")
-            
-            //
-            print("Event count After: " + String (self.fetchedInformation.count))
-            
             DispatchQueue.main.asyncAfter(deadline: .now() + 1 , execute: {
                 self.refresher.endRefreshing()
             })
-            
             self.tableView.reloadData()
         })
         

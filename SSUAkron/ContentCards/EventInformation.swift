@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Firebase
 
 
 class EventInformation: UIViewController {
@@ -27,6 +28,9 @@ class EventInformation: UIViewController {
     @IBOutlet weak var descriptionView: UITextView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var signUpButton: UIButton!
+    
+    var coordinations: CLLocationCoordinate2D?
+    
     @IBAction func signUpClicked(_ sender: UIButton) {
     
         sender.tap()
@@ -37,7 +41,7 @@ class EventInformation: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        loadData()
+        setupView()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,10 +53,10 @@ class EventInformation: UIViewController {
     
     
     // TODO: Connect this to a button in the card
-    func openMapForPlace(c : CLLocationCoordinate2D) {
-        
-        let latitude: CLLocationDegrees = c.latitude
-        let longitude: CLLocationDegrees = c.longitude
+    @objc func openMapForPlace() {
+        let c = coordinations
+        let latitude: CLLocationDegrees = c!.latitude
+        let longitude: CLLocationDegrees = c!.longitude
         
         let regionDistance:CLLocationDistance = 10000
         let coordinates = CLLocationCoordinate2DMake(latitude, longitude)
@@ -63,11 +67,13 @@ class EventInformation: UIViewController {
         ]
         let placemark = MKPlacemark(coordinate: coordinates, addressDictionary: nil)
         let mapItem = MKMapItem(placemark: placemark)
-        mapItem.name = "Place Name"
         mapItem.openInMaps(launchOptions: options)
     }
     
-    func loadData()  {
+    
+    
+    func setupView()  {
+        
         
         signUpButton.layer.cornerRadius = radius
         
@@ -83,17 +89,21 @@ class EventInformation: UIViewController {
         let center = CLLocationCoordinate2DMake(39.659996, -86.197870)
         mapView?.centerCoordinate = center
         
-        
-        
-        mapView.addAnnotation(MapPin(coordinate: center, title: "Home", subtitle: "My homie"))
+        let mappin = MapPin(coordinate: center, title: "Home", subtitle: "My homie")
+        mapView.addAnnotation(mappin)
+
         
         mapView?.camera.altitude = 2000
+        
+        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(viewViewed), userInfo: nil, repeats: false)
+    }
+    
+    @objc func viewViewed() {
         
         bigAssView.setNeedsLayout()
         bigAssView.setNeedsDisplay()
     }
 }
-
 extension UIButton{
     func pulse()  {
         let pulse = CASpringAnimation(keyPath: "transform.scale")

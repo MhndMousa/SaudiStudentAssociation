@@ -27,6 +27,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if let user = user {
+                self.gotToMain()
+            }
+        }
         
         let userDefault = UserDefaults.standard
         DispatchQueue.global(qos: .background).async {
@@ -39,11 +44,51 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     }
     @IBAction func googleSignInButtonTapped(_ sender: Any) {
         GIDSignIn.sharedInstance().signIn()
-        print(GIDSignIn.sharedInstance().description)
-        if Auth.auth().currentUser != nil{
-            gotToMain()
-        }
-        print(Auth.auth().currentUser?.email!)
+        let indicator = UIActivityIndicatorView()
+        let loadingView = UIView()
+        let trButton = TransitionButton()
+        
+        
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(loadingView)
+        
+        loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        loadingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        loadingView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        loadingView.backgroundColor = .white
+        loadingView.alpha = 0.8
+        
+        loadingView.addSubview(indicator)
+        indicator.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor).isActive = true
+        indicator.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor).isActive = true
+        indicator.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        indicator.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        indicator.color = .blue
+        indicator.startAnimating()
+
+       
+        
+        
+        let qualityOfServiceClass = DispatchQoS.QoSClass.background
+        let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
+        
+        backgroundQueue.async(execute: {
+            sleep(2)
+            
+            DispatchQueue.main.async(execute: { () -> Void in
+                if Auth.auth().currentUser != nil{
+                    self.gotToMain()
+                }
+                
+                loadingView.removeFromSuperview()
+            print(Auth.auth().currentUser?.email! as Any)
+            })
+        })
+        
+        
     }
     
     override func viewDidLoad() {
@@ -51,7 +96,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         initView()
         
         GIDSignIn.sharedInstance().uiDelegate = self
-        
+//        GIDSignIn.sharedInstance().signInSilently()
 
     }
     
@@ -73,6 +118,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
 
         button.backgroundColor = UIColor(hex: "167CAA")
         button.setTitle("تسجيل دخول", for: .normal)
+        button.titleLabel?.font = UIFont(name: "NotoKufiArabic", size: 17)
         button.setTitleColor(.white, for: .normal)
         button.cornerRadius = 20
         button.spinnerColor = .white

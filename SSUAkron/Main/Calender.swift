@@ -43,38 +43,40 @@ class EventViewController: UITableViewController {
         events.removeAll()
         ref.child("Store").observe(.childAdded) { (snapshot) in
             
-            var dic  = snapshot.value! as! [String: Any]
-            let card = CardInformaion()
-            let storageRef =  Storage.storage().reference()
+            let dic  = snapshot.value! as! [String: AnyObject]
+            let card = CardInformaion(dic, self.colors)
+            card.cardId = snapshot.key
             
-            //TODO: Add the rest of the data that populates the card
-            card.title = dic["title"] as? String ?? ""
-            card.itemTitle = dic["itemTitle"] as? String ?? ""
-            card.itemSubtitle = dic["itemSubtitle"] as? String ?? ""
-            let backgroundColor = dic["backgroundColor"] as? String ?? "pink"
-            let textColor = dic["textColor"] as? String ?? "white"
-            
-            card.textColor = self.colors[textColor]
-            card.backgroundColor = self.colors[backgroundColor]
-            
-            let photoRef = storageRef.child("test/a3716125247_16.jpg")
-            //Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-                photoRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-                    if  error != nil{
-                    } else {
-                        let image = UIImage(data: data!)
-                        card.image = image!
+            let photoRef = Storage.storage().reference().child("test/a3716125247_16.jpg")
+//            Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+                    photoRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+                        if  error != nil{
+                        } else {
+                            let a = UIImage(data: data!)
+                            card.image = a!
+                        }
                     }
-                }
             
             self.events.insert(card, at: 0)
-            self.tableView.reloadData()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                self.refresher.endRefreshing()
+            self.events.sort(by: { (card1, card2) -> Bool in
+                return card1.time.intValue > card2.time.intValue
             })
+            
+            self.timer?.invalidate()
+            self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.handleDataReload), userInfo: nil, repeats: false)
+   
         }
     }
     
+    var timer : Timer?
+    @objc func handleDataReload(){
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            self.refresher.endRefreshing()
+        })
+    }
     
     // MARK: - Table view data source
     
@@ -87,6 +89,11 @@ class EventViewController: UITableViewController {
         return 320
     }
 
+
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        cardId = self.events[indexPath.row].cardId!
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -130,4 +137,6 @@ class EventViewController: UITableViewController {
     
     
 }
+
+var cardId = String()
 
