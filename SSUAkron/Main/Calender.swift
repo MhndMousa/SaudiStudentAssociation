@@ -13,6 +13,7 @@ var currentUser = SaudiUser()
 
 class EventViewController: UITableViewController {
 
+    var delegate: CardDelegate? = nil
     var events = [CardInformaion]()
     var colors = ["pink" :UIColor.init(red: 1, green: 0.7, blue: 0.7, alpha: 1), "blue" : UIColor.blue, "orange" : UIColor.orange, "white" : UIColor.white, "black" : UIColor.black]
     
@@ -78,47 +79,35 @@ class EventViewController: UITableViewController {
         })
     }
     
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: CardHighlightCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardHighlightCell
-
-        
-        cell.card?.shadowOpacity = 0
-        
-        let cardVC = EventInformation()
         let event = self.events[indexPath.row]
+        let cardVC = EventInformation()
         
 //        let cardVC = UIViewController(nibName: "EventCard", bundle: nil) as! EventInformation
-//        let cardVC = storyboard?.instantiateViewController(withIdentifier: "EventCard") as! EventInformation
         
+//        let cardVC = storyboard?.instantiateViewController(withIdentifier: "EventCard") as! EventInformation
+      
         DispatchQueue.main.async {
-            
-            cell.card?.textColor = .white
-            cell.card?.title = String( describing: event.title!)
-            cell.card?.itemTitle = String( describing: event.itemTitle!)
-            cell.card?.itemSubtitle = String( describing: event.itemSubtitle!)
-            cell.card?.backgroundColor = event.backgroundColor!
-            cell.card?.icon = event.image
-            cell.card?.textColor = event.textColor!
+            cell.populate(event)
             cardVC.dateLabel?.text = String(describing: indexPath.row)
-            
             cardVC.loadViewIfNeeded()
             cardVC.viewDidLayoutSubviews()
         }
-        
 
-
-        cell.card?.shouldPresent(cardVC, from: self, fullscreen: true)
-        
+    
+        cell.card.delegate = self as? CardDelegate
+        cell.event = cardVC
+        cell.card?.shouldPresent(cell.event, from: self, fullscreen: true)
         
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         cell.backgroundColor = UIColor(hex: "efeff4")
-        return cell
         
+        return cell
     }
-    
-    
-    
     
     
     
@@ -131,5 +120,4 @@ class EventViewController: UITableViewController {
         //        return wrapContent(cell: self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath))
         return 320
     }
-
 }

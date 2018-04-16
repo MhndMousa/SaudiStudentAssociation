@@ -8,25 +8,34 @@
 
 import UIKit
 
-class CardHighlightCell: UITableViewCell {
+class CardHighlightCell: UITableViewCell, CardDelegate {
 
+    var event : EventInformation!
+    
     @IBOutlet weak var card: CardHighlight!
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        
+        card.shadowOpacity = 0
     }
 
     
+    func populate(_ event: CardInformaion) {
+        card.title = String( describing: event.title!)
+        card.itemTitle = String( describing: event.itemTitle!)
+        card.itemSubtitle = String( describing: event.itemSubtitle!)
+        card.backgroundColor = event.backgroundColor!
+        card.icon = event.image
+        card.textColor = event.textColor!
+    }
+
+    
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        // Configure the view for the selected state
-        
     }
     override func prepareForReuse() {
         super.prepareForReuse()
-        //set cell to initial state here
-        //set like button to initial state - title, font, color, etc.
+        self.event = nil
     }
     
 }

@@ -49,8 +49,6 @@
 		59C23B912077423500B21E0B /* ContactCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C23B8F2077423500B21E0B /* ContactCardCell.swift */; };
 		59C23B922077423500B21E0B /* ContactCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59C23B902077423500B21E0B /* ContactCardCell.xib */; };
 		59C23B95207757CF00B21E0B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C23B94207757CF00B21E0B /* User.swift */; };
-		59DDB6A4205FA33D001DF580 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6A3205FA33D001DF580 /* StoreViewController.swift */; };
-		59DDB6A6205FA360001DF580 /* CalenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6A5205FA360001DF580 /* CalenderViewController.swift */; };
 		59DDB6BE2060E104001DF580 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6BD2060E104001DF580 /* Global.swift */; };
 		59E24C32206372A800B04928 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59E24C31206372A800B04928 /* GoogleService-Info.plist */; };
 		59E425D320663DF30097E08A /* CardInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E425D220663DF30097E08A /* CardInformation.swift */; };
@@ -102,8 +100,6 @@
 		59C23B8F2077423500B21E0B /* ContactCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCardCell.swift; sourceTree = "<group>"; };
 		59C23B902077423500B21E0B /* ContactCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCardCell.xib; sourceTree = "<group>"; };
 		59C23B94207757CF00B21E0B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		59DDB6A3205FA33D001DF580 /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
-		59DDB6A5205FA360001DF580 /* CalenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderViewController.swift; sourceTree = "<group>"; };
 		59DDB6BD2060E104001DF580 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		59E24C31206372A800B04928 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		59E425D220663DF30097E08A /* CardInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInformation.swift; sourceTree = "<group>"; };
@@ -161,15 +157,6 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
-		596259862065B44300DD7CAA /* Unused */ = {
-			isa = PBXGroup;
-			children = (
-				59DDB6A3205FA33D001DF580 /* StoreViewController.swift */,
-				59DDB6A5205FA360001DF580 /* CalenderViewController.swift */,
-			);
-			path = Unused;
-			sourceTree = "<group>";
-		};
 		5962598D2066032C00DD7CAA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -219,7 +206,6 @@
 				5979508C205B1B0000807FD1 /* Info.plist */,
 				59E24C31206372A800B04928 /* GoogleService-Info.plist */,
 				59795084205B1B0000807FD1 /* SSUAkron.xcdatamodeld */,
-				596259862065B44300DD7CAA /* Unused */,
 			);
 			path = SSUAkron;
 			sourceTree = "<group>";
@@ -462,7 +448,6 @@
 				59C23B912077423500B21E0B /* ContactCardCell.swift in Sources */,
 				597950A0205B1B8300807FD1 /* LayoutHelper.swift in Sources */,
 				59BE991720721FEC00EB00BA /* StoreInformation.swift in Sources */,
-				59DDB6A4205FA33D001DF580 /* StoreViewController.swift in Sources */,
 				597950A1205B1B8300807FD1 /* Card.swift in Sources */,
 				59F791A3207A133800A4DA20 /* Profile.swift in Sources */,
 				592453B92075E05000D0A1A9 /* CustomCells.swift in Sources */,
@@ -483,7 +468,6 @@
 				590B23762082BA7400270381 /* Message.swift in Sources */,
 				59B26206206A091100F1E9E7 /* EventInformation.swift in Sources */,
 				59795080205B1B0000807FD1 /* Contact.swift in Sources */,
-				59DDB6A6205FA360001DF580 /* CalenderViewController.swift in Sources */,
 				5979507E205B1B0000807FD1 /* AppDelegate.swift in Sources */,
 				59E425D320663DF30097E08A /* CardInformation.swift in Sources */,
 				59DDB6BE2060E104001DF580 /* Global.swift in Sources */,

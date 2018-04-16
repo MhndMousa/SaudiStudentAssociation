@@ -11,7 +11,7 @@ import MapKit
 import Firebase
 
 
-class EventInformation: UIViewController {
+class EventInformation: UIViewController , CardDelegate{
 
     var radius : CGFloat = 12
     @IBOutlet var bigAssView: UIView!
@@ -35,9 +35,24 @@ class EventInformation: UIViewController {
         sender.tap()
     }
     
+    func cardDidTapInside(card: Card) {
+        print("didtapinside")
+        bigAssView.layoutIfNeeded()
+        bigAssView.setNeedsDisplay()
+        descriptionView.setNeedsDisplay()
+        descriptionView.layoutIfNeeded()
+    }
+    
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         setupView()
+
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -107,12 +122,6 @@ class EventInformation: UIViewController {
         
 //        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(viewViewed), userInfo: nil, repeats: false)
     }
-    
-    @objc func viewViewed() {
-        bigAssView.setNeedsLayout()
-        bigAssView.setNeedsDisplay()
-    }
-
 }   // end Class
 
 
