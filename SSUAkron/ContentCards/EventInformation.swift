@@ -32,12 +32,8 @@ class EventInformation: UIViewController {
     var coordinations: CLLocationCoordinate2D?
     
     @IBAction func signUpClicked(_ sender: UIButton) {
-    
         sender.tap()
     }
-    
-
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -46,11 +42,15 @@ class EventInformation: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+
+    let mapButton : UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = 12
+        button.titleLabel?.text = "navigate"
+        button.backgroundColor = .blue
+        return button
+    }()
     
     // TODO: Connect this to a button in the card
     @objc func openMapForPlace() {
@@ -69,41 +69,56 @@ class EventInformation: UIViewController {
         let mapItem = MKMapItem(placemark: placemark)
         mapItem.openInMaps(launchOptions: options)
     }
-    
-    
-    
-    func setupView()  {
+
+    func populateCard() {
         
-        
-        signUpButton.layer.cornerRadius = radius
-        
-        signupContainer.layer.cornerRadius = radius
-        dateContainer.layer.cornerRadius = radius
-        mapContainer.layer.cornerRadius = radius
-        contContainer.layer.cornerRadius = radius
-        descriptionContainer.layer.cornerRadius = radius
-        mapView.layer.cornerRadius = radius
-        descriptionView.layer.cornerRadius = radius
-        descriptionView.font = UIFont(name: "NotoKufiArabic", size: 12)
+        // Data base refrence to populate the card with appropraite choice
         
         let center = CLLocationCoordinate2DMake(39.659996, -86.197870)
         mapView?.centerCoordinate = center
-        
         let mappin = MapPin(coordinate: center, title: "Home", subtitle: "My homie")
         mapView.addAnnotation(mappin)
-
-        
         mapView?.camera.altitude = 2000
+    }
+    
+    func setupView()  {
+        signUpButton.layer.cornerRadius = radius
+        signupContainer.layer.cornerRadius = radius
+        dateContainer.layer.cornerRadius = radius
         
-        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(viewViewed), userInfo: nil, repeats: false)
+        mapContainer.layer.cornerRadius = radius
+        mapView.layer.cornerRadius = radius
+        mapContainer.addSubview(mapButton)
+        mapButton.leftAnchor.constraint(equalTo: mapContainer.leftAnchor, constant: 0).isActive = true
+        mapButton.bottomAnchor.constraint(equalTo: mapContainer.bottomAnchor, constant: 0).isActive = true
+        mapButton.widthAnchor.constraint(equalToConstant: 100)
+        mapButton.heightAnchor.constraint(equalToConstant: 40)
+       
+        contContainer.layer.cornerRadius = radius
+        
+        descriptionContainer.layer.cornerRadius = radius
+        descriptionView.layer.cornerRadius = radius
+        descriptionView.isEditable = false
+        descriptionView.isSelectable = false
+        descriptionView.showsVerticalScrollIndicator = false
+        descriptionView.font = UIFont(name: "NotoKufiArabic", size: 12)
+        
+        populateCard()
+        
+//        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(viewViewed), userInfo: nil, repeats: false)
     }
     
     @objc func viewViewed() {
-        
         bigAssView.setNeedsLayout()
         bigAssView.setNeedsDisplay()
     }
-}
+
+}   // end Class
+
+
+
+
+
 extension UIButton{
     func pulse()  {
         let pulse = CASpringAnimation(keyPath: "transform.scale")
