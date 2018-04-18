@@ -228,6 +228,15 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		59980B8320871EE1000B8871 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				590B23732082A68F00270381 /* Chat.swift */,
+				590B23772083C75E00270381 /* NewMessage.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
 		59B26203206A08F200F1E9E7 /* ContentCards */ = {
 			isa = PBXGroup;
 			children = (
@@ -253,8 +262,7 @@
 		59DDB6A1205FA2E3001DF580 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				590B23732082A68F00270381 /* Chat.swift */,
-				590B23772083C75E00270381 /* NewMessage.swift */,
+				59980B8320871EE1000B8871 /* Chat */,
 				596CDA7E206C29D40043A157 /* Login.swift */,
 				59B26201206A08C400F1E9E7 /* Calender.swift */,
 				596259842063CAED00DD7CAA /* Store.swift */,
