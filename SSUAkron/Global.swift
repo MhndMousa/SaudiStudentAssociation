@@ -88,6 +88,7 @@ extension UIColor {
     
     // MARK: - Initialization
     
+    
     convenience init?(hex: String) {
         var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
         hexSanitized = hexSanitized.replacingOccurrences(of: "#", with: "")

@@ -24,24 +24,13 @@ class StoreTableViewController: UITableViewController {
         super.viewDidLoad()
         
         imageArray = [#imageLiteral(resourceName: "car1"),#imageLiteral(resourceName: "car3"),#imageLiteral(resourceName: "car2")]
-        
-        
-        
-        
-        
         tableView.refreshControl = refresher
         
         self.navigationController?.navigationBar.largeTitleTextAttributes = [
             .font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!
             ,.foregroundColor : UIColor.white
         ]
-        
-   
 
-        
-        
-        
-        
     }
     
     

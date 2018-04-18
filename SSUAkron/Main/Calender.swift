@@ -13,17 +13,25 @@ var currentUser = SaudiUser()
 
 class EventViewController: UITableViewController {
 
+    let cardVC = EventInformation()
     var delegate: CardDelegate? = nil
     var events = [CardInformaion]()
-    var colors = ["pink" :UIColor.init(red: 1, green: 0.7, blue: 0.7, alpha: 1), "blue" : UIColor.blue, "orange" : UIColor.orange, "white" : UIColor.white, "black" : UIColor.black]
+    lazy var colors :[String:UIColor] = {
+        var dic = [String:UIColor]()
+        dic["pink"] =  UIColor.init(red: 1, green: 0.7, blue: 0.7, alpha: 1)
+        dic["white"] = .white
+        dic["blue"] = .blue
+        dic["orange"] = .orange
+        dic["black"] = .black
+        
+        return dic
+        
+    }()
     
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.register(UINib(nibName: "CardHighlightCell", bundle: nil), forCellReuseIdentifier: "cell")
         refreshCurrentUserInfo()
     }
-    
-  
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         requestData()
@@ -85,7 +93,6 @@ class EventViewController: UITableViewController {
         
         let cell: CardHighlightCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardHighlightCell
         let event = self.events[indexPath.row]
-        let cardVC = EventInformation()
         
 //        let cardVC = UIViewController(nibName: "EventCard", bundle: nil) as! EventInformation
         
@@ -93,11 +100,12 @@ class EventViewController: UITableViewController {
       
         DispatchQueue.main.async {
             cell.populate(event)
-            cardVC.dateLabel?.text = String(describing: indexPath.row)
-            cardVC.loadViewIfNeeded()
-            cardVC.viewDidLayoutSubviews()
+            self.cardVC.dateLabel?.text = String(describing: indexPath.row)
+            self.cardVC.loadViewIfNeeded()
+            self.cardVC.viewDidLayoutSubviews()
         }
 
+        UIColor.purple
     
         cell.card.delegate = self as? CardDelegate
         cell.event = cardVC
@@ -121,3 +129,4 @@ class EventViewController: UITableViewController {
         return 320
     }
 }
+
