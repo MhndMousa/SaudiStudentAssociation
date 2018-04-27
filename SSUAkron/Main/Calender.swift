@@ -11,10 +11,9 @@ import Firebase
 
 var currentUser = SaudiUser()
 
-class EventViewController: UITableViewController {
+class EventViewController: UITableViewController,CardDelegate {
 
-    let cardVC = EventInformation()
-    var delegate: CardDelegate? = nil
+    var delegate : CardDelegate?
     var events = [CardInformaion]()
     lazy var colors :[String:UIColor] = {
         var dic = [String:UIColor]()
@@ -30,6 +29,7 @@ class EventViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.register(UINib(nibName: "CardHighlightCell", bundle: nil), forCellReuseIdentifier: "cell")
+        delegate = self
         refreshCurrentUserInfo()
     }
     override func viewDidLoad() {
@@ -94,30 +94,32 @@ class EventViewController: UITableViewController {
         let cell: CardHighlightCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardHighlightCell
         let event = self.events[indexPath.row]
         
-//        let cardVC = UIViewController(nibName: "EventCard", bundle: nil) as! EventInformation
+        let cardVC :EventInformation = {
+            let e = EventInformation()
+            e.dateLabel?.text = String(describing: indexPath.row)
+            return e
+        }()
+
+        //        let cardVC = UIViewController(nibName: "EventCard", bundle: nil) as! EventInformation
         
-//        let cardVC = storyboard?.instantiateViewController(withIdentifier: "EventCard") as! EventInformation
+        //        let cardVC = storyboard?.instantiateViewController(withIdentifier: "EventCard") as! EventInformation
       
         DispatchQueue.main.async {
             cell.populate(event)
-            self.cardVC.dateLabel?.text = String(describing: indexPath.row)
-            self.cardVC.loadViewIfNeeded()
-            self.cardVC.viewDidLayoutSubviews()
+            cardVC.dateLabel?.text = String(describing: indexPath.row)
+            cardVC.loadViewIfNeeded()
+            cardVC.viewDidLayoutSubviews()
         }
-
-        UIColor.purple
     
-        cell.card.delegate = self as? CardDelegate
+//        cell.card.delegate = self as? CardDelegate
         cell.event = cardVC
         cell.card?.shouldPresent(cell.event, from: self, fullscreen: true)
         
-        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        cell.selectionStyle = .none
         cell.backgroundColor = UIColor(hex: "efeff4")
         
         return cell
     }
-    
-    
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

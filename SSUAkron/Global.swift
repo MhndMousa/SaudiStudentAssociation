@@ -62,21 +62,22 @@ func refreshCurrentUserInfo() {
 
 func getUserInfo() -> SaudiUser {
     let currentUser = Auth.auth().currentUser
-    let uid = (currentUser?.uid)!
-    print(uid)
-    let ref = Database.database().reference().child("users").child(uid)
     let user = SaudiUser()
-    ref.observe(.value) { (snapshot) in
-        let value = snapshot.value as! [String: Any]
-        
-        user.name = value["name"] as? String
-        user.email = value["email"] as? String
-        user.uid = currentUser?.uid
-        user.major = value["major"] as? String
-        user.phoneNumber = value["phone_number"] as? String
-        user.university = value["university"] as? String
-        if snapshot.hasChild("job"){
-            user.job = value["job"] as! String
+    if let uid = currentUser?.uid{
+        let ref = Database.database().reference().child("users").child(uid)
+            ref.observe(.value) { (snapshot) in
+                let value = snapshot.value as! [String: Any]
+                
+                user.name = value["name"] as? String
+                user.email = value["email"] as? String
+                user.uid = currentUser?.uid
+                user.major = value["major"] as? String
+                user.phoneNumber = value["phone_number"] as? String
+                user.university = value["university"] as? String
+                if snapshot.hasChild("job"){
+                    user.job = value["job"] as! String
+                
+            }
         }
     }
     return user
