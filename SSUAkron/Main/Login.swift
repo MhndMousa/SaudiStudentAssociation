@@ -17,8 +17,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextFeild: UITextField!
+    @IBOutlet weak var loginButtonContainer: UIView!
+
+    @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var rectangleView: UIView!
-    let button = TransitionButton()
+    
     
     
     fileprivate func gotToMain(){
@@ -27,6 +30,101 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        tryLogin()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        drawLoginButton()
+        GIDSignIn.sharedInstance().uiDelegate = self
+    }
+    
+    @IBAction func googleSignInButtonTapped(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+        
+        // Adding a loading UIView to show that networking in the background
+        let indicator = UIActivityIndicatorView()
+        let loadingView = UIView()
+        
+        
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(loadingView)
+        
+        // Adding a white overlay on the current page
+        loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        loadingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        loadingView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        loadingView.backgroundColor = .white
+        loadingView.alpha = 0.8
+
+        // Add loading indicator
+        loadingView.addSubview(indicator)
+        indicator.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor).isActive = true
+        indicator.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor).isActive = true
+        indicator.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        indicator.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        indicator.color = .blue
+        indicator.startAnimating()
+
+        
+        // Animating the indicator
+        let qualityOfServiceClass = DispatchQoS.QoSClass.background
+        let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
+        backgroundQueue.async(execute: {
+            sleep(2)
+            DispatchQueue.main.async(execute: { () -> Void in
+                if Auth.auth().currentUser != nil{
+                    self.gotToMain()
+                }
+                // Delete the white overlay
+                loadingView.removeFromSuperview()
+                print(Auth.auth().currentUser?.email! as Any)
+            })
+        })
+    }
+    
+    var loginButton : TransitionButton = {
+        let button = TransitionButton()
+        button.backgroundColor = UIColor(hex: "167CAA")
+        button.setTitle("تسجيل دخول", for: .normal)
+        button.titleLabel?.font = UIFont(name: "NotoKufiArabic", size: 17)
+        button.setTitleColor(.white, for: .normal)
+        button.cornerRadius = 20
+        button.spinnerColor = .white
+        button.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
+        
+        return button
+    }()
+
+    func drawLoginButton(){
+        loginButtonContainer.backgroundColor = .clear
+        rectangleView.layer.cornerRadius = 20
+        usernameTextField.layer.cornerRadius = 5
+        passwordTextFeild.layer.cornerRadius = 5
+        signUpButton.layer.cornerRadius = 20
+        
+        
+        // Update login button style
+        let point = self.signUpButton.frame.center
+        loginButton.frame =  CGRect(x: self.view.frame.width / 2 - 50 ,
+                                y: point.y + 20,
+                                width: 100, height: 50)
+        loginButtonContainer.addSubview(loginButton)
+        
+        // Adding constraints
+        loginButton.translatesAutoresizingMaskIntoConstraints = false
+        loginButton.topAnchor.constraint(equalTo: loginButtonContainer.topAnchor).isActive = true
+        loginButton.bottomAnchor.constraint(equalTo: loginButtonContainer.bottomAnchor).isActive = true
+        loginButton.leadingAnchor.constraint(equalTo: loginButtonContainer.leadingAnchor).isActive = true
+        loginButton.trailingAnchor.constraint(equalTo: loginButtonContainer.trailingAnchor).isActive = true
+    }
+
+    
+    // If the user logged in before then login them in automatically.
+    func tryLogin() {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if let user = user {
                 self.gotToMain()
@@ -39,138 +137,42 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
             if !justLoggedOut && userDefault.string(forKey: "email") != nil && userDefault.string(forKey: "password") != nil{
                 self.gotToMain()
             }
-
+            
         }
     }
-    @IBAction func googleSignInButtonTapped(_ sender: Any) {
-        GIDSignIn.sharedInstance().signIn()
-        let indicator = UIActivityIndicatorView()
-        let loadingView = UIView()
-        let trButton = TransitionButton()
-        
-        
-        indicator.translatesAutoresizingMaskIntoConstraints = false
-        loadingView.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.view.addSubview(loadingView)
-        
-        loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        loadingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        loadingView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        loadingView.backgroundColor = .white
-        loadingView.alpha = 0.8
-        
-        loadingView.addSubview(indicator)
-        indicator.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor).isActive = true
-        indicator.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor).isActive = true
-        indicator.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        indicator.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        indicator.color = .blue
-        indicator.startAnimating()
 
-       
-        
-        
-        let qualityOfServiceClass = DispatchQoS.QoSClass.background
-        let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
-        
-        backgroundQueue.async(execute: {
-            sleep(2)
-            
-            DispatchQueue.main.async(execute: { () -> Void in
-                if Auth.auth().currentUser != nil{
-                    self.gotToMain()
-                }
-                
-                loadingView.removeFromSuperview()
-            print(Auth.auth().currentUser?.email! as Any)
-            })
-        })
-        
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        initView()
-        
-        GIDSignIn.sharedInstance().uiDelegate = self
-//        GIDSignIn.sharedInstance().signInSilently()
-
-    }
-    
-    @IBOutlet weak var transitionButtonContainer: UIView!
-    
-    func initView(){
-        transitionButtonContainer.backgroundColor = .clear
-        rectangleView.layer.cornerRadius = 20
-        signUpButton.layer.cornerRadius = 20
-        
-        usernameTextField.layer.cornerRadius = 5
-        passwordTextFeild.layer.cornerRadius = 5
-        
-        let point = self.signUpButton.frame.center
-        print(point)
-        button .frame =  CGRect(x: self.view.frame.width / 2 - 50 ,
-                                y: point.y + 20,
-                                width: 100, height: 50)
-
-        button.backgroundColor = UIColor(hex: "167CAA")
-        button.setTitle("تسجيل دخول", for: .normal)
-        button.titleLabel?.font = UIFont(name: "NotoKufiArabic", size: 17)
-        button.setTitleColor(.white, for: .normal)
-        button.cornerRadius = 20
-        button.spinnerColor = .white
-        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
-        
-        transitionButtonContainer.addSubview(button)
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        let top = button.topAnchor.constraint(equalTo: transitionButtonContainer.topAnchor)
-        let bot = button.bottomAnchor.constraint(equalTo: transitionButtonContainer.bottomAnchor)
-        let led = button.leadingAnchor.constraint(equalTo: transitionButtonContainer.leadingAnchor)
-        let trail = button.trailingAnchor.constraint(equalTo: transitionButtonContainer.trailingAnchor)
-        let buttonCon = [top, bot, led, trail]
-        NSLayoutConstraint.activate(buttonCon)
-//        self.view.addSubview(button)
-        
-        
-    }
-    @IBOutlet weak var signUpButton: UIButton!
-    @IBAction func buttonAction() {
+    @IBAction func loginButtonAction() {
         let email = self.usernameTextField.text!
         let password = self.passwordTextFeild.text!
         login(email: email, password: password)
     }
 
     func login(email : String, password : String){
-        self.button.startAnimation() // 2: Then start the animation when the user tap the button
+        self.loginButton.startAnimation() // 2: Then start the animation when the user tap the button
         let qualityOfServiceClass = DispatchQoS.QoSClass.background
         let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
-     
+        
         backgroundQueue.async(execute: {
             sleep(3) // 3: Do your networking task or background work here.
             Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                 if error != nil{
                     DispatchQueue.main.async(execute: { () -> Void in
-                        self.button.stopAnimation(animationStyle: .shake, completion: nil)
+                        self.loginButton.stopAnimation(animationStyle: .shake, completion: nil)
                     })
                 }else{
                     DispatchQueue.main.async(execute: { () -> Void in
-                            self.button.stopAnimation(animationStyle: .expand, completion: {
+                        self.loginButton.stopAnimation(animationStyle: .expand, completion: {
+                            // Add user default for the email and password for to loging automatically after
                             let userDefault = UserDefaults.standard
                             userDefault.setValue(email, forKey: "email")
                             userDefault.setValue(password, forKey: "password")
-
-                                self.gotToMain()
+                            self.gotToMain()
                         })
                     })
                 }
             })
         })
     }
-    
     
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -185,7 +187,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         }
         return true
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
