@@ -27,20 +27,19 @@ class CounterViewController: UIViewController {
         super.viewDidLoad()
         updateSalary()
         ringView?.progress = 0.0
+        
+        // If the salary is not updated update it after a second from the time the view was loaded.
         if isSalaryUpdated {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 self.updateCircle()
             })
         }
-        
-//        circle.layer.cornerRadius = circle.frame.height / 2 +
     
+        
+        // Rendering a white background for the circle.
         let render = UIGraphicsImageRenderer(size: CGSize(width: ringView.frame.width, height: ringView.frame.height))
         let img = render.image { (ctx) in
-            
             ctx.cgContext.setFillColor(UIColor.white.cgColor)
-      
-            
             let rectangle = CGRect(x: 0, y: 0, width: ringView.frame.width, height: ringView.frame.width)
             ctx.cgContext.addEllipse(in: rectangle)
             ctx.cgContext.drawPath(using: .fill)

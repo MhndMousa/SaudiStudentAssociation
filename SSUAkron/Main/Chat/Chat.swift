@@ -19,6 +19,8 @@ class ChatLogController: UITableViewController {
 
     }
     
+    
+    // TODO: Complete the database schema and add private and public chats!
     func fetchUsers(){
 
         let messagesRef = ref.child("users").child(currentUser.uid!).child("messages")

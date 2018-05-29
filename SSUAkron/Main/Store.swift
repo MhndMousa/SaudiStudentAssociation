@@ -17,13 +17,12 @@ class StoreTableViewController: UITableViewController {
     @IBOutlet weak var costLabel: UILabel!
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.register(UINib(nibName: "CardArticleCell", bundle: nil), forCellReuseIdentifier: "cell")
-         requestData()
+         requestStoreData()
 
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        imageArray = [#imageLiteral(resourceName: "car1"),#imageLiteral(resourceName: "car3"),#imageLiteral(resourceName: "car2")]
         tableView.refreshControl = refresher
         
         self.navigationController?.navigationBar.largeTitleTextAttributes = [
@@ -39,14 +38,14 @@ class StoreTableViewController: UITableViewController {
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = .white
-        refreshControl.addTarget(self, action: #selector(requestData), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(requestStoreData), for: .valueChanged)
         
         return refreshControl
         
     }()
     
     
-    @objc func requestData() {
+    @objc func requestStoreData() {
 
         fetchedInformation.removeAll()
         print("Event count Before: " + String (fetchedInformation.count))
@@ -54,33 +53,45 @@ class StoreTableViewController: UITableViewController {
         // TODO: Change the refrence to the Calander Event child in firebase
         ref.child("Store").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
             for child in snapshot.children.allObjects as! [DataSnapshot]{
-                var dic  = child.value! as! [String: Any]
+                let dic  = child.value! as! [String: Any]
                 let card = CardInformaion(dic as [String : AnyObject])
                 
                 self.fetchedInformation.insert(card, at: 0)
                 
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1 , execute: {
-                self.refresher.endRefreshing()
-            })
-            self.tableView.reloadData()
         })
-        
+        self.timer.invalidate()
+        self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.handleDataReload), userInfo: nil, repeats: false)
         
     }
-    
+    @objc func handleDataReload(){
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            self.refresher.endRefreshing()
+        })
+    }
 
+    
+    lazy var timer : Timer = {
+        let timer = Timer()
+        return timer
+    }()
   
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardArticleCell
         cell.backgroundColor = UIColor(hex: "efeff4")
-        
+        let item = self.fetchedInformation[indexPath.row]
 //        let cardContentVC = self.storyboard!.instantiateViewController(withIdentifier: "StoreCard")
         let cardContentVC = StoreInformation()
    
         
         DispatchQueue.main.async {
+            
+            
+            //cell.populate(item)
             
             cell.card?.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
             cell.card?.backgroundImage = self.imageArray[0]
