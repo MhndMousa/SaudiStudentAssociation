@@ -22,9 +22,7 @@ class EventViewController: UITableViewController,CardDelegate {
         dic["blue"] = .blue
         dic["orange"] = .orange
         dic["black"] = .black
-        
         return dic
-        
     }()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,11 +30,16 @@ class EventViewController: UITableViewController,CardDelegate {
         delegate = self
         refreshCurrentUserInfo()
     }
+    
+    func updateStyle()  {
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         requestData()
         tableView.refreshControl = refresher
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
+        
     }
     
     // MARK: - Refresher data source
@@ -64,13 +67,11 @@ class EventViewController: UITableViewController,CardDelegate {
                             let a = UIImage(data: data!)
                             card.image = a!
                         }
-                    }
-            
+                    }		
             self.events.insert(card, at: 0)
             self.events.sort(by: { (card1, card2) -> Bool in
                 return card1.time.intValue > card2.time.intValue
             })
-            
             self.timer?.invalidate()
             self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.handleDataReload), userInfo: nil, repeats: false)
    
@@ -99,10 +100,6 @@ class EventViewController: UITableViewController,CardDelegate {
             e.dateLabel?.text = String(describing: indexPath.row)
             return e
         }()
-
-        //        let cardVC = UIViewController(nibName: "EventCard", bundle: nil) as! EventInformation
-        
-        //        let cardVC = storyboard?.instantiateViewController(withIdentifier: "EventCard") as! EventInformation
       
         DispatchQueue.main.async {
             cell.populate(event)
@@ -111,7 +108,6 @@ class EventViewController: UITableViewController,CardDelegate {
             cardVC.viewDidLayoutSubviews()
         }
     
-//        cell.card.delegate = self as? CardDelegate
         cell.event = cardVC
         cell.card?.shouldPresent(cell.event, from: self, fullscreen: true)
         

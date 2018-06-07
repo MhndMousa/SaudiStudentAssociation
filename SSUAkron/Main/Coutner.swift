@@ -26,7 +26,7 @@ class CounterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateSalary()
-        ringView?.progress = 0.0
+        ringView?.progress = 1.0
         if isSalaryUpdated {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
                 self.updateCircle()
@@ -60,7 +60,7 @@ class CounterViewController: UIViewController {
         CATransaction.begin()
         CATransaction.setAnimationDuration(1.5)
         // Assign how many days to the progress bar of the ring
-        self.ringView?.progress = self.map(minRange: 0, maxRange: 30, minDomain: 0, maxDomain: 1, value: Float(self.s))
+        self.ringView?.progress = self.map(minRange: 0, maxRange: 30, minDomain: 0, maxDomain: 1, value: Float(30 - self.s))
         CATransaction.commit()
         isSalaryUpdated = false
     }

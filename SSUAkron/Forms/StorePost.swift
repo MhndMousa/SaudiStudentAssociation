@@ -33,7 +33,7 @@ class StorePostFormViewController: FormViewController, CLLocationManagerDelegate
         
   }
     
-    var randomArray = ["مركبة" , "اثاث منزل", "الكترونيات", "ملتزمات دراسية", "اخرى"]
+    var randomArray = ["مركبة" , "اثاث منزل", "الكترونيات", "مستلزمات دراسية", "اخرى"]
     override func viewDidLoad() {
         super.viewDidLoad()
 
