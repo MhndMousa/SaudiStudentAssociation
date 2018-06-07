@@ -1,4 +1,4 @@
-//
+ //
 //  LoginViewController.swift
 //  SSUAkron
 //
@@ -21,7 +21,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
 
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var rectangleView: UIView!
+ 
     
+    
+    var loginButton : TransitionButton = {
+        let button = TransitionButton()
+        button.backgroundColor = UIColor(hex: "167CAA")
+        button.setTitle("تسجيل دخول", for: .normal)
+        button.titleLabel?.font = UIFont(name: "NotoKufiArabic", size: 17)
+        button.setTitleColor(.white, for: .normal)
+        button.cornerRadius = 20
+        button.spinnerColor = .white
+        button.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
+        
+        return button
+    }()
     
     
     fileprivate func gotToMain(){
@@ -85,19 +99,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
             })
         })
     }
-    
-    var loginButton : TransitionButton = {
-        let button = TransitionButton()
-        button.backgroundColor = UIColor(hex: "167CAA")
-        button.setTitle("تسجيل دخول", for: .normal)
-        button.titleLabel?.font = UIFont(name: "NotoKufiArabic", size: 17)
-        button.setTitleColor(.white, for: .normal)
-        button.cornerRadius = 20
-        button.spinnerColor = .white
-        button.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
-        
-        return button
-    }()
+
 
     func drawLoginButton(){
         loginButtonContainer.backgroundColor = .clear
@@ -126,7 +128,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     // If the user logged in before then login them in automatically.
     func tryLogin() {
         Auth.auth().addStateDidChangeListener { (auth, user) in
-            if let user = user {
+            if user != nil {
                 self.gotToMain()
             }
         }

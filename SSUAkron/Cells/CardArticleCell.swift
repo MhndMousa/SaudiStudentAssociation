@@ -21,6 +21,13 @@ class CardArticleCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    // TODO: Automate the population of the card
+    func populate(_ event: CardInformaion) {
+        
+        
+    }
+
     override func prepareForReuse() {
         super.prepareForReuse()
         

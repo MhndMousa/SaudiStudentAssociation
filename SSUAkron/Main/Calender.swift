@@ -11,9 +11,8 @@ import Firebase
 
 var currentUser = SaudiUser()
 
-class EventViewController: UITableViewController,CardDelegate {
+class EventViewController: UITableViewController {
 
-    var delegate : CardDelegate?
     var events = [CardInformaion]()
     lazy var colors :[String:UIColor] = {
         var dic = [String:UIColor]()
@@ -27,28 +26,39 @@ class EventViewController: UITableViewController,CardDelegate {
         
     }()
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.tableView.register(UINib(nibName: "CardHighlightCell", bundle: nil), forCellReuseIdentifier: "cell")
-        delegate = self
-        refreshCurrentUserInfo()
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        requestData()
-        tableView.refreshControl = refresher
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
-    }
-    
     // MARK: - Refresher data source
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = .white
-        refreshControl.addTarget(self, action: #selector(requestData), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(requestCalenderData), for: .valueChanged)
         return refreshControl
-
+        
     }()
     
-    @objc func requestData() {
+    lazy var timer : Timer = {
+        let timer = Timer()
+        return timer
+    }()
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.register(UINib(nibName: "CardHighlightCell", bundle: nil), forCellReuseIdentifier: "cell")
+        refreshCurrentUserInfo()
+        requestCalenderData()
+        updateStyle()
+    }
+    
+    func updateStyle()  {
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.refreshControl = refresher
+        }
+    
+    @objc func requestCalenderData() {
         events.removeAll()
         ref.child("Store").observe(.childAdded) { (snapshot) in
             
@@ -71,13 +81,13 @@ class EventViewController: UITableViewController,CardDelegate {
                 return card1.time.intValue > card2.time.intValue
             })
             
-            self.timer?.invalidate()
+            self.timer.invalidate()
             self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.handleDataReload), userInfo: nil, repeats: false)
    
         }
     }
     
-    var timer : Timer?
+
     @objc func handleDataReload(){
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -100,10 +110,7 @@ class EventViewController: UITableViewController,CardDelegate {
             return e
         }()
 
-        //        let cardVC = UIViewController(nibName: "EventCard", bundle: nil) as! EventInformation
         
-        //        let cardVC = storyboard?.instantiateViewController(withIdentifier: "EventCard") as! EventInformation
-      
         DispatchQueue.main.async {
             cell.populate(event)
             cardVC.dateLabel?.text = String(describing: indexPath.row)
@@ -111,7 +118,6 @@ class EventViewController: UITableViewController,CardDelegate {
             cardVC.viewDidLayoutSubviews()
         }
     
-//        cell.card.delegate = self as? CardDelegate
         cell.event = cardVC
         cell.card?.shouldPresent(cell.event, from: self, fullscreen: true)
         
@@ -127,7 +133,6 @@ class EventViewController: UITableViewController,CardDelegate {
         return events.count
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        //        return wrapContent(cell: self.tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath))
         return 320
     }
 }

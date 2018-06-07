@@ -35,7 +35,7 @@ class ContactViewController: UICollectionViewController{
     }
 
     
-    func reloadData(){
+    func reloadRoasterData(){
         roaster.removeAll()
         _ = ref.child("clubs").child("IN").child("indianapolis").child("roaster").observe(.value) { (snapshot) in
             let values = snapshot.value as! NSDictionary
@@ -55,10 +55,13 @@ class ContactViewController: UICollectionViewController{
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        reloadRoasterData()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView?.register(UINib(nibName: "ContactCardCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-        reloadData()
+        reloadRoasterData()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle{
