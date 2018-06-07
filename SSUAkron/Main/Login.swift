@@ -18,19 +18,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextFeild: UITextField!
     @IBOutlet weak var loginButtonContainer: UIView!
-
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var rectangleView: UIView!
- 
-    
-    
     var loginButton : TransitionButton = {
         let button = TransitionButton()
-        button.backgroundColor = UIColor(hex: "167CAA")
+        button.backgroundColor = UIColor(hex: "2F82AB")
         button.setTitle("تسجيل دخول", for: .normal)
-        button.titleLabel?.font = UIFont(name: "NotoKufiArabic", size: 17)
+        button.titleLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
         button.setTitleColor(.white, for: .normal)
-        button.cornerRadius = 20
+        button.cornerRadius = 5
         button.spinnerColor = .white
         button.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
         
@@ -41,6 +37,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     fileprivate func gotToMain(){
         let secondVC = self.storyboard!.instantiateViewController(withIdentifier: "main")
         self.present(secondVC, animated: true, completion: nil)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,7 +92,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         let qualityOfServiceClass = DispatchQoS.QoSClass.background
         let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
         backgroundQueue.async(execute: {
-            sleep(2)
+            sleep(8)
             DispatchQueue.main.async(execute: { () -> Void in
                 if Auth.auth().currentUser != nil{
                     self.gotToMain()
@@ -99,14 +103,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
             })
         })
     }
-
+    
+    
 
     func drawLoginButton(){
         loginButtonContainer.backgroundColor = .clear
-        rectangleView.layer.cornerRadius = 20
+//        rectangleView.layer.cornerRadius = 5
         usernameTextField.layer.cornerRadius = 5
         passwordTextFeild.layer.cornerRadius = 5
-        signUpButton.layer.cornerRadius = 20
+        signUpButton.layer.cornerRadius = 5
         
         
         // Update login button style
@@ -176,10 +181,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         })
     }
     
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == usernameTextField{

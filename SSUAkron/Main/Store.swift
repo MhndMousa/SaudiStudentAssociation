@@ -94,7 +94,7 @@ class StoreTableViewController: UITableViewController {
             //cell.populate(item)
             
             cell.card?.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
-            cell.card?.backgroundImage = self.imageArray[0]
+//            cell.card?.backgroundImage = self.imageArray[0]
             
             cell.card?.title = "كامري"
             cell.card?.subtitle = "وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف وصف"
