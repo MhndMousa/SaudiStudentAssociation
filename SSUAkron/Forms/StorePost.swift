@@ -28,49 +28,61 @@ class StorePostFormViewController: FormViewController, CLLocationManagerDelegate
         
     }
     
+    
+    // TODO: Check cells for correct input
+    func checkCells() -> Bool {
+        
+        return true
+    }
+    
     @IBOutlet weak var submitButton: UIBarButtonItem!
     @IBAction func submitTapped(_ sender: Any) {
-        // Post to firebase
-
+        // Post to firebase procedure
+        guard checkCells() else {return}
         
+        // Get values from the form
         var formValues = self.form.values()
         
-        print(formValues)
-        
-        // Take photo and upload it to storage first
-//        let userStoreStorageRef = storageRef.child("store").child(currentUser.uid!)
-        let userStoreStorageRef = storageRef.child("store")
-        print("userStoreStorageRef: \(userStoreStorageRef)")
-        
-        let imageRef = userStoreStorageRef.child("image1.png")
+        // Make refrence in the storage and the database for the photo and the post
+        let userIDStorageRef = storageRef.child("store").child(currentUser.uid!)    // Storage: Store -> uid
+        let newPostKey = ref.child("Store").childByAutoId().key                     // Databse: Store -> random_post
+        let imageRef =  userIDStorageRef.child(newPostKey).child("image1.jpg")      // Storage: Store -> uid -> random_post -> image name
         
         
-        // File located on disk
+        // TODO: for loop for each photo in an array
+        //       Send all at one, or one by one??
+        //       Inside the if statement or ouside??
+        
         if let img = formValues["picture"] as? UIImage{
             print(img.size)
-            
-            if let imageData = UIImagePNGRepresentation(img){
+        
+            // Convert Image into data and prepare for upload
+            if let imageData = UIImageJPEGRepresentation(img, 0.8){
+                
+                // Uploads the image
                 let uploadTask = imageRef.putData(imageData)
-                let observer = uploadTask.observe(.progress) { (snapshot) in
+                
+                // Observe upload progress
+                uploadTask.observe(.progress) { (snapshot) in
                     let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount) / Double(snapshot.progress!.totalUnitCount)
                     print("Completed: \(percentComplete)")
                 }
-                // You can also access to download URL after upload.
-                storageRef.downloadURL { (url, error) in
-                    guard let downloadURL = url else {
-                        // Uh-oh, an error occurred!
-                        return
-                    }
-                    formValues["picture"] = url
+                
+                // Assign the picture path to the form to save it in the database
+                let imageArray: [String:Any] = ["count" : "5", "image1" : imageRef.fullPath]
+                formValues["picture"] = imageArray as! [String:String]
+
+                
+                // If the upload is successful
+                uploadTask.observe(.success) { (snapshot) in
+                    
+                    // Post the data with new reassigned location for the picture to the database
+                    ref.child("Store").child(newPostKey).setValue(formValues)
+                    print("Post uploaded")
+                    self.dismiss(animated: true, completion: nil)
                 }
             }
-            
         }
-        // get location of photo in storage here and reassign it
-        formValues["picture"] = "photo location in storage"
-        
-        // pass data with new reassigned location for the picture
-        ref.child("Store").childByAutoId().setValue(formValues)
         
   }
     
