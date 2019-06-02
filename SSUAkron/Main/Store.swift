@@ -50,7 +50,6 @@ class StoreTableViewController: UITableViewController {
         fetchedInformation.removeAll()
         print("Event count Before: " + String (fetchedInformation.count))
         
-        // TODO: Change the refrence to the Calander Event child in firebase
         ref.child("Store").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
             for child in snapshot.children.allObjects as! [DataSnapshot]{
                 let dic  = child.value! as! [String: Any]
