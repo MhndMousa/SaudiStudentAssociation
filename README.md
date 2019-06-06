@@ -10,14 +10,14 @@ This app is a platform developed for Saudi Students in Indianapolis which includ
 
 ### Technologies used:
 *  [Firebase](firebase.google.com)
-* storage 
-* real-time database
-* Cloud function
-* User Authentication 
+    * storage 
+    * real-time database
+    * Cloud function
+    * User Authentication 
 * [Eureka](https://github.com/xmartlabs/Eureka)
 * Apple built in libraries
-* UIKit
-* MapKit
+    * UIKit
+    * MapKit
 
 ### Testing
 1. Clone this repository `git clone https://github.com/MhndMousa/[PROJECT_NAME]`
@@ -27,6 +27,7 @@ This app is a platform developed for Saudi Students in Indianapolis which includ
 3. Open the file with the extention of `SSUAkron.xcworkspace`
 
 To avoid any errors, make sure you change provision profile licence to your licence and change the Bundle identifier name to your own identifier
+
 4. RUN 
 
 
