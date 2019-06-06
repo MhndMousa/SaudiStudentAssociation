@@ -52,7 +52,6 @@
 		59DDB6BE2060E104001DF580 /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DDB6BD2060E104001DF580 /* Global.swift */; };
 		59E24C32206372A800B04928 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 59E24C31206372A800B04928 /* GoogleService-Info.plist */; };
 		59E425D320663DF30097E08A /* CardInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E425D220663DF30097E08A /* CardInformation.swift */; };
-		59F77CD3229A2CB10035B7DB /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 59F77CD2229A2CB10035B7DB /* data.json */; };
 		59F791A3207A133800A4DA20 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F791A2207A133800A4DA20 /* Profile.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,7 +103,6 @@
 		59DDB6BD2060E104001DF580 /* Global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		59E24C31206372A800B04928 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		59E425D220663DF30097E08A /* CardInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInformation.swift; sourceTree = "<group>"; };
-		59F77CD2229A2CB10035B7DB /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		59F791A2207A133800A4DA20 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		6E64B43DE83D8B272E5D1859 /* Pods_SSUAkron.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSUAkron.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C61FE7349C2795879C2A83A /* Pods-SSUAkron.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSUAkron.release.xcconfig"; path = "Pods/Target Support Files/Pods-SSUAkron/Pods-SSUAkron.release.xcconfig"; sourceTree = "<group>"; };
@@ -208,7 +206,6 @@
 				5979508C205B1B0000807FD1 /* Info.plist */,
 				59E24C31206372A800B04928 /* GoogleService-Info.plist */,
 				59795084205B1B0000807FD1 /* SSUAkron.xcdatamodeld */,
-				59F77CD2229A2CB10035B7DB /* data.json */,
 			);
 			path = SSUAkron;
 			sourceTree = "<group>";
@@ -358,7 +355,6 @@
 				59C23B922077423500B21E0B /* ContactCardCell.xib in Resources */,
 				59BE991820721FEC00EB00BA /* StoreInformation.xib in Resources */,
 				595AA08D205C7ECA009D3D09 /* NotoKufiArabic-Regular.ttf in Resources */,
-				59F77CD3229A2CB10035B7DB /* data.json in Resources */,
 				5962598C2065F98F00DD7CAA /* CardHighlightCell.xib in Resources */,
 				5979508B205B1B0000807FD1 /* LaunchScreen.storyboard in Resources */,
 				59795088205B1B0000807FD1 /* Assets.xcassets in Resources */,
