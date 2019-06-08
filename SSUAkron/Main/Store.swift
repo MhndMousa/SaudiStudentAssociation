@@ -11,29 +11,17 @@ import Firebase
 
 class StoreTableViewController: UITableViewController {
 
+    // MARK:  Variables
+
     var fetchedInformation = [CardInformaion]()
     var imageArray = [UIImage]()
-    
     @IBOutlet weak var costLabel: UILabel!
-    override func viewWillAppear(_ animated: Bool) {
-        self.tableView.register(UINib(nibName: "CardArticleCell", bundle: nil), forCellReuseIdentifier: "cell")
-         requestStoreData()
 
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableView.refreshControl = refresher
-        
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [
-            .font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!
-            ,.foregroundColor : UIColor.white
-        ]
-
-    }
     
-    
-    // MARK: - Refresher data source
+    lazy var timer : Timer = {
+        let timer = Timer()
+        return timer
+    }()
     
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
@@ -44,7 +32,8 @@ class StoreTableViewController: UITableViewController {
         
     }()
     
-    
+    // MARK:  Networking
+
     @objc func requestStoreData() {
 
         fetchedInformation.removeAll()
@@ -63,6 +52,10 @@ class StoreTableViewController: UITableViewController {
         self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.handleDataReload), userInfo: nil, repeats: false)
         
     }
+
+    
+    // MARK:  TableView Config
+    
     @objc func handleDataReload(){
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -72,13 +65,6 @@ class StoreTableViewController: UITableViewController {
         })
     }
 
-    
-    lazy var timer : Timer = {
-        let timer = Timer()
-        return timer
-    }()
-  
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardArticleCell
         cell.backgroundColor = UIColor(hex: "efeff4")
@@ -115,19 +101,6 @@ class StoreTableViewController: UITableViewController {
         return cell
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     // Row count
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
@@ -139,7 +112,28 @@ class StoreTableViewController: UITableViewController {
         return 340
     }
     
+    // MARK:  ViewController methogs
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.register(UINib(nibName: "CardArticleCell", bundle: nil), forCellReuseIdentifier: "cell")
+        requestStoreData()
+        
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.refreshControl = refresher
+        
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [
+            .font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!
+            ,.foregroundColor : UIColor.white
+        ]
+        
+    }
+    
+    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

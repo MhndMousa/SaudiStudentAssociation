@@ -15,11 +15,16 @@ import GoogleSignIn
 var justLoggedOut = false
 class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
 
+    // MARK:  Variables
+
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextFeild: UITextField!
     @IBOutlet weak var loginButtonContainer: UIView!
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var rectangleView: UIView!
+    
+    
+    // Transition Button
     var loginButton : TransitionButton = {
         let button = TransitionButton()
         button.backgroundColor = UIColor(hex: "2F82AB")
@@ -34,78 +39,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     }()
     
     
-    fileprivate func gotToMain(){
-        let secondVC = self.storyboard!.instantiateViewController(withIdentifier: "main")
-        self.present(secondVC, animated: true, completion: nil)
-    }
+    // MARK:  Login Buttons
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        tryLogin()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        drawLoginButton()
-        GIDSignIn.sharedInstance().uiDelegate = self
-    }
-    
-    @IBAction func googleSignInButtonTapped(_ sender: Any) {
-        GIDSignIn.sharedInstance().signIn()
-        
-        // Adding a loading UIView to show that networking in the background
-        let indicator = UIActivityIndicatorView()
-        let loadingView = UIView()
-        
-        
-        indicator.translatesAutoresizingMaskIntoConstraints = false
-        loadingView.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.view.addSubview(loadingView)
-        
-        // Adding a white overlay on the current page
-        loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        loadingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        loadingView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        loadingView.backgroundColor = .white
-        loadingView.alpha = 0.8
-
-        // Add loading indicator
-        loadingView.addSubview(indicator)
-        indicator.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor).isActive = true
-        indicator.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor).isActive = true
-        indicator.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        indicator.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        indicator.color = .blue
-        indicator.startAnimating()
-
-        
-        // Animating the indicator
-        let qualityOfServiceClass = DispatchQoS.QoSClass.background
-        let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
-        backgroundQueue.async(execute: {
-            sleep(8)
-            DispatchQueue.main.async(execute: { () -> Void in
-                if Auth.auth().currentUser != nil{
-                    self.gotToMain()
-                }
-                // Delete the white overlay
-                loadingView.removeFromSuperview()
-                print(Auth.auth().currentUser?.email! as Any)
-            })
-        })
-    }
-    
-    
-
     func drawLoginButton(){
         loginButtonContainer.backgroundColor = .clear
 //        rectangleView.layer.cornerRadius = 5
@@ -129,25 +64,83 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         loginButton.trailingAnchor.constraint(equalTo: loginButtonContainer.trailingAnchor).isActive = true
     }
 
+   
     
+    
+    // MARK:  Login Methods
+
     // If the user logged in before then login them in automatically.
     func tryLogin() {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
-                self.gotToMain()
+                self.presentMainViewController()
             }
         }
-        
         let userDefault = UserDefaults.standard
         DispatchQueue.global(qos: .background).async {
             sleep(1)
             if !justLoggedOut && userDefault.string(forKey: "email") != nil && userDefault.string(forKey: "password") != nil{
-                self.gotToMain()
+                self.presentMainViewController()
             }
             
         }
     }
 
+    
+    
+    
+    // Google login button
+    @IBAction func googleSignInButtonTapped(_ sender: Any) {
+        GIDSignIn.sharedInstance().signIn()
+        
+        // Adding a loading UIView to show that networking in the background
+        let indicator = UIActivityIndicatorView()
+        let loadingView = UIView()
+        
+        
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(loadingView)
+        
+        // Adding a white overlay on the current page
+        loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        loadingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        loadingView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        loadingView.backgroundColor = .white
+        loadingView.alpha = 0.8
+        
+        // Add loading indicator
+        loadingView.addSubview(indicator)
+        indicator.centerXAnchor.constraint(equalTo: loadingView.centerXAnchor).isActive = true
+        indicator.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor).isActive = true
+        indicator.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        indicator.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        indicator.color = .blue
+        indicator.startAnimating()
+        
+        
+        // Animating the indicator
+        let qualityOfServiceClass = DispatchQoS.QoSClass.background
+        let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
+        backgroundQueue.async(execute: {
+            sleep(8)
+            DispatchQueue.main.async(execute: { () -> Void in
+                if Auth.auth().currentUser != nil{
+                    self.presentMainViewController()
+                }
+                // Delete the white overlay
+                loadingView.removeFromSuperview()
+                print(Auth.auth().currentUser?.email! as Any)
+            })
+        })
+    }
+    
+    
+    
+    
+    // Email & Password login
     @IBAction func loginButtonAction() {
         let email = self.usernameTextField.text!
         let password = self.passwordTextFeild.text!
@@ -173,7 +166,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
                             let userDefault = UserDefaults.standard
                             userDefault.setValue(email, forKey: "email")
                             userDefault.setValue(password, forKey: "password")
-                            self.gotToMain()
+                            self.presentMainViewController()
                         })
                     })
                 }
@@ -181,6 +174,32 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         })
     }
     
+    
+    // MARK:  Configurations & Delegates
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tryLogin()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        drawLoginButton()
+        GIDSignIn.sharedInstance().uiDelegate = self
+    }
+    
+    fileprivate func presentMainViewController(){
+        let secondVC = self.storyboard!.instantiateViewController(withIdentifier: "main")
+        secondVC.modalPresentationStyle = .fullScreen
+        self.present(secondVC, animated: true, completion: nil)
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == usernameTextField{
