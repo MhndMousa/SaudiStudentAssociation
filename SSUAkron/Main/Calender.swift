@@ -81,6 +81,7 @@ class EventViewController: UITableViewController {
     
     
     // MARK:  TableView Config
+
     
     @objc func handleDataReload(){
         DispatchQueue.main.async {
@@ -110,7 +111,6 @@ class EventViewController: UITableViewController {
             return e
         }()
 
-        
         DispatchQueue.main.async {
             cell.populate(event)
             cardVC.dateLabel?.text = String(describing: indexPath.row)
@@ -121,7 +121,7 @@ class EventViewController: UITableViewController {
         cell.event = cardVC
         cell.card?.shouldPresent(cell.event, from: self, fullscreen: true)
         
-        cell.selectionStyle = .none
+//        cell.selectionStyle = .none
         cell.backgroundColor = UIColor(hex: "efeff4")
         
         return cell
@@ -130,7 +130,7 @@ class EventViewController: UITableViewController {
     
     
     // MARK:  UIViewController Config
-
+    
    
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.register(UINib(nibName: "CardHighlightCell", bundle: nil), forCellReuseIdentifier: "cell")

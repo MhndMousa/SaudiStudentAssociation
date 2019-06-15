@@ -20,7 +20,7 @@ class CardHighlightCell: UITableViewCell, CardDelegate {
 
     
     func populate(_ event: CardInformaion) {
-        card.title = String( describing: event.title!)
+        card.title = String( describing: event.title)
         card.itemTitle = String( describing: event.itemTitle!)
         card.itemSubtitle = String( describing: event.itemSubtitle!)
         card.backgroundColor = event.backgroundColor!

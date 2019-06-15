@@ -15,7 +15,7 @@ import GoogleSignIn
 var justLoggedOut = false
 class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
 
-    // MARK:  Variables
+    // MARK:  -  Variables
 
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextFeild: UITextField!
@@ -39,7 +39,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     }()
     
     
-    // MARK:  Login Buttons
+    // MARK: - Login Buttons
     
     func drawLoginButton(){
         loginButtonContainer.backgroundColor = .clear
@@ -66,21 +66,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
 
    
     
-    
     // MARK:  Login Methods
 
     // If the user logged in before then login them in automatically.
     func tryLogin() {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
-                self.presentMainViewController()
+                self.performSegueToMainViewController()
             }
         }
         let userDefault = UserDefaults.standard
         DispatchQueue.global(qos: .background).async {
             sleep(1)
             if !justLoggedOut && userDefault.string(forKey: "email") != nil && userDefault.string(forKey: "password") != nil{
-                self.presentMainViewController()
+                self.performSegueToMainViewController()
             }
             
         }
@@ -128,7 +127,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
             sleep(8)
             DispatchQueue.main.async(execute: { () -> Void in
                 if Auth.auth().currentUser != nil{
-                    self.presentMainViewController()
+                    self.performSegueToMainViewController()
                 }
                 // Delete the white overlay
                 loadingView.removeFromSuperview()
@@ -166,7 +165,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
                             let userDefault = UserDefaults.standard
                             userDefault.setValue(email, forKey: "email")
                             userDefault.setValue(password, forKey: "password")
-                            self.presentMainViewController()
+                            self.performSegueToMainViewController()
                         })
                     })
                 }
@@ -195,7 +194,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         GIDSignIn.sharedInstance().uiDelegate = self
     }
     
-    fileprivate func presentMainViewController(){
+    fileprivate func performSegueToMainViewController(){
         let secondVC = self.storyboard!.instantiateViewController(withIdentifier: "main")
         secondVC.modalPresentationStyle = .fullScreen
         self.present(secondVC, animated: true, completion: nil)

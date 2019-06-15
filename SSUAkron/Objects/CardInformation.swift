@@ -10,7 +10,8 @@ import UIKit
 import Firebase
 
 class CardInformaion: NSObject {
-    var title: String?
+    var title: String 
+    var catagory: String?
     var itemTitle: String?
     var itemSubtitle: String?
     var image: UIImage = #imageLiteral(resourceName: "ssa")

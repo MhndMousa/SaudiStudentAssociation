@@ -25,7 +25,12 @@ class CardArticleCell: UITableViewCell {
     // TODO: Automate the population of the card
     func populate(_ event: CardInformaion) {
         
+        card.backgroundColor = UIColor(red: 0, green: 94/255, blue: 112/255, alpha: 1)
+        //            cell.card?.backgroundImage = self.imageArray[0]
         
+        card.title = event.title
+        card.subtitle = event.itemSubtitle ?? ""
+        card.category = event.catagory ?? ""
     }
 
     override func prepareForReuse() {
