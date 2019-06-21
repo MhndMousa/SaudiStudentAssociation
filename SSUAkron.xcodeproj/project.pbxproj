@@ -63,6 +63,7 @@
 		592453B82075E05000D0A1A9 /* CustomCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCells.swift; sourceTree = "<group>"; };
 		592453BC2075E7A000D0A1A9 /* EventPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPost.swift; sourceTree = "<group>"; };
 		5925AEB7207828AA00EF6D8D /* SignupForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupForm.swift; sourceTree = "<group>"; };
+		5948BF2A22B5CD500001F725 /* SSUAkron.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SSUAkron.entitlements; sourceTree = "<group>"; };
 		595AA086205C5A86009D3D09 /* NotoKufiArabic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoKufiArabic-Regular.ttf"; sourceTree = "<group>"; };
 		595AA087205C5A86009D3D09 /* NotoKufiArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoKufiArabic-Bold.ttf"; sourceTree = "<group>"; };
 		595AA090205CA4AE009D3D09 /* Coutner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coutner.swift; sourceTree = "<group>"; };
@@ -193,6 +194,7 @@
 		5979507C205B1B0000807FD1 /* SSUAkron */ = {
 			isa = PBXGroup;
 			children = (
+				5948BF2A22B5CD500001F725 /* SSUAkron.entitlements */,
 				5962598D2066032C00DD7CAA /* Cells */,
 				59B26203206A08F200F1E9E7 /* ContentCards */,
 				592453BB2075E72300D0A1A9 /* Forms */,
@@ -621,6 +623,7 @@
 			baseConfigurationReference = 4557988D8C3ACDABD4CE712A /* Pods-SSUAkron.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SSUAkron/SSUAkron.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WXT8YUFTMG;
 				INFOPLIST_FILE = SSUAkron/Info.plist;
@@ -638,6 +641,7 @@
 			baseConfigurationReference = 9C61FE7349C2795879C2A83A /* Pods-SSUAkron.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SSUAkron/SSUAkron.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WXT8YUFTMG;
 				INFOPLIST_FILE = SSUAkron/Info.plist;

@@ -121,7 +121,7 @@ class EventViewController: UITableViewController {
         cell.event = cardVC
         cell.card?.shouldPresent(cell.event, from: self, fullscreen: true)
         
-//        cell.selectionStyle = .none
+        cell.selectionStyle = .none
         cell.backgroundColor = UIColor(hex: "efeff4")
         
         return cell

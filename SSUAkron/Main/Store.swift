@@ -48,6 +48,7 @@ class StoreTableViewController: UITableViewController {
                 self.fetchedInformation.insert(card, at: 0)
             }
         })
+        print(fetchedInformation)
         self.timer.invalidate()
         self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.handleDataReload), userInfo: nil, repeats: false)
         
@@ -72,14 +73,15 @@ class StoreTableViewController: UITableViewController {
 //        let cardContentVC = self.storyboard!.instantiateViewController(withIdentifier: "StoreCard")
         let cardContentVC = StoreInformation()
         
-//        DispatchQueue.main.async {
-//            cell.populate(item)
-////            cardContentVC.costLabel?.text = String(describing: indexPath.row)
-//            cell.card.shouldPresent(cardContentVC, from: self, fullscreen: true)
-//        }
+        DispatchQueue.main.async {
+            cell.populate(item)
+//            cardContentVC.costLabel?.text = String(describing: indexPath.row)
+            cell.card.shouldPresent(cardContentVC, from: self, fullscreen: true)
         
-//        cardContentVC.costLabel.text = "15"
-//        cell.selectionStyle = .none
+            cardContentVC.costLabel.text = self.fetchedInformation[indexPath.row].userID
+        }
+        
+        cell.selectionStyle = .none
         cell.card.shadowOpacity = 0
         
         return cell
@@ -96,29 +98,37 @@ class StoreTableViewController: UITableViewController {
         return 340
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let indexPath = tableView.indexPathForSelectedRow
-        let cell = tableView.cellForRow(at: tableView.indexPathForSelectedRow!) as! CardArticleCell
-        print("selected: \(cell)")
-        
-        if #available(iOS 13.0, *) {
-            let StorePost = self.storyboard!.instantiateViewController(identifier: "Storinformation") as! StoreInformation
-            StorePost.costLabel.text = "10"
-            StorePost.whereToRecieveLabel.text = "any"
-            DispatchQueue.main.async {
-                
-                cell.card.shouldPresent(StorePost, from: self)
-            }
-        } else {
-            performSegue(withIdentifier: "Storeinformation", sender: self)
-        }
-        
-        let vc = self.storyboard!.instantiateViewController(withIdentifier: "main") as! StoreInformation
-        vc.costLabel.text = ""
-        vc.whereToRecieveLabel.text = "any"
-        cell.card.shouldPresent(vc, from: self)
-        
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//
+//
+//
+////        let indexPath = tableView.indexPathForSelectedRow
+//        let cell = tableView.cellForRow(at: tableView.indexPathForSelectedRow!) as! CardArticleCell
+//        print("selected: \(cell)")
+//
+//        if #available(iOS 13.0, *) {
+//            let StorePost = self.storyboard!.instantiateViewController(identifier: "Storinformation") as! StoreInformation
+//            StorePost.costLabel.text = "10"
+//            StorePost.whereToRecieveLabel.text = "any"
+//            DispatchQueue.main.async {
+//
+//                cell.card.shouldPresent(StorePost, from: self)
+//            }
+//        } else {
+//            performSegue(withIdentifier: "Storeinformation", sender: self)
+//        }
+//
+//        let vc = self.storyboard!.instantiateViewController(withIdentifier: "main") as! StoreInformation
+//        vc.costLabel.text = ""
+//        vc.whereToRecieveLabel.text = "any"
+//        cell.card.shouldPresent(vc, from: self)
+//
+//
+//
+//
+//
+//    }
     
     // MARK:  ViewController methogs
     
