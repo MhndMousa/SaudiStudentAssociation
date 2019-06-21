@@ -9,18 +9,19 @@
 import UIKit
 
 class StoreInformation: UIViewController {
-
+    @IBOutlet weak var DescriptionContainer: UIView!
     @IBOutlet weak var costView: UIView!
     @IBOutlet weak var messageView: UIView!
     @IBOutlet weak var typeView: UIView!
     @IBOutlet weak var photosView: UIView!
-    @IBOutlet weak var DescriptionContainer: UIView!
     
     @IBOutlet weak var descriptionView: UITextView!
+    
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var messageButton: UIButton!
     @IBOutlet weak var whereToRecieveLabel: UILabel!
+    
+    @IBOutlet weak var messageButton: UIButton!
     
     @IBAction func messageTapped(_ sender: Any) {
         // Open a new message with uid of the item poster

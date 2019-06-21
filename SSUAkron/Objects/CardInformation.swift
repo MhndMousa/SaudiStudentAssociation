@@ -16,6 +16,7 @@ class CardInformaion: NSObject {
     var itemSubtitle: String?
     var image: UIImage = #imageLiteral(resourceName: "ssa")
     var backgroundColor: UIColor?
+    var price : String?
     var textColor: UIColor?
     var userID: String?
     var time: NSNumber = 0
@@ -23,23 +24,23 @@ class CardInformaion: NSObject {
     
     init(_ dic: [String: AnyObject]) {
         //TODO: Add the rest of the data that populates the card
-        title = dic["title"] as? String ?? ""
-        itemTitle = dic["itemTitle"] as? String ?? ""
-        itemSubtitle = dic["itemSubtitle"] as? String ?? ""
+        title = dic["title"] as? String ?? "title"
+        itemTitle = dic["itemTitle"] as? String ?? "itemTitle"
+        itemSubtitle = dic["itemSubtitle"] as? String ?? "itemSubtitle"
     }
     
     init(_ dic: [String: AnyObject], _ colors: [String:UIColor]) {
         
         //TODO: Add the rest of the data that populates the card
-        title = dic["title"] as? String ?? ""
-        itemTitle = dic["itemTitle"] as? String ?? ""
-        itemSubtitle = dic["itemSubtitle"] as? String ?? ""
+        title = dic["title"] as? String ?? "Title"
+        itemTitle = dic["itemTitle"] as? String ?? "itemTitle"
+        itemSubtitle = dic["itemSubtitle"] as? String ?? "itemSubtitle"
         
         let b = dic["backgroundColor"] as? String ?? "pink"
         let t = dic["textColor"] as? String ?? "white"
         textColor = colors[t]
         backgroundColor = colors[b]
     }
-
+    
 }
 

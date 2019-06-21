@@ -14,6 +14,10 @@
 		592453B92075E05000D0A1A9 /* CustomCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592453B82075E05000D0A1A9 /* CustomCells.swift */; };
 		592453BD2075E7A000D0A1A9 /* EventPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592453BC2075E7A000D0A1A9 /* EventPost.swift */; };
 		5925AEB8207828AA00EF6D8D /* SignupForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5925AEB7207828AA00EF6D8D /* SignupForm.swift */; };
+		5948BF2C22B82B770001F725 /* StoreCardInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5948BF2B22B82B770001F725 /* StoreCardInformation.swift */; };
+		5948BF2F22B8379A0001F725 /* NoCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5948BF2D22B8379A0001F725 /* NoCardTableViewCell.swift */; };
+		5948BF3022B8379A0001F725 /* NoCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5948BF2E22B8379A0001F725 /* NoCardTableViewCell.xib */; };
+		5948BF3222B8447E0001F725 /* NoCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5948BF3122B8447E0001F725 /* NoCardViewController.swift */; };
 		595AA08C205C7ECA009D3D09 /* NotoKufiArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 595AA087205C5A86009D3D09 /* NotoKufiArabic-Bold.ttf */; };
 		595AA08D205C7ECA009D3D09 /* NotoKufiArabic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 595AA086205C5A86009D3D09 /* NotoKufiArabic-Regular.ttf */; };
 		595AA091205CA4AE009D3D09 /* Coutner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595AA090205CA4AE009D3D09 /* Coutner.swift */; };
@@ -64,6 +68,10 @@
 		592453BC2075E7A000D0A1A9 /* EventPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPost.swift; sourceTree = "<group>"; };
 		5925AEB7207828AA00EF6D8D /* SignupForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupForm.swift; sourceTree = "<group>"; };
 		5948BF2A22B5CD500001F725 /* SSUAkron.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SSUAkron.entitlements; sourceTree = "<group>"; };
+		5948BF2B22B82B770001F725 /* StoreCardInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreCardInformation.swift; sourceTree = "<group>"; };
+		5948BF2D22B8379A0001F725 /* NoCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCardTableViewCell.swift; sourceTree = "<group>"; };
+		5948BF2E22B8379A0001F725 /* NoCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoCardTableViewCell.xib; sourceTree = "<group>"; };
+		5948BF3122B8447E0001F725 /* NoCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoCardViewController.swift; sourceTree = "<group>"; };
 		595AA086205C5A86009D3D09 /* NotoKufiArabic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoKufiArabic-Regular.ttf"; sourceTree = "<group>"; };
 		595AA087205C5A86009D3D09 /* NotoKufiArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoKufiArabic-Bold.ttf"; sourceTree = "<group>"; };
 		595AA090205CA4AE009D3D09 /* Coutner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coutner.swift; sourceTree = "<group>"; };
@@ -161,6 +169,8 @@
 		5962598D2066032C00DD7CAA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				5948BF2D22B8379A0001F725 /* NoCardTableViewCell.swift */,
+				5948BF2E22B8379A0001F725 /* NoCardTableViewCell.xib */,
 				596259892065F98F00DD7CAA /* CardHighlightCell.swift */,
 				5962598A2065F98F00DD7CAA /* CardHighlightCell.xib */,
 				5962598E20660A7200DD7CAA /* CardArticleCell.swift */,
@@ -254,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				59E425D220663DF30097E08A /* CardInformation.swift */,
+				5948BF2B22B82B770001F725 /* StoreCardInformation.swift */,
 				5987BF6B2073DE4F00D36360 /* MapPin.swift */,
 				59C23B94207757CF00B21E0B /* User.swift */,
 				590B23752082BA7400270381 /* Message.swift */,
@@ -270,6 +281,7 @@
 				596259842063CAED00DD7CAA /* Store.swift */,
 				5979507F205B1B0000807FD1 /* Contact.swift */,
 				595AA090205CA4AE009D3D09 /* Coutner.swift */,
+				5948BF3122B8447E0001F725 /* NoCardViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -360,6 +372,7 @@
 				5962598C2065F98F00DD7CAA /* CardHighlightCell.xib in Resources */,
 				5979508B205B1B0000807FD1 /* LaunchScreen.storyboard in Resources */,
 				59795088205B1B0000807FD1 /* Assets.xcassets in Resources */,
+				5948BF3022B8379A0001F725 /* NoCardTableViewCell.xib in Resources */,
 				59795083205B1B0000807FD1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,6 +463,7 @@
 			files = (
 				5962599020660A7200DD7CAA /* CardArticleCell.swift in Sources */,
 				597950A7205B1B9400807FD1 /* Player_by_Patric_Piemonte.swift in Sources */,
+				5948BF3222B8447E0001F725 /* NoCardViewController.swift in Sources */,
 				59C23B95207757CF00B21E0B /* User.swift in Sources */,
 				5979509D205B1B8300807FD1 /* Animator.swift in Sources */,
 				5987BF6C2073DE4F00D36360 /* MapPin.swift in Sources */,
@@ -465,6 +479,7 @@
 				597950A3205B1B8300807FD1 /* CardGroup.swift in Sources */,
 				597950A4205B1B8300807FD1 /* CardPlayer.swift in Sources */,
 				59B261FE2068C92A00F1E9E7 /* StorePost.swift in Sources */,
+				5948BF2C22B82B770001F725 /* StoreCardInformation.swift in Sources */,
 				592453BD2075E7A000D0A1A9 /* EventPost.swift in Sources */,
 				590B23782083C75E00270381 /* NewMessage.swift in Sources */,
 				590B23742082A69000270381 /* Chat.swift in Sources */,
@@ -473,6 +488,7 @@
 				596259852063CAED00DD7CAA /* Store.swift in Sources */,
 				5925AEB8207828AA00EF6D8D /* SignupForm.swift in Sources */,
 				597950A5205B1B8300807FD1 /* CardArticle.swift in Sources */,
+				5948BF2F22B8379A0001F725 /* NoCardTableViewCell.swift in Sources */,
 				59795086205B1B0000807FD1 /* SSUAkron.xcdatamodeld in Sources */,
 				5962598B2065F98F00DD7CAA /* CardHighlightCell.swift in Sources */,
 				590B23762082BA7400270381 /* Message.swift in Sources */,

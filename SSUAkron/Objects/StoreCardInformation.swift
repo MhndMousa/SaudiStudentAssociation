@@ -7,3 +7,17 @@
 //
 
 import Foundation
+import UIKit
+
+class StoreCardInformation: NSObject {
+    var cost: String?
+    var time: NSNumber?
+    var uid = SaudiUser.self
+    var date: Date?
+    var photos: [UIImage]?
+    
+    init(_ dic: [String:AnyObject]){
+        
+    }
+    
+}

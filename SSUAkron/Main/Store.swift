@@ -47,8 +47,10 @@ class StoreTableViewController: UITableViewController {
                 let card = CardInformaion(dic as [String : AnyObject])
                 self.fetchedInformation.insert(card, at: 0)
             }
+            print("After loop")
+            print(self.fetchedInformation)
         })
-        print(fetchedInformation)
+//        print(fetchedInformation)
         self.timer.invalidate()
         self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.handleDataReload), userInfo: nil, repeats: false)
         
@@ -67,18 +69,34 @@ class StoreTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardArticleCell
         cell.backgroundColor = UIColor(hex: "efeff4")
         let item = self.fetchedInformation[indexPath.row]
-//        let cardContentVC = self.storyboard!.instantiateViewController(withIdentifier: "StoreCard")
         let cardContentVC = StoreInformation()
+//        let cardContentViewController = UIViewController(nibName: "StoreInformation", bundle: nil) as! StoreInformation
+//
+//        for card in fetchedInformation {
+//           print(card)
+//        }
+//        print(fetchedInformation)
+       
+
+        print("look here")
+   
         
+        print(item.title,item.itemTitle,item.itemSubtitle,item.backgroundColor,item.catagory,item.price,item.time,item.userID)
+        
+        
+        // Assign the presentation first then populate the content
         DispatchQueue.main.async {
-            cell.populate(item)
-//            cardContentVC.costLabel?.text = String(describing: indexPath.row)
+//            cell.populate(item)
             cell.card.shouldPresent(cardContentVC, from: self, fullscreen: true)
-        
-            cardContentVC.costLabel.text = self.fetchedInformation[indexPath.row].userID
+            
+            cardContentVC.costLabel.text = item.price
+            cardContentVC.whereToRecieveLabel.text = item.price
+//            cardContentVC.costLabel.text = self.fetchedInformation[indexPath.row]
+            
         }
         
         cell.selectionStyle = .none
@@ -89,7 +107,7 @@ class StoreTableViewController: UITableViewController {
     
     // Row count
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+//        print(fetchedInformation[0])
         return fetchedInformation.count
     }
     
@@ -150,7 +168,6 @@ class StoreTableViewController: UITableViewController {
     }
     
     
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
