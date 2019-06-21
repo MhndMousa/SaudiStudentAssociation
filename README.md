@@ -5,10 +5,7 @@ This app is a platform developed for Saudi Students in Indianapolis which includ
 * Exchange goods via the marketplace
 * Contacting the Saudi student orginazation leaders via chat
 
-<img src="images/1.png" width="300px" />
-<img src="images/2.png" width="300px" />
-<img src="images/3.png" width="300px" />
-<img src="images/4.png" width="300px" />
+<img src="images/1.png" width="300px" /><img src="images/3.png" width="300px" /><img src="images/4.png" width="300px" /><img src="images/2.png" width="300px" />
 
 
 
@@ -24,9 +21,9 @@ This app is a platform developed for Saudi Students in Indianapolis which includ
     * MapKit
 
 ### Testing
-1. Clone this repository `git clone https://github.com/MhndMousa/[PROJECT_NAME]`
+1. Clone this repository `git clone https://github.com/MhndMousa/SaudiStudentAssociation`
 
-2. Navigate to the directory
+2. Navigate to the directory `cd ./SaudiStudentAssociation`
 
 3. Open the file with the extention of `SSUAkron.xcworkspace`
 
