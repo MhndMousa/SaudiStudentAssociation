@@ -5,10 +5,7 @@ This app is a platform developed for Saudi Students in Indianapolis which includ
 * Exchange goods via the marketplace
 * Contacting the Saudi student orginazation leaders via chat
 
-<img src="images/1.png" width="300px" />
-<img src="images/2.png" width="300px" />
-<img src="images/3.png" width="300px" />
-<img src="images/4.png" width="300px" />
+<img src="images/1.png" width="300px" /><img src="images/3.png" width="300px" /><img src="images/4.png" width="300px" /><img src="images/2.png" width="300px" />
 
 
 
