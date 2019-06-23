@@ -1,15 +1,15 @@
 # SaudiStudentAssociation
-### Description
+<img src="images/1.png" width="200px" /><img src="images/3.png" width="200px" /><img src="images/4.png" width="200px" /><img src="images/2.png" width="200px" />
+
+## Description
 This app is a platform developed for Saudi Students in Indianapolis which include:
-* A calandert to arrange, register, and follow events happening in the city
+* A calendar to arrange, register, and follow events happening in the city
 * Exchange goods via the marketplace
-* Contacting the Saudi student orginazation leaders via chat
-
-<img src="images/1.png" width="300px" /><img src="images/3.png" width="300px" /><img src="images/4.png" width="300px" /><img src="images/2.png" width="300px" />
+* Contacting the Saudi student organization leaders via chat
 
 
+## Built With:
 
-### Technologies used:
 *  [Firebase](firebase.google.com)
     * storage
     * real-time database
@@ -20,13 +20,26 @@ This app is a platform developed for Saudi Students in Indianapolis which includ
     * UIKit
     * MapKit
 
-### Testing
-1. Clone this repository `git clone https://github.com/MhndMousa/SaudiStudentAssociation`
 
-2. Navigate to the directory `cd ./SaudiStudentAssociation`
+## Testing
 
-3. Open the file with the extention of `SSUAkron.xcworkspace`
+1. Clone this repository 
 
-To avoid any errors, make sure you change provision profile licence to your licence and change the Bundle identifier name to your own identifier
+`git clone https://github.com/MhndMousa/SaudiStudentAssociation`
+
+2. Navigate to the directory 
+
+`cd ./SaudiStudentAssociation`
+
+3. Open the file with the extension of `SSUAkron.xcworkspace`
+
+To avoid any errors, make sure you change provision profile license to your license and change the Bundle Identifier name to your own identifier 
 
 4. RUN
+
+
+# License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+
