@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CardHighlightCell: UITableViewCell, CardDelegate {
+@IBDesignable class CardHighlightCell: UITableViewCell, CardDelegate {
 
     var event : EventInformation!
     

@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Firebase
 import GoogleSignIn
+import GooglePlaces
 import IQKeyboardManagerSwift
 
 @UIApplicationMain

@@ -26,7 +26,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         button.setTitle("تسجيل دخول", for: .normal)
         button.titleLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
         button.setTitleColor(.white, for: .normal)
-        button.cornerRadius = 5
+//        button.cornerRadius = 5
         button.spinnerColor = .white
         button.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
         

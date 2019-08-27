@@ -13,23 +13,15 @@ import Firebase
 
 class EventInformation: UIViewController , CardDelegate{
 
-    var radius : CGFloat = 12
-    @IBOutlet var bigAssView: UIView!
-    
-    @IBOutlet weak var signupContainer: UIView!
-    @IBOutlet weak var dateContainer: UIView!
-    @IBOutlet weak var contContainer: UIView!
-    @IBOutlet weak var mapContainer: UIView!
-    @IBOutlet weak var descriptionContainer: UIView!
-    
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var descriptionView: UITextView!
+    @IBOutlet weak var descriptionView: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var signUpButton: UIButton!
     
     var coordinations: CLLocationCoordinate2D?
+    var radius : CGFloat = 12
     
     @IBAction func signUpClicked(_ sender: UIButton) {
         sender.tap()
@@ -37,28 +29,34 @@ class EventInformation: UIViewController , CardDelegate{
     
     func cardDidTapInside(card: Card) {
         print("didtapinside")
-        bigAssView.layoutIfNeeded()
-        bigAssView.setNeedsDisplay()
+//        bigAssView.layoutIfNeeded()
+//        bigAssView.setNeedsDisplay()
         descriptionView.setNeedsDisplay()
         descriptionView.layoutIfNeeded()
     }
     
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        setupView()
+//
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//
+//
+//    }
+//
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//
+//    }
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//    }
+//
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        signUpButton.layer.cornerRadius = signUpButton.frame.height / 2
+        
     }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-
     let mapButton : UIButton = {
         let button = UIButton()
         button.layer.cornerRadius = 12
@@ -97,28 +95,28 @@ class EventInformation: UIViewController , CardDelegate{
     }
     
     func setupView()  {
-        signUpButton.layer.cornerRadius = radius
-        signupContainer.layer.cornerRadius = radius
-        dateContainer.layer.cornerRadius = radius
-        
-        mapContainer.layer.cornerRadius = radius
-        mapView.layer.cornerRadius = radius
-        mapContainer.addSubview(mapButton)
-        mapButton.leftAnchor.constraint(equalTo: mapContainer.leftAnchor, constant: 0).isActive = true
-        mapButton.bottomAnchor.constraint(equalTo: mapContainer.bottomAnchor, constant: 0).isActive = true
-        mapButton.widthAnchor.constraint(equalToConstant: 100)
-        mapButton.heightAnchor.constraint(equalToConstant: 40)
-       
-        contContainer.layer.cornerRadius = radius
-        
-        descriptionContainer.layer.cornerRadius = radius
-        descriptionView.layer.cornerRadius = radius
-        descriptionView.isEditable = false
-        descriptionView.isSelectable = false
-        descriptionView.showsVerticalScrollIndicator = false
-        descriptionView.font = UIFont(name: "NotoKufiArabic", size: 12)
-        
-        populateCard()
+//        signUpButton.layer.cornerRadius = radius
+////        signupContainer.layer.cornerRadius = radius
+////        dateContainer.layer.cornerRadius = radius
+////
+////        mapContainer.layer.cornerRadius = radius
+//        mapView.layer.cornerRadius = radius
+////        mapContainer.addSubview(mapButton)
+////        mapButton.leftAnchor.constraint(equalTo: mapContainer.leftAnchor, constant: 0).isActive = true
+////        mapButton.bottomAnchor.constraint(equalTo: mapContainer.bottomAnchor, constant: 0).isActive = true
+//        mapButton.widthAnchor.constraint(equalToConstant: 100)
+//        mapButton.heightAnchor.constraint(equalToConstant: 40)
+//
+////        contContainer.layer.cornerRadius = radius
+//
+////        descriptionContainer.layer.cornerRadius = radius
+//        descriptionView.layer.cornerRadius = radius
+////        descriptionView.isEditable = false
+////        descriptionView.isSelectable = false
+////        descriptionView.showsVerticalScrollIndicator = false
+//        descriptionView.font = UIFont(name: "NotoKufiArabic", size: 12)
+//
+//        populateCard()
         
 //        Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(viewViewed), userInfo: nil, repeats: false)
     }
@@ -144,6 +142,7 @@ extension UIButton{
     
     
     func tap()  {
+        
         UIButton.animate(withDuration: 0.1, animations: {
             self.transform = CGAffineTransform(scaleX: 0.97, y: 0.97)
         }) { _ in

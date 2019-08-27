@@ -3,10 +3,19 @@
 
 target 'SSUAkron' do
   use_frameworks!
-  pod 'Firebase/Core'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Storage'
-  pod 'Firebase/Database'
+  # pod 'Firebase/Core'
+  # pod 'Firebase/Auth'
+  # pod 'FirebaseUI'
+  # Only pull in FirebaseUI Database features
+pod 'FirebaseUI/Database', '~> 8.0'
+
+# Only pull in FirebaseUI Storage features
+pod 'FirebaseUI/Storage', '~> 8.0'
+
+# Only pull in FirebaseUI Auth features
+pod 'FirebaseUI/Auth', '~> 8.0'
+  # pod 'Firebase/Storage'
+  # pod 'Firebase/Database'
   pod 'MKRingProgressView'
   pod 'TransitionButton'
   pod 'Eureka'

@@ -11,6 +11,7 @@ import UIKit
 import Eureka
 import ImageRow
 import MapKit
+import GooglePlacesRow
 
 class EventPostFormViewController: FormViewController, CLLocationManagerDelegate {
     
@@ -34,15 +35,18 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
 
     }
     
+    let locationManager = CLLocationManager()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+    }
+    
     var randomArray = ["فعالية رياضية" , "فعالية نسائية", "فعالية اجتماعية", "فعاليات اخرى"]
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let locationManager = CLLocationManager()
-        
-        locationManager.delegate = self;
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
         
        
         
@@ -111,8 +115,8 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
                 row.title = "موقع الفعالية"
                 
                 DispatchQueue.main.async {
-                    locationManager.startUpdatingLocation()
-                    if let coordinates = locationManager.location?.coordinate{
+                    self.locationManager.startUpdatingLocation()
+                    if let coordinates = self.locationManager.location?.coordinate{
                           row.value = CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
                     }
                 }
@@ -120,17 +124,21 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
                     cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
                     cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
                 })
-            <<< ImageRow(){
-                $0.title = "صورة"
-                $0.sourceTypes = [.PhotoLibrary, .Camera]
-                $0.clearAction = .yes(style: UIAlertActionStyle.destructive)
-                }.cellUpdate({ (cell, row) in
-                    cell.accessoryView?.layer.cornerRadius = 17
-                    cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
-                }).cellSetup({ (cell, row) in
-                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-                })
+        
+            <<< GooglePlacesAccessoryRow()
+            
+        
+//            <<< ImageRow(){
+//                $0.title = "صورة"
+//                $0.sourceTypes = [.PhotoLibrary, .Camera]
+//                $0.clearAction = .yes(style: UIAlertActionStyle.destructive)
+//                }.cellUpdate({ (cell, row) in
+//                    cell.accessoryView?.layer.cornerRadius = 17
+//                    cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+//                }).cellSetup({ (cell, row) in
+//                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+//                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+//                })
         
 
             
