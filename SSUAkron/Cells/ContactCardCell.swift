@@ -15,18 +15,32 @@ class ContactCardCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var jobLabel: UILabel!
     @IBOutlet weak var contactButton: UIButton!
+    @IBOutlet weak var buttonView: UIView!
+    
+    var whatsAppNumber: String?
     
     @IBAction func contactButtonClicked(_ sender: UIButton) {
-        sender.tap()
+        
+        guard whatsAppNumber != nil else { return }
+        guard let url = URL(string: "https://wa.me/\(whatsAppNumber)") else { return }
+        UIApplication.shared.open(url)
+        
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        contactButton.layer.cornerRadius = 8
-        
-        contactButton.alpha = 0.8
     }
 
+    
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()  
+        buttonView.backgroundColor = whatsAppNumber == nil ? .gray : .blueSSA
+        buttonView.layer.cornerRadius = buttonView.bounds.width / 2
+        contactButton.alpha = 0.8
+    }
+    
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
@@ -36,3 +50,5 @@ class ContactCardCell: UICollectionViewCell {
         
     }
 }
+
+

@@ -74,10 +74,7 @@ func getUserInfo() -> SaudiUser {
                 user.major = value["major"] as? String
                 user.phoneNumber = value["phone_number"] as? String
                 user.university = value["university"] as? String
-                if snapshot.hasChild("job"){
-                    user.job = value["job"] as! String
-                
-            }
+                user.job = value["job"] as? String 
         }
     }
     return user
@@ -89,6 +86,7 @@ extension UIColor {
     
     // MARK: - Initialization
     
+    class var blueSSA : UIColor { return UIColor(hex: "167CAA")! }
     
     convenience init?(hex: String) {
         var hexSanitized = hex.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -125,3 +123,28 @@ extension UIColor {
     
     
 }
+
+
+extension UIView{
+    @IBInspectable
+    var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+        }
+    }
+}
+
+extension UIViewController {
+    
+    func showAlert(title: String = "Error", message: String = "Something went wrong") {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+}
+
+
+

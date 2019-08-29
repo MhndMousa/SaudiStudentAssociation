@@ -13,7 +13,7 @@ import UIKit
     /**
      Text of the title label.
      */
-    @IBInspectable public var title: String = "...." {
+    @IBInspectable public var title: String = "loading.." {
         didSet{
             titleLbl.text = title.uppercased()
             titleLbl.lineHeight(0.70)
@@ -26,7 +26,7 @@ import UIKit
     /**
      Text of the title label of the item at the bottom.
      */
-    @IBInspectable public var itemTitle: String = "،،" {
+    @IBInspectable public var itemTitle: String = "loading.." {
         didSet{
             itemTitleLbl.text = itemTitle
         }
@@ -38,7 +38,7 @@ import UIKit
     /**
      Text of the subtitle label of the item at the bottom.
      */
-    @IBInspectable public var itemSubtitle: String = "،،" {
+    @IBInspectable public var itemSubtitle: String = "loading.." {
         didSet{
             itemSubtitleLbl.text = itemSubtitle
         }

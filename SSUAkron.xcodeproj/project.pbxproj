@@ -11,6 +11,7 @@
 		590B23742082A69000270381 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B23732082A68F00270381 /* Chat.swift */; };
 		590B23762082BA7400270381 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B23752082BA7400270381 /* Message.swift */; };
 		590B23782083C75E00270381 /* NewMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590B23772083C75E00270381 /* NewMessage.swift */; };
+		591865EF231494A10044546B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 591865EE231494A10044546B /* Assets.xcassets */; };
 		592453B92075E05000D0A1A9 /* CustomCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592453B82075E05000D0A1A9 /* CustomCells.swift */; };
 		592453BD2075E7A000D0A1A9 /* EventPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592453BC2075E7A000D0A1A9 /* EventPost.swift */; };
 		5925AEB8207828AA00EF6D8D /* SignupForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5925AEB7207828AA00EF6D8D /* SignupForm.swift */; };
@@ -27,7 +28,6 @@
 		59795080205B1B0000807FD1 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979507F205B1B0000807FD1 /* Contact.swift */; };
 		59795083205B1B0000807FD1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59795081205B1B0000807FD1 /* Main.storyboard */; };
 		59795086205B1B0000807FD1 /* SSUAkron.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59795084205B1B0000807FD1 /* SSUAkron.xcdatamodeld */; };
-		59795088205B1B0000807FD1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59795087205B1B0000807FD1 /* Assets.xcassets */; };
 		5979508B205B1B0000807FD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59795089205B1B0000807FD1 /* LaunchScreen.storyboard */; };
 		5979509D205B1B8300807FD1 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59795094205B1B7F00807FD1 /* Animator.swift */; };
 		5979509E205B1B8300807FD1 /* CardGroupSliding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59795095205B1B8000807FD1 /* CardGroupSliding.swift */; };
@@ -60,6 +60,7 @@
 		590B23732082A68F00270381 /* Chat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		590B23752082BA7400270381 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		590B23772083C75E00270381 /* NewMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessage.swift; sourceTree = "<group>"; };
+		591865EE231494A10044546B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		592453B82075E05000D0A1A9 /* CustomCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCells.swift; sourceTree = "<group>"; };
 		592453BC2075E7A000D0A1A9 /* EventPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPost.swift; sourceTree = "<group>"; };
 		5925AEB7207828AA00EF6D8D /* SignupForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupForm.swift; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		5979507F205B1B0000807FD1 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		59795082205B1B0000807FD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		59795085205B1B0000807FD1 /* SSUAkron.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SSUAkron.xcdatamodel; sourceTree = "<group>"; };
-		59795087205B1B0000807FD1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5979508A205B1B0000807FD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5979508C205B1B0000807FD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59795094205B1B7F00807FD1 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
@@ -204,10 +204,10 @@
 				59DDB6BD2060E104001DF580 /* Global.swift */,
 				59795081205B1B0000807FD1 /* Main.storyboard */,
 				59795089205B1B0000807FD1 /* LaunchScreen.storyboard */,
-				59795087205B1B0000807FD1 /* Assets.xcassets */,
 				5979508C205B1B0000807FD1 /* Info.plist */,
 				59E24C31206372A800B04928 /* GoogleService-Info.plist */,
 				59795084205B1B0000807FD1 /* SSUAkron.xcdatamodeld */,
+				591865EE231494A10044546B /* Assets.xcassets */,
 			);
 			path = SSUAkron;
 			sourceTree = "<group>";
@@ -352,6 +352,7 @@
 			files = (
 				59B26207206A091100F1E9E7 /* EventInformation.xib in Resources */,
 				595AA08C205C7ECA009D3D09 /* NotoKufiArabic-Bold.ttf in Resources */,
+				591865EF231494A10044546B /* Assets.xcassets in Resources */,
 				59E24C32206372A800B04928 /* GoogleService-Info.plist in Resources */,
 				5962599120660A7200DD7CAA /* CardArticleCell.xib in Resources */,
 				59C23B922077423500B21E0B /* ContactCardCell.xib in Resources */,
@@ -359,7 +360,6 @@
 				595AA08D205C7ECA009D3D09 /* NotoKufiArabic-Regular.ttf in Resources */,
 				5962598C2065F98F00DD7CAA /* CardHighlightCell.xib in Resources */,
 				5979508B205B1B0000807FD1 /* LaunchScreen.storyboard in Resources */,
-				59795088205B1B0000807FD1 /* Assets.xcassets in Resources */,
 				59795083205B1B0000807FD1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,36 +391,36 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GooglePlacesRow/GooglePlacesRow.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageRow/ImageRow.framework",
 				"${BUILT_PRODUCTS_DIR}/MKRingProgressView/MKRingProgressView.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GooglePlacesRow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageRow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MKRingProgressView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		983C2AA8EA7E36E5EAA70902 /* [CP] Copy Pods Resources */ = {
@@ -429,16 +429,22 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */

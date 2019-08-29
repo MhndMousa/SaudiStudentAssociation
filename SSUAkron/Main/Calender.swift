@@ -54,15 +54,17 @@ class EventViewController: UITableViewController {
             let card = CardInformaion(dic, self.colors)
             card.cardId = snapshot.key
             
-            let photoRef = Storage.storage().reference().child("test/a3716125247_16.jpg")
+            
 //            Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
-                    photoRef.getData(maxSize: 1 * 1024 * 1024) {data, error in
+            Storage.storage().reference().child("test/a3716125247_16.jpg")
+                .getData(maxSize: 1 * 1024 * 1024) {data, error in
                         if  error != nil{
                         } else {
                             let a = UIImage(data: data!)
                             card.image = a!
                         }
                     }
+
             
             self.events.insert(card, at: 0)
             self.events.sort(by: { (card1, card2) -> Bool in
@@ -101,16 +103,38 @@ class EventViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell: CardHighlightCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardHighlightCell
-        let event = self.events[indexPath.row]
-        
-        let cardVC :EventInformation = {
-            let e = EventInformation()
-            e.dateLabel?.text = String(describing: indexPath.row)
-            return e
-        }()
+//
+//        let cell: CardHighlightCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardHighlightCell
+//        let event = self.events[indexPath.row]
+//
+//        let cardVC :EventInformation = {
+//            let e = EventInformation()
+//            e.dateLabel?.text = String(describing: indexPath.row)
+//            return e
+//        }()
+//
+//
+//        DispatchQueue.main.async {
+//            cell.populate(event)
+//            cardVC.dateLabel?.text = String(describing: indexPath.row)
+//            cardVC.loadViewIfNeeded()
+//            cardVC.viewDidLayoutSubviews()
+//        }
+//
+//        cell.event = cardVC
+//        cell.card?.shouldPresent(cell.event, from: self, fullscreen: true)
+//
+//        cell.selectionStyle = .none
+//        cell.backgroundColor = UIColor(hex: "efeff4")
 
+<<<<<<< HEAD
+        
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        cell.textLabel?.text = self.events[indexPath.row].title
+        cell.detailTextLabel?.text = "\(self.events[indexPath.row].userID)"
+        cell.imageView?.image = self.events[indexPath.row].icon
+        cell.accessoryType = .disclosureIndicator
+=======
         DispatchQueue.main.async {
             cell.populate(event)
             cardVC.dateLabel?.text = String(describing: indexPath.row)
@@ -120,11 +144,16 @@ class EventViewController: UITableViewController {
     
         cell.event = cardVC
         cell.card?.shouldPresent(cell.event, from: self, fullscreen: true)
+>>>>>>> master
         
-        cell.selectionStyle = .none
-        cell.backgroundColor = UIColor(hex: "efeff4")
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = EventInformation()
+        vc.title = self.events[indexPath.row].title
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
@@ -138,10 +167,15 @@ class EventViewController: UITableViewController {
         requestCalenderData()
         updateStyle()
     }
+<<<<<<< HEAD
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+=======
     
     func updateStyle()  {
         self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
         
+>>>>>>> master
     }
     override func viewDidLoad() {
         super.viewDidLoad()

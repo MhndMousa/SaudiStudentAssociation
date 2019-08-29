@@ -107,6 +107,19 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+<<<<<<< HEAD
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SSUAkron/AppDelegate.swift"
+            timestampString = "588631104.449049"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "unknown"
+            landmarkType = "0">
+=======
             uuid = "E1AD16C0-76B3-4E62-8604-105FB0A41185"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -198,6 +211,7 @@
             endingLineNumber = "135"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
+>>>>>>> master
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

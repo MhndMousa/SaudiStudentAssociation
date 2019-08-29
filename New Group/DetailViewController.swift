@@ -83,10 +83,10 @@ internal class DetailViewController: UIViewController {
             detail.alpha = 1
             detail.frame = CGRect(x: 0,
                                   y: card.backgroundIV.bounds.maxY,
-                                  width: scrollView.frame.width,
+                                  width: self.view.frame.width,
                                   height: detail.frame.height)
              
-            scrollView.contentSize = CGSize(width: scrollView.bounds.width, height: detail.frame.maxY)
+            scrollView.contentSize = CGSize(width: self.view.frame.width, height: detail.frame.maxY)
             
             
             xButton.frame = CGRect (x: scrollView.frame.maxX - 20 - 40,

@@ -11,6 +11,9 @@ import UIKit
 import Eureka
 import ImageRow
 import MapKit
+import GooglePlaces
+
+//import <GooglePlaces/GooglePlaces.h>
 
 class EventPostFormViewController: FormViewController, CLLocationManagerDelegate {
     
@@ -37,15 +40,31 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
 
     }
     
+    let locationManager = CLLocationManager()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+    }
+    
     var randomArray = ["فعالية رياضية" , "فعالية نسائية", "فعالية اجتماعية", "فعاليات اخرى"]
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let locationManager = CLLocationManager()
         
-        locationManager.delegate = self;
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+        
+        // Specify the place data types to return.
+        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) | UInt(GMSPlaceField.placeID.rawValue))!
+        autocompleteController.placeFields = fields
+        
+        // Specify a filter.
+        let filter = GMSAutocompleteFilter()
+        filter.type = .noFilter
+        autocompleteController.autocompleteFilter = filter
         
        
         
@@ -55,8 +74,8 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
                 row.title = "العنوان"
                 row.placeholder = "اختر عنوان الفعالية"
                 }.cellSetup({ (cell, row) in
-                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.textLabel?.font = .notoKufiArabicSmall
+                    cell.detailTextLabel?.font = .notoKufiArabicSmall
                 })
             
             <<< PushRow<String>() {
@@ -64,78 +83,134 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
                 $0.selectorTitle = "اختر نوع الفعالية"
                 $0.options = randomArray
                 }.cellSetup({ (cell, row) in
-                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.textLabel?.font = .notoKufiArabicSmall
+                    cell.detailTextLabel?.font = .notoKufiArabicSmall
                 })
             <<< TextAreaRow(){
                 $0.placeholder = "وصف للفعالية"
                 }.cellSetup({ (cell, row) in
-                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.textLabel?.font = .notoKufiArabicSmall
+                    cell.detailTextLabel?.font = .notoKufiArabicSmall
                 })
+                    
+
             
             +++ Section()
             <<< IntRow(){
                 $0.title = "المبلغ"
                 $0.placeholder = "ادخل المبلغ بالدولار"
                 }.cellSetup({ (cell, row) in
-                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.textLabel?.font = .notoKufiArabicSmall
+                    cell.detailTextLabel?.font = .notoKufiArabicSmall
                 })
             <<< IntRow(){
                 $0.title = "عدد المقاعدة المتاحة"
                 $0.placeholder = "0"
                 }.cellSetup({ (cell, row) in
-                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.textLabel?.font = .notoKufiArabicSmall
+                    cell.detailTextLabel?.font = .notoKufiArabicSmall
                 })
-            
-            
-        
     
-            
             +++ Section(footer: "في حال عدم اضافة صورة سوف يتم استخدام صورة النادي السعودي الاصلية لاعلان الفعالية")
             
             <<< TextRow(){ row in
                 row.title = "اسم الموقع"
                 row.placeholder = "اختر اسم الموقع"
                 }.cellSetup({ (cell, row) in
-                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.textLabel?.font = .notoKufiArabicSmall
+                    cell.detailTextLabel?.font = .notoKufiArabicSmall
                 })
+    
             <<< TextRow(){ row in
                 row.title = "وصف الموقع"
                 row.placeholder = "مثال : الغرفة رفم 4 الطابق 2"
                 }.cellSetup({ (cell, row) in
-                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.textLabel?.font = .notoKufiArabicSmall
+                    cell.detailTextLabel?.font = .notoKufiArabicSmall
                 })
-            <<< LocationRow(){row in
-                row.title = "موقع الفعالية"
-                
-                DispatchQueue.main.async {
-                    locationManager.startUpdatingLocation()
-                    if let coordinates = locationManager.location?.coordinate{
-                          row.value = CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
-                    }
-                }
-                }.cellSetup({ (cell, row) in
-                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-                })
-            <<< ImageRow(){
-                $0.title = "صورة"
-                $0.sourceTypes = [.PhotoLibrary, .Camera]
-                $0.clearAction = .yes(style: UIAlertActionStyle.destructive)
-                }.cellUpdate({ (cell, row) in
-                    cell.accessoryView?.layer.cornerRadius = 17
-                    cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+
+            <<< ButtonRow(){row in
+                row.title = "اختر موقع الفعالية"
+                row.tag = "location"
+                }.onCellSelection({ (cell, row) in
+                // Display the autocomplete view controller.
+                self.present(autocompleteController, animated: true, completion: nil)
                 }).cellSetup({ (cell, row) in
-                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.textLabel?.font = .notoKufiArabicSmall
+                    cell.detailTextLabel?.font = .notoKufiArabicSmall
                 })
+        
+        
+//            <<< LocationRow(){row in
+//                row.title = "موقع الفعالية"
+//
+//                DispatchQueue.main.async {
+//                    self.locationManager.startUpdatingLocation()
+//                    if let coordinates = self.locationManager.location?.coordinate{
+//                          row.value = CLLocation(latitude: coordinates.latitude, longitude: coordinates.longitude)
+//                    }
+//                }
+//                }.cellSetup({ (cell, row) in
+//                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+//                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+//                })
+
+        
+//            <<< ImageRow(){
+//                $0.title = "صورة"
+//                $0.sourceTypes = [.PhotoLibrary, .Camera]
+//                $0.clearAction = .yes(style: UIAlertActionStyle.destructive)
+//                }.cellUpdate({ (cell, row) in
+//                    cell.accessoryView?.layer.cornerRadius = 17
+//                    cell.accessoryView?.frame = CGRect(x: 0, y: 0, width: 34, height: 34)
+//                }).cellSetup({ (cell, row) in
+//                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+//                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+//                })
         
 
             
     }
+}
+extension EventPostFormViewController: GMSAutocompleteViewControllerDelegate {
+    
+    // Handle the user's selection.
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        print("Place name: \(place.name)")
+        print("Place ID: \(place.placeID)")
+        
+//        let rows = self.form.allRows.filter({$0.title == "" || $0.tag == })
+//        cell.title = "\(place.name!)"
+
+        
+        self.loadViewIfNeeded()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // User canceled the operation.
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+    
+}
+
+extension UIFont{
+    class var notoKufiArabicSmall: UIFont {return UIFont(name: "NotoKufiArabic", size: 12)!}
+    class var notoKufiArabicMedium: UIFont {return UIFont(name: "NotoKufiArabic", size: 15)!}
+    class var notoKufiArabicLarge: UIFont {return UIFont(name: "NotoKufiArabic", size: 21)!}
+    
 }
