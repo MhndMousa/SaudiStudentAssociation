@@ -11,6 +11,7 @@ import UIKit
 import Eureka
 import ImageRow
 import MapKit
+
 class StorePostFormViewController: FormViewController, CLLocationManagerDelegate {
     
     
@@ -27,22 +28,157 @@ class StorePostFormViewController: FormViewController, CLLocationManagerDelegate
         
     }
     
+    
+    // TODO: Check cells for correct input
+    func checkCells() -> Bool {
+        
+        
+        return true
+    }
+    
     @IBOutlet weak var submitButton: UIBarButtonItem!
     @IBAction func submitTapped(_ sender: Any) {
-        print("tapped")
         
+        
+        
+        // Post to firebase procedure
+        guard checkCells() else {return}
+        
+        // Get values from the form
+        var formValues = self.form.values()
+        
+        if let userID = currentUser.uid {
+            // Make refrence in the storage and the database for the photo and the post
+            let userIDStorageRef = storageRef.child("store").child(userID)    // Storage: Store -> uid
+            let newPostKey = ref.child("Store").childByAutoId().key                     // Databse: Store -> random_post
+            let imageRef =  userIDStorageRef.child(newPostKey).child("image1.jpg")      // Storage: Store -> uid -> random_post -> image name
+            
+            // Add poster ID for to get to them when contacting via chat
+            formValues["uid"] = userID
+            
+            // TODO: for loop for each photo in an array
+            //       Send all at one, or one by one??
+            //       Inside the if statement or ouside??
+            if let img = formValues["picture"] as? UIImage{
+                print(img.size)
+                
+                // Convert Image into data and prepare for upload
+                if let imageData = UIImageJPEGRepresentation(img, 0.8){
+                    
+                    // Uploads the image
+                    let uploadTask = imageRef.putData(imageData)
+                    
+                    // Observe upload progress
+                    uploadTask.observe(.progress) { (snapshot) in
+                        let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount) / Double(snapshot.progress!.totalUnitCount)
+                        print("Completed: \(percentComplete)")
+                    }
+                    
+                    // Assign the picture path to the form to save it in the database
+                    let imageArray: [String:Any] = ["count" : "5", "image1" : imageRef.fullPath]
+                    formValues["picture"] = imageArray as! [String:String]
+                    
+                    
+                    // If the upload is successful
+                    uploadTask.observe(.success) { (snapshot) in
+                        
+                        // Post the data with new reassigned location for the picture to the database
+                        ref.child("Store").child(newPostKey).setValue(formValues)
+                        print("Post uploaded")
+                        self.dismiss(animated: true, completion: nil)
+                    }
+                }
+            }
+        }
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+//
+//
+//
+//
+//
+//
+//        // Post to firebase procedure
+//        guard checkCells() else {return}
+//
+//        // Get values from the form
+//        var formValues = self.form.values()
+//
+//        // Make refrence in the storage and the database for the photo and the post
+//        let userIDStorageRef = storageRef.child("store").child(currentUser.uid!)    // Storage: Store -> uid
+//        let newPostKey = ref.child("Store").childByAutoId().key                     // Databse: Store -> random_post
+//        let imageRef =  userIDStorageRef.child(newPostKey).child("image1.jpg")      // Storage: Store -> uid -> random_post -> image name
+//
+//
+//        // TODO: for loop for each photo in an array
+//        //       Send all at one, or one by one??
+//        //       Inside the if statement or ouside??
+//
+//        if let img = formValues["picture"] as? UIImage{
+//            print(img.size)
+//
+//            // Convert Image into data and prepare for upload
+//            if let imageData = UIImageJPEGRepresentation(img, 0.8){
+//
+//                // Uploads the image
+//                let uploadTask = imageRef.putData(imageData)
+//
+//                // Observe upload progress
+//                uploadTask.observe(.progress) { (snapshot) in
+//                    let percentComplete = 100.0 * Double(snapshot.progress!.completedUnitCount) / Double(snapshot.progress!.totalUnitCount)
+//                    print("Completed: \(percentComplete)")
+//                }
+//
+//                // Assign the picture path to the form to save it in the database
+//                let imageArray: [String:Any] = ["count" : "5", "image1" : imageRef.fullPath]
+//                formValues["picture"] = imageArray as! [String:String]
+//
+//
+//                // If the upload is successful
+//                uploadTask.observe(.success) { (snapshot) in
+//
+//                    // Post the data with new reassigned location for the picture to the database
+//                    ref.child("Store").child(newPostKey).setValue(formValues)
+//                    print("Post uploaded")
+//                    self.dismiss(animated: true, completion: nil)
+//                }
+//            }
+//        }
+//
+//
+//
+//
+//
+//
+//
+//
   }
     
-    var randomArray = ["مركبة" , "اثاث منزل", "الكترونيات", "مستلزمات دراسية", "اخرى"]
+    var typeChoicesArray = ["مركبة" , "اثاث منزل", "الكترونيات", "مستلزمات دراسية", "اخرى"]
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
         
+        // TODO: Validate every input from the user before submission
         form +++ Section()
             <<< TextRow(){ row in
                 row.title = "العنوان"
+                row.tag = "title"
                 row.placeholder = "اختر عنوان السعلة"
+                }.cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.titleLabel?.textColor = .red
+                    }
                 }.cellSetup({ (cell, row) in
                     cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
                     cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
@@ -50,8 +186,13 @@ class StorePostFormViewController: FormViewController, CLLocationManagerDelegate
             
             <<< PushRow<String>() {
                 $0.title = "نوع السلعة"
+                $0.tag = "catagory"
                 $0.selectorTitle = "اختر نوع السلعة"
-                $0.options = randomArray
+                $0.options = typeChoicesArray
+                }.cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.textLabel?.textColor = .red
+                    }
                 }.cellSetup({ (cell, row) in
                     cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
                     cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
@@ -59,6 +200,7 @@ class StorePostFormViewController: FormViewController, CLLocationManagerDelegate
             
             <<< ImageRow(){
                 $0.title = "صورة"
+                $0.tag = "picture"
                 $0.sourceTypes = [.PhotoLibrary, .Camera]
                 $0.clearAction = .yes(style: UIAlertActionStyle.destructive)
                 }.cellUpdate({ (cell, row) in
@@ -70,6 +212,11 @@ class StorePostFormViewController: FormViewController, CLLocationManagerDelegate
                 })
             <<< TextAreaRow(){
                 $0.placeholder = "وصف السلعة"
+                $0.tag = "descrition"
+                }.cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.textLabel?.textColor = .red
+                    }
                 }.cellSetup({ (cell, row) in
                     cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
                     cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
@@ -78,14 +225,24 @@ class StorePostFormViewController: FormViewController, CLLocationManagerDelegate
             +++ Section()
             <<< IntRow(){
                 $0.title = "المبلغ"
+                $0.tag = "price"
                 $0.placeholder = "ادخل المبلغ بالدولار"
+                }.cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.titleLabel?.textColor = .red
+                    }
                 }.cellSetup({ (cell, row) in
                     cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
                     cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
                 })
             <<< PickerInlineRow<String>(){
                 $0.title = "اريد الملبغ في"
+                $0.tag = "location"
                 $0.options = ["السعودية", "بلد الدراسة"]
+                }.cellUpdate { cell, row in
+                    if !row.isValid {
+                        cell.textLabel?.textColor = .red
+                    }
                 }.cellSetup({ (cell, row) in
                     cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
                     cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)

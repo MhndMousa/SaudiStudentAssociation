@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 
 class CardInformaion: NSObject {
+<<<<<<< HEAD
     enum eventIcons {
         case food, celebration, gathering
         var image: UIImage {
@@ -27,6 +28,10 @@ class CardInformaion: NSObject {
     
     
     var title: String?
+=======
+    var title: String 
+    var catagory: String?
+>>>>>>> master
     var itemTitle: String?
     var itemSubtitle: String?
     var image: UIImage = #imageLiteral(resourceName: "ssa")

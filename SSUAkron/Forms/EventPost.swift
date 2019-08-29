@@ -33,6 +33,9 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
     
     @IBOutlet weak var submitButton: UIBarButtonItem!
     @IBAction func submitTapped(_ sender: Any) {
+        
+        // Check for admin premission then post to firebase
+        
         print("tapped")
 
     }
