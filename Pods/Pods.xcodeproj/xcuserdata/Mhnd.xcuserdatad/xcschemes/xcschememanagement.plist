@@ -59,7 +59,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>GooglePlacesRow.xcscheme</key>
+		<key>GoogleMaps.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>GooglePlaces.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

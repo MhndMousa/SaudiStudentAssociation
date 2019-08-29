@@ -37,8 +37,13 @@ PODS:
   - FirebaseUI/Storage (8.0.4):
     - Firebase/Storage (~> 6.0)
     - SDWebImage (~> 5.0)
-  - GooglePlacesRow (3.0.0):
-    - Eureka (~> 4.0)
+  - GoogleMaps (3.3.0):
+    - GoogleMaps/Maps (= 3.3.0)
+  - GoogleMaps/Base (3.3.0)
+  - GoogleMaps/Maps (3.3.0):
+    - GoogleMaps/Base
+  - GooglePlaces (3.3.0):
+    - GoogleMaps/Base (= 3.3.0)
   - GoogleSignIn (4.1.2):
     - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
     - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
@@ -90,7 +95,8 @@ DEPENDENCIES:
   - FirebaseUI/Auth (~> 8.0)
   - FirebaseUI/Database (~> 8.0)
   - FirebaseUI/Storage (~> 8.0)
-  - GooglePlacesRow
+  - GoogleMaps (~> 3.1)
+  - GooglePlaces (~> 3.1)
   - GoogleSignIn
   - ImageRow (~> 3.0)
   - IQKeyboardManagerSwift
@@ -107,7 +113,8 @@ SPEC REPOS:
     - FirebaseDatabase
     - FirebaseStorage
     - FirebaseUI
-    - GooglePlacesRow
+    - GoogleMaps
+    - GooglePlaces
     - GoogleSignIn
     - GoogleToolboxForMac
     - GoogleUtilities
@@ -129,7 +136,8 @@ SPEC CHECKSUMS:
   FirebaseDatabase: f48e067716864be2b855cf716b927ef375d6cfa0
   FirebaseStorage: 618dd8fd886b30adf6e5d1915b1f5c18cb5c3944
   FirebaseUI: d92c980c1c7e553df3c5e7b0725baeb13f80f6d2
-  GooglePlacesRow: c0bb6bc0acf8b2ab690986ef5c5ecb1085dd1d9e
+  GoogleMaps: cfee83da305b9aaeccf92c24ac79df11c3003492
+  GooglePlaces: 1e2a87bd9efee9623ee65d44ecc35ebfecd7b13c
   GoogleSignIn: d9ef55b10f0aa401a5de2747f59b725e4b9732ac
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GoogleUtilities: d2b0e277a95962e09bb27f5cd42f5f0b6a506c7d
@@ -142,6 +150,6 @@ SPEC CHECKSUMS:
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   TransitionButton: d271030914c84a00b54b4d983446944d2875e7ba
 
-PODFILE CHECKSUM: e51fed06301285186a77261ed419ab97d2cdc55b
+PODFILE CHECKSUM: fbb16d856e46ffa63ed1a8a615670f4137c532fd
 
 COCOAPODS: 1.7.3
