@@ -50,7 +50,7 @@ class StorePostFormViewController: FormViewController, CLLocationManagerDelegate
         if let userID = currentUser.uid {
             // Make refrence in the storage and the database for the photo and the post
             let userIDStorageRef = storageRef.child("store").child(userID)    // Storage: Store -> uid
-            let newPostKey = ref.child("Store").childByAutoId().key                     // Databse: Store -> random_post
+            let newPostKey = ref.child("Store").childByAutoId().key!                     // Databse: Store -> random_post
             let imageRef =  userIDStorageRef.child(newPostKey).child("image1.jpg")      // Storage: Store -> uid -> random_post -> image name
             
             // Add poster ID for to get to them when contacting via chat

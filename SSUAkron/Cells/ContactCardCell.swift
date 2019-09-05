@@ -34,8 +34,9 @@ class ContactCardCell: UICollectionViewCell {
     
     
     override func layoutSubviews() {
-        super.layoutSubviews()  
+        super.layoutSubviews()
         buttonView.backgroundColor = whatsAppNumber == nil ? .gray : .blueSSA
+        buttonView.isUserInteractionEnabled = whatsAppNumber == nil
         buttonView.layer.cornerRadius = buttonView.bounds.width / 2
         contactButton.alpha = 0.8
     }

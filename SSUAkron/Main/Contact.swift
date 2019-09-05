@@ -13,32 +13,23 @@ import FirebaseUI
 
 
 
-class ContactViewController: UICollectionViewController{
 
+class ContactViewController: UICollectionViewController{
+    @IBAction func infoButtonTapped(_ sender: Any) {
+            showAlert(title: "ما غرض هذه الصفحة؟", message: "كثير منا ما يعرف مين هم القائمين على النادي السعودي، هذه الصفحة غرضها معرفة لائحة النادي وطريقة التواصل معاهم")
+    }
+    
     
     var roaster = [SaudiUser]()
     
-    @IBAction func signOutTapped(_ sender: Any) {
-        do{
-            try Auth.auth().signOut()
-            let userDefault = UserDefaults.standard
-            
-//            let email = userDefault.string(forKey: "email")
-//            let password = userDefault.string(forKey: "password")
-            userDefault.removeObject(forKey: "email")
-            userDefault.removeObject(forKey: "password")
-            let vc = self.storyboard!.instantiateViewController(withIdentifier: "login")
-            self.present(vc, animated: true, completion: nil)
-            justLoggedOut = true
-        }catch let error as NSError{
-            print(error)
-        }
-    }
-
-    
     func reloadRoasterData(){
+        
+        addReloadingIndicator(for: 1)
         roaster.removeAll()
-        _ = ref.child("clubs").child("IN").child("indianapolis").child("roaster").observe(.value) { (snapshot) in
+        
+        
+        
+        ref.child("clubs").child("IN").child("indianapolis").child("roaster").observe(.value) { (snapshot) in
             let values = snapshot.value as! NSDictionary
             for value in values.allValues{
                 let userInfoFromFirebase = value as! [String : String]
@@ -51,17 +42,33 @@ class ContactViewController: UICollectionViewController{
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         reloadRoasterData()
+        self.collectionView?.register(UINib(nibName: "ContactCardCell", bundle: nil), forCellWithReuseIdentifier: "cell")
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.collectionView?.register(UINib(nibName: "ContactCardCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+        
+        let button = UIButton(type: .system)
+        button.setTitle("Some", for: .normal)
+        button.titleLabel?.font = .notoKufiBoldArabicMedium
+        button.setImage(#imageLiteral(resourceName: "icons8-expand-arrow-96-2"), for: .normal)
+        button.imageView?.anchor(trailing: button.titleLabel?.leadingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 2), size: .init(width: 17, height: 17))
+        
+        let stackview = UIStackView(arrangedSubviews:  [button])
+        stackview.axis = .horizontal
+        stackview.distribution = .fill
+        stackview.alignment = .center
+        stackview.spacing = 4
+        
+        self.navigationItem.titleView = stackview
     }
+  
 
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .default
-    }
+}
 
+
+extension ContactViewController: UICollectionViewDelegateFlowLayout{
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return roaster.count
@@ -78,14 +85,7 @@ class ContactViewController: UICollectionViewController{
         
         return cell
     }
-
-}
-
-
-
-
-
-extension ContactViewController: UICollectionViewDelegateFlowLayout{
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let cellWidth = (self.view.bounds.width / 2) - 6
         
@@ -104,11 +104,4 @@ extension ContactViewController: UICollectionViewDelegateFlowLayout{
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 4
     }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        let insets = UIEdgeInsets(top: 3, left: 3, bottom: 3, right: 3)
-//        return insets
-//    }
-
-    
-    
 }

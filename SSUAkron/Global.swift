@@ -82,6 +82,64 @@ func getUserInfo() -> SaudiUser {
 
 
 
+
+
+public func updateIcon(_ name: String) -> UIImage{
+    print(name)
+    if name == "food" {return UIImage(fromAssets: .food)}
+    if name == "woman" {return UIImage(fromAssets: .woman)}
+    if name == "celebration" {return UIImage(fromAssets: .sports)}
+    if name == "message" {return UIImage(fromAssets: .message)}
+    if name == "fastfood" {return UIImage(fromAssets: .fastfood)}
+    
+    if name == "auto" {return UIImage(fromAssets: .auto)}
+    if name == "electronics" {return UIImage(fromAssets: .electronics)}
+    if name == "appliances" {return UIImage(fromAssets: .appliances)}
+    if name == "books" {return UIImage(fromAssets: .books)}
+    
+    
+    
+    return UIImage()
+    
+}
+
+
+extension UIImage{
+    
+    enum storeIcons:String{
+        case auto = "commute_black"
+        case electronics =  "computer_black"
+        case books = "book_black"
+        case appliances = "house_black"
+        static let values = [auto,electronics,books,appliances ]
+        
+    }
+    
+    enum eventIcons :String {
+        case food = "food_black"
+        case fastfood = "fastfood_black"
+        case woman = "woman_black"
+        case sports = "sports_black"
+        case message = "message_black"
+        static let values = [food,woman,fastfood, sports, message]
+        
+        
+        
+        
+    }
+    convenience init!(fromAssets : eventIcons) {
+        self.init(named: fromAssets.rawValue)
+    }
+    convenience init!(fromAssets : storeIcons) {
+        self.init(named: fromAssets.rawValue)
+    }
+    
+}
+
+
+
+
+
 extension UIColor {
     
     // MARK: - Initialization
@@ -126,6 +184,54 @@ extension UIColor {
 
 
 extension UIView{
+    
+    func anchor(top: NSLayoutYAxisAnchor? = nil,
+                leading: NSLayoutXAxisAnchor? = nil,
+                bottom: NSLayoutYAxisAnchor? = nil,
+                trailing: NSLayoutXAxisAnchor? = nil,
+                centerx : NSLayoutXAxisAnchor? = nil,
+                centery: NSLayoutYAxisAnchor? = nil,
+                padding : UIEdgeInsets = .zero,
+                size: CGSize = .zero){
+        
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        if let top = top{
+            topAnchor.constraint(equalTo: top, constant:  padding.top).isActive = true
+        }
+        if let centery = centery{
+            centerYAnchor.constraint(equalTo: centery).isActive = true
+        }
+        if let centerx = centerx{
+            centerXAnchor.constraint(equalTo: centerx).isActive = true
+        }
+        if let bottom = bottom{
+            bottomAnchor.constraint(equalTo: bottom, constant:  -padding.bottom).isActive = true
+        }
+        if let leading = leading{
+            leadingAnchor.constraint(equalTo: leading, constant:  padding.left).isActive = true
+        }
+        if let trailing = trailing{
+            trailingAnchor.constraint(equalTo: trailing, constant:  -padding.right).isActive = true
+        }
+        
+        if size.width != 0{
+            widthAnchor.constraint(equalToConstant: size.width).isActive = true
+        }
+        if size.height != 0{
+            heightAnchor.constraint(equalToConstant: size.height).isActive = true
+        }
+        
+    }
+    
+    
+    func fillSuperView(){
+        anchor(top: superview?.topAnchor, leading: superview?.leadingAnchor, bottom: superview?.bottomAnchor, trailing: superview?.trailingAnchor)
+    }
+    
+    
+    
+    
     @IBInspectable
     var cornerRadius: CGFloat {
         get {
@@ -135,6 +241,9 @@ extension UIView{
             layer.cornerRadius = newValue
         }
     }
+    
+   
+
 }
 
 extension UIViewController {
@@ -144,7 +253,79 @@ extension UIViewController {
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
+    
+    func addReloadingIndicator(for seconds: TimeInterval) {
+        let indicator = UIActivityIndicatorView()
+        let loadingView = UIView()
+        
+        
+        indicator.translatesAutoresizingMaskIntoConstraints = false
+        loadingView.translatesAutoresizingMaskIntoConstraints = false
+        
+        //        self.view.addSubview(loadingView)
+        //
+        //        // Adding a white overlay on the current page
+        //        loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        //        loadingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        //        loadingView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        //        loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        //        loadingView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
+        //        //        loadingView.backgroundColor =
+        //
+        //        // Add loading indicator
+        //        loadingView.addSubview(indicator)
+        view.addSubview(indicator)
+        indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        //        indicator.centerYAnchor.constraint(equalTo: (self.navigationController?.navigationBar.centerYAnchor)!).isActive = true
+        indicator.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
+        indicator.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        indicator.heightAnchor.constraint(equalToConstant: 200).isActive = true
+        //        indicator.color = .black
+        indicator.hidesWhenStopped = true
+        indicator.activityIndicatorViewStyle = .gray
+        
+        DispatchQueue.main.async {
+            indicator.startAnimating()
+            DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: {
+                indicator.removeFromSuperview()
+            })
+            
+        }
+    }
+    
 }
 
 
 
+
+
+
+
+
+
+extension UIButton{
+    func pulse()  {
+        let pulse = CASpringAnimation(keyPath: "transform.scale")
+        pulse.duration = 0.3
+        pulse.fromValue = 0.96
+        pulse.toValue = 1
+        pulse.autoreverses = true
+        pulse.repeatCount  = 1
+        pulse.initialVelocity = 0.6
+        pulse.damping = 1
+        
+        layer.add(pulse, forKey: nil)
+    }
+    
+    
+    func tap()  {
+        
+        UIButton.animate(withDuration: 0.1, animations: {
+            self.transform = CGAffineTransform(scaleX: 0.97, y: 0.97)
+        }) { _ in
+            UIButton.animate(withDuration: 0.1, animations: {
+                self.transform = CGAffineTransform.identity
+            })
+        }
+    }
+}

@@ -1,22 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="QXJ-DL-Dao">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="R8h-xr-yqY">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-=======
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14810.11" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eh5-fw-BJC">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
-    <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14766.13"/>
->>>>>>> master
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
-        <capability name="iOS 13.0 system colors" minToolsVersion="11.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="NotoKufiArabic-Regular.ttf">
@@ -54,12 +45,12 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="مدينة انديانا" prompt="النادي السعودي " largeTitleDisplayMode="never" id="dsM-8D-fDI">
-                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="a6g-59-aEO">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="info_outlined" id="1Hp-C2-cmt">
                             <connections>
-                                <action selector="signOutTapped:" destination="Zch-5V-9uF" id="NVn-I1-nDx"/>
+                                <action selector="infoButtonTapped:" destination="Zch-5V-9uF" id="nhj-Yd-5xX"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="ic_account_circle" id="pT6-1u-vvo">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="outline_account_circle_black_18dp" id="pT6-1u-vvo">
                             <connections>
                                 <segue destination="0cb-7j-s6x" kind="presentation" id="khG-9D-vhg"/>
                             </connections>
@@ -75,7 +66,7 @@
             <objects>
                 <viewController id="rOX-Ax-fXf" customClass="ProfileViewContoller" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0h7-ld-x9F">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3De-2Q-dS9"/>
@@ -102,7 +93,7 @@
             <objects>
                 <viewController id="xrl-3J-yIS" customClass="SignupForm" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YMo-tH-dh8">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="D3f-8k-oTN"/>
@@ -251,14 +242,33 @@
                     <connections>
                         <segue destination="QXJ-DL-Dao" kind="relationship" relationship="viewControllers" id="JlU-L0-6Kz"/>
                         <segue destination="9hf-8h-mP9" kind="relationship" relationship="viewControllers" id="I5c-t7-bmb"/>
-                        <segue destination="zrA-5z-MFP" kind="relationship" relationship="viewControllers" id="8Ub-RX-T4W"/>
                         <segue destination="XpQ-fp-l17" kind="relationship" relationship="viewControllers" id="RTz-o4-cjE"/>
                         <segue destination="aSL-M9-t1x" kind="relationship" relationship="viewControllers" id="rgE-ir-vTR"/>
+                        <segue destination="smh-dZ-aK3" kind="relationship" relationship="viewControllers" id="sPq-ob-f6h"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MrT-Fg-iwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2012" y="3144"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="19o-kh-1b1">
+            <objects>
+                <viewController id="smh-dZ-aK3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0zM-oh-KIa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="zOP-RS-rW9"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="info_black" id="zk8-Hr-Pyd">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-7"/>
+                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
+                    </tabBarItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lFF-J2-20J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2012" y="3995"/>
         </scene>
         <!--السوق-->
         <scene sceneID="daa-T8-Ya9">
@@ -286,7 +296,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="السوق" id="XRs-Qp-xdC">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="OZK-7y-KIa">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="info_outlined" id="2sh-JV-CcM">
+                            <connections>
+                                <action selector="infoButtonTapped:" destination="qjq-Qo-TNd" id="kbI-Mr-A2D"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="OZK-7y-KIa">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="UfN-tH-xRc" kind="show" id="jCB-38-nla"/>
@@ -355,9 +370,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="الفعاليات" id="Fp0-N1-E7u">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="info_outlined" id="O8l-Ht-y86">
+                            <connections>
+                                <action selector="infoButtonTapped:" destination="ygp-SZ-rjq" id="C8U-cY-ZPN"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ErR-Uh-eG7">
                             <connections>
-                                <segue destination="7ik-aY-kDI" kind="presentation" modalPresentationStyle="formSheet" id="hEz-xC-PhV"/>
+                                <segue destination="7ik-aY-kDI" kind="presentation" id="hEz-xC-PhV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -371,7 +391,7 @@
             <objects>
                 <viewController id="fMH-S8-cgD" customClass="EventPostFormViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2u3-Ja-Jkw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                         <viewLayoutGuide key="safeArea" id="d5n-Kw-LUI"/>
@@ -547,11 +567,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jPJ-GZ-NW3">
-<<<<<<< HEAD
                         <rect key="frame" x="0.0" y="44" width="375" height="96"/>
-=======
-                        <rect key="frame" x="0.0" y="44" width="375" height="115.33333333333334"/>
->>>>>>> master
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.086274509803921567" green="0.48627450980392156" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -582,11 +598,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="0RQ-Ma-PqZ">
-<<<<<<< HEAD
                         <rect key="frame" x="0.0" y="44" width="375" height="96"/>
-=======
-                        <rect key="frame" x="0.0" y="44" width="375" height="117"/>
->>>>>>> master
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.086274509803921567" green="0.48627450980392156" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -617,10 +629,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TE4-OD-N06">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TE4-OD-N06" id="4G5-JA-Oza">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -636,14 +648,6 @@
             </objects>
             <point key="canvasLocation" x="2358" y="-147"/>
         </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="hjL-sP-yd9">
-            <objects>
-                <viewControllerPlaceholder id="OT5-be-0r2" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vDC-o6-wQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="357.60000000000002" y="140.32983508245877"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="MVL-Ie-Uf4">
             <objects>
@@ -653,7 +657,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="4Qc-4V-gA8">
-                        <rect key="frame" x="0.0" y="44" width="375" height="108.66666666666669"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.070183776319026947" green="0.47544276714324951" blue="0.67418622970581055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -680,7 +684,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7ik-aY-kDI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="09n-5B-uxV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.086791582409999998" green="0.48432129619999997" blue="0.66587328909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -733,11 +737,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="tBg-sy-Qsr">
-<<<<<<< HEAD
-                        <rect key="frame" x="0.0" y="44" width="375" height="108.66666666666669"/>
-=======
-                        <rect key="frame" x="0.0" y="44" width="375" height="117"/>
->>>>>>> master
+                        <rect key="frame" x="0.0" y="44" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.070183776319026947" green="0.47544276714324951" blue="0.67418622970581055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -764,7 +764,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dQm-Lo-iQx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XVd-5X-jlQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.086791582409999998" green="0.48432129619999997" blue="0.66587328909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
@@ -783,7 +783,7 @@
                 <navigationController storyboardIdentifier="profile" automaticallyAdjustsScrollViewInsets="NO" id="0cb-7j-s6x" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="21i-wO-AYw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.070183776319026947" green="0.47544276714324951" blue="0.67418622970581055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -806,7 +806,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_account_circle" width="24" height="24"/>
         <image name="ic_attach_money" width="24" height="24"/>
         <image name="ic_check" width="24" height="24"/>
         <image name="ic_close" width="24" height="24"/>
@@ -814,6 +813,9 @@
         <image name="ic_date_range" width="24" height="24"/>
         <image name="ic_message" width="24" height="24"/>
         <image name="ic_store_mall_directory" width="24" height="24"/>
+        <image name="info_black" width="18" height="18"/>
+        <image name="info_outlined" width="18" height="18"/>
+        <image name="outline_account_circle_black_18dp" width="18" height="18"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

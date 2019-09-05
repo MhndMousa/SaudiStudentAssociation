@@ -107,8 +107,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         loadingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
         loadingView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        loadingView.backgroundColor = .white
-        loadingView.alpha = 0.8
+        loadingView.backgroundColor = UIColor(white: 0, alpha: 0.5)
+//        loadingView.backgroundColor =
         
         // Add loading indicator
         loadingView.addSubview(indicator)
@@ -116,7 +116,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         indicator.centerYAnchor.constraint(equalTo: loadingView.centerYAnchor).isActive = true
         indicator.widthAnchor.constraint(equalToConstant: 200).isActive = true
         indicator.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        indicator.color = .blue
+        indicator.color = .white
         indicator.startAnimating()
         
         

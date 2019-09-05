@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eh5-fw-BJC">
+<device id="retina4_7" orientation="portrait">
+<adaptation id="fullscreen"/>
+</device>
+<dependencies>
+<deployment identifier="iOS"/>
+<plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+<capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+<capability name="Safe area layout guides" minToolsVersion="9.0"/>
+<capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+</dependencies>
+<customFonts key="customFonts">
+<array key="NotoKufiArabic-Regular.ttf">
+<string>NotoKufiArabic</string>
+</array>
+</customFonts>
+<scenes>
+<!--مدينة انديانا-->
+<scene sceneID="fJE-fe-P1u">
+<objects>
+<collectionViewController id="Zch-5V-9uF" customClass="ContactViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+<collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="zjv-JR-8L6">
+<rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+<collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kLD-sg-9vQ">
+<size key="itemSize" width="187" height="237"/>
+<size key="headerReferenceSize" width="0.0" height="0.0"/>
+<size key="footerReferenceSize" width="0.0" height="0.0"/>
+<inset key="sectionInset" minX="10" minY="20" maxX="10" maxY="20"/>
+</collectionViewFlowLayout>
+<cells>
+<collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="rUy-rt-Cj9" customClass="ContactCardCell" customModule="SSUAkron" customModuleProvider="target">
+<rect key="frame" x="10" y="141.5" width="187" height="237"/>
+<autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+<view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+<rect key="frame" x="0.0" y="0.0" width="187" height="237"/>
+<autoresizingMask key="autoresizingMask"/>
+</view>
+</collectionViewCell>
+</cells>
+<connections>
+<outlet property="dataSource" destination="Zch-5V-9uF" id="1bQ-Z9-aAe"/>
+<outlet property="delegate" destination="Zch-5V-9uF" id="NQr-GA-gp6"/>
+</connections>
+</collectionView>
+<navigationItem key="navigationItem" title="مدينة انديانا" prompt="النادي السعودي " largeTitleDisplayMode="never" id="dsM-8D-fDI">
+<barButtonItem key="leftBarButtonItem" systemItem="action" id="a6g-59-aEO">
+<connections>
+<action selector="signOutTapped:" destination="Zch-5V-9uF" id="NVn-I1-nDx"/>
+</connections>
+</barButtonItem>
+<barButtonItem key="rightBarButtonItem" title="Item" image="ic_account_circle" id="pT6-1u-vvo">
+<connections>
+<segue destination="0cb-7j-s6x" kind="presentation" id="khG-9D-vhg"/>
+</connections>
+</barButtonItem>
+</navigationItem>
+</collectionViewController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="Zye-Zw-TuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="2396" y="2342"/>
+</scene>
+<!--الملف الشخصي-->
+<scene sceneID="guz-Jb-roM">
+<objects>
+<viewController id="rOX-Ax-fXf" customClass="ProfileViewContoller" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+<view key="view" contentMode="scaleToFill" id="0h7-ld-x9F">
+<rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+<viewLayoutGuide key="safeArea" id="3De-2Q-dS9"/>
+</view>
+<navigationItem key="navigationItem" title="الملف الشخصي" id="yY9-pZ-Lqf">
+<barButtonItem key="leftBarButtonItem" title="Item" image="ic_close" id="RoJ-G9-m1y">
+<connections>
+<action selector="cancelTapped:" destination="rOX-Ax-fXf" id="VX1-8A-TzQ"/>
+</connections>
+</barButtonItem>
+<barButtonItem key="rightBarButtonItem" title="Item" image="ic_check" id="cIJ-x1-h3H">
+<connections>
+<action selector="submitTapped:" destination="rOX-Ax-fXf" id="YHU-iW-jbg"/>
+</connections>
+</barButtonItem>
+</navigationItem>
+</viewController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="gaJ-Wn-RC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="4478" y="2342"/>
+</scene>
+<!--Signup Form-->
+<scene sceneID="YZ7-VT-DGT">
+<objects>
+<viewController id="xrl-3J-yIS" customClass="SignupForm" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+<view key="view" contentMode="scaleToFill" id="YMo-tH-dh8">
+<rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+<viewLayoutGuide key="safeArea" id="D3f-8k-oTN"/>
+</view>
+<navigationItem key="navigationItem" id="DlU-FM-s5A">
+<barButtonItem key="leftBarButtonItem" systemItem="cancel" id="uCC-bl-otu">
+<connections>
+<action selector="dismissTapped:" destination="xrl-3J-yIS" id="2w0-c0-WSI"/>
+</connections>
+</barButtonItem>
+<barButtonItem key="rightBarButtonItem" systemItem="done" id="Cgj-lR-anX">
+<connections>
+<action selector="submitTapped:" destination="xrl-3J-yIS" id="SH2-LV-S6A"/>
+</connections>
+</barButtonItem>
+</navigationItem>
+<connections>
+<outlet property="submitButton" destination="Cgj-lR-anX" id="hSs-XM-lZh"/>
+</connections>
+</viewController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="GYA-YL-HMs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="-2012" y="2106"/>
+</scene>
+<!--Login View Controller-->
+<scene sceneID="O4M-tM-rQA">
+<objects>
+<viewController storyboardIdentifier="login" id="Eh5-fw-BJC" customClass="LoginViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+<view key="view" contentMode="scaleToFill" id="v3q-R0-nRU">
+<rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<subviews>
+<view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lb4-eF-hdT">
+<rect key="frame" x="30" y="60" width="325" height="400"/>
+<subviews>
+<textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="البريد الالكتروني " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYY-oM-ufy">
+<rect key="frame" x="10" y="272" width="305" height="40"/>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+<color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+<constraints>
+<constraint firstAttribute="height" constant="40" id="jwC-YC-Abf"/>
+</constraints>
+<nil key="textColor"/>
+<fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+<textInputTraits key="textInputTraits"/>
+</textField>
+<imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ssa" translatesAutoresizingMaskIntoConstraints="NO" id="GAL-X4-vVq">
+<rect key="frame" x="62.5" y="30" width="200" height="173.5"/>
+<constraints>
+<constraint firstAttribute="width" secondItem="GAL-X4-vVq" secondAttribute="height" multiplier="960:833" id="bKz-TM-4yv"/>
+<constraint firstAttribute="width" constant="200" id="cgn-pl-4LT"/>
+</constraints>
+</imageView>
+<textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="كلمة المرور" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aQJ-oP-YSN">
+<rect key="frame" x="10" y="330" width="305" height="40"/>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+<nil key="textColor"/>
+<fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+<textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="password"/>
+</textField>
+</subviews>
+<color key="backgroundColor" red="0.086791582405567169" green="0.48432129621505737" blue="0.66587328910827637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<constraints>
+<constraint firstItem="zYY-oM-ufy" firstAttribute="width" secondItem="aQJ-oP-YSN" secondAttribute="width" id="Kfo-ql-G3V"/>
+<constraint firstItem="zYY-oM-ufy" firstAttribute="centerX" secondItem="Lb4-eF-hdT" secondAttribute="centerX" id="LLx-KW-3n7"/>
+<constraint firstItem="GAL-X4-vVq" firstAttribute="centerX" secondItem="Lb4-eF-hdT" secondAttribute="centerX" id="P6n-2U-tUD"/>
+<constraint firstAttribute="trailing" secondItem="zYY-oM-ufy" secondAttribute="trailing" constant="10" id="R4r-uu-PyU"/>
+<constraint firstItem="aQJ-oP-YSN" firstAttribute="top" secondItem="zYY-oM-ufy" secondAttribute="bottom" constant="18" id="RiI-Kb-vpJ"/>
+<constraint firstAttribute="bottom" secondItem="aQJ-oP-YSN" secondAttribute="bottom" constant="30" id="dvJ-dZ-g4v"/>
+<constraint firstItem="zYY-oM-ufy" firstAttribute="leading" secondItem="Lb4-eF-hdT" secondAttribute="leading" constant="10" id="fzO-Oc-Ah7"/>
+<constraint firstItem="zYY-oM-ufy" firstAttribute="height" secondItem="aQJ-oP-YSN" secondAttribute="height" id="lUr-8m-mpH"/>
+<constraint firstItem="aQJ-oP-YSN" firstAttribute="centerX" secondItem="Lb4-eF-hdT" secondAttribute="centerX" id="z0c-JJ-Tc4"/>
+<constraint firstAttribute="height" constant="400" id="zoV-s4-tzG"/>
+<constraint firstItem="GAL-X4-vVq" firstAttribute="top" secondItem="Lb4-eF-hdT" secondAttribute="top" constant="30" id="zya-0q-JcG"/>
+</constraints>
+</view>
+<button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="035-16-3WT">
+<rect key="frame" x="25" y="470" width="325" height="40"/>
+<color key="backgroundColor" red="0.21544662117958069" green="0.60186463594436646" blue="0.5999639630317688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+<state key="normal" title="تسجيل"/>
+<connections>
+<segue destination="dQm-Lo-iQx" kind="presentation" id="F9f-jv-OFC"/>
+</connections>
+</button>
+<view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqA-7n-8W4">
+<rect key="frame" x="25" y="520" width="325" height="40"/>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</view>
+<view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUP-3r-jlu" customClass="GIDSignInButton">
+<rect key="frame" x="25" y="570" width="325" height="40"/>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+<constraints>
+<constraint firstAttribute="height" constant="40" id="8VW-Pu-Uxx"/>
+</constraints>
+<connections>
+<action selector="googleSignInButtonTapped:" destination="Eh5-fw-BJC" eventType="touchUpInside" id="Qll-td-CAd"/>
+</connections>
+</view>
+</subviews>
+<color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<constraints>
+<constraint firstItem="RgY-2S-Haw" firstAttribute="trailing" secondItem="Lb4-eF-hdT" secondAttribute="trailing" constant="20" id="1d8-iI-BuL"/>
+<constraint firstItem="035-16-3WT" firstAttribute="centerX" secondItem="v3q-R0-nRU" secondAttribute="centerX" id="75L-61-TYj"/>
+<constraint firstItem="Lb4-eF-hdT" firstAttribute="top" secondItem="RgY-2S-Haw" secondAttribute="top" constant="40" id="780-tU-hV8"/>
+<constraint firstItem="zqA-7n-8W4" firstAttribute="centerX" secondItem="RgY-2S-Haw" secondAttribute="centerX" id="DvB-KU-U7c"/>
+<constraint firstItem="zqA-7n-8W4" firstAttribute="top" secondItem="035-16-3WT" secondAttribute="bottom" constant="10" id="E8x-wP-BD5"/>
+<constraint firstItem="zqA-7n-8W4" firstAttribute="height" secondItem="035-16-3WT" secondAttribute="height" id="FfK-cj-SvE"/>
+<constraint firstItem="GUP-3r-jlu" firstAttribute="centerX" secondItem="RgY-2S-Haw" secondAttribute="centerX" id="Gsp-GX-wuT"/>
+<constraint firstItem="035-16-3WT" firstAttribute="height" secondItem="GUP-3r-jlu" secondAttribute="height" id="Inf-ZB-LQZ"/>
+<constraint firstItem="GUP-3r-jlu" firstAttribute="top" secondItem="zqA-7n-8W4" secondAttribute="bottom" constant="10" id="LMW-gp-oHX"/>
+<constraint firstItem="zqA-7n-8W4" firstAttribute="width" secondItem="035-16-3WT" secondAttribute="width" id="Sye-fE-vFY"/>
+<constraint firstItem="GUP-3r-jlu" firstAttribute="width" secondItem="Lb4-eF-hdT" secondAttribute="width" id="Z5L-KW-rLY"/>
+<constraint firstItem="Lb4-eF-hdT" firstAttribute="leading" secondItem="RgY-2S-Haw" secondAttribute="leading" constant="30" id="b6y-Yk-GwQ"/>
+<constraint firstItem="035-16-3WT" firstAttribute="width" secondItem="GUP-3r-jlu" secondAttribute="width" id="er9-cA-uJv"/>
+<constraint firstItem="035-16-3WT" firstAttribute="top" secondItem="Lb4-eF-hdT" secondAttribute="bottom" constant="10" id="rRR-ub-0DM"/>
+</constraints>
+<viewLayoutGuide key="safeArea" id="RgY-2S-Haw"/>
+</view>
+<connections>
+<outlet property="loginButtonContainer" destination="zqA-7n-8W4" id="bFr-6k-1yZ"/>
+<outlet property="passwordTextFeild" destination="aQJ-oP-YSN" id="ERU-Bw-paJ"/>
+<outlet property="rectangleView" destination="Lb4-eF-hdT" id="hft-pU-VBP"/>
+<outlet property="signUpButton" destination="035-16-3WT" id="fzp-Vi-4fH"/>
+<outlet property="usernameTextField" destination="zYY-oM-ufy" id="CoX-Ba-4pr"/>
+</connections>
+</viewController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="xfN-C1-7z4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="-4055" y="2108"/>
+</scene>
+<!--Tab Bar Controller-->
+<scene sceneID="gEa-BI-Iuw">
+<objects>
+<tabBarController storyboardIdentifier="main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R8h-xr-yqY" sceneMemberID="viewController">
+<tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wby-6b-zly">
+<rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+<autoresizingMask key="autoresizingMask"/>
+<color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+<rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.10000000000000001"/>
+<color key="tintColor" red="0.086791582405567169" green="0.48432129621505737" blue="0.66587328910827637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<color key="selectedImageTintColor" red="0.086791582405567169" green="0.48432129621505737" blue="0.66587328910827637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</tabBar>
+<connections>
+<segue destination="QXJ-DL-Dao" kind="relationship" relationship="viewControllers" id="JlU-L0-6Kz"/>
+<segue destination="9hf-8h-mP9" kind="relationship" relationship="viewControllers" id="I5c-t7-bmb"/>
+<segue destination="zrA-5z-MFP" kind="relationship" relationship="viewControllers" id="8Ub-RX-T4W"/>
+<segue destination="XpQ-fp-l17" kind="relationship" relationship="viewControllers" id="RTz-o4-cjE"/>
+<segue destination="aSL-M9-t1x" kind="relationship" relationship="viewControllers" id="rgE-ir-vTR"/>
+</connections>
+</tabBarController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="MrT-Fg-iwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="-2012" y="3144"/>
+</scene>
+<!--السوق-->
+<scene sceneID="daa-T8-Ya9">
+<objects>
+<tableViewController id="qjq-Qo-TNd" customClass="StoreTableViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+<tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EUp-ar-C0p">
+<rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+<prototypes>
+<tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="114" id="o4q-50-OfL">
+<rect key="frame" x="0.0" y="28" width="375" height="114"/>
+<autoresizingMask key="autoresizingMask"/>
+<tableViewCellContentView key="contentView" autoresizesSubviews="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o4q-50-OfL" id="lTf-D7-ElQ">
+<rect key="frame" x="0.0" y="0.0" width="375" height="114"/>
+<autoresizingMask key="autoresizingMask"/>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+</tableViewCellContentView>
+<color key="backgroundColor" red="0.93725490196078431" green="0.52870008680555558" blue="0.1884494357638889" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</tableViewCell>
+</prototypes>
+<connections>
+<outlet property="dataSource" destination="qjq-Qo-TNd" id="lOM-tV-guS"/>
+<outlet property="delegate" destination="qjq-Qo-TNd" id="WGq-hP-ZQE"/>
+</connections>
+</tableView>
+<navigationItem key="navigationItem" title="السوق" id="XRs-Qp-xdC">
+<barButtonItem key="rightBarButtonItem" style="plain" systemItem="compose" id="OZK-7y-KIa">
+<color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+<connections>
+<segue destination="UfN-tH-xRc" kind="show" id="jCB-38-nla"/>
+</connections>
+</barButtonItem>
+</navigationItem>
+</tableViewController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="Q8V-TL-JGg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="2396" y="627"/>
+</scene>
+<!--اضافة سلعة-->
+<scene sceneID="bOU-n8-DME">
+<objects>
+<viewController id="hxm-a3-pIQ" customClass="StorePostFormViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+<view key="view" contentMode="scaleToFill" id="g0c-OW-94h">
+<rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+<viewLayoutGuide key="safeArea" id="fa8-y3-5sn"/>
+</view>
+<navigationItem key="navigationItem" title="اضافة سلعة" largeTitleDisplayMode="never" id="Tyl-Du-CEg">
+<barButtonItem key="leftBarButtonItem" title="Item" image="ic_close" id="cAk-HC-YKk">
+<connections>
+<action selector="cancelTapped:" destination="hxm-a3-pIQ" id="H5Q-7q-hAR"/>
+</connections>
+</barButtonItem>
+<barButtonItem key="rightBarButtonItem" title="Item" image="ic_check" id="BTb-kB-nz4">
+<connections>
+<action selector="submitTapped:" destination="hxm-a3-pIQ" id="Fju-Qz-DKs"/>
+</connections>
+</barButtonItem>
+</navigationItem>
+<connections>
+<outlet property="cancel" destination="cAk-HC-YKk" id="SmO-YJ-87R"/>
+<outlet property="submitButton" destination="BTb-kB-nz4" id="dyF-my-Bcf"/>
+</connections>
+</viewController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="MHr-U9-Aj5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="4431" y="627"/>
+</scene>
+<!--الفعاليات-->
+<scene sceneID="Ojr-jN-ald">
+<objects>
+<tableViewController id="ygp-SZ-rjq" customClass="EventViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+<tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="eDI-Lz-PbC">
+<rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+<prototypes>
+<tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="170" id="ZN6-Lf-HaU">
+<rect key="frame" x="0.0" y="28" width="375" height="170"/>
+<autoresizingMask key="autoresizingMask"/>
+<tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZN6-Lf-HaU" id="bYd-J4-1f8">
+<rect key="frame" x="0.0" y="0.0" width="375" height="170"/>
+<autoresizingMask key="autoresizingMask"/>
+</tableViewCellContentView>
+<color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</tableViewCell>
+</prototypes>
+<connections>
+<outlet property="dataSource" destination="ygp-SZ-rjq" id="gSD-Pc-8HK"/>
+<outlet property="delegate" destination="ygp-SZ-rjq" id="6dX-kX-AVC"/>
+</connections>
+</tableView>
+<navigationItem key="navigationItem" title="الفعاليات" id="Fp0-N1-E7u">
+<barButtonItem key="rightBarButtonItem" systemItem="add" id="ErR-Uh-eG7">
+<connections>
+<segue destination="7ik-aY-kDI" kind="presentation" id="hEz-xC-PhV"/>
+</connections>
+</barButtonItem>
+</navigationItem>
+</tableViewController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="mK0-Vo-GHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="2398" y="1442"/>
+</scene>
+<!--اضافة فعالية-->
+<scene sceneID="yUE-6x-vIj">
+<objects>
+<viewController id="fMH-S8-cgD" customClass="EventPostFormViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+<view key="view" contentMode="scaleToFill" id="2u3-Ja-Jkw">
+<rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
+<viewLayoutGuide key="safeArea" id="d5n-Kw-LUI"/>
+</view>
+<navigationItem key="navigationItem" title="اضافة فعالية" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="NtU-BW-6Qq">
+<barButtonItem key="leftBarButtonItem" image="ic_close" id="Y8I-sP-nyo">
+<connections>
+<action selector="dismissTapped:" destination="fMH-S8-cgD" id="LZL-1P-EfZ"/>
+</connections>
+</barButtonItem>
+<barButtonItem key="rightBarButtonItem" title="Item" image="ic_check" id="BtN-yy-htt">
+<connections>
+<action selector="submitTapped:" destination="fMH-S8-cgD" id="Agz-p0-sEl"/>
+</connections>
+</barButtonItem>
+</navigationItem>
+<connections>
+<outlet property="dismissButton" destination="Y8I-sP-nyo" id="bpb-If-Bfm"/>
+<outlet property="submitButton" destination="BtN-yy-htt" id="gye-RO-VyX"/>
+</connections>
+</viewController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="MSs-CV-VmD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="4430" y="1441"/>
+</scene>
+<!--المتبقي على الراتب-->
+<scene sceneID="8Rr-WY-3YR">
+<objects>
+<viewController storyboardIdentifier="blueVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wgj-KI-5bK" customClass="CounterViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+<view key="view" contentMode="scaleToFill" id="OGI-yf-5Gc">
+<rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<subviews>
+<view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RuH-2R-wuk">
+<rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+<subviews>
+<view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SAK-kZ-8Vb" userLabel="Container">
+<rect key="frame" x="10" y="-79" width="580" height="580"/>
+<subviews>
+<view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFj-sT-PMm">
+<rect key="frame" x="0.0" y="-40" width="580" height="580"/>
+<subviews>
+<imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="veX-Ev-OPw">
+<rect key="frame" x="0.0" y="0.0" width="580" height="580"/>
+</imageView>
+</subviews>
+<constraints>
+<constraint firstAttribute="bottom" secondItem="veX-Ev-OPw" secondAttribute="bottom" id="67e-oe-BbZ"/>
+<constraint firstItem="veX-Ev-OPw" firstAttribute="top" secondItem="VFj-sT-PMm" secondAttribute="top" id="6qb-6m-7nI"/>
+<constraint firstItem="veX-Ev-OPw" firstAttribute="leading" secondItem="VFj-sT-PMm" secondAttribute="leading" id="CSW-EB-taM"/>
+<constraint firstAttribute="trailing" secondItem="veX-Ev-OPw" secondAttribute="trailing" id="ORI-fC-RzY"/>
+<constraint firstAttribute="width" secondItem="VFj-sT-PMm" secondAttribute="height" multiplier="1:1" id="Pwe-Ys-q96"/>
+</constraints>
+</view>
+<view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="692-cc-Uvt" customClass="MKRingProgressView" customModule="MKRingProgressView">
+<rect key="frame" x="0.0" y="-40" width="580" height="580"/>
+<subviews>
+<stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5wv-Lf-nTd">
+<rect key="frame" x="248.5" y="178" width="83.5" height="224"/>
+<subviews>
+<label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="dateCounter" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="unT-1K-P7M">
+<rect key="frame" x="0.0" y="0.0" width="83.5" height="177"/>
+<fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="150"/>
+<color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+</label>
+<label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ايام" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="aBT-XB-23y">
+<rect key="frame" x="0.0" y="177" width="83.5" height="47"/>
+<fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="40"/>
+<color key="textColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<nil key="highlightedColor"/>
+</label>
+</subviews>
+</stackView>
+</subviews>
+<constraints>
+<constraint firstItem="5wv-Lf-nTd" firstAttribute="centerX" secondItem="692-cc-Uvt" secondAttribute="centerX" id="Ghm-Ig-Sy8"/>
+<constraint firstAttribute="width" secondItem="692-cc-Uvt" secondAttribute="height" multiplier="1:1" id="jBf-QQ-TGR"/>
+<constraint firstItem="5wv-Lf-nTd" firstAttribute="centerY" secondItem="692-cc-Uvt" secondAttribute="centerY" id="wIO-Sh-j6H"/>
+</constraints>
+<userDefinedRuntimeAttributes>
+<userDefinedRuntimeAttribute type="color" keyPath="startColor">
+<color key="value" red="0.086791582405567169" green="0.48432129621505737" blue="0.66587328910827637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</userDefinedRuntimeAttribute>
+<userDefinedRuntimeAttribute type="color" keyPath="endColor">
+<color key="value" red="0.10033646969041338" green="0.56367717355104197" blue="0.77916798857868019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</userDefinedRuntimeAttribute>
+<userDefinedRuntimeAttribute type="number" keyPath="ringWidth">
+<real key="value" value="30"/>
+</userDefinedRuntimeAttribute>
+</userDefinedRuntimeAttributes>
+</view>
+</subviews>
+<constraints>
+<constraint firstItem="VFj-sT-PMm" firstAttribute="leading" secondItem="SAK-kZ-8Vb" secondAttribute="leading" id="7wR-xv-d0k"/>
+<constraint firstAttribute="trailing" secondItem="VFj-sT-PMm" secondAttribute="trailing" id="H5f-ow-36B"/>
+<constraint firstItem="692-cc-Uvt" firstAttribute="leading" secondItem="SAK-kZ-8Vb" secondAttribute="leading" id="KP0-lr-MQd"/>
+<constraint firstAttribute="trailing" secondItem="692-cc-Uvt" secondAttribute="trailing" id="Lw5-K2-UW0"/>
+<constraint firstItem="VFj-sT-PMm" firstAttribute="leading" secondItem="SAK-kZ-8Vb" secondAttribute="leading" id="MaJ-05-8qb"/>
+<constraint firstAttribute="bottom" secondItem="692-cc-Uvt" secondAttribute="bottom" constant="40" id="UDh-1Y-jDA"/>
+<constraint firstAttribute="bottom" secondItem="VFj-sT-PMm" secondAttribute="bottom" constant="40" id="UXd-Vt-c0E"/>
+<constraint firstAttribute="width" secondItem="SAK-kZ-8Vb" secondAttribute="height" multiplier="1:1" id="Uuk-Jg-OQH"/>
+</constraints>
+</view>
+</subviews>
+<color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<constraints>
+<constraint firstAttribute="bottom" secondItem="SAK-kZ-8Vb" secondAttribute="bottom" constant="50" id="OyP-cr-fph"/>
+<constraint firstItem="SAK-kZ-8Vb" firstAttribute="leading" secondItem="RuH-2R-wuk" secondAttribute="leading" constant="10" id="lx8-A0-dbQ"/>
+<constraint firstAttribute="trailing" secondItem="SAK-kZ-8Vb" secondAttribute="trailing" constant="10" id="tAn-1g-8j4"/>
+</constraints>
+</view>
+</subviews>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+<constraints>
+<constraint firstItem="RuH-2R-wuk" firstAttribute="leading" secondItem="eCS-Xm-0tW" secondAttribute="leading" id="mEb-9b-7Bm"/>
+<constraint firstItem="RuH-2R-wuk" firstAttribute="top" secondItem="OGI-yf-5Gc" secondAttribute="top" id="naA-1B-Bag"/>
+<constraint firstItem="RuH-2R-wuk" firstAttribute="bottom" secondItem="eCS-Xm-0tW" secondAttribute="bottom" id="o10-49-Mn1"/>
+<constraint firstItem="RuH-2R-wuk" firstAttribute="trailing" secondItem="eCS-Xm-0tW" secondAttribute="trailing" id="yLc-HZ-gG6"/>
+</constraints>
+<viewLayoutGuide key="safeArea" id="eCS-Xm-0tW"/>
+</view>
+<navigationItem key="navigationItem" title="المتبقي على الراتب" id="Ya1-UT-6eE"/>
+<connections>
+<outlet property="circle" destination="VFj-sT-PMm" id="onI-dH-wjA"/>
+<outlet property="dateCounter" destination="unT-1K-P7M" id="0xI-ac-1n8"/>
+<outlet property="daysLabel" destination="aBT-XB-23y" id="nqd-9q-UjJ"/>
+<outlet property="imageView" destination="veX-Ev-OPw" id="Zn9-ev-L4I"/>
+<outlet property="ringView" destination="692-cc-Uvt" id="Q7L-8S-eht"/>
+<outlet property="stackView" destination="5wv-Lf-nTd" id="H99-8a-bYw"/>
+</connections>
+</viewController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="FMK-Fq-GHk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="2358" y="3145"/>
+</scene>
+<!--Navigation Controller-->
+<scene sceneID="EKp-6G-rzi">
+<objects>
+<navigationController automaticallyAdjustsScrollViewInsets="NO" id="QXJ-DL-Dao" sceneMemberID="viewController">
+<tabBarItem key="tabBarItem" title="" image="ic_date_range" id="6yc-Jd-Bm3">
+<inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+</tabBarItem>
+<toolbarItems/>
+<navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="faW-7j-byS">
+<rect key="frame" x="0.0" y="20" width="600" height="96"/>
+<autoresizingMask key="autoresizingMask"/>
+<color key="barTintColor" red="0.086274509803921567" green="0.48627450980392156" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<textAttributes key="titleTextAttributes">
+<fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+<color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+</textAttributes>
+<textAttributes key="largeTitleTextAttributes">
+<fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="34"/>
+<color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</textAttributes>
+</navigationBar>
+<nil name="viewControllers"/>
+<connections>
+<segue destination="ygp-SZ-rjq" kind="relationship" relationship="rootViewController" id="SNZ-zg-yUz"/>
+</connections>
+</navigationController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="quG-rc-Lo0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="1422" y="1444"/>
+</scene>
+<!--Navigation Controller-->
+<scene sceneID="v2V-n9-Tub">
+<objects>
+<navigationController automaticallyAdjustsScrollViewInsets="NO" id="9hf-8h-mP9" sceneMemberID="viewController">
+<tabBarItem key="tabBarItem" title="" image="ic_store_mall_directory" id="shs-YB-9MH">
+<inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+</tabBarItem>
+<toolbarItems/>
+<navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jPJ-GZ-NW3">
+<rect key="frame" x="0.0" y="20" width="600" height="96"/>
+<autoresizingMask key="autoresizingMask"/>
+<color key="barTintColor" red="0.086274509803921567" green="0.48627450980392156" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<textAttributes key="titleTextAttributes">
+<fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+<color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+</textAttributes>
+<textAttributes key="largeTitleTextAttributes">
+<fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="34"/>
+<color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+</textAttributes>
+</navigationBar>
+<nil name="viewControllers"/>
+<connections>
+<segue destination="qjq-Qo-TNd" kind="relationship" relationship="rootViewController" id="i5I-Qm-e1m"/>
+</connections>
+</navigationController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="cSS-8V-MU7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="1420" y="627"/>
+</scene>
+<!--Navigation Controller-->
+<scene sceneID="Zbv-Td-pke">
+<objects>
+<navigationController automaticallyAdjustsScrollViewInsets="NO" id="aSL-M9-t1x" sceneMemberID="viewController">
+<tabBarItem key="tabBarItem" title="" image="ic_attach_money" id="qYp-CA-5mc">
+<inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+<inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
+</tabBarItem>
+<toolbarItems/>
+<navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="0RQ-Ma-PqZ">
+<rect key="frame" x="0.0" y="20" width="600" height="96"/>
+<autoresizingMask key="autoresizingMask"/>
+<color key="barTintColor" red="0.086791582405567169" green="0.48432129621505737" blue="0.66587328910827637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<textAttributes key="titleTextAttributes">
+<fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+<color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</textAttributes>
+<textAttributes key="largeTitleTextAttributes">
+<fontDescription key="fontDescription" name="NotoKufiArabic-Bold" family="Noto Kufi Arabic" pointSize="34"/>
+<color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</textAttributes>
+</navigationBar>
+<nil name="viewControllers"/>
+<connections>
+<segue destination="Wgj-KI-5bK" kind="relationship" relationship="rootViewController" id="Kpp-yD-7T4"/>
+</connections>
+</navigationController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="IbP-X1-ay8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="1420" y="3146"/>
+</scene>
+<!--الرسائل-->
+<scene sceneID="wfj-b3-xke">
+<objects>
+<tableViewController id="fxR-ux-Pu6" customClass="ChatLogController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
+<tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6hd-Iw-Vsy">
+<rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+<color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+<prototypes>
+<tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="TE4-OD-N06">
+<rect key="frame" x="0.0" y="28" width="375" height="44"/>
+<autoresizingMask key="autoresizingMask"/>
+<tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TE4-OD-N06" id="4G5-JA-Oza">
+<rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+<autoresizingMask key="autoresizingMask"/>
+</tableViewCellContentView>
+</tableViewCell>
+</prototypes>
+<connections>
+<outlet property="dataSource" destination="fxR-ux-Pu6" id="xFy-7b-bQV"/>
+<outlet property="delegate" destination="fxR-ux-Pu6" id="lRm-RC-Ri9"/>
+</connections>
+</tableView>
+<navigationItem key="navigationItem" title="الرسائل" id="K0M-cg-hgQ"/>
+</tableViewController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="t0H-W5-ERs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="2358" y="-147"/>
+</scene>
+<!--Storyboard Reference-->
+<scene sceneID="hjL-sP-yd9">
+<objects>
+<viewControllerPlaceholder id="OT5-be-0r2" sceneMemberID="viewController"/>
+<placeholder placeholderIdentifier="IBFirstResponder" id="vDC-o6-wQW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="357.60000000000002" y="140.32983508245877"/>
+</scene>
+<!--Navigation Controller-->
+<scene sceneID="MVL-Ie-Uf4">
+<objects>
+<navigationController automaticallyAdjustsScrollViewInsets="NO" id="XpQ-fp-l17" sceneMemberID="viewController">
+<tabBarItem key="tabBarItem" title="" image="ic_contact_mail" id="ag9-md-rDq">
+<inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+</tabBarItem>
+<toolbarItems/>
+<navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="4Qc-4V-gA8">
+<rect key="frame" x="0.0" y="20" width="600" height="96"/>
+<autoresizingMask key="autoresizingMask"/>
+<color key="barTintColor" red="0.070183776319026947" green="0.47544276714324951" blue="0.67418622970581055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<textAttributes key="titleTextAttributes">
+<fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+<color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</textAttributes>
+<textAttributes key="largeTitleTextAttributes">
+<fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="34"/>
+<color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</textAttributes>
+</navigationBar>
+<nil name="viewControllers"/>
+<connections>
+<segue destination="Zch-5V-9uF" kind="relationship" relationship="rootViewController" id="elt-q6-ZS7"/>
+</connections>
+</navigationController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="QBF-DW-CbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="1420" y="2327"/>
+</scene>
+<!--Navigation Controller-->
+<scene sceneID="c8m-GF-s7G">
+<objects>
+<navigationController automaticallyAdjustsScrollViewInsets="NO" id="7ik-aY-kDI" sceneMemberID="viewController">
+<toolbarItems/>
+<navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="09n-5B-uxV">
+<rect key="frame" x="0.0" y="20" width="600" height="44"/>
+<autoresizingMask key="autoresizingMask"/>
+<color key="barTintColor" red="0.086791582409999998" green="0.48432129619999997" blue="0.66587328909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<textAttributes key="titleTextAttributes">
+<fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+<color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</textAttributes>
+</navigationBar>
+<nil name="viewControllers"/>
+<connections>
+<segue destination="fMH-S8-cgD" kind="relationship" relationship="rootViewController" id="lGO-xj-yY3"/>
+</connections>
+</navigationController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="u01-Gj-gf3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="3534" y="1444"/>
+</scene>
+<!--Navigation Controller-->
+<scene sceneID="qC4-wJ-gZu">
+<objects>
+<navigationController automaticallyAdjustsScrollViewInsets="NO" id="UfN-tH-xRc" sceneMemberID="viewController">
+<toolbarItems/>
+<navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="M0x-V3-B4C">
+<rect key="frame" x="0.0" y="20" width="600" height="44"/>
+<autoresizingMask key="autoresizingMask"/>
+<color key="barTintColor" red="0.086791582409999998" green="0.48432129619999997" blue="0.66587328909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<textAttributes key="titleTextAttributes">
+<fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+<color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</textAttributes>
+<textAttributes key="largeTitleTextAttributes">
+<color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</textAttributes>
+</navigationBar>
+<nil name="viewControllers"/>
+<connections>
+<segue destination="hxm-a3-pIQ" kind="relationship" relationship="rootViewController" id="RUW-vE-5cQ"/>
+</connections>
+</navigationController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="GBa-qz-9nl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="3492" y="627"/>
+</scene>
+<!--Navigation Controller-->
+<scene sceneID="5jz-rh-bpI">
+<objects>
+<navigationController automaticallyAdjustsScrollViewInsets="NO" id="zrA-5z-MFP" sceneMemberID="viewController">
+<tabBarItem key="tabBarItem" title="" image="ic_message" badgeValue="3" id="rmG-M9-vPh">
+<inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+<color key="badgeColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+</tabBarItem>
+<toolbarItems/>
+<navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="tBg-sy-Qsr">
+<rect key="frame" x="0.0" y="20" width="600" height="96"/>
+<autoresizingMask key="autoresizingMask"/>
+<color key="barTintColor" red="0.070183776319026947" green="0.47544276714324951" blue="0.67418622970581055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<textAttributes key="titleTextAttributes">
+<fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+<color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</textAttributes>
+<textAttributes key="largeTitleTextAttributes">
+<fontDescription key="fontDescription" name="NotoKufiArabic-Bold" family="Noto Kufi Arabic" pointSize="34"/>
+<color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</textAttributes>
+</navigationBar>
+<nil name="viewControllers"/>
+<connections>
+<segue destination="fxR-ux-Pu6" kind="relationship" relationship="rootViewController" id="3js-Lp-DIB"/>
+</connections>
+</navigationController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="vji-0a-pDY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="1420" y="-147"/>
+</scene>
+<!--Navigation Controller-->
+<scene sceneID="7Sd-dQ-MQG">
+<objects>
+<navigationController automaticallyAdjustsScrollViewInsets="NO" id="dQm-Lo-iQx" sceneMemberID="viewController">
+<toolbarItems/>
+<navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XVd-5X-jlQ">
+<rect key="frame" x="0.0" y="20" width="600" height="44"/>
+<autoresizingMask key="autoresizingMask"/>
+<color key="barTintColor" red="0.086791582409999998" green="0.48432129619999997" blue="0.66587328909999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</navigationBar>
+<nil name="viewControllers"/>
+<connections>
+<segue destination="xrl-3J-yIS" kind="relationship" relationship="rootViewController" id="AXs-hv-rG4"/>
+</connections>
+</navigationController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="Swc-UU-itc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="-3010" y="2108"/>
+</scene>
+<!--Navigation Controller-->
+<scene sceneID="9a8-if-QzY">
+<objects>
+<navigationController storyboardIdentifier="profile" automaticallyAdjustsScrollViewInsets="NO" id="0cb-7j-s6x" sceneMemberID="viewController">
+<toolbarItems/>
+<navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="21i-wO-AYw">
+<rect key="frame" x="0.0" y="20" width="600" height="44"/>
+<autoresizingMask key="autoresizingMask"/>
+<color key="barTintColor" red="0.070183776319026947" green="0.47544276714324951" blue="0.67418622970581055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+<textAttributes key="titleTextAttributes">
+<fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="17"/>
+<color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</textAttributes>
+<textAttributes key="largeTitleTextAttributes">
+<fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="34"/>
+<color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</textAttributes>
+</navigationBar>
+<nil name="viewControllers"/>
+<connections>
+<segue destination="rOX-Ax-fXf" kind="relationship" relationship="rootViewController" id="1Cr-V5-HZG"/>
+</connections>
+</navigationController>
+<placeholder placeholderIdentifier="IBFirstResponder" id="Zwm-bv-nfO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+</objects>
+<point key="canvasLocation" x="3492" y="2342"/>
+</scene>
+</scenes>
+<resources>
+<image name="ic_account_circle" width="24" height="24"/>
+<image name="ic_attach_money" width="24" height="24"/>
+<image name="ic_check" width="24" height="24"/>
+<image name="ic_close" width="24" height="24"/>
+<image name="ic_contact_mail" width="24" height="24"/>
+<image name="ic_date_range" width="24" height="24"/>
+<image name="ic_message" width="24" height="24"/>
+<image name="ic_store_mall_directory" width="24" height="24"/>
+<image name="ssa" width="960" height="833"/>
+</resources>
+<color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+</document>

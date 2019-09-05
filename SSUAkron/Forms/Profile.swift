@@ -120,9 +120,28 @@ class ProfileViewContoller: FormViewController {
                     cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
                 })
         
-        
-        
+            <<< ButtonRow(){row in
+                row.title = "تسجيل الخروج"
+                }.onCellSelection({ (_, _) in
+                    do{
+                        try Auth.auth().signOut()
+                        let userDefault = UserDefaults.standard
+                        userDefault.removeObject(forKey: "email")
+                        userDefault.removeObject(forKey: "password")
+                        let vc = self.storyboard!.instantiateViewController(withIdentifier: "login")
+                        self.present(vc, animated: true, completion: nil)
+                        justLoggedOut = true
+                        
+                    }catch let error as NSError{
+                        print(error)
+                    }
+                }).cellSetup({ (cell, row) in
+                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                })
+
     }
+    
     
     
 }

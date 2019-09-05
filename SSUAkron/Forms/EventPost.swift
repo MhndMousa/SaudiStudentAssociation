@@ -211,6 +211,12 @@ extension EventPostFormViewController: GMSAutocompleteViewControllerDelegate {
 extension UIFont{
     class var notoKufiArabicSmall: UIFont {return UIFont(name: "NotoKufiArabic", size: 12)!}
     class var notoKufiArabicMedium: UIFont {return UIFont(name: "NotoKufiArabic", size: 15)!}
+    class var notoKufiArabicMediumLarge: UIFont {return UIFont(name: "NotoKufiArabic", size: 18)!}
     class var notoKufiArabicLarge: UIFont {return UIFont(name: "NotoKufiArabic", size: 21)!}
+    
+    class var notoKufiBoldArabicSmall: UIFont {return UIFont(name: "NotoKufiArabic-Bold", size: 12)!}
+    class var notoKufiBoldArabicMedium: UIFont {return UIFont(name: "NotoKufiArabic-Bold", size: 15)!}
+    class var notoKufiBoldArabicMediumLarge: UIFont {return UIFont(name: "NotoKufiArabic-Bold", size: 18)!}
+    class var notoKufiBoldArabicLarge: UIFont {return UIFont(name: "NotoKufiArabic-Bold", size: 21)!}
     
 }
