@@ -14,6 +14,7 @@ pod 'FirebaseUI/Storage', '~> 8.0'
 
 # Only pull in FirebaseUI Auth features
 pod 'FirebaseUI/Auth', '~> 8.0'
+  pod 'Firebase/Firestore'
   # pod 'Firebase/Storage'
   # pod 'Firebase/Database'
   pod 'MKRingProgressView'

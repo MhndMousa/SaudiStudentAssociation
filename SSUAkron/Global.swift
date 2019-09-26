@@ -246,6 +246,8 @@ extension UIView{
 
 }
 
+
+
 extension UIViewController {
     
     func showAlert(title: String = "Error", message: String = "Something went wrong") {
@@ -254,33 +256,30 @@ extension UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+
+    
+    func updateNavBar() {
+        if #available(iOS 13.0, *) {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white, .font: UIFont.notoKufiArabicSmall]
+            navBarAppearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white ,.font: UIFont.notoKufiBoldArabicExtraLarge]
+            navBarAppearance.backgroundColor = .blueSSA
+            navigationController?.navigationBar.standardAppearance = navBarAppearance
+            navigationController?.navigationBar.scrollEdgeAppearance = navBarAppearance
+        }
+    }
+    
+        
     func addReloadingIndicator(for seconds: TimeInterval) {
         let indicator = UIActivityIndicatorView()
-        let loadingView = UIView()
-        
         
         indicator.translatesAutoresizingMaskIntoConstraints = false
-        loadingView.translatesAutoresizingMaskIntoConstraints = false
         
-        //        self.view.addSubview(loadingView)
-        //
-        //        // Adding a white overlay on the current page
-        //        loadingView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        //        loadingView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        //        loadingView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        //        loadingView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        //        loadingView.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
-        //        //        loadingView.backgroundColor =
-        //
-        //        // Add loading indicator
-        //        loadingView.addSubview(indicator)
         view.addSubview(indicator)
         indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        //        indicator.centerYAnchor.constraint(equalTo: (self.navigationController?.navigationBar.centerYAnchor)!).isActive = true
         indicator.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
         indicator.widthAnchor.constraint(equalToConstant: 200).isActive = true
         indicator.heightAnchor.constraint(equalToConstant: 200).isActive = true
-        //        indicator.color = .black
         indicator.hidesWhenStopped = true
         indicator.activityIndicatorViewStyle = .gray
         
@@ -288,14 +287,13 @@ extension UIViewController {
             indicator.startAnimating()
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: {
                 indicator.removeFromSuperview()
+                indicator.stopAnimating()
             })
             
         }
     }
     
 }
-
-
 
 
 

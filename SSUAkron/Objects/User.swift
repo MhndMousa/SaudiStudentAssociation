@@ -18,7 +18,7 @@ class SaudiUser : NSObject{
     var university: String? = nil
     var phoneNumber: String? = nil
     var image: UIImage! = UIImage(named: "Unknown_Person")!
-    var imageLink: String!  = "ll"
+    var imageLink: String!  = ""
     
     override init() {
         self.name  = nil
@@ -29,14 +29,14 @@ class SaudiUser : NSObject{
         self.university = nil
         self.phoneNumber = nil
         self.image = UIImage(named: "Unknown_Person")!
-        self.imageLink  = "ll"
+        self.imageLink  = ""
     }
     
     
-    init(_ child: Dictionary<String, String>) {
-        self.name = child["name"]
-        self.uid = child["uid"]
-        self.phoneNumber = child["phone_number"]
-        self.job = child["job"]
+    init(_ child: [String:Any]) {
+        self.name = child["name"] as? String ?? "اسم"
+        self.uid = child["uid"] as? String ?? ""
+        self.phoneNumber = child["phone_number"] as? String ?? ""
+        self.job = child["job"] as? String ?? ""
     }
 }

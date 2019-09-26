@@ -20,22 +20,26 @@ class CounterViewController: UIViewController {
     
     @IBOutlet weak var circle: UIView!
     @IBOutlet weak var imageView: UIImageView!
-    var s : Int = 0
+    var daysLeft : Int = 0
     var isSalaryUpdated: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         updateSalary()
+        updateNavBar()
         ringView?.progress = 1.0
-        
         // If the salary is not updated update it after a second from the time the view was loaded.
         if isSalaryUpdated {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-                self.updateCircle()
-            })
+            animateCircle()
         }
-    
+        let tap = UITapGestureRecognizer(target: self, action: #selector(animateCircle))
+        dateCounter.addGestureRecognizer(tap)
+        daysLabel.addGestureRecognizer(tap)
+        ringView.addGestureRecognizer(tap)
+        view.addGestureRecognizer(tap)
         
+    
+        /*
         // Rendering a white background for the circle.
         let render = UIGraphicsImageRenderer(size: CGSize(width: ringView.frame.width, height: ringView.frame.height))
         let img = render.image { (ctx) in
@@ -45,8 +49,14 @@ class CounterViewController: UIViewController {
             ctx.cgContext.drawPath(using: .fill)
             }
         imageView.image =  img
+        */
         
-        
+    }
+
+    @objc func animateCircle(){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            self.updateCircle()
+        })
     }
 
     // converts number of a range of two numbers into another range of  two numbers
@@ -54,12 +64,15 @@ class CounterViewController: UIViewController {
         return Double(minDomain + (maxDomain - minDomain) * (value - minRange) / (maxRange - minRange))
     }
     
+    // MARK:  MKCircle Methods
+    
+
     // Updates the MKCircleProgressBar
     func updateCircle() {
         CATransaction.begin()
-        CATransaction.setAnimationDuration(1.5)
+        CATransaction.setAnimationDuration(0.7)
         // Assign how many days to the progress bar of the ring
-        self.ringView?.progress = self.map(minRange: 0, maxRange: 30, minDomain: 0, maxDomain: 1, value: Float(30 - self.s))
+        self.ringView?.progress = self.map(minRange: 0, maxRange: 30, minDomain: 0, maxDomain: 1, value: Float(30 - self.daysLeft))
         CATransaction.commit()
         isSalaryUpdated = false
     }
@@ -73,13 +86,13 @@ class CounterViewController: UIViewController {
             d = Date(timeIntervalSinceNow: TimeInterval(num))
             print(Calendar.current.component(.day, from: d))
             if Calendar.current.component(.day, from: d) == 27 {
-                s = d.interval(ofComponent: .day, fromDate: Date() )
+                daysLeft = d.interval(ofComponent: .day, fromDate: Date() )
                 break
             }
             // Adds a 86400 seconds = (1 day)
             num = num + 86400
         }
-        dateCounter?.text = String(s)
+        dateCounter?.text = String(daysLeft)
         isSalaryUpdated = true
         
         /*

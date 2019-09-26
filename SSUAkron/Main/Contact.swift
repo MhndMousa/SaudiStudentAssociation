@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-import Firebase
+import FirebaseFirestore
 import FirebaseUI
 
 
@@ -19,38 +19,83 @@ class ContactViewController: UICollectionViewController{
             showAlert(title: "ما غرض هذه الصفحة؟", message: "كثير منا ما يعرف مين هم القائمين على النادي السعودي، هذه الصفحة غرضها معرفة لائحة النادي وطريقة التواصل معاهم")
     }
     
-    
-    var roaster = [SaudiUser]()
-    
-    func reloadRoasterData(){
+    lazy var refresher: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.tintColor = UIColor.blueSSA
+        refreshControl.addTarget(self, action: #selector(requestMembersData), for: .valueChanged)
         
+        return refreshControl
+        
+    }()
+    
+    lazy var timer : Timer = {
+        let timer = Timer()
+        return timer
+    }()
+    
+    
+    @objc func requestMembersData() {
         addReloadingIndicator(for: 1)
+        
         roaster.removeAll()
         
         
         
-        ref.child("clubs").child("IN").child("indianapolis").child("roaster").observe(.value) { (snapshot) in
-            let values = snapshot.value as! NSDictionary
-            for value in values.allValues{
-                let userInfoFromFirebase = value as! [String : String]
-                self.roaster.append(SaudiUser(userInfoFromFirebase))
-                print(self.roaster)
-            }
-            self.collectionView?.reloadData()
+        Firestore.firestore().collection("SSA").whereField("name", isEqualTo: "ssa").getDocuments { (snapshot, err) in
+            guard let dictionary = snapshot?.documents.first?.data() else {return}
+            
+            
+            let orginizers = dictionary["orginizer"] as! [String]
+            print("orginizers: ", orginizers)
+            
+            
+            orginizers.forEach({
+                Firestore.firestore().collection("Users").whereField("uid", isEqualTo: $0).getDocuments(completion: { (snapshot2, error) in
+                    snapshot2?.documents.forEach({
+                        print($0)
+                    })
+                    if let error = error {
+                        print(error.localizedDescription)
+                        return
+                    }
+                    if let rosterMemeber = snapshot2?.documents.first?.data() {
+                        self.roaster.append(SaudiUser(rosterMemeber))
+                    }
+                    self.collectionView?.reloadData()
+                })
+            })
         }
+        
+        self.timer.invalidate()
+        self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.handleDataReload), userInfo: nil, repeats: false)
         
     }
     
+    @objc func handleDataReload(){
+        DispatchQueue.main.async {
+            self.collectionView?.reloadData()
+            
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+            self.refresher.endRefreshing()
+        })
+    }
+    
+    var roaster = [SaudiUser]()
+
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        reloadRoasterData()
         self.collectionView?.register(UINib(nibName: "ContactCardCell", bundle: nil), forCellWithReuseIdentifier: "cell")
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        requestMembersData()
+        updateNavBar()
+        collectionView?.refreshControl = refresher
         let button = UIButton(type: .system)
-        button.setTitle("Some", for: .normal)
+        button.setTitle("الجامعة", for: .normal)
         button.titleLabel?.font = .notoKufiBoldArabicMedium
         button.setImage(#imageLiteral(resourceName: "icons8-expand-arrow-96-2"), for: .normal)
         button.imageView?.anchor(trailing: button.titleLabel?.leadingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 2), size: .init(width: 17, height: 17))
@@ -62,9 +107,10 @@ class ContactViewController: UICollectionViewController{
         stackview.spacing = 4
         
         self.navigationItem.titleView = stackview
-    }
-  
+        
+      
 
+    }
 }
 
 

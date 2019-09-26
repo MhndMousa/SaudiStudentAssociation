@@ -156,28 +156,12 @@ class StoreTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
 //        self.tableView.register(UINib(nibName: "CardArticleCell", bundle: nil), forCellReuseIdentifier: "cell")
 //        self.tableView.register(FullPhotoTableViewCell.self, forCellReuseIdentifier: "cell")
-        self.tableView.register(UINib(nibName: "FullPhotoTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-
-        requestStoreData()
-        
-    }
-    override func viewDidLoad() {
-        super.viewDidLoad()
         
         tableView.refreshControl = refresher
+        self.tableView.register(UINib(nibName: "FullPhotoTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        updateNavBar()
+        requestStoreData()
         
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [
-            .font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!
-            ,.foregroundColor : UIColor.white
-        ]
-        
-    }
-    
-    
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 

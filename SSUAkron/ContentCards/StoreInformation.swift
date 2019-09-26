@@ -20,7 +20,6 @@ class StoreInformation: UIViewController,UIScrollViewDelegate {
     var imageArray : [UIImage] = []
     
     @IBOutlet weak var pageControl: UIPageControl!
-    
     @IBOutlet weak var photoCarouselScrollView: UIScrollView!
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var messageButton: UIButton!

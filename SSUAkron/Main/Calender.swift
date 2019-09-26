@@ -18,16 +18,15 @@ class EventViewController: UITableViewController {
     }
     // MARK:  Variables
 
-    var events = [CardInformaion]()
+    var events : [CardInformaion]  = []
+    
     lazy var colors :[String:UIColor] = {
-        
         var dic = [String:UIColor]()
         dic["pink"] =  UIColor.init(red: 1, green: 0.7, blue: 0.7, alpha: 1)
         dic["white"] = .white
         dic["blue"] = .blue
         dic["orange"] = .orange
         dic["black"] = .black
-        
         return dic
         
     }()
@@ -37,7 +36,6 @@ class EventViewController: UITableViewController {
         refreshControl.tintColor = .white
         refreshControl.addTarget(self, action: #selector(requestCalenderData), for: .valueChanged)
         return refreshControl
-        
     }()
     
     lazy var timer : Timer = {
@@ -47,8 +45,29 @@ class EventViewController: UITableViewController {
     
     
     
+    
+    // MARK:  UIViewController Config
+      
+      func updateStyle()  {
+                  self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
+      }
+     
+      override func viewDidLoad() {
+        super.viewDidLoad()
+        self.tableView.register(UINib(nibName: "CardHighlightCell", bundle: nil), forCellReuseIdentifier: "cell")
+        tableView.refreshControl = refresher
+        addReloadingIndicator(for: 1)
+        refreshCurrentUserInfo()
+        requestCalenderData()
+        updateNavBar()
+        updateStyle()
+      }
+    
+    
+    
+    
+    
     // MARK:  Networking
-
   
     @objc func requestCalenderData() {
         events.removeAll()
@@ -78,8 +97,11 @@ class EventViewController: UITableViewController {
         }
     }
     
-    // MARK:  TableView Config
-
+    
+    
+    
+    
+    // MARK:  TableView Delegates
     
     @objc func handleDataReload(){
         DispatchQueue.main.async {
@@ -139,41 +161,13 @@ class EventViewController: UITableViewController {
         return cell
     }
     
-    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = EventInformation()
         vc.title = self.events[indexPath.row].title
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-    
-    
-    // MARK:  UIViewController Config
-    
-   
-        
-    override func viewWillAppear(_ animated: Bool) {
-        self.tableView.register(UINib(nibName: "CardHighlightCell", bundle: nil), forCellReuseIdentifier: "cell")
-        
-        addReloadingIndicator(for: 1)
-        refreshCurrentUserInfo()
-        requestCalenderData()
-        updateStyle()
-    }
-
-    func updateStyle()  {
-        
-                self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
-        
-
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableView.refreshControl = refresher
-    }
-    
+  
 }
 
 
