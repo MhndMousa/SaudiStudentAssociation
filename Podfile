@@ -5,8 +5,8 @@ target 'SSUAkron' do
   use_frameworks!
   # pod 'Firebase/Core'
   # pod 'Firebase/Auth'
-  # pod 'FirebaseUI'
-  # Only pull in FirebaseUI Database features
+  #pod 'FirebaseUI'
+  pod 'SendBirdSDK'
 pod 'FirebaseUI/Database', '~> 8.0'
 
 # Only pull in FirebaseUI Storage features

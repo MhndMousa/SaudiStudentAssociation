@@ -12,6 +12,7 @@ import Firebase
 import GoogleSignIn
 import GooglePlaces
 import IQKeyboardManagerSwift
+import SendBirdSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
@@ -25,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         IQKeyboardManager.sharedManager().enable = true
+        SBDMain.initWithApplicationId("2E0DE893-1611-4EE6-9F06-0BC8D7EE2C9E")
         
         UINavigationBar.appearance().barStyle = .blackOpaque
         

@@ -10,6 +10,7 @@ import UIKit
 import TransitionButton
 import Firebase
 import GoogleSignIn
+import SendBirdSDK
 
 
 var justLoggedOut = false
@@ -72,6 +73,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     func tryLogin() {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
+                self.loginUserToSendBird()
                 self.performSegueToMainViewController()
             }
         }
@@ -79,13 +81,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         DispatchQueue.global(qos: .background).async {
             sleep(1)
             if !justLoggedOut && userDefault.string(forKey: "email") != nil && userDefault.string(forKey: "password") != nil{
+                self.loginUserToSendBird()
                 self.performSegueToMainViewController()
             }
             
         }
     }
 
-    
+    fileprivate func loginUserToSendBird() {
+        guard let uid = Auth.auth().currentUser?.uid else{return}
+        
+        SBDMain.connect(withUserId: uid) { (user, error) in
+            if error != nil{
+                print(error?.localizedDescription)
+                return
+            }
+        }
+        
+    }
     
     
     // Google login button
@@ -127,6 +140,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
             sleep(8)
             DispatchQueue.main.async(execute: { () -> Void in
                 if Auth.auth().currentUser != nil{
+                    self.loginUserToSendBird()
                     self.performSegueToMainViewController()
                 }
                 // Delete the white overlay
@@ -165,6 +179,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
                             let userDefault = UserDefaults.standard
                             userDefault.setValue(email, forKey: "email")
                             userDefault.setValue(password, forKey: "password")
+                            self.loginUserToSendBird()
                             self.performSegueToMainViewController()
                         })
                     })
