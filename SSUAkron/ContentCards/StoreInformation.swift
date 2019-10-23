@@ -10,15 +10,6 @@ import UIKit
 
 class StoreInformation: UIViewController,UIScrollViewDelegate {
 
-//    @IBOutlet weak var costView: UIView!
-//    @IBOutlet weak var messageView: UIView!
-//    @IBOutlet weak var typeView: UIView!
-//    @IBOutlet weak var photosView: UIView!
-//    @IBOutlet weak var DescriptionContainer: UIView!
-//    @IBOutlet weak var descriptionView: UITextView!
-//    @IBOutlet weak var typeLabel: UILabel!
-    var imageArray : [UIImage] = []
-    
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var photoCarouselScrollView: UIScrollView!
     @IBOutlet weak var costLabel: UILabel!
@@ -26,18 +17,32 @@ class StoreInformation: UIViewController,UIScrollViewDelegate {
     @IBOutlet weak var whereToRecieveLabel: UILabel!
     @IBOutlet weak var descriptionView: UILabel!
     
+    var costString = ""
+    var whereToRecieveString = ""
+    var descriptionString = ""
+    var imageArray : [UIImage] = []
+    var whatsAppNumber :String?
+    
     @IBAction func messageTapped(_ sender: UIButton) {
         // Open a new message with uid of the item poster
         sender.tap()
+        print(whatsAppNumber)
+        guard whatsAppNumber != nil else {
+            showAlert(title: "حدث خطأ", message:"صاحب الاعلان لم يضع رقمه")
+            return
+        }
+        if let number = whatsAppNumber{
+            guard let url = URL(string: "https://wa.me/\(number)") else { return }
+            UIApplication.shared.open(url)
+        }
+        
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        messageButton.layer.cornerRadius = messageButton.frame.height / 2
-        
-        imageArray = [#imageLiteral(resourceName: "car2"),#imageLiteral(resourceName: "car3"),#imageLiteral(resourceName: "car2")]
-        
-        
+    func updateInfo() {
+        print(costString)
+        costLabel.text = costString
+        whereToRecieveLabel.text = whereToRecieveString
+        descriptionView.text = descriptionString
         for i in 0..<imageArray.count{
             let imageview = UIImageView()
             imageview.image = imageArray[i]
@@ -46,24 +51,20 @@ class StoreInformation: UIViewController,UIScrollViewDelegate {
             imageview.contentMode = .scaleAspectFit
             photoCarouselScrollView.contentSize.width = photoCarouselScrollView.frame.width * CGFloat(i + 1)
             photoCarouselScrollView.addSubview(imageview)
-            
         }
-        
-        
-        pageControl.numberOfPages = imageArray.count
-        
-
     }
-
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateInfo()
+        messageButton.layer.cornerRadius = messageButton.frame.height / 2
+        photoCarouselScrollView.backgroundColor = UIColor(white: 0.94, alpha: 1)
+        pageControl.numberOfPages = imageArray.count
+    }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
         pageControl.currentPage = Int(pageIndex)
     
     }
-    
-    
-    
-
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseUI
 
 
 class StoreTableViewController: UITableViewController {
@@ -17,7 +18,7 @@ class StoreTableViewController: UITableViewController {
     }
     // MARK:  Variables
 
-    var fetchedInformation = [CardInformaion]()
+    var fetchedInformation = [StoreInformationModel]()
     var imageArray = [UIImage]()
     @IBOutlet weak var costLabel: UILabel!
 
@@ -41,20 +42,20 @@ class StoreTableViewController: UITableViewController {
     @objc func requestStoreData() {
         addReloadingIndicator(for: 1)
         fetchedInformation.removeAll()
-        print("Event count Before: " + String (fetchedInformation.count))
-        
+//        print("Event count Before: " + String (fetchedInformation.count))
         ref.child("Store").queryOrderedByKey().observeSingleEvent(of: .value, with: { (snapshot) in
             for child in snapshot.children.allObjects as! [DataSnapshot]{
-                
                 let dic  = child.value! as! [String: Any]
-                let card = CardInformaion(dic as [String : AnyObject])
+                print(dic)
+                let card = StoreInformationModel(dic as [String : AnyObject])
                 self.fetchedInformation.insert(card, at: 0)
+
             }
         })
         print(fetchedInformation)
         self.timer.invalidate()
         self.timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.handleDataReload), userInfo: nil, repeats: false)
-        
+        self.tableView.reloadData()
     }
 
     
@@ -70,40 +71,20 @@ class StoreTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardArticleCell
-//        cell.backgroundColor = UIColor(hex: "efeff4")
-//        let item = self.fetchedInformation[indexPath.row]
-////        let cardContentVC = self.storyboard!.instantiateViewController(withIdentifier: "StoreCard")
-////        let cardContentVC = StoreInformation()
-//
-//        DispatchQueue.main.async {
-////            cell.populate(item)
-////            cardContentVC.costLabel?.text = String(describing: indexPath.row)
-////            cell.card.shouldPresent(cardContentVC, from: self, fullscreen: true)
-//
-////            cardContentVC.costLabel.text = self.fetchedInformation[indexPath.row].userID
-//        }
-//
-//        cell.selectionStyle = .none
-//        cell.card.shadowOpacity = 0
-        
-        
-//        let cell = UITableViewCell()
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FullPhotoTableViewCell
-
-//        cell.textLabel?.text = self.fetchedInformation[indexPath.row].title
-//        cell.detailTextLabel?.text = "\(self.fetchedInformation[indexPath.row].userID)"
-//        cell.imageView?.image = self.fetchedInformation[indexPath.row].icon
+        let index = self.fetchedInformation[indexPath.row]
+        cell.headlineLabel.text = index.title
+        cell.catagory.text = index.catagory
+        if let photoPath = index.photoPath{
+            cell.backgroundImageView.sd_setImage(with: URL(string: "gs://ssuakron.appspot.com\(index.photoPath!)"))
+        }
+        print("index: ", index)
         cell.accessoryType = .disclosureIndicator
-        
-        
         return cell
     }
     
     // Row count
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return fetchedInformation.count
     }
     
@@ -114,54 +95,26 @@ class StoreTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = StoreInformation()
-        vc.title = self.fetchedInformation[indexPath.row].title
+        let info = self.fetchedInformation[indexPath.row]
+        vc.title = info.title
+        vc.costString = info.cost
+        vc.descriptionString = info.descriptionString
+        vc.whereToRecieveString = info.whereToReceive
+        vc.whatsAppNumber = info.whatsAppNumber
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     
-//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//
-//
-//
-////        let indexPath = tableView.indexPathForSelectedRow
-//        let cell = tableView.cellForRow(at: tableView.indexPathForSelectedRow!) as! CardArticleCell
-//        print("selected: \(cell)")
-//
-//        if #available(iOS 13.0, *) {
-//            let StorePost = self.storyboard!.instantiateViewController(identifier: "Storinformation") as! StoreInformation
-//            StorePost.costLabel.text = "10"
-//            StorePost.whereToRecieveLabel.text = "any"
-//            DispatchQueue.main.async {
-//
-//                cell.card.shouldPresent(StorePost, from: self)
-//            }
-//        } else {
-//            performSegue(withIdentifier: "Storeinformation", sender: self)
-//        }
-//
-//        let vc = self.storyboard!.instantiateViewController(withIdentifier: "main") as! StoreInformation
-//        vc.costLabel.text = ""
-//        vc.whereToRecieveLabel.text = "any"
-//        cell.card.shouldPresent(vc, from: self)
-//
-//
-//
-//
-//
-//    }
-    
     // MARK:  ViewController methogs
     
-    override func viewWillAppear(_ animated: Bool) {
-//        self.tableView.register(UINib(nibName: "CardArticleCell", bundle: nil), forCellReuseIdentifier: "cell")
-//        self.tableView.register(FullPhotoTableViewCell.self, forCellReuseIdentifier: "cell")
-        
+    override func viewDidLoad() {
+        super.viewDidLoad()
         tableView.refreshControl = refresher
         self.tableView.register(UINib(nibName: "FullPhotoTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         updateNavBar()
         requestStoreData()
-        
+//        self.tableView.register(UINib(nibName: "CardArticleCell", bundle: nil), forCellReuseIdentifier: "cell")
+//        self.tableView.register(FullPhotoTableViewCell.self, forCellReuseIdentifier: "cell")
     }
 }
 

@@ -120,31 +120,6 @@ class EventViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cell: CardHighlightCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CardHighlightCell
-//        let event = self.events[indexPath.row]
-//
-//        let cardVC :EventInformation = {
-//            let e = EventInformation()
-//            e.dateLabel?.text = String(describing: indexPath.row)
-//            return e
-//        }()
-//
-//
-//        DispatchQueue.main.async {
-//            cell.populate(event)
-//            cardVC.dateLabel?.text = String(describing: indexPath.row)
-//            cardVC.loadViewIfNeeded()
-//            cardVC.viewDidLayoutSubviews()
-//        }
-//
-//        cell.event = cardVC
-//        cell.card?.shouldPresent(cell.event, from: self, fullscreen: true)
-//
-//        cell.selectionStyle = .none
-//        cell.backgroundColor = UIColor(hex: "efeff4")
-
-
         
         let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
         
