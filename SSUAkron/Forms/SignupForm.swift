@@ -23,11 +23,11 @@ class SignupForm: FormViewController {
             if error != nil{
              print(error)
             }else{
-                
                 let userDefault = UserDefaults.standard
                 userDefault.setValue(email, forKey: "email")
                 userDefault.setValue(password, forKey: "password")
                 let secondVC = self.storyboard!.instantiateViewController(withIdentifier: "main")
+                secondVC.modalPresentationStyle = .fullScreen
                 self.present(secondVC, animated: true, completion: nil)
             }
         }

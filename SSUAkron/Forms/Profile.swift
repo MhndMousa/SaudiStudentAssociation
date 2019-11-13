@@ -129,6 +129,7 @@ class ProfileViewContoller: FormViewController {
                         userDefault.removeObject(forKey: "email")
                         userDefault.removeObject(forKey: "password")
                         let vc = self.storyboard!.instantiateViewController(withIdentifier: "login")
+                        vc.modalPresentationStyle = .fullScreen
                         self.present(vc, animated: true, completion: nil)
                         justLoggedOut = true
                         
