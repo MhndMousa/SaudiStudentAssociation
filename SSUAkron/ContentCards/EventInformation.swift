@@ -13,26 +13,95 @@ import Firebase
 
 class EventInformation: UIViewController{
 
-    @IBOutlet weak var costLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var descriptionView: UILabel!
-    @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var signUpButton: UIButton!
+    // MARK: - Properties
     
+
+    @IBOutlet var regestraionStatusLabel: UILabel!
+    @IBOutlet var costLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var timeLabel: UILabel!
+    @IBOutlet var descriptionView: UILabel!
+    @IBOutlet var mapView: MKMapView!
+    @IBOutlet var signUpButton: UIButton!
     var coordinations: CLLocationCoordinate2D?
-    var radius : CGFloat = 12
-    
-    @IBAction func signUpClicked(_ sender: UIButton) {
-        sender.tap()
+    weak var eventInfo : EventCellInfo? {
+        didSet{
+            
+            guard let eventInfo = self.eventInfo else { fatalError()}
+            
+            UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseOut, animations: {
+                self.dateLabel.alpha = 0
+                self.descriptionView.alpha = 0
+                self.costLabel.alpha = 0
+                self.timeLabel.alpha = 0
+                self.mapView.alpha = 0
+                self.regestraionStatusLabel.alpha = 0
+             }, completion: { (_) in
+                
+                self.dateLabel.text = eventInfo.date
+                self.descriptionView.text = eventInfo.eventDescription
+                self.costLabel.text = eventInfo.cost
+                self.timeLabel.text = eventInfo.time?.stringValue 
+                
+                self.regestraionStatusLabel.text = eventInfo.registered ? "مسجل" : "غير مسجل"
+                
+                
+//                let center = CLLocationCoordinate2DMake(39.659996, -86.197870)
+//                let mappin = MapPin(coordinate: center, title: "Home", subtitle: "My homie")
+                self.mapView?.centerCoordinate = eventInfo.location.center
+                self.mapView.addAnnotation(eventInfo.location.pin)
+                self.mapView?.camera.altitude = 2000
+                self.mapView.setCenter(eventInfo.location.center, animated: true)
+                
+                
+                UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseOut, animations: {
+                    self.dateLabel.alpha = 1
+                    self.descriptionView.alpha = 1
+                    self.costLabel.alpha = 1
+                    self.timeLabel.alpha = 1
+                    self.mapView.alpha = 1
+                    self.regestraionStatusLabel.alpha = 1
+
+                  
+                }, completion:nil)
+             })
+        }
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        signUpButton.layer.cornerRadius = signUpButton.frame.height / 2
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        dateLabel = UILabel()
+        descriptionView = UILabel()
+        costLabel = UILabel()
+        timeLabel = UILabel()
+        mapView = MKMapView()
+        regestraionStatusLabel = UILabel()
+    }
+    init(event : EventCellInfo) {
+        super.init(nibName: nil, bundle: nil)
+        dateLabel = UILabel()
+        descriptionView = UILabel()
+        costLabel = UILabel()
+        timeLabel = UILabel()
+        mapView = MKMapView()
+        regestraionStatusLabel = UILabel()
+        eventInfo = event
     }
     
+    deinit {
+        dateLabel = nil
+        descriptionView = nil
+        costLabel = nil
+        timeLabel = nil
+        mapView = nil
+        regestraionStatusLabel = nil
+        eventInfo = nil
+        coordinations = nil
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     let mapButton : UIButton = {
         let button = UIButton()
@@ -41,6 +110,18 @@ class EventInformation: UIViewController{
         button.backgroundColor = .blue
         return button
     }()
+    
+ 
+    // MARK: - View Controller Lifecycle
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        signUpButton.layer.cornerRadius = signUpButton.frame.height / 2
+    }
+    
+    
+    // MARK: - Helpers
     
     // TODO: Connect this to a button in the card
     @objc func openMapForPlace() {
@@ -71,9 +152,15 @@ class EventInformation: UIViewController{
         mapView?.camera.altitude = 2000
     }
     
-    
-}   // end Class
+    // MARK: - Handlers
 
+     @IBAction func signUpClicked(_ sender: UIButton) {
+         sender.tap()
+     }
+
+    
+    
+}
 
 
 
