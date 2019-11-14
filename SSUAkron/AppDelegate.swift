@@ -17,10 +17,12 @@ import SendBirdSDK
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
+    
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
+         
         FirebaseApp.configure()
         GMSPlacesClient.provideAPIKey("AIzaSyAksFJh6mX9UT_Js1-PwbhKbaa_jia7IZs")
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
@@ -28,7 +30,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         IQKeyboardManager.sharedManager().enable = true
         SBDMain.initWithApplicationId("2E0DE893-1611-4EE6-9F06-0BC8D7EE2C9E")
         
+        
         UINavigationBar.appearance().barStyle = .blackOpaque
+        
+        
+//        let window = self.ein
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let root : UIViewController
+        
+        let userDefault = UserDefaults.standard
+        if userDefault.bool(forKey: "loggedIn"){
+            root = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "main")
+        }else{
+            root = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "login")
+        }
+        
+        self.window?.rootViewController = root
+        self.window?.makeKeyAndVisible()
+        
+        
         
         return true
     }
