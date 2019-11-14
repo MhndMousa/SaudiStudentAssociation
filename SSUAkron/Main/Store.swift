@@ -83,6 +83,9 @@ class StoreTableViewController: UITableViewController {
         return cell
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
     // Row count
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedInformation.count

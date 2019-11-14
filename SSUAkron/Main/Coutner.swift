@@ -76,6 +76,9 @@ class CounterViewController: UIViewController {
         CATransaction.commit()
         isSalaryUpdated = false
     }
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
     
     func updateSalary() {
         var d = Date()
