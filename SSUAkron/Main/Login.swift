@@ -57,6 +57,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
                                 width: 100, height: 50)
         loginButtonContainer.addSubview(loginButton)
         
+        self.view.bringSubview(toFront: loginButtonContainer)
+        
         // Adding constraints
         loginButton.translatesAutoresizingMaskIntoConstraints = false
         loginButton.topAnchor.constraint(equalTo: loginButtonContainer.topAnchor).isActive = true
@@ -71,21 +73,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
 
     // If the user logged in before then login them in automatically.
     func tryLogin() {
-        Auth.auth().addStateDidChangeListener { (auth, user) in
-            if user != nil {
-                self.loginUserToSendBird()
-                self.performSegueToMainViewController()
-            }
-        }
+        
         let userDefault = UserDefaults.standard
-        DispatchQueue.global(qos: .background).async {
-            sleep(1)
-            if !justLoggedOut && userDefault.string(forKey: "email") != nil && userDefault.string(forKey: "password") != nil{
-                self.loginUserToSendBird()
+            if userDefault.bool(forKey: "loggedIn"){
+//                self.loginUserToSendBird()
                 self.performSegueToMainViewController()
             }
-            
-        }
     }
 
     fileprivate func loginUserToSendBird() {
@@ -137,7 +130,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         let qualityOfServiceClass = DispatchQoS.QoSClass.background
         let backgroundQueue = DispatchQueue.global(qos: qualityOfServiceClass)
         backgroundQueue.async(execute: {
-            sleep(8)
             DispatchQueue.main.async(execute: { () -> Void in
                 if Auth.auth().currentUser != nil{
                     self.loginUserToSendBird()
@@ -159,6 +151,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         let password = self.passwordTextFeild.text!
         login(email: email, password: password)
     }
+    
 
     func login(email : String, password : String){
         self.loginButton.startAnimation() // 2: Then start the animation when the user tap the button
@@ -177,9 +170,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
                         self.loginButton.stopAnimation(animationStyle: .expand, completion: {
                             // Add user default for the email and password for to loging automatically after
                             let userDefault = UserDefaults.standard
-                            userDefault.setValue(email, forKey: "email")
-                            userDefault.setValue(password, forKey: "password")
+                            userDefault.set(true, forKey: "loggedIn")
                             self.loginUserToSendBird()
+//                            sleep(0.2)
                             self.performSegueToMainViewController()
                         })
                     })
@@ -194,7 +187,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }

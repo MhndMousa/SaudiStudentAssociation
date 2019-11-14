@@ -126,8 +126,7 @@ class ProfileViewContoller: FormViewController {
                     do{
                         try Auth.auth().signOut()
                         let userDefault = UserDefaults.standard
-                        userDefault.removeObject(forKey: "email")
-                        userDefault.removeObject(forKey: "password")
+                        userDefault.set(false, forKey: "loggedIn")
                         let vc = self.storyboard!.instantiateViewController(withIdentifier: "login")
                         vc.modalPresentationStyle = .fullScreen
                         self.present(vc, animated: true, completion: nil)
