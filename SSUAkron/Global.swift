@@ -88,7 +88,7 @@ public func updateIcon(_ name: String) -> UIImage{
     print(name)
     if name == "food" {return UIImage(fromAssets: .food)}
     if name == "woman" {return UIImage(fromAssets: .woman)}
-    if name == "celebration" {return UIImage(fromAssets: .sports)}
+    if name == "sports" {return UIImage(fromAssets: .sports)}
     if name == "message" {return UIImage(fromAssets: .message)}
     if name == "fastfood" {return UIImage(fromAssets: .fastfood)}
     
