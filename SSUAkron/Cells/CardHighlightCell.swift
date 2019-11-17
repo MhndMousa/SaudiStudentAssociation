@@ -19,13 +19,13 @@ import UIKit
     }
 
     
-    func populate(_ event: CardInformaion) {
+    func populate(_ event: EventCellInfo) {
         card.title = String( describing: event.title)
-        card.itemTitle = String( describing: event.itemTitle!)
-        card.itemSubtitle = String( describing: event.itemSubtitle!)
-        card.backgroundColor = event.backgroundColor!
-        card.icon = event.image
-        card.textColor = event.textColor!
+//        card.itemTitle = String( describing: event.itemTitle!)
+//        card.itemSubtitle = String( describing: event.itemSubtitle!)
+//        card.backgroundColor = event.backgroundColor!
+//        card.icon = event.image
+//        card.textColor = event.textColor!
     }
 
     
