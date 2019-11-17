@@ -35,14 +35,26 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
     @IBAction func submitTapped(_ sender: Any) {
         
         // Check for admin premission then post to firebase
+        var formValues = form.values()
         
-        var icon :String = EventCatagoryToIconName()
+        if let icon = EventCatagoryToIconName(){
+            formValues["icon"]  = icon
+        }
         
+        let calender = Calendar.current
         
-        print(form.values())
+        // Deconstruct the date from the row
+        let a = form.rowBy(tag: "date")?.baseValue as! Date
+        formValues["date"] = "\(calender.component(.month, from: a))/\(calender.component(.day, from: a))/\(calender.component(.year, from: a))"
         
-        print("tapped")
+        // Deconstruct the time from the row
+        let b = form.rowBy(tag: "date")?.baseValue as! Date
+        formValues["time"] = "\(calender.component(.hour, from: b)):\(calender.component(.minute, from: b))"
 
+        formValues.forEach({
+            print("K:", $0, "V:", $1)
+        })
+        
     }
     
     let locationManager = CLLocationManager()
@@ -54,12 +66,7 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
         locationManager.requestAlwaysAuthorization()
     }
     
-    var randomArray = [
-                                    "فعالية رياضية"
-                                    , "فعالية نسائية"
-                                    , "فعالية اجتماعية"
-                                    , "فعاليات اخرى"
-]
+    var randomArray = [ "فعالية رياضية" , "فعالية نسائية" , "فعالية اجتماعية" , "فعاليات اخرى" ]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -83,6 +90,7 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
             <<< TextRow(){ row in
                 row.title = "العنوان"
                 row.placeholder = "اختر عنوان الفعالية"
+                row.tag = "title"
                 }.cellSetup({ (cell, row) in
                     cell.textLabel?.font = .notoKufiArabicSmall
                     cell.detailTextLabel?.font = .notoKufiArabicSmall
@@ -99,17 +107,42 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
                 })
             <<< TextAreaRow(){
                 $0.placeholder = "وصف للفعالية"
+                $0.tag = "eventDescription"
                 }.cellSetup({ (cell, row) in
                     cell.textLabel?.font = .notoKufiArabicSmall
                     cell.detailTextLabel?.font = .notoKufiArabicSmall
                 })
-                    
-
+                 
             
             +++ Section()
+//            <<< DateTimeRow(){
+//                           $0.title = "التاريخ"
+//                           $0.tag = "date"
+//                           $0.value = Date(timeIntervalSinceReferenceDate: 0)
+//                           }.cellSetup({ (cell, row) in
+//                               cell.textLabel?.font = .notoKufiArabicSmall
+//                               cell.detailTextLabel?.font = .notoKufiArabicSmall
+//                           })
+            <<< DateRow(){
+                $0.title = "تاريخ الفعالية"
+                $0.tag = "date"
+                $0.value = Date(timeIntervalSinceReferenceDate: 0)
+                }.cellSetup({ (cell, row) in
+                    cell.textLabel?.font = .notoKufiArabicSmall
+                    cell.detailTextLabel?.font = .notoKufiArabicSmall
+                })
+            <<< TimeRow(){
+               $0.title = "وقت الفعالية"
+               $0.tag = "time"
+               $0.value = Date(timeIntervalSinceReferenceDate: 0)
+               }.cellSetup({ (cell, row) in
+                   cell.textLabel?.font = .notoKufiArabicSmall
+                   cell.detailTextLabel?.font = .notoKufiArabicSmall
+               })
             <<< IntRow(){
                 $0.title = "المبلغ"
                 $0.placeholder = "ادخل المبلغ بالدولار"
+                $0.tag = "cost"
                 }.cellSetup({ (cell, row) in
                     cell.textLabel?.font = .notoKufiArabicSmall
                     cell.detailTextLabel?.font = .notoKufiArabicSmall
@@ -122,8 +155,9 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
                     cell.detailTextLabel?.font = .notoKufiArabicSmall
                 })
     
-            +++ Section(footer: "في حال عدم اضافة صورة سوف يتم استخدام صورة النادي السعودي الاصلية لاعلان الفعالية")
+//            +++ Section(footer: "في حال عدم اضافة صورة سوف يتم استخدام صورة النادي السعودي الاصلية لاعلان الفعالية")
             
+            +++ Section()
             <<< TextRow(){ row in
                 row.title = "اسم الموقع"
                 row.placeholder = "اختر اسم الموقع"
@@ -185,14 +219,14 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
             
     }
     
-    func EventCatagoryToIconName() -> String {
+    func EventCatagoryToIconName() -> String? {
         let rowString = form.rowBy(tag: "catagory")?.baseValue
-        switch rowString as! String {
+        switch rowString as? String {
                case "فعالية رياضية":  return "sports"
                case "فعالية نسائية":  return "woman"
                case "فعالية اجتماعية": return "message"
                case "فعاليات اخرى": return "none"
-               default: return "none"
+               default: return nil
         }
     }
 }
@@ -236,17 +270,17 @@ extension EventPostFormViewController: GMSAutocompleteViewControllerDelegate {
 }
 
 extension UIFont{
-    class var notoKufiArabicSmall: UIFont {return UIFont(name: "NotoKufiArabic", size: 12)!}
-    class var notoKufiArabicMedium: UIFont {return UIFont(name: "NotoKufiArabic", size: 15)!}
-    class var notoKufiArabicMediumLarge: UIFont {return UIFont(name: "NotoKufiArabic", size: 18)!}
-    class var notoKufiArabicLarge: UIFont {return UIFont(name: "NotoKufiArabic", size: 21)!}
-    class var notoKufiArabicExtraLarge: UIFont {return UIFont(name: "NotoKufiArabic", size: 34)!}
+    class var notoKufiArabicSmall: UIFont           {return UIFont(name: "NotoKufiArabic", size: 12)!}
+    class var notoKufiArabicMedium: UIFont          {return UIFont(name: "NotoKufiArabic", size: 15)!}
+    class var notoKufiArabicMediumLarge: UIFont     {return UIFont(name: "NotoKufiArabic", size: 18)!}
+    class var notoKufiArabicLarge: UIFont           {return UIFont(name: "NotoKufiArabic", size: 21)!}
+    class var notoKufiArabicExtraLarge: UIFont      {return UIFont(name: "NotoKufiArabic", size: 34)!}
     
-    class var notoKufiBoldArabicSmall: UIFont {return UIFont(name: "NotoKufiArabic-Bold", size: 12)!}
-    class var notoKufiBoldArabicMedium: UIFont {return UIFont(name: "NotoKufiArabic-Bold", size: 15)!}
+    class var notoKufiBoldArabicSmall: UIFont       {return UIFont(name: "NotoKufiArabic-Bold", size: 12)!}
+    class var notoKufiBoldArabicMedium: UIFont      {return UIFont(name: "NotoKufiArabic-Bold", size: 15)!}
     class var notoKufiBoldArabicMediumLarge: UIFont {return UIFont(name: "NotoKufiArabic-Bold", size: 18)!}
-    class var notoKufiBoldArabicLarge: UIFont {return UIFont(name: "NotoKufiArabic-Bold", size: 21)!}
-    class var notoKufiBoldArabicExtraLarge: UIFont {return UIFont(name: "NotoKufiArabic-Bold", size: 34)!}
+    class var notoKufiBoldArabicLarge: UIFont       {return UIFont(name: "NotoKufiArabic-Bold", size: 21)!}
+    class var notoKufiBoldArabicExtraLarge: UIFont  {return UIFont(name: "NotoKufiArabic-Bold", size: 34)!}
     
 }
 
