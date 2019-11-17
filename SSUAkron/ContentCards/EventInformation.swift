@@ -28,6 +28,7 @@ class EventInformation: UIViewController{
         didSet{
             
             guard let eventInfo = self.eventInfo else { fatalError()}
+            self.title = eventInfo.title
             
             UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseOut, animations: {
                 self.dateLabel.alpha = 0
@@ -51,7 +52,6 @@ class EventInformation: UIViewController{
                 self.mapView?.centerCoordinate = eventInfo.location.center
                 self.mapView.addAnnotation(eventInfo.location.pin)
                 self.mapView?.camera.altitude = 2000
-                self.mapView.setCenter(eventInfo.location.center, animated: true)
                 
                 
                 UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseOut, animations: {
@@ -77,14 +77,8 @@ class EventInformation: UIViewController{
         mapView = MKMapView()
         regestraionStatusLabel = UILabel()
     }
-    init(event : EventCellInfo) {
-        super.init(nibName: nil, bundle: nil)
-        dateLabel = UILabel()
-        descriptionView = UILabel()
-        costLabel = UILabel()
-        timeLabel = UILabel()
-        mapView = MKMapView()
-        regestraionStatusLabel = UILabel()
+    convenience init(event : EventCellInfo) {
+        self.init()
         eventInfo = event
     }
     
@@ -116,8 +110,12 @@ class EventInformation: UIViewController{
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        
         signUpButton.layer.cornerRadius = signUpButton.frame.height / 2
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.mapView.setCenter(eventInfo!.location.center, animated: true)
     }
     
     
