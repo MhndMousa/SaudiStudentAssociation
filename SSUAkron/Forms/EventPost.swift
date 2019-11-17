@@ -36,6 +36,11 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
         
         // Check for admin premission then post to firebase
         
+        var icon :String = EventCatagoryToIconName()
+        
+        
+        print(form.values())
+        
         print("tapped")
 
     }
@@ -49,7 +54,12 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
         locationManager.requestAlwaysAuthorization()
     }
     
-    var randomArray = ["فعالية رياضية" , "فعالية نسائية", "فعالية اجتماعية", "فعاليات اخرى"]
+    var randomArray = [
+                                    "فعالية رياضية"
+                                    , "فعالية نسائية"
+                                    , "فعالية اجتماعية"
+                                    , "فعاليات اخرى"
+]
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -82,6 +92,7 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
                 $0.title = "نوع الفعالية"
                 $0.selectorTitle = "اختر نوع الفعالية"
                 $0.options = randomArray
+                $0.tag = "catagory"
                 }.cellSetup({ (cell, row) in
                     cell.textLabel?.font = .notoKufiArabicSmall
                     cell.detailTextLabel?.font = .notoKufiArabicSmall
@@ -116,6 +127,8 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
             <<< TextRow(){ row in
                 row.title = "اسم الموقع"
                 row.placeholder = "اختر اسم الموقع"
+                row.tag = "location_name"
+                row.disabled = true
                 }.cellSetup({ (cell, row) in
                     cell.textLabel?.font = .notoKufiArabicSmall
                     cell.detailTextLabel?.font = .notoKufiArabicSmall
@@ -171,6 +184,17 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
 
             
     }
+    
+    func EventCatagoryToIconName() -> String {
+        let rowString = form.rowBy(tag: "catagory")?.baseValue
+        switch rowString as! String {
+               case "فعالية رياضية":  return "sports"
+               case "فعالية نسائية":  return "woman"
+               case "فعالية اجتماعية": return "message"
+               case "فعاليات اخرى": return "none"
+               default: return "none"
+        }
+    }
 }
 extension EventPostFormViewController: GMSAutocompleteViewControllerDelegate {
     
@@ -178,6 +202,9 @@ extension EventPostFormViewController: GMSAutocompleteViewControllerDelegate {
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         print("Place name: \(place.name)")
         print("Place ID: \(place.placeID)")
+        
+        form.rowBy(tag: "location_name")?.baseValue = place.name
+        form.rowBy(tag: "location_name")?.updateCell()
         
 //        let rows = self.form.allRows.filter({$0.title == "" || $0.tag == })
 //        cell.title = "\(place.name!)"
@@ -222,3 +249,6 @@ extension UIFont{
     class var notoKufiBoldArabicExtraLarge: UIFont {return UIFont(name: "NotoKufiArabic-Bold", size: 34)!}
     
 }
+
+
+

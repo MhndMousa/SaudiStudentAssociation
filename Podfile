@@ -8,7 +8,7 @@ target 'SSUAkron' do
   #pod 'FirebaseUI'
   pod 'SendBirdSDK'
 pod 'FirebaseUI/Database', '~> 8.0'
-
+pod "SkeletonView"
 # Only pull in FirebaseUI Storage features
 pod 'FirebaseUI/Storage', '~> 8.0'
 

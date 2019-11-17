@@ -114,10 +114,16 @@ class EventViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = EventInformation()
+        let event = EventInformation()
+//        let vc = UINavigationController(rootViewController: event)
         
-        vc.eventInfo = self.events[indexPath.row]
-        self.navigationController?.pushViewController(vc, animated: true)
+        event.eventInfo = self.events[indexPath.row]
+//
+        self.navigationController?.pushViewController(event, animated: true)
+        
+//        self.navigationController?.present(vc, animated: true, completion: {
+//            event.eventInfo = self.events[indexPath.row]
+//        })
         tableView.deselectRow(at: indexPath, animated: false)
         
     }
