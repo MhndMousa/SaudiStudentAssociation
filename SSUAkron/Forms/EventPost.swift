@@ -12,6 +12,7 @@ import Eureka
 import ImageRow
 import MapKit
 import GooglePlaces
+import FirebaseDatabase
 
 //import <GooglePlaces/GooglePlaces.h>
 
@@ -30,16 +31,43 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
         self.present(alert, animated: true, completion: nil)
         
     }
+    var place : GMSPlace!
     
     @IBOutlet weak var submitButton: UIBarButtonItem!
+    
+//    func 
+    
     @IBAction func submitTapped(_ sender: Any) {
+        
+        
+        // Check fields are the correct ones
+        
+        
+        
+        
         
         // Check for admin premission then post to firebase
         var formValues = form.values()
         
+        var locationInfo : [String : Any] = [
+            "coordinates" : ["long" : self.place.coordinate.longitude, "lat" : self.place.coordinate.latitude],
+            "name" : self.place.name,
+            "subtitle" : self.form.rowBy(tag: "location_description")?.baseValue as? String ,
+            "id" : self.place.placeID,
+        ]
+        
+        print(locationInfo)
+        
         if let icon = EventCatagoryToIconName(){
             formValues["icon"]  = icon
         }
+        
+        formValues.merge(locationInfo) { (current, _) -> Any? in current}
+        print(formValues)
+        
+        
+        
+        
         
         let calender = Calendar.current
         
@@ -55,12 +83,26 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
             print("K:", $0, "V:", $1)
         })
         
+        
+        
+        
+        
+        
+        
+//        ref.child("posts").childByAutoId().setValue(formValues)
+        ref.child("Event").childByAutoId().setValue(formValues) { (error, _) in
+            if error == nil{
+                self.dismiss(animated: true, completion: nil)
+            }else{
+                self.showAlert(title: "خطأ", message: "\(error?.localizedDescription)")
+            }
+        }
     }
     
     let locationManager = CLLocationManager()
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        navigationController?.navigationBar.barTintColor = .blueSSA
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestAlwaysAuthorization()
@@ -75,15 +117,14 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
         autocompleteController.delegate = self
         
         // Specify the place data types to return.
-        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) | UInt(GMSPlaceField.placeID.rawValue))!
+        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) | UInt(GMSPlaceField.placeID.rawValue) | UInt(GMSPlaceField.addressComponents.rawValue))!
         autocompleteController.placeFields = fields
         
         // Specify a filter.
         let filter = GMSAutocompleteFilter()
-        filter.type = .noFilter
+        filter.type = .establishment
         autocompleteController.autocompleteFilter = filter
         
-       
         
         form +++ Section()
             
@@ -91,101 +132,135 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
                 row.title = "العنوان"
                 row.placeholder = "اختر عنوان الفعالية"
                 row.tag = "title"
-                }.cellSetup({ (cell, row) in
-                    cell.textLabel?.font = .notoKufiArabicSmall
-                    cell.detailTextLabel?.font = .notoKufiArabicSmall
-                })
+            }.cellSetup({ (cell, row) in
+                cell.textLabel?.font = .notoKufiArabicSmall
+                cell.detailTextLabel?.font = .notoKufiArabicSmall
+            })
             
             <<< PushRow<String>() {
                 $0.title = "نوع الفعالية"
                 $0.selectorTitle = "اختر نوع الفعالية"
                 $0.options = randomArray
                 $0.tag = "catagory"
-                }.cellSetup({ (cell, row) in
-                    cell.textLabel?.font = .notoKufiArabicSmall
-                    cell.detailTextLabel?.font = .notoKufiArabicSmall
-                })
+            }.cellSetup({ (cell, row) in
+                cell.textLabel?.font = .notoKufiArabicSmall
+                cell.detailTextLabel?.font = .notoKufiArabicSmall
+            })
             <<< TextAreaRow(){
                 $0.placeholder = "وصف للفعالية"
                 $0.tag = "eventDescription"
-                }.cellSetup({ (cell, row) in
-                    cell.textLabel?.font = .notoKufiArabicSmall
-                    cell.detailTextLabel?.font = .notoKufiArabicSmall
-                })
-                 
+            }.cellSetup({ (cell, row) in
+                cell.textLabel?.font = .notoKufiArabicSmall
+                cell.detailTextLabel?.font = .notoKufiArabicSmall
+            })
+            
             
             +++ Section()
-//            <<< DateTimeRow(){
-//                           $0.title = "التاريخ"
-//                           $0.tag = "date"
-//                           $0.value = Date(timeIntervalSinceReferenceDate: 0)
-//                           }.cellSetup({ (cell, row) in
-//                               cell.textLabel?.font = .notoKufiArabicSmall
-//                               cell.detailTextLabel?.font = .notoKufiArabicSmall
-//                           })
             <<< DateRow(){
                 $0.title = "تاريخ الفعالية"
                 $0.tag = "date"
-                $0.value = Date(timeIntervalSinceReferenceDate: 0)
-                }.cellSetup({ (cell, row) in
-                    cell.textLabel?.font = .notoKufiArabicSmall
-                    cell.detailTextLabel?.font = .notoKufiArabicSmall
-                })
+                $0.value = Date()
+            }.cellSetup({ (cell, row) in
+                cell.textLabel?.font = .notoKufiArabicSmall
+//                    /                    cell.detailTextLabel?.font = .notoKufiArabicSmall
+            })
             <<< TimeRow(){
-               $0.title = "وقت الفعالية"
-               $0.tag = "time"
-               $0.value = Date(timeIntervalSinceReferenceDate: 0)
-               }.cellSetup({ (cell, row) in
-                   cell.textLabel?.font = .notoKufiArabicSmall
-                   cell.detailTextLabel?.font = .notoKufiArabicSmall
-               })
+                $0.title = "وقت الفعالية"
+                $0.tag = "time"
+                $0.value = Date()
+            }.cellSetup({ (cell, row) in
+                cell.textLabel?.font = .notoKufiArabicSmall
+//                    /                    cell.detailTextLabel?.font = .notoKufiArabicSmall
+            })
             <<< IntRow(){
-                $0.title = "المبلغ"
+                $0.title = "رسوم دخول الفعالية"
                 $0.placeholder = "ادخل المبلغ بالدولار"
                 $0.tag = "cost"
-                }.cellSetup({ (cell, row) in
-                    cell.textLabel?.font = .notoKufiArabicSmall
-                    cell.detailTextLabel?.font = .notoKufiArabicSmall
-                })
+            }.cellSetup({ (cell, row) in
+                cell.textLabel?.font = .notoKufiArabicSmall
+                cell.detailTextLabel?.font = .notoKufiArabicSmall
+            })
             <<< IntRow(){
                 $0.title = "عدد المقاعدة المتاحة"
                 $0.placeholder = "0"
-                }.cellSetup({ (cell, row) in
-                    cell.textLabel?.font = .notoKufiArabicSmall
-                    cell.detailTextLabel?.font = .notoKufiArabicSmall
-                })
-    
-//            +++ Section(footer: "في حال عدم اضافة صورة سوف يتم استخدام صورة النادي السعودي الاصلية لاعلان الفعالية")
+            }.cellSetup({ (cell, row) in
+                cell.textLabel?.font = .notoKufiArabicSmall
+                cell.detailTextLabel?.font = .notoKufiArabicSmall
+            })
+            
+//                     +++ Section(footer: "في حال عدم اضافة صورة سوف يتم استخدام صورة النادي السعودي الاصلية لاعلان الفعالية")
             
             +++ Section()
-            <<< TextRow(){ row in
-                row.title = "اسم الموقع"
-                row.placeholder = "اختر اسم الموقع"
-                row.tag = "location_name"
-                row.disabled = true
-                }.cellSetup({ (cell, row) in
-                    cell.textLabel?.font = .notoKufiArabicSmall
-                    cell.detailTextLabel?.font = .notoKufiArabicSmall
-                })
-    
-            <<< TextRow(){ row in
-                row.title = "وصف الموقع"
-                row.placeholder = "مثال : الغرفة رفم 4 الطابق 2"
-                }.cellSetup({ (cell, row) in
-                    cell.textLabel?.font = .notoKufiArabicSmall
-                    cell.detailTextLabel?.font = .notoKufiArabicSmall
-                })
-
             <<< ButtonRow(){row in
                 row.title = "اختر موقع الفعالية"
                 row.tag = "location"
-                }.onCellSelection({ (cell, row) in
+            }.onCellSelection({ (cell, row) in
                 // Display the autocomplete view controller.
                 self.present(autocompleteController, animated: true, completion: nil)
-                }).cellSetup({ (cell, row) in
-                    cell.textLabel?.font = .notoKufiArabicSmall
-                    cell.detailTextLabel?.font = .notoKufiArabicSmall
-                })
+            }).cellSetup({ (cell, row) in
+                cell.textLabel?.font = .notoKufiArabicSmall
+                cell.detailTextLabel?.font = .notoKufiArabicSmall
+            })
+            
+            <<< TextRow(){ row in
+                row.title = "الاسم"
+                row.placeholder = ""
+                row.tag = "location_name"
+                row.disabled = true
+            }.cellSetup({ (cell, row) in
+                cell.textLabel?.font = .notoKufiArabicSmall
+                cell.detailTextLabel?.font = .notoKufiArabicSmall
+            })
+            
+            <<< TextRow(){ row in
+                row.title = "المدينة"
+                row.placeholder = ""
+                row.tag = "location_city"
+                row.disabled = true
+            }.cellSetup({ (cell, row) in
+                cell.textLabel?.font = .notoKufiArabicSmall
+                cell.detailTextLabel?.font = .notoKufiArabicSmall
+            })
+            
+            <<< TextRow(){ row in
+                row.title = "الولاية"
+                row.placeholder = ""
+                row.tag = "location_state"
+                row.disabled = true
+            }.cellSetup({ (cell, row) in
+                cell.textLabel?.font = .notoKufiArabicSmall
+                cell.detailTextLabel?.font = .notoKufiArabicSmall
+            })
+            <<< TextRow(){ row in
+                row.title = "البلد"
+                row.placeholder = ""
+                row.tag = "location_country"
+                row.disabled = true
+            }.cellSetup({ (cell, row) in
+                cell.textLabel?.font = .notoKufiArabicSmall
+                cell.detailTextLabel?.font = .notoKufiArabicSmall
+            })
+            <<< TextRow(){ row in
+                row.title = "الرمز البريدي"
+                row.placeholder = ""
+                row.tag = "postal_code"
+                row.disabled = true
+            }.cellSetup({ (cell, row) in
+                cell.textLabel?.font = .notoKufiArabicSmall
+                cell.detailTextLabel?.font = .notoKufiArabicSmall
+            })
+
+            
+            <<< TextRow(){ row in
+                row.title = "وصف الموقع"
+                row.tag = "location_description"
+                row.placeholder = "مثال : الغرفة رفم 4 الطابق 2"
+            }.cellSetup({ (cell, row) in
+                cell.textLabel?.font = .notoKufiArabicSmall
+                cell.detailTextLabel?.font = .notoKufiArabicSmall
+            })
+
+            
         
         
 //            <<< LocationRow(){row in
@@ -234,12 +309,38 @@ extension EventPostFormViewController: GMSAutocompleteViewControllerDelegate {
     
     // Handle the user's selection.
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
-        print("Place name: \(place.name)")
-        print("Place ID: \(place.placeID)")
+//        print("Place name: \(place.name)")
+//        print("Place ID: \(place.placeID)")
+//        print(place.addressComponents?.map({$0.name}))
+//        print(place.addressComponents?.map({$0.types}))
+//        print(place.addressComponents?.map({$0.shortName}))
+//        print(place.addressComponents?.filter({if ($0.types.contains("locality"){return $0.name}}))
         
-        form.rowBy(tag: "location_name")?.baseValue = place.name
+        self.place = place
+        
+        
+        let city        = place.addressComponents?.first(where: {$0.types.contains("locality")})?.name
+        let county      = place.addressComponents?.first(where: {$0.types.contains("administrative_area_level_2")})?.name
+        let state       = place.addressComponents?.first(where: {$0.types.contains("administrative_area_level_1")})?.name
+        let country     = place.addressComponents?.first(where: {$0.types.contains("country")})?.name
+        let postal_code = place.addressComponents?.first(where: {$0.types.contains("postal_code")})?.name
+        let administrat = place.addressComponents?.first(where: {$0.types.contains("administrative_area_level_3")})?.name
+        
+        
+//        print("Place ID: \(place.addressComponents?.filter({ $0.name == "city" }))")
+        
+        form.rowBy(tag: "location_name")?.baseValue = place.name?.localizedCapitalized
+        form.rowBy(tag: "location_city")?.baseValue = city
+        form.rowBy(tag: "location_state")?.baseValue = state
+        form.rowBy(tag: "location_country")?.baseValue = country?.localizedCapitalized
+        form.rowBy(tag: "postal_code")?.baseValue = postal_code
+        
+        
         form.rowBy(tag: "location_name")?.updateCell()
-        
+        form.rowBy(tag: "location_city")?.updateCell()
+        form.rowBy(tag: "location_state")?.updateCell()
+        form.rowBy(tag: "location_country")?.updateCell()
+        form.rowBy(tag: "postal_code")?.updateCell()
 //        let rows = self.form.allRows.filter({$0.title == "" || $0.tag == })
 //        cell.title = "\(place.name!)"
 
@@ -283,6 +384,8 @@ extension UIFont{
     class var notoKufiBoldArabicExtraLarge: UIFont  {return UIFont(name: "NotoKufiArabic-Bold", size: 34)!}
     
 }
-
-
+//
+//extension UIColor{
+//    class var SSAblue: UIFont  {return UIFont(name: "NotoKufiArabic-Bold", size: 34)!}
+//}
 
