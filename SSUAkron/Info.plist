@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<string>en_US</string>
 	<key>CFBundleDisplayName</key>
 	<string>Saudis in Indy</string>
 	<key>CFBundleExecutable</key>
@@ -31,7 +31,7 @@
 		<dict/>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>2</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>

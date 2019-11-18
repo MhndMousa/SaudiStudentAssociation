@@ -35,13 +35,15 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
     
     @IBOutlet weak var submitButton: UIBarButtonItem!
     
-//    func 
-    
+//    func checkCells() -> Bool{
+//        return true
+//    }
+//
     @IBAction func submitTapped(_ sender: Any) {
         
         
         // Check fields are the correct ones
-        
+//        guard checkCells() else { showAlert(title: "بوه شي ناقص", message: "تاكد انك كتبت في كل الخانات") ; return }
         
         
         
@@ -53,7 +55,7 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
             "coordinates" : ["long" : self.place.coordinate.longitude, "lat" : self.place.coordinate.latitude],
             "name" : self.place.name,
             "subtitle" : self.form.rowBy(tag: "location_description")?.baseValue as? String ,
-            "id" : self.place.placeID,
+            "location_id" : self.place.placeID,
         ]
         
         print(locationInfo)
@@ -84,13 +86,15 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
         })
         
         
+        let postId = ref.child("Store").childByAutoId().key! 
+        formValues["id"] = postId
         
         
         
         
         
 //        ref.child("posts").childByAutoId().setValue(formValues)
-        ref.child("Event").childByAutoId().setValue(formValues) { (error, _) in
+        ref.child("Event").child(postId).setValue(formValues) { (error, _) in
             if error == nil{
                 self.dismiss(animated: true, completion: nil)
             }else{

@@ -42,6 +42,7 @@ class EventCellInfo: NSObject {
     var registered: Bool!
     var eventDescription: String?
     var location: Location!
+    var id : String!
     
     init(_ dic: [String: AnyObject]) {
         
@@ -56,6 +57,7 @@ class EventCellInfo: NSObject {
         self.date = dic["date"] as? String ?? " "
         self.cost = dic["cost"] as? String ?? " "
         self.eventDescription = dic["eventDescription"] as? String ?? " "
+        self.id = dic["id"] as? String ?? ""
         
         // Checks if dictionary value is nil first, if not checks if the current user is registered on or not and return that value
         self.registered = dic["registered"] != nil ? dic["registered"]?.contains(currentUser.uid!) : false
