@@ -371,12 +371,10 @@
                                 <action selector="infoButtonTapped:" destination="ygp-SZ-rjq" id="C8U-cY-ZPN"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ErR-Uh-eG7">
-                            <connections>
-                                <segue destination="7ik-aY-kDI" kind="presentation" modalPresentationStyle="fullScreen" id="hEz-xC-PhV"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="7ik-aY-kDI" kind="presentation" identifier="segueToEventPost" modalPresentationStyle="fullScreen" id="ppA-l7-ay0"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mK0-Vo-GHv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

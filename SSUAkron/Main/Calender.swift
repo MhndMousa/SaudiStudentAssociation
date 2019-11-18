@@ -45,11 +45,14 @@ class EventViewController: UITableViewController {
     
     // MARK:-  UIViewController LifeCycle
       
-      func updateStyle()  {
-                  self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
-      }
+    func updateStyle()  {
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
+        if currentUser.job == "admin" {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(segueToEventPost))
+        }
+    }
      
-      override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(UINib(nibName: "CardHighlightCell", bundle: nil), forCellReuseIdentifier: "cell")
         tableView.refreshControl = refresher
@@ -58,10 +61,13 @@ class EventViewController: UITableViewController {
         requestCalenderData()
         updateNavBar()
         updateStyle()
-      }
+    }
     
+ 
     
-    
+    @objc func segueToEventPost(){
+        self.performSegue(withIdentifier: "segueToEventPost", sender: self)
+    }
     
     
     // MARK: - Networking
