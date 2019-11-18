@@ -8,7 +8,8 @@
 
 import UIKit
 import MapKit
-import Firebase
+import FirebaseDatabase
+
 
 
 class EventInformation: UIViewController{
@@ -42,10 +43,12 @@ class EventInformation: UIViewController{
                 self.dateLabel.text = eventInfo.date
                 self.descriptionView.text = eventInfo.eventDescription
                 self.costLabel.text = eventInfo.cost
-                self.timeLabel.text = eventInfo.time?.stringValue 
+                self.timeLabel.text = eventInfo.time?.stringValue
+//                self.id = eventInfo.id
                 
-                self.regestraionStatusLabel.text = eventInfo.registered ? "مسجل" : "غير مسجل"
-                
+//                self.regestraionStatusLabel.text = eventInfo.registered ? "مسجل" : "غير مسجل"
+//                self.regestraionStatusLabel.textColor = eventInfo.registered ? .systemRed : .systemGreen
+                self.toggleRegistraionStatus()
                 
 //                let center = CLLocationCoordinate2DMake(39.659996, -86.197870)
 //                let mappin = MapPin(coordinate: center, title: "Home", subtitle: "My homie")
@@ -152,8 +155,33 @@ class EventInformation: UIViewController{
     
     // MARK: - Handlers
 
+    func toggleRegistraionStatus(){
+
+        self.regestraionStatusLabel.text = self.eventInfo!.registered ? "مسجل" : "غير مسجل"
+        self.regestraionStatusLabel.textColor = self.eventInfo!.registered ?  .systemGreen : .systemRed
+
+    }
+    
      @IBAction func signUpClicked(_ sender: UIButton) {
          sender.tap()
+        
+        self.eventInfo!.registered = !self.eventInfo!.registered
+        
+        let animation = CATransition()
+        animation.duration = 0.3
+        animation.timingFunction = CAMediaTimingFunction(controlPoints: 0.4, 0.4, 0.4, 0.4)
+        self.regestraionStatusLabel.layer.add(animation, forKey: nil)
+//        self.regestraionStatusLabel.text = "New text"
+        
+        toggleRegistraionStatus()
+//        self.regestraionStatusLabel.text = self.eventInfo!.registered ? "مسجل" : "غير مسجل"
+//        UIView.animate(withDuration: 1, delay: 0.5, options: .curveEaseOut, animations: {
+//            self.regestraionStatusLabel.text = self.eventInfo!.registered ? "مسجل" : "غير مسجل"
+//
+//        }, completion: nil)
+//        self.regestraionStatusLabel.layoutIfNeeded()
+        ref.child("Event").child(self.eventInfo!.id).child("Registered").setValue([currentUser.uid: self.eventInfo!.registered])
+        
      }
 
     
