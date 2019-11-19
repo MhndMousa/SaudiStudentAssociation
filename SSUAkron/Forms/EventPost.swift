@@ -51,21 +51,20 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
         // Check for admin premission then post to firebase
         var formValues = form.values()
         
-        var locationInfo : [String : Any] = [
-            "coordinates" : ["long" : self.place.coordinate.longitude, "lat" : self.place.coordinate.latitude],
-            "name" : self.place.name,
-            "subtitle" : self.form.rowBy(tag: "location_description")?.baseValue as? String ,
-            "location_id" : self.place.placeID,
-        ]
+//        var locationInfo : [String : Any] = [
+//            "coordinates" : ["long" : self.place.coordinate.longitude, "lat" : self.place.coordinate.latitude],
+//            "location_description" : self.form.rowBy(tag: "location_description")?.baseValue as? String ,
+//            "location_id" : self.place.placeID,
+//        ]
         
-        print(locationInfo)
-        
-        if let icon = EventCatagoryToIconName(){
-            formValues["icon"]  = icon
-        }
-        
-        formValues.merge(locationInfo) { (current, _) -> Any? in current}
-        print(formValues)
+//        print(locationInfo)
+//
+//        if let icon = EventCatagoryToIconName(){
+//            formValues["icon"]  = icon
+//        }
+//
+//        formValues.merge(locationInfo) { (current, _) -> Any? in current}
+//        print(formValues)
         
         
         
@@ -74,12 +73,18 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
         let calender = Calendar.current
         
         // Deconstruct the date from the row
-        let a = form.rowBy(tag: "date")?.baseValue as! Date
-        formValues["date"] = "\(calender.component(.month, from: a))/\(calender.component(.day, from: a))/\(calender.component(.year, from: a))"
-        
+        let dateFromRow = form.rowBy(tag: "date")?.baseValue as! Date
+        print(dateFromRow)
+        print(Date().timeIntervalSince1970)
+//        print(a.timeIntervalSince1970.val)
+//        print(Date(timeIntervalSince1970: Date().timeIntervalSince1970))
+//        formValues["dates"] = NSNumber(value: a.timeIntervalSince1970.)
+        print("\(calender.component(.day, from: dateFromRow)) \(calender.component(.calendar, from: dateFromRow)) \(calender.component(.year, from: dateFromRow))")
+        print(Date(timeIntervalSince1970: TimeInterval(calender.component(.calendar, from: dateFromRow))))
+
         // Deconstruct the time from the row
-        let b = form.rowBy(tag: "date")?.baseValue as! Date
-        formValues["time"] = "\(calender.component(.hour, from: b)):\(calender.component(.minute, from: b))"
+        let timeFromRow = form.rowBy(tag: "time")?.baseValue as! Date
+        formValues["time"] = "\(calender.component(.hour, from: timeFromRow)) : \(calender.component(.minute, from: timeFromRow))"
 
         formValues.forEach({
             print("K:", $0, "V:", $1)
@@ -94,8 +99,14 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
         
         
 //        ref.child("posts").childByAutoId().setValue(formValues)
-        ref.child("Event").child(postId).setValue(formValues) { (error, _) in
+        ref.child("Event").child(postId).setValue(formValues) { (error, ref) in
             if error == nil{
+//                let jj = NSNumber(floatLiteral: a.timeIntervalSince1970)
+                let date = NSNumber(value: dateFromRow.timeIntervalSince1970)
+                let time =  NSNumber(value: timeFromRow.timeIntervalSince1970)
+                ref.updateChildValues(["dates": date])
+                ref.updateChildValues(["times": time])
+                
                 self.dismiss(animated: true, completion: nil)
             }else{
                 self.showAlert(title: "خطأ", message: "\(error?.localizedDescription)")
@@ -121,7 +132,7 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
         autocompleteController.delegate = self
         
         // Specify the place data types to return.
-        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) | UInt(GMSPlaceField.placeID.rawValue) | UInt(GMSPlaceField.addressComponents.rawValue))!
+        let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) | UInt(GMSPlaceField.coordinate.rawValue) | UInt(GMSPlaceField.placeID.rawValue) | UInt(GMSPlaceField.addressComponents.rawValue))!
         autocompleteController.placeFields = fields
         
         // Specify a filter.

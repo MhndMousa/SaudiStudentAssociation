@@ -11,12 +11,10 @@ import MapKit
 import FirebaseDatabase
 
 
-
 class EventInformation: UIViewController{
 
     // MARK: - Properties
     
-
     @IBOutlet var regestraionStatusLabel: UILabel!
     @IBOutlet var costLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
@@ -40,10 +38,14 @@ class EventInformation: UIViewController{
                 self.regestraionStatusLabel.alpha = 0
              }, completion: { (_) in
                 
-                self.dateLabel.text = eventInfo.date
+                let date = eventInfo.dates
+                self.dateLabel.text = "\(date.day) \(date.month) \(date.year)"
+                self.timeLabel.text = "\(date.hour):\(date.minutes) \(date.timeOfDay)"
+                
                 self.descriptionView.text = eventInfo.eventDescription
-                self.costLabel.text = eventInfo.cost
-                self.timeLabel.text = eventInfo.time?.stringValue
+//                self.descriptionView.text = eventInfo.eventDescription!.appending("\n\n\n سوف تقام الفعالية في:  \n \(eventInfo.location.subtitle)")
+                self.costLabel.text = eventInfo.cost == 0 ? "مجاني" : eventInfo.cost?.stringValue.appending(" دولار")
+                
 //                self.id = eventInfo.id
                 
 //                self.regestraionStatusLabel.text = eventInfo.registered ? "مسجل" : "غير مسجل"
@@ -113,7 +115,8 @@ class EventInformation: UIViewController{
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        signUpButton.layer.cornerRadius = signUpButton.frame.height / 2
+//        signUpButton.layer.cornerRadius = signUpButton.frame.height / 2
+        signUpButton.layer.cornerRadius = 5
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -165,22 +168,30 @@ class EventInformation: UIViewController{
      @IBAction func signUpClicked(_ sender: UIButton) {
          sender.tap()
         
-        self.eventInfo!.registered = !self.eventInfo!.registered
-        
-        let animation = CATransition()
-        animation.duration = 0.3
-        animation.timingFunction = CAMediaTimingFunction(controlPoints: 0.4, 0.4, 0.4, 0.4)
-        self.regestraionStatusLabel.layer.add(animation, forKey: nil)
-//        self.regestraionStatusLabel.text = "New text"
-        
-        toggleRegistraionStatus()
+  
 //        self.regestraionStatusLabel.text = self.eventInfo!.registered ? "مسجل" : "غير مسجل"
 //        UIView.animate(withDuration: 1, delay: 0.5, options: .curveEaseOut, animations: {
 //            self.regestraionStatusLabel.text = self.eventInfo!.registered ? "مسجل" : "غير مسجل"
 //
 //        }, completion: nil)
 //        self.regestraionStatusLabel.layoutIfNeeded()
-        ref.child("Event").child(self.eventInfo!.id).child("Registered").setValue([currentUser.uid: self.eventInfo!.registered])
+
+        sender.showSpinner()
+        ref.child("Event").child(self.eventInfo!.id).child("Registered").updateChildValues(([currentUser.uid: self.eventInfo!.registered])) { (error, ref) in
+            
+            if error != nil{
+                self.showAlert()
+                return
+            }
+            
+            self.eventInfo!.registered = !self.eventInfo!.registered
+            let animation = CATransition()
+            animation.duration = 0.2
+            animation.timingFunction = CAMediaTimingFunction(controlPoints: 0.4, 0.4, 0.4, 0.4)
+            sender.removeSpinner()
+            self.regestraionStatusLabel.layer.add(animation, forKey: nil)
+            self.toggleRegistraionStatus()
+        }
         
      }
 
@@ -190,3 +201,44 @@ class EventInformation: UIViewController{
 
 
 
+extension Date {
+    var year:String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY"
+//        dateFormatter.dateStyle = .
+        return dateFormatter.string(from: self)
+    }
+    var day :String{
+       let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d"
+        return dateFormatter.string(from: self)
+    }
+    var month: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM"
+        return dateFormatter.string(from: self)
+    }
+    var hour: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h"
+        return dateFormatter.string(from: self)
+    }
+    var minutes: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "m"
+        return dateFormatter.string(from: self)
+    }
+    
+    var timeOfDay: String {
+       let dateFormatter = DateFormatter()
+       dateFormatter.dateFormat = "a"
+       return dateFormatter.string(from: self)
+   }
+       
+    var formattedDate: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd mmmm yyyy"
+        return dateFormatter.string(from: self)
+    }
+    
+}

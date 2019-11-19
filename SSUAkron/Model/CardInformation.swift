@@ -12,12 +12,16 @@ import Firebase
 
 class Location: NSObject {
     
-    var center : CLLocationCoordinate2D!
+    var center : CLLocationCoordinate2D! = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+    var title: String! = "title"
+    var subtitle: String! = "subtitle"
     var pin :MapPin!
     
     init(center: CLLocationCoordinate2D, title: String, subtitle: String) {
         super.init()
         self.center = center
+        self.title = title
+        self.subtitle = subtitle
         self.pin = MapPin(coordinate: center, title: title, subtitle: subtitle)
     }
     init(_ center: CLLocationCoordinate2D) {
@@ -36,9 +40,11 @@ class EventCellInfo: NSObject {
     var title: String!
     var catagory: String?
     var icon : UIImage?
-    var time: NSNumber?
+    var time: String?
     var date: String?
-    var cost: String?
+    var dates: Date
+    var times: Date
+    var cost: NSNumber?
     var registered: Bool!
     var eventDescription: String?
     var location: Location!
@@ -53,22 +59,31 @@ class EventCellInfo: NSObject {
         self.icon = updateIcon(dic["icon"] as? String ?? "")
         self.title = dic["title"] as? String ?? " "
         self.catagory = dic["catagory"] as? String ?? " "
-        self.time = dic["time"] as? NSNumber ?? 0
+        self.time = dic["time"] as? String ?? " "
         self.date = dic["date"] as? String ?? " "
-        self.cost = dic["cost"] as? String ?? " "
+        
+        let d = dic["dates"] as? Double ?? 0.0
+        self.dates = Date(timeIntervalSince1970: d)
+        let t = dic["time"] as? Double ?? 0.0
+        self.times = Date(timeIntervalSince1970: t)
+        
+        self.cost = dic["cost"] as? NSNumber ?? 0
         self.eventDescription = dic["eventDescription"] as? String ?? " "
         self.id = dic["id"] as? String ?? ""
         
         // Checks if dictionary value is nil first, if not checks if the current user is registered on or not and return that value
         self.registered = dic["registered"] != nil ? dic["registered"]?.contains(currentUser.uid!) : false
         
+        let location_name = dic["location_name"] as? String ?? ""
+        let location_description = dic["location_description"] as? String ?? ""
+        
         
         // Exctract coordinates (long, lat)
-        guard let location = dic["location"] as? [String: Double] else {
+        guard let location = dic["coordinates"] as? [String: Double] else {
             self.location = Location(CLLocationCoordinate2DMake(0, 0))
             return
         }
-        self.location = Location(CLLocationCoordinate2DMake(location["long"]! , location["lat"]!))
+        self.location = Location(center: CLLocationCoordinate2DMake(location["lat"]!, location["long"]!), title: location_name, subtitle: location_description)
         
         
         

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		592453B92075E05000D0A1A9 /* CustomCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592453B82075E05000D0A1A9 /* CustomCells.swift */; };
 		592453BD2075E7A000D0A1A9 /* EventPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592453BC2075E7A000D0A1A9 /* EventPost.swift */; };
 		5925AEB8207828AA00EF6D8D /* SignupForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5925AEB7207828AA00EF6D8D /* SignupForm.swift */; };
+		5944555C23837C7F001A9F4F /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 5944555B23837C7F001A9F4F /* Reachability */; };
+		5944555E2383853B001A9F4F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5944555D2383853B001A9F4F /* LoadingView.swift */; };
 		595AA08C205C7ECA009D3D09 /* NotoKufiArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 595AA087205C5A86009D3D09 /* NotoKufiArabic-Bold.ttf */; };
 		595AA08D205C7ECA009D3D09 /* NotoKufiArabic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 595AA086205C5A86009D3D09 /* NotoKufiArabic-Regular.ttf */; };
 		595AA091205CA4AE009D3D09 /* Coutner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595AA090205CA4AE009D3D09 /* Coutner.swift */; };
@@ -68,6 +70,7 @@
 		592453B82075E05000D0A1A9 /* CustomCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCells.swift; sourceTree = "<group>"; };
 		592453BC2075E7A000D0A1A9 /* EventPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPost.swift; sourceTree = "<group>"; };
 		5925AEB7207828AA00EF6D8D /* SignupForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupForm.swift; sourceTree = "<group>"; };
+		5944555D2383853B001A9F4F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		5948BF2A22B5CD500001F725 /* SSUAkron.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SSUAkron.entitlements; sourceTree = "<group>"; };
 		595AA086205C5A86009D3D09 /* NotoKufiArabic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoKufiArabic-Regular.ttf"; sourceTree = "<group>"; };
 		595AA087205C5A86009D3D09 /* NotoKufiArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoKufiArabic-Bold.ttf"; sourceTree = "<group>"; };
@@ -125,6 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				51D8E251D50306494D205B06 /* Pods_SSUAkron.framework in Frameworks */,
+				5944555C23837C7F001A9F4F /* Reachability in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,6 +225,7 @@
 				59E24C31206372A800B04928 /* GoogleService-Info.plist */,
 				59795084205B1B0000807FD1 /* SSUAkron.xcdatamodeld */,
 				59CB80F6232066560085B696 /* Assets.xcassets */,
+				5944555D2383853B001A9F4F /* LoadingView.swift */,
 			);
 			path = SSUAkron;
 			sourceTree = "<group>";
@@ -317,6 +322,9 @@
 			dependencies = (
 			);
 			name = SSUAkron;
+			packageProductDependencies = (
+				5944555B23837C7F001A9F4F /* Reachability */,
+			);
 			productName = SSUAkron;
 			productReference = 5979507A205B1B0000807FD1 /* SSUAkron.app */;
 			productType = "com.apple.product-type.application";
@@ -351,6 +359,9 @@
 				Base,
 			);
 			mainGroup = 59795071205B1B0000807FD1;
+			packageReferences = (
+				5944555A23837C7F001A9F4F /* XCRemoteSwiftPackageReference "Reachability" */,
+			);
 			productRefGroup = 5979507B205B1B0000807FD1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -504,6 +515,7 @@
 				597950A3205B1B8300807FD1 /* CardGroup.swift in Sources */,
 				597950A4205B1B8300807FD1 /* CardPlayer.swift in Sources */,
 				59B261FE2068C92A00F1E9E7 /* StorePost.swift in Sources */,
+				5944555E2383853B001A9F4F /* LoadingView.swift in Sources */,
 				592453BD2075E7A000D0A1A9 /* EventPost.swift in Sources */,
 				590B23782083C75E00270381 /* NewMessage.swift in Sources */,
 				590B23742082A69000270381 /* Chat.swift in Sources */,
@@ -655,7 +667,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -671,7 +684,10 @@
 				DEVELOPMENT_TEAM = WXT8YUFTMG;
 				INFOPLIST_FILE = SSUAkron/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mhnd.SSUAkron;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -690,7 +706,10 @@
 				DEVELOPMENT_TEAM = WXT8YUFTMG;
 				INFOPLIST_FILE = SSUAkron/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mhnd.SSUAkron;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -720,6 +739,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5944555A23837C7F001A9F4F /* XCRemoteSwiftPackageReference "Reachability" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ashleymills/Reachability.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5944555B23837C7F001A9F4F /* Reachability */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5944555A23837C7F001A9F4F /* XCRemoteSwiftPackageReference "Reachability" */;
+			productName = Reachability;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		59795084205B1B0000807FD1 /* SSUAkron.xcdatamodeld */ = {
