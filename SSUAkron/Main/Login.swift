@@ -12,6 +12,10 @@ import Firebase
 import GoogleSignIn
 import SendBirdSDK
 
+ enum StorybaordID :String{
+    case main = "main"
+    case login = "login"
+ }
 
 var justLoggedOut = false
 class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {
@@ -202,7 +206,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     }
     
     fileprivate func performSegueToMainViewController(){
-        let secondVC = self.storyboard!.instantiateViewController(withIdentifier: "main")
+        let secondVC = storyboard!.instantiateViewController(withIdentifier: StorybaordID.main.rawValue)
         secondVC.modalPresentationStyle = .fullScreen
         self.present(secondVC, animated: true, completion: nil)
     }

@@ -48,12 +48,10 @@
                                 <action selector="infoButtonTapped:" destination="Zch-5V-9uF" id="nhj-Yd-5xX"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="outline_account_circle_black_18dp" id="pT6-1u-vvo">
-                            <connections>
-                                <segue destination="0cb-7j-s6x" kind="presentation" modalPresentationStyle="fullScreen" id="khG-9D-vhg"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="0cb-7j-s6x" kind="presentation" identifier="SegueToPersonalProfile" id="Sy7-HU-WS5"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zye-Zw-TuA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -64,7 +62,7 @@
             <objects>
                 <viewController id="rOX-Ax-fXf" customClass="ProfileViewContoller" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0h7-ld-x9F">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3De-2Q-dS9"/>
@@ -366,7 +364,7 @@
                     <navigationItem key="navigationItem" title="الفعاليات" id="Fp0-N1-E7u">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="info_outlined" id="O8l-Ht-y86">
                             <connections>
-                                <action selector="infoButtonTapped:" destination="ygp-SZ-rjq" id="C8U-cY-ZPN"/>
+                                <action selector="infoButtonTapped:" destination="ygp-SZ-rjq" id="4af-OL-80P"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -515,12 +513,10 @@
         <scene sceneID="EKp-6G-rzi">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QXJ-DL-Dao" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ic_date_range" id="6yc-Jd-Bm3">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="ic_date_range" id="6yc-Jd-Bm3"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="faW-7j-byS">
-                        <rect key="frame" x="0.0" y="44" width="375" height="115.33333333333334"/>
+                        <rect key="frame" x="0.0" y="44.000000000000007" width="375" height="108.66666666666669"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.086274509803921567" green="0.48627450980392156" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -550,7 +546,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jPJ-GZ-NW3">
-                        <rect key="frame" x="0.0" y="44" width="375" height="115.33333333333334"/>
+                        <rect key="frame" x="0.0" y="44.000000000000007" width="375" height="108.66666666666669"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.086274509803921567" green="0.48627450980392156" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -575,12 +571,11 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="aSL-M9-t1x" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="ic_attach_money" id="qYp-CA-5mc">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="0RQ-Ma-PqZ">
-                        <rect key="frame" x="0.0" y="44.000000000000007" width="375" height="108.66666666666669"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="117"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.086274509803921567" green="0.48627450980392156" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -634,12 +629,10 @@
         <scene sceneID="MVL-Ie-Uf4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XpQ-fp-l17" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ic_contact_mail" id="ag9-md-rDq">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="" image="ic_contact_mail" id="ag9-md-rDq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="4Qc-4V-gA8">
-                        <rect key="frame" x="0.0" y="44" width="375" height="115.33333333333334"/>
+                        <rect key="frame" x="0.0" y="44.000000000000007" width="375" height="108.66666666666669"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.070183776319026947" green="0.47544276714324951" blue="0.67418622970581055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -765,7 +758,7 @@
                 <navigationController storyboardIdentifier="profile" automaticallyAdjustsScrollViewInsets="NO" id="0cb-7j-s6x" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="21i-wO-AYw">
-                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.070183776319026947" green="0.47544276714324951" blue="0.67418622970581055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -797,7 +790,6 @@
         <image name="ic_store_mall_directory" width="24" height="24"/>
         <image name="info_black" width="18" height="18"/>
         <image name="info_outlined" width="18" height="18"/>
-        <image name="outline_account_circle_black_18dp" width="18" height="18"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

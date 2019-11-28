@@ -26,7 +26,7 @@ class SignupForm: FormViewController {
                 let userDefault = UserDefaults.standard
                 userDefault.setValue(email, forKey: "email")
                 userDefault.setValue(password, forKey: "password")
-                let secondVC = self.storyboard!.instantiateViewController(withIdentifier: "main")
+                let secondVC = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.main.rawValue)
                 secondVC.modalPresentationStyle = .fullScreen
                 self.present(secondVC, animated: true, completion: nil)
             }
@@ -73,14 +73,14 @@ class SignupForm: FormViewController {
                     cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
                 })
             
-            <<< AlertRow<String>() { row in
-                row.title = "الجنس"
-                row.options = ["ذكر", "انثى"]
-                row.tag = "gender"
-                }.cellSetup({ (cell, row) in
-                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-                })
+//            <<< AlertRow<String>() { row in
+//                row.title = "الجنس"
+//                row.options = ["ذكر", "انثى"]
+//                row.tag = "gender"
+//                }.cellSetup({ (cell, row) in
+//                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+//                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+//                })
             
             +++ Section()
             <<< EmailRow(){row in
