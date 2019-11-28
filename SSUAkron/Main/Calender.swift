@@ -11,12 +11,21 @@ import Firebase
 
 var currentUser = SaudiUser()
 
-class EventViewController: UITableViewController {
+enum SegueTo: String {
+    case EventPost = "segueToEventPost"
+    case PersonalProfile = "SegueToPersonalProfile"
+}
 
+class EventViewController: UITableViewController {
+    
+    @IBAction func infoButtonTapped(_ sender: Any) {
+        showAlert(title: "ما غرض هذه الصفحة؟", message: "هذه الصفحة موجودة لعرض الفعاليات التي يعلن عنها النادي السعودي")
+    }
+    
     // MARK:-  Properties
 
     var events : [EventCellInfo]  = []
-    
+    private let cellID = "cell"
     lazy var colors :[String:UIColor] = {
         var dic = [String:UIColor]()
         dic["pink"] =  UIColor.init(red: 1, green: 0.7, blue: 0.7, alpha: 1)
@@ -46,15 +55,15 @@ class EventViewController: UITableViewController {
     // MARK:-  UIViewController LifeCycle
       
     func updateStyle()  {
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [ NSAttributedStringKey.font: UIFont(name: "NotoKufiArabic-Bold", size: 34)!,  NSAttributedStringKey.foregroundColor : UIColor.white]
-        if currentUser.job == "admin" {
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [ .font: UIFont.notoKufiArabicLarge,  .foregroundColor : UIColor.white]
+        if currentUser.job != "admin" {
             self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(segueToEventPost))
         }
     }
      
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(UINib(nibName: "CardHighlightCell", bundle: nil), forCellReuseIdentifier: "cell")
+        self.tableView.register(UINib(nibName: "CardHighlightCell", bundle: nil), forCellReuseIdentifier: cellID)
         tableView.refreshControl = refresher
         addReloadingIndicator(for: 1)
         refreshCurrentUserInfo()
@@ -66,7 +75,7 @@ class EventViewController: UITableViewController {
  
     
     @objc func segueToEventPost(){
-        self.performSegue(withIdentifier: "segueToEventPost", sender: self)
+        self.performSegue(withIdentifier: SegueTo.EventPost.rawValue, sender: self)
     }
     
     
@@ -112,7 +121,7 @@ class EventViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellID)
         cell.populate(for: self.events[indexPath.row])
         cell.accessoryType = .disclosureIndicator
         
@@ -121,17 +130,9 @@ class EventViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let event = EventInformation()
-//        let vc = UINavigationController(rootViewController: event)
-        
         event.eventInfo = self.events[indexPath.row]
-//
         self.navigationController?.pushViewController(event, animated: true)
-        
-//        self.navigationController?.present(vc, animated: true, completion: {
-//            event.eventInfo = self.events[indexPath.row]
-//        })
         tableView.deselectRow(at: indexPath, animated: false)
-        
     }
 }
 
