@@ -39,6 +39,7 @@ class ContactCardCell: UICollectionViewCell {
         buttonView.isUserInteractionEnabled = whatsAppNumber == nil
         buttonView.layer.cornerRadius = buttonView.bounds.width / 2
         contactButton.alpha = 0.8
+        layer.cornerRadius = 10
     }
     
     

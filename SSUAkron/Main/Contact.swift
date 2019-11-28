@@ -82,27 +82,36 @@ class ContactViewController: UICollectionViewController{
     }
     
     var roaster = [SaudiUser]()
-
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.collectionView?.register(UINib(nibName: "ContactCardCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
     
+    @objc func selectUniversity(){
+        showAlert(title: "هذه الخاصية محدودة حالياًَ", message: "نوادي سعودية اخرى ستضاف مع الوقت .. خبروا جماعتكم")
+    }
+    @objc func segueToPersonalProfile()  {
+        performSegue(withIdentifier: SegueTo.PersonalProfile.rawValue, sender: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView?.register(UINib(nibName: "ContactCardCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+        collectionView?.refreshControl = refresher
+//        collectionView?.backgroundColor = .blueSSA
         requestMembersData()
         updateNavBar()
-        collectionView?.refreshControl = refresher
+        
+        let rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "outline_account_circle_black_18dp"), style: .plain, target: self, action: #selector(segueToPersonalProfile))
+//        navigationItem.rightBarButtonItem = rightBarButtonItem
+        
+        
         let button = UIButton(type: .system)
-        button.setTitle("الجامعة", for: .normal)
+        button.setTitle("IUPUI", for: .normal)
         button.titleLabel?.font = .notoKufiBoldArabicMedium
         button.setImage(#imageLiteral(resourceName: "icons8-expand-arrow-96-2"), for: .normal)
         button.imageView?.anchor(trailing: button.titleLabel?.leadingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 2), size: .init(width: 17, height: 17))
+        button.addTarget(self, action: #selector(selectUniversity), for: .touchUpInside)
         
         let stackview = UIStackView(arrangedSubviews:  [button])
         stackview.axis = .horizontal
@@ -115,6 +124,7 @@ class ContactViewController: UICollectionViewController{
       
 
     }
+    lazy var cellWidth :CGFloat = (self.view.bounds.width / 2) - 20
 }
 
 
@@ -131,27 +141,24 @@ extension ContactViewController: UICollectionViewDelegateFlowLayout{
         cell.nameLabel.text = user.name
         cell.jobLabel.text = user.job ?? " "
         cell.imageView.sd_setImage(with: URL(string: user.imageLink), placeholderImage: #imageLiteral(resourceName: "Unknown_Person"))
-        cell.whatsAppNumber =   user.phoneNumber
+        cell.whatsAppNumber = user.phoneNumber
         
         return cell
     }
+
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = (self.view.bounds.width / 2) - 6
         
         return CGSize(width: cellWidth, height: cellWidth * 1.75)
     }
 
-    
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 4
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return .init(top: 10, left: 12.5, bottom: 10, right: 12.5)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout
         collectionViewLayout: UICollectionViewLayout,
                         minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 4
+        return 12.5
     }
 }
