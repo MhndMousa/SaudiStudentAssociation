@@ -18,6 +18,7 @@ class StoreTableViewController: UITableViewController {
     }
     // MARK:  Variables
 
+    private let cellId = "cell"
     var fetchedInformation = [StoreInformationModel]()
     var imageArray = [UIImage]()
     @IBOutlet weak var costLabel: UILabel!
@@ -71,7 +72,7 @@ class StoreTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FullPhotoTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! FullPhotoTableViewCell
         let index = self.fetchedInformation[indexPath.row]
         cell.headlineLabel.text = index.title
         cell.catagory.text = index.catagory
