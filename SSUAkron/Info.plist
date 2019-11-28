@@ -36,14 +36,6 @@
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSCameraUsageDescription</key>
-	<string>aaa</string>
-	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>AAA</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>AAA</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>AAA</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>NotoKufiArabic-Bold.ttf</string>
