@@ -23,6 +23,32 @@ class EventInformation: UIViewController{
     @IBOutlet var mapView: MKMapView!
     @IBOutlet var signUpButton: UIButton!
     var coordinations: CLLocationCoordinate2D?
+    @IBAction func appleMapsTapped(_ sender: Any) {
+       
+        guard let eventInfo = eventInfo else {
+            return
+        }
+        
+        UIApplication.shared.openURL(URL(string: "http://maps.apple.com/?q=\(eventInfo.location.center.latitude),\(eventInfo.location.center.longitude)")!)
+       
+        
+        
+    }
+    @IBAction func googleMapsTapped(_ sender: Any) {
+        
+        guard let eventInfo = eventInfo else {
+            return
+        }
+//        print("\(eventInfo.location.center.latitude),\(eventInfo.location.center.longitude)")
+        if (UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!)) {
+          UIApplication.shared.openURL(URL(string:
+            "comgooglemaps://?center=\(eventInfo.location.center.latitude),\(eventInfo.location.center.longitude)&zoom=14&views=traffic")!)
+        } else {
+            UIApplication.shared.openURL(NSURL(string:
+            "https://maps.google.com/?q=@\(eventInfo.location.center.latitude),\(eventInfo.location.center.longitude)")! as URL)
+          print("Can't use comgooglemaps://");
+        }
+    }
     weak var eventInfo : EventCellInfo? {
         didSet{
             
@@ -113,15 +139,11 @@ class EventInformation: UIViewController{
  
     // MARK: - View Controller Lifecycle
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-//        signUpButton.layer.cornerRadius = signUpButton.frame.height / 2
-        signUpButton.layer.cornerRadius = 5
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         self.mapView.setCenter(eventInfo!.location.center, animated: true)
+        signUpButton.layer.cornerRadius = 5
+        mapView.clipsToBounds = true
     }
     
     
