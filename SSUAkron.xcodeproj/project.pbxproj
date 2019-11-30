@@ -28,7 +28,6 @@
 		5979507E205B1B0000807FD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979507D205B1B0000807FD1 /* AppDelegate.swift */; };
 		59795080205B1B0000807FD1 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979507F205B1B0000807FD1 /* Contact.swift */; };
 		59795083205B1B0000807FD1 /* kk.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59795081205B1B0000807FD1 /* kk.storyboard */; };
-		59795086205B1B0000807FD1 /* SSUAkron.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 59795084205B1B0000807FD1 /* SSUAkron.xcdatamodeld */; };
 		5979508B205B1B0000807FD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59795089205B1B0000807FD1 /* LaunchScreen.storyboard */; };
 		5979509D205B1B8300807FD1 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59795094205B1B7F00807FD1 /* Animator.swift */; };
 		5979509E205B1B8300807FD1 /* CardGroupSliding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59795095205B1B8000807FD1 /* CardGroupSliding.swift */; };
@@ -85,7 +84,6 @@
 		5979507D205B1B0000807FD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5979507F205B1B0000807FD1 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		59795082205B1B0000807FD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/kk.storyboard; sourceTree = "<group>"; };
-		59795085205B1B0000807FD1 /* SSUAkron.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SSUAkron.xcdatamodel; sourceTree = "<group>"; };
 		5979508A205B1B0000807FD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5979508C205B1B0000807FD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59795094205B1B7F00807FD1 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
@@ -223,7 +221,6 @@
 				59795089205B1B0000807FD1 /* LaunchScreen.storyboard */,
 				5979508C205B1B0000807FD1 /* Info.plist */,
 				59E24C31206372A800B04928 /* GoogleService-Info.plist */,
-				59795084205B1B0000807FD1 /* SSUAkron.xcdatamodeld */,
 				59CB80F6232066560085B696 /* Assets.xcassets */,
 				5944555D2383853B001A9F4F /* LoadingView.swift */,
 			);
@@ -524,7 +521,6 @@
 				596259852063CAED00DD7CAA /* Store.swift in Sources */,
 				5925AEB8207828AA00EF6D8D /* SignupForm.swift in Sources */,
 				597950A5205B1B8300807FD1 /* CardArticle.swift in Sources */,
-				59795086205B1B0000807FD1 /* SSUAkron.xcdatamodeld in Sources */,
 				5962598B2065F98F00DD7CAA /* CardHighlightCell.swift in Sources */,
 				59CB80F0231F9C430085B696 /* FullPhotoTableViewCell.swift in Sources */,
 				590B23762082BA7400270381 /* Message.swift in Sources */,
@@ -680,7 +676,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SSUAkron/SSUAkron.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = WXT8YUFTMG;
 				INFOPLIST_FILE = SSUAkron/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
@@ -702,7 +698,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SSUAkron/SSUAkron.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 7;
 				DEVELOPMENT_TEAM = WXT8YUFTMG;
 				INFOPLIST_FILE = SSUAkron/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
@@ -758,19 +754,6 @@
 			productName = Reachability;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		59795084205B1B0000807FD1 /* SSUAkron.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				59795085205B1B0000807FD1 /* SSUAkron.xcdatamodel */,
-			);
-			currentVersion = 59795085205B1B0000807FD1 /* SSUAkron.xcdatamodel */;
-			path = SSUAkron.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 59795072205B1B0000807FD1 /* Project object */;
 }

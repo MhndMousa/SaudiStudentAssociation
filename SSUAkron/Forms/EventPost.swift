@@ -114,13 +114,13 @@ class EventPostFormViewController: FormViewController, CLLocationManagerDelegate
         }
     }
     
-    let locationManager = CLLocationManager()
+//    let locationManager = CLLocationManager()
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.navigationBar.barTintColor = .blueSSA
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
+//        locationManager.delegate = self
+//        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager.requestAlwaysAuthorization()
     }
     
     var randomArray = [ "فعالية رياضية" , "فعالية نسائية" , "فعالية اجتماعية" , "فعاليات اخرى" ]

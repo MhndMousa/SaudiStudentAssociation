@@ -206,9 +206,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     }
     
     fileprivate func performSegueToMainViewController(){
-        let secondVC = storyboard!.instantiateViewController(withIdentifier: StorybaordID.main.rawValue)
-        secondVC.modalPresentationStyle = .fullScreen
-        self.present(secondVC, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let secondVC = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.main.rawValue)
+            secondVC.modalPresentationStyle = .fullScreen
+            self.present(secondVC, animated: true, completion: nil)
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
