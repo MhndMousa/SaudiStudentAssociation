@@ -21,24 +21,16 @@ class ContactCardCell: UICollectionViewCell {
     
     @IBAction func contactButtonClicked(_ sender: UIButton) {
         
-        guard whatsAppNumber != nil else { return }
-        guard let url = URL(string: "https://wa.me/\(whatsAppNumber)") else { return }
+        guard let number = whatsAppNumber else { return }
+        let url = URL(string: "https://wa.me/1\(number)")!
         UIApplication.shared.open(url)
         
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-
-    
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
+    func update() {
         buttonView.backgroundColor = whatsAppNumber == nil ? .gray : .blueSSA
-        buttonView.isUserInteractionEnabled = whatsAppNumber == nil
+        buttonView.isUserInteractionEnabled = whatsAppNumber != nil
         buttonView.layer.cornerRadius = buttonView.bounds.width / 2
-        contactButton.alpha = 0.8
         layer.cornerRadius = 10
     }
     

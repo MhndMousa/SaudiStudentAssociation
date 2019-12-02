@@ -129,7 +129,7 @@ class StoreInformationModel: NSObject {
         cost =  dic["price"] as? String ?? ""
         descriptionString = dic["description"] as? String ?? ""
         catagory = dic["catagory"] as? String ?? ""
-        whatsAppNumber = dic["whatsapp"] as? String ?? nil
+        whatsAppNumber = dic["whatsappnumber"] as? String ?? nil
                 
         guard let imageDict = dic["picture"] as? [String:String] else {return}
         photoPath = imageDict["image1"] as! String

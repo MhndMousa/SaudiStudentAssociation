@@ -36,7 +36,7 @@ class SaudiUser : NSObject{
     init(_ child: [String:Any]) {
         self.name = child["name"] as? String ?? "اسم"
         self.uid = child["uid"] as? String ?? ""
-        self.phoneNumber = child["phone_number"] as? String ?? nil
+        self.phoneNumber = child["whatsappnumber"] as? String ?? nil
         self.job = child["job"] as? String ?? ""
     }
 }

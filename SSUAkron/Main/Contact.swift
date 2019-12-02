@@ -142,7 +142,7 @@ extension ContactViewController: UICollectionViewDelegateFlowLayout{
         cell.jobLabel.text = user.job ?? " "
         cell.imageView.sd_setImage(with: URL(string: user.imageLink), placeholderImage: #imageLiteral(resourceName: "Unknown_Person"))
         cell.whatsAppNumber = user.phoneNumber
-        
+        cell.update()
         return cell
     }
 
