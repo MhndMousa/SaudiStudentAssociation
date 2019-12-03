@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -73,11 +73,6 @@
                                 <action selector="cancelTapped:" destination="rOX-Ax-fXf" id="VX1-8A-TzQ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="ic_check" id="cIJ-x1-h3H">
-                            <connections>
-                                <action selector="submitTapped:" destination="rOX-Ax-fXf" id="YHU-iW-jbg"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gaJ-Wn-RC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -123,41 +118,40 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lb4-eF-hdT">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="475.33333333333331"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="السعودية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycA-4c-FmU">
-                                        <rect key="frame" x="77" y="147" width="142" height="65"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="34"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="السعودية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycA-4c-FmU">
+                                        <rect key="frame" x="59.999999999999986" y="220.66666666666663" width="249.66666666666663" height="114"/>
+                                        <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="60"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="النوادي" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ks-t7-awC">
-                                        <rect key="frame" x="200" y="82" width="107" height="65"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="34"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الاندية" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Ks-t7-awC">
+                                        <rect key="frame" x="146.33333333333337" y="140.66666666666666" width="168.66666666666663" height="114"/>
+                                        <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="60"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.18431372549019609" green="0.50980392156862742" blue="0.6705882352941176" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="270" id="cR6-Gh-2CI"/>
+                                    <constraint firstItem="ycA-4c-FmU" firstAttribute="centerY" secondItem="Lb4-eF-hdT" secondAttribute="centerY" constant="40" id="KF5-Os-ZJB"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Ks-t7-awC" secondAttribute="trailing" constant="60" id="Zkr-rM-qCT"/>
+                                    <constraint firstItem="9Ks-t7-awC" firstAttribute="centerY" secondItem="Lb4-eF-hdT" secondAttribute="centerY" constant="-40" id="mhb-6l-oVu"/>
+                                    <constraint firstItem="ycA-4c-FmU" firstAttribute="leading" secondItem="Lb4-eF-hdT" secondAttribute="leading" constant="60" id="y81-Yf-qkN"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqA-7n-8W4">
-                                <rect key="frame" x="20" y="410" width="335" height="40"/>
+                                <rect key="frame" x="20" y="635.33333333333337" width="335" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUP-3r-jlu" customClass="GIDSignInButton">
-                                <rect key="frame" x="197.66666666666663" y="470" width="157.33333333333337" height="45"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <connections>
-                                    <action selector="googleSignInButtonTapped:" destination="Eh5-fw-BJC" eventType="touchUpInside" id="Qll-td-CAd"/>
-                                </connections>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="البريد الالكتروني " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zYY-oM-ufy">
-                                <rect key="frame" x="20" y="290" width="335" height="40"/>
+                                <rect key="frame" x="20" y="515.33333333333337" width="335" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -167,14 +161,17 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="كلمة المرور" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aQJ-oP-YSN">
-                                <rect key="frame" x="20" y="350" width="335" height="40"/>
+                                <rect key="frame" x="20" y="575.33333333333337" width="335" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="035-16-3WT">
-                                <rect key="frame" x="20" y="472.66666666666669" width="157.66666666666666" height="40.000000000000057"/>
+                                <rect key="frame" x="20" y="698" width="335" height="40"/>
                                 <color key="backgroundColor" red="0.21544662117958069" green="0.60186463594436646" blue="0.5999639630317688" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dEL-XW-7nS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="NotoKufiArabic" family="Noto Kufi Arabic" pointSize="12"/>
                                 <state key="normal" title="عضو جديد"/>
                                 <connections>
@@ -186,26 +183,22 @@
                         <constraints>
                             <constraint firstItem="zYY-oM-ufy" firstAttribute="height" secondItem="aQJ-oP-YSN" secondAttribute="height" id="0Pe-Yl-xpH"/>
                             <constraint firstItem="zYY-oM-ufy" firstAttribute="width" secondItem="aQJ-oP-YSN" secondAttribute="width" id="0aU-CW-ojV"/>
-                            <constraint firstItem="GUP-3r-jlu" firstAttribute="centerY" secondItem="035-16-3WT" secondAttribute="centerY" id="1cq-HZ-ryn"/>
                             <constraint firstItem="RgY-2S-Haw" firstAttribute="trailing" secondItem="Lb4-eF-hdT" secondAttribute="trailing" id="1d8-iI-BuL"/>
                             <constraint firstItem="zqA-7n-8W4" firstAttribute="centerX" secondItem="RgY-2S-Haw" secondAttribute="centerX" id="2ff-Fq-iWS"/>
-                            <constraint firstItem="GUP-3r-jlu" firstAttribute="width" secondItem="035-16-3WT" secondAttribute="width" id="Bwy-Ho-26k"/>
-                            <constraint firstItem="035-16-3WT" firstAttribute="height" secondItem="zqA-7n-8W4" secondAttribute="height" id="EbY-R6-w83"/>
+                            <constraint firstItem="035-16-3WT" firstAttribute="top" secondItem="zqA-7n-8W4" secondAttribute="bottom" constant="22.666666666666742" id="4Ma-mI-HG6"/>
+                            <constraint firstItem="RgY-2S-Haw" firstAttribute="bottom" secondItem="035-16-3WT" secondAttribute="bottom" constant="40" id="6S6-PP-F7v"/>
+                            <constraint firstItem="zYY-oM-ufy" firstAttribute="top" secondItem="Lb4-eF-hdT" secondAttribute="bottom" constant="40" id="8Lw-xS-cSr"/>
                             <constraint firstItem="Lb4-eF-hdT" firstAttribute="top" secondItem="v3q-R0-nRU" secondAttribute="top" id="Po4-NA-OPZ"/>
                             <constraint firstItem="zYY-oM-ufy" firstAttribute="leading" secondItem="v3q-R0-nRU" secondAttribute="leading" constant="20" id="SPw-hT-1As"/>
                             <constraint firstItem="zqA-7n-8W4" firstAttribute="top" secondItem="aQJ-oP-YSN" secondAttribute="bottom" constant="20" id="YHu-rs-dZm"/>
-                            <constraint firstItem="RgY-2S-Haw" firstAttribute="trailing" secondItem="GUP-3r-jlu" secondAttribute="trailing" constant="20" id="ZGv-aa-ayQ"/>
                             <constraint firstItem="Lb4-eF-hdT" firstAttribute="leading" secondItem="RgY-2S-Haw" secondAttribute="leading" id="b6y-Yk-GwQ"/>
-                            <constraint firstItem="GUP-3r-jlu" firstAttribute="leading" secondItem="035-16-3WT" secondAttribute="trailing" constant="20" id="bgl-WY-bMW"/>
-                            <constraint firstItem="GUP-3r-jlu" firstAttribute="top" secondItem="zqA-7n-8W4" secondAttribute="bottom" constant="20" id="cxh-GF-SVL"/>
-                            <constraint firstItem="035-16-3WT" firstAttribute="leading" secondItem="RgY-2S-Haw" secondAttribute="leading" constant="20" id="lfm-Hj-bB3"/>
+                            <constraint firstItem="035-16-3WT" firstAttribute="leading" secondItem="RgY-2S-Haw" secondAttribute="leading" constant="20" id="iUt-kG-yFc"/>
                             <constraint firstItem="zqA-7n-8W4" firstAttribute="height" secondItem="zYY-oM-ufy" secondAttribute="height" id="ojf-VT-IAs"/>
-                            <constraint firstItem="zYY-oM-ufy" firstAttribute="top" secondItem="Lb4-eF-hdT" secondAttribute="bottom" constant="20" id="qLT-CR-8ZE"/>
+                            <constraint firstItem="RgY-2S-Haw" firstAttribute="trailing" secondItem="035-16-3WT" secondAttribute="trailing" constant="20" id="piJ-H4-dYg"/>
                             <constraint firstItem="zqA-7n-8W4" firstAttribute="width" secondItem="zYY-oM-ufy" secondAttribute="width" id="qw3-fv-ZR8"/>
                             <constraint firstItem="aQJ-oP-YSN" firstAttribute="centerX" secondItem="v3q-R0-nRU" secondAttribute="centerX" id="rF8-d7-QdD"/>
                             <constraint firstItem="zYY-oM-ufy" firstAttribute="centerX" secondItem="v3q-R0-nRU" secondAttribute="centerX" id="rh4-7B-E9n"/>
                             <constraint firstItem="aQJ-oP-YSN" firstAttribute="top" secondItem="zYY-oM-ufy" secondAttribute="bottom" constant="20" id="sey-d0-eVJ"/>
-                            <constraint firstItem="GUP-3r-jlu" firstAttribute="height" secondItem="zqA-7n-8W4" secondAttribute="height" constant="5" id="ySa-ci-73l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RgY-2S-Haw"/>
                     </view>
@@ -546,7 +539,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="jPJ-GZ-NW3">
-                        <rect key="frame" x="0.0" y="44.000000000000007" width="375" height="108.66666666666669"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="115.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.086274509803921567" green="0.48627450980392156" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -575,7 +568,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="0RQ-Ma-PqZ">
-                        <rect key="frame" x="0.0" y="44" width="375" height="117"/>
+                        <rect key="frame" x="0.0" y="44.000000000000007" width="375" height="108.66666666666669"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.086274509803921567" green="0.48627450980392156" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -632,7 +625,7 @@
                     <tabBarItem key="tabBarItem" title="" image="ic_contact_mail" id="ag9-md-rDq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="4Qc-4V-gA8">
-                        <rect key="frame" x="0.0" y="44.000000000000007" width="375" height="108.66666666666669"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="115.33333333333334"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.070183776319026947" green="0.47544276714324951" blue="0.67418622970581055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">

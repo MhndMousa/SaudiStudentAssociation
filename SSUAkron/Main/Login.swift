@@ -12,9 +12,9 @@ import Firebase
 import GoogleSignIn
 import SendBirdSDK
 
- enum StorybaordID :String{
-    case main = "main"
-    case login = "login"
+ class StorybaordID {
+    static var main = "main"
+    static var login = "login"
  }
 
 var justLoggedOut = false
@@ -36,7 +36,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         button.setTitle("تسجيل دخول", for: .normal)
         button.titleLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
         button.setTitleColor(.white, for: .normal)
-//        button.cornerRadius = 5
+        button.layer.cornerRadius = 5
         button.spinnerColor = .white
         button.addTarget(self, action: #selector(loginButtonAction), for: .touchUpInside)
         
@@ -207,7 +207,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     
     fileprivate func performSegueToMainViewController(){
         DispatchQueue.main.async {
-            let secondVC = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.main.rawValue)
+            let secondVC = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.main)
             secondVC.modalPresentationStyle = .fullScreen
             self.present(secondVC, animated: true, completion: nil)
         }

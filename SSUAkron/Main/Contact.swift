@@ -91,7 +91,21 @@ class ContactViewController: UICollectionViewController{
         showAlert(title: "هذه الخاصية محدودة حالياًَ", message: "نوادي سعودية اخرى ستضاف مع الوقت .. خبروا جماعتكم")
     }
     @objc func segueToPersonalProfile()  {
-        performSegue(withIdentifier: SegueTo.PersonalProfile.rawValue, sender: self)
+        performSegue(withIdentifier: SegueTo.PersonalProfile, sender: self)
+    }
+    @objc func handleLogOut()  {
+        do{
+            try Auth.auth().signOut()
+            let userDefault = UserDefaults.standard
+            userDefault.set(false, forKey: "loggedIn")
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.login)
+            vc.modalPresentationStyle = .fullScreen
+            self.present(vc, animated: true, completion: nil)
+            justLoggedOut = true
+            
+        }catch let error as NSError{
+            print(error)
+        }
     }
     
     override func viewDidLoad() {
@@ -103,7 +117,8 @@ class ContactViewController: UICollectionViewController{
         updateNavBar()
         
         let rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "outline_account_circle_black_18dp"), style: .plain, target: self, action: #selector(segueToPersonalProfile))
-//        navigationItem.rightBarButtonItem = rightBarButtonItem
+//        let rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "outline_account_circle_black_18dp"), style: .plain, target: self, action: #selector(handleLogOut))
+        navigationItem.rightBarButtonItem = rightBarButtonItem
         
         
         let button = UIButton(type: .system)

@@ -41,9 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         
         let userDefault = UserDefaults.standard
         if userDefault.bool(forKey: "loggedIn"){
-            root = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: StorybaordID.main.rawValue)
+            root = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: StorybaordID.main)
         }else{
-            root = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: StorybaordID.login.rawValue)
+            root = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: StorybaordID.login)
         }
         
         self.window?.rootViewController = root

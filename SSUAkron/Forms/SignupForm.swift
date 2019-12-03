@@ -26,18 +26,21 @@ class SignupForm: FormViewController {
                 let userDefault = UserDefaults.standard
                 userDefault.setValue(email, forKey: "email")
                 userDefault.setValue(password, forKey: "password")
-                let secondVC = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.main.rawValue)
+                let secondVC = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.main)
                 secondVC.modalPresentationStyle = .fullScreen
                 self.present(secondVC, animated: true, completion: nil)
             }
         }
     }
+    
     @IBAction func submitTapped(_ sender: Any) {
         let valuesDictionary = form.values()
+        showSpinner(onView: view)
         print(valuesDictionary)
         for i in valuesDictionary {
             if i.value == nil{
-                print(i)
+                self.showAlert(title: "Error", message: "Please make sure all feilds are filled")
+                removeSpinner()
                 return
             }
         }
@@ -45,8 +48,10 @@ class SignupForm: FormViewController {
         let password = valuesDictionary["password"] as! String
         Auth.auth().createUser(withEmail: email, password: password, completion: { user, error in
             if error != nil{
-                print(error)
+                self.removeSpinner()
+                self.showAlert(title: "Error", message: "\(error!.localizedDescription)")
             } else{
+                self.removeSpinner()
                 print("User is created:\(String(describing: user))")
                 self.login(email: email, password: password)
             }
@@ -59,10 +64,6 @@ class SignupForm: FormViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        for row in form.rows {
-        //            row.
-        //        }
-        
         
         form +++ Section()
             <<< TextRow(){ row in
@@ -72,15 +73,6 @@ class SignupForm: FormViewController {
                     cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
                     cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
                 })
-            
-//            <<< AlertRow<String>() { row in
-//                row.title = "الجنس"
-//                row.options = ["ذكر", "انثى"]
-//                row.tag = "gender"
-//                }.cellSetup({ (cell, row) in
-//                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-//                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-//                })
             
             +++ Section()
             <<< EmailRow(){row in

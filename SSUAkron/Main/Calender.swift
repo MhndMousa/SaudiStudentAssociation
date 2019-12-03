@@ -11,9 +11,9 @@ import Firebase
 
 var currentUser = SaudiUser()
 
-enum SegueTo: String {
-    case EventPost = "segueToEventPost"
-    case PersonalProfile = "SegueToPersonalProfile"
+class SegueTo {
+    static var EventPost = "segueToEventPost"
+    static var PersonalProfile = "SegueToPersonalProfile"
 }
 
 class EventViewController: UITableViewController {
@@ -75,7 +75,7 @@ class EventViewController: UITableViewController {
  
     
     @objc func segueToEventPost(){
-        self.performSegue(withIdentifier: SegueTo.EventPost.rawValue, sender: self)
+        self.performSegue(withIdentifier: SegueTo.EventPost, sender: self)
     }
     
     
