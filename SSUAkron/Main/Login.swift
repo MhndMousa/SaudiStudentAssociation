@@ -12,7 +12,7 @@ import Firebase
 import GoogleSignIn
 import SendBirdSDK
 
- class StorybaordID {
+ struct StorybaordID {
     static var main = "main"
     static var login = "login"
  }
@@ -55,7 +55,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         
         
         // Update login button style
-        let point = self.signUpButton.frame.center
+        let point = self.signUpButton.center
         loginButton.frame =  CGRect(x: self.view.frame.width / 2 - 50 ,
                                 y: point.y + 20,
                                 width: 100, height: 50)
@@ -136,7 +136,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
         backgroundQueue.async(execute: {
             DispatchQueue.main.async(execute: { () -> Void in
                 if Auth.auth().currentUser != nil{
-                    self.loginUserToSendBird()
+//                    self.loginUserToSendBird()
                     self.performSegueToMainViewController()
                 }
                 // Delete the white overlay
@@ -175,7 +175,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
                             // Add user default for the email and password for to loging automatically after
                             let userDefault = UserDefaults.standard
                             userDefault.set(true, forKey: "loggedIn")
-                            self.loginUserToSendBird()
+//                            self.loginUserToSendBird()
 //                            sleep(0.2)
                             self.performSegueToMainViewController()
                         })
@@ -207,7 +207,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     
     fileprivate func performSegueToMainViewController(){
         DispatchQueue.main.async {
-            let secondVC = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.main)
+//            let secondVC = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.main)
+            let secondVC = MainTabBarViewController()
             secondVC.modalPresentationStyle = .fullScreen
             self.present(secondVC, animated: true, completion: nil)
         }

@@ -34,17 +34,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         UINavigationBar.appearance().barStyle = .blackOpaque
         
         
-//        let window = self.ein
         
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let root : UIViewController
         
         let userDefault = UserDefaults.standard
         if userDefault.bool(forKey: "loggedIn"){
-            root = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: StorybaordID.main)
+//            root = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: StorybaordID.main)
+            root = MainTabBarViewController()
         }else{
-            root = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: StorybaordID.login)
+//            root = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: StorybaordID.login)
+            root = LoginViewController()
         }
+        
+        
+        
         
         self.window?.rootViewController = root
         self.window?.makeKeyAndVisible()

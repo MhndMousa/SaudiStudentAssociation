@@ -14,31 +14,19 @@
 		592453B92075E05000D0A1A9 /* CustomCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592453B82075E05000D0A1A9 /* CustomCells.swift */; };
 		592453BD2075E7A000D0A1A9 /* EventPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592453BC2075E7A000D0A1A9 /* EventPost.swift */; };
 		5925AEB8207828AA00EF6D8D /* SignupForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5925AEB7207828AA00EF6D8D /* SignupForm.swift */; };
+		5927679923BFEE1F00C81F51 /* ContactCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5927679723BFEE1F00C81F51 /* ContactCardCell.swift */; };
+		5927679A23BFEE1F00C81F51 /* ContactCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5927679823BFEE1F00C81F51 /* ContactCardCell.xib */; };
 		5944555C23837C7F001A9F4F /* Reachability in Frameworks */ = {isa = PBXBuildFile; productRef = 5944555B23837C7F001A9F4F /* Reachability */; };
 		5944555E2383853B001A9F4F /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5944555D2383853B001A9F4F /* LoadingView.swift */; };
 		595AA08C205C7ECA009D3D09 /* NotoKufiArabic-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 595AA087205C5A86009D3D09 /* NotoKufiArabic-Bold.ttf */; };
 		595AA08D205C7ECA009D3D09 /* NotoKufiArabic-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 595AA086205C5A86009D3D09 /* NotoKufiArabic-Regular.ttf */; };
 		595AA091205CA4AE009D3D09 /* Coutner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595AA090205CA4AE009D3D09 /* Coutner.swift */; };
 		596259852063CAED00DD7CAA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596259842063CAED00DD7CAA /* Store.swift */; };
-		5962598B2065F98F00DD7CAA /* CardHighlightCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596259892065F98F00DD7CAA /* CardHighlightCell.swift */; };
-		5962598C2065F98F00DD7CAA /* CardHighlightCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5962598A2065F98F00DD7CAA /* CardHighlightCell.xib */; };
-		5962599020660A7200DD7CAA /* CardArticleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5962598E20660A7200DD7CAA /* CardArticleCell.swift */; };
-		5962599120660A7200DD7CAA /* CardArticleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5962598F20660A7200DD7CAA /* CardArticleCell.xib */; };
 		596CDA7F206C29D40043A157 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596CDA7E206C29D40043A157 /* Login.swift */; };
 		5979507E205B1B0000807FD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979507D205B1B0000807FD1 /* AppDelegate.swift */; };
 		59795080205B1B0000807FD1 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979507F205B1B0000807FD1 /* Contact.swift */; };
 		59795083205B1B0000807FD1 /* kk.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59795081205B1B0000807FD1 /* kk.storyboard */; };
 		5979508B205B1B0000807FD1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 59795089205B1B0000807FD1 /* LaunchScreen.storyboard */; };
-		5979509D205B1B8300807FD1 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59795094205B1B7F00807FD1 /* Animator.swift */; };
-		5979509E205B1B8300807FD1 /* CardGroupSliding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59795095205B1B8000807FD1 /* CardGroupSliding.swift */; };
-		5979509F205B1B8300807FD1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59795096205B1B8000807FD1 /* DetailViewController.swift */; };
-		597950A0205B1B8300807FD1 /* LayoutHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59795097205B1B8000807FD1 /* LayoutHelper.swift */; };
-		597950A1205B1B8300807FD1 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59795098205B1B8100807FD1 /* Card.swift */; };
-		597950A2205B1B8300807FD1 /* CardHighlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59795099205B1B8100807FD1 /* CardHighlight.swift */; };
-		597950A3205B1B8300807FD1 /* CardGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979509A205B1B8200807FD1 /* CardGroup.swift */; };
-		597950A4205B1B8300807FD1 /* CardPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979509B205B1B8200807FD1 /* CardPlayer.swift */; };
-		597950A5205B1B8300807FD1 /* CardArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979509C205B1B8300807FD1 /* CardArticle.swift */; };
-		597950A7205B1B9400807FD1 /* Player_by_Patric_Piemonte.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597950A6205B1B9300807FD1 /* Player_by_Patric_Piemonte.swift */; };
 		5987BF6C2073DE4F00D36360 /* MapPin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5987BF6B2073DE4F00D36360 /* MapPin.swift */; };
 		598E28122320A70700B661C4 /* AboutMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 598E28112320A70700B661C4 /* AboutMeViewController.swift */; };
 		59B261FE2068C92A00F1E9E7 /* StorePost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59B261FD2068C92A00F1E9E7 /* StorePost.swift */; };
@@ -47,8 +35,6 @@
 		59B26207206A091100F1E9E7 /* EventInformation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59B26205206A091100F1E9E7 /* EventInformation.xib */; };
 		59BE991720721FEC00EB00BA /* StoreInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59BE991520721FEC00EB00BA /* StoreInformation.swift */; };
 		59BE991820721FEC00EB00BA /* StoreInformation.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59BE991620721FEC00EB00BA /* StoreInformation.xib */; };
-		59C23B912077423500B21E0B /* ContactCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C23B8F2077423500B21E0B /* ContactCardCell.swift */; };
-		59C23B922077423500B21E0B /* ContactCardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59C23B902077423500B21E0B /* ContactCardCell.xib */; };
 		59C23B95207757CF00B21E0B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C23B94207757CF00B21E0B /* User.swift */; };
 		59CB80F0231F9C430085B696 /* FullPhotoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59CB80EE231F9C430085B696 /* FullPhotoTableViewCell.swift */; };
 		59CB80F1231F9C430085B696 /* FullPhotoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59CB80EF231F9C430085B696 /* FullPhotoTableViewCell.xib */; };
@@ -69,16 +55,14 @@
 		592453B82075E05000D0A1A9 /* CustomCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCells.swift; sourceTree = "<group>"; };
 		592453BC2075E7A000D0A1A9 /* EventPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPost.swift; sourceTree = "<group>"; };
 		5925AEB7207828AA00EF6D8D /* SignupForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupForm.swift; sourceTree = "<group>"; };
+		5927679723BFEE1F00C81F51 /* ContactCardCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactCardCell.swift; sourceTree = "<group>"; };
+		5927679823BFEE1F00C81F51 /* ContactCardCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactCardCell.xib; sourceTree = "<group>"; };
 		5944555D2383853B001A9F4F /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		5948BF2A22B5CD500001F725 /* SSUAkron.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SSUAkron.entitlements; sourceTree = "<group>"; };
 		595AA086205C5A86009D3D09 /* NotoKufiArabic-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoKufiArabic-Regular.ttf"; sourceTree = "<group>"; };
 		595AA087205C5A86009D3D09 /* NotoKufiArabic-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoKufiArabic-Bold.ttf"; sourceTree = "<group>"; };
 		595AA090205CA4AE009D3D09 /* Coutner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coutner.swift; sourceTree = "<group>"; };
 		596259842063CAED00DD7CAA /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
-		596259892065F98F00DD7CAA /* CardHighlightCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHighlightCell.swift; sourceTree = "<group>"; };
-		5962598A2065F98F00DD7CAA /* CardHighlightCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardHighlightCell.xib; sourceTree = "<group>"; };
-		5962598E20660A7200DD7CAA /* CardArticleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardArticleCell.swift; sourceTree = "<group>"; };
-		5962598F20660A7200DD7CAA /* CardArticleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardArticleCell.xib; sourceTree = "<group>"; };
 		596CDA7E206C29D40043A157 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		5979507A205B1B0000807FD1 /* SSUAkron.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSUAkron.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5979507D205B1B0000807FD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,16 +70,6 @@
 		59795082205B1B0000807FD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/kk.storyboard; sourceTree = "<group>"; };
 		5979508A205B1B0000807FD1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5979508C205B1B0000807FD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		59795094205B1B7F00807FD1 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
-		59795095205B1B8000807FD1 /* CardGroupSliding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGroupSliding.swift; sourceTree = "<group>"; };
-		59795096205B1B8000807FD1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		59795097205B1B8000807FD1 /* LayoutHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutHelper.swift; sourceTree = "<group>"; };
-		59795098205B1B8100807FD1 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		59795099205B1B8100807FD1 /* CardHighlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardHighlight.swift; sourceTree = "<group>"; };
-		5979509A205B1B8200807FD1 /* CardGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardGroup.swift; sourceTree = "<group>"; };
-		5979509B205B1B8200807FD1 /* CardPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPlayer.swift; sourceTree = "<group>"; };
-		5979509C205B1B8300807FD1 /* CardArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardArticle.swift; sourceTree = "<group>"; };
-		597950A6205B1B9300807FD1 /* Player_by_Patric_Piemonte.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player_by_Patric_Piemonte.swift; sourceTree = "<group>"; };
 		5987BF6B2073DE4F00D36360 /* MapPin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPin.swift; sourceTree = "<group>"; };
 		598E28112320A70700B661C4 /* AboutMeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutMeViewController.swift; sourceTree = "<group>"; };
 		59B261FD2068C92A00F1E9E7 /* StorePost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePost.swift; sourceTree = "<group>"; };
@@ -104,8 +78,6 @@
 		59B26205206A091100F1E9E7 /* EventInformation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventInformation.xib; sourceTree = "<group>"; };
 		59BE991520721FEC00EB00BA /* StoreInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreInformation.swift; sourceTree = "<group>"; };
 		59BE991620721FEC00EB00BA /* StoreInformation.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StoreInformation.xib; sourceTree = "<group>"; };
-		59C23B8F2077423500B21E0B /* ContactCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactCardCell.swift; sourceTree = "<group>"; };
-		59C23B902077423500B21E0B /* ContactCardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ContactCardCell.xib; sourceTree = "<group>"; };
 		59C23B94207757CF00B21E0B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		59CB80EE231F9C430085B696 /* FullPhotoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullPhotoTableViewCell.swift; sourceTree = "<group>"; };
 		59CB80EF231F9C430085B696 /* FullPhotoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FullPhotoTableViewCell.xib; sourceTree = "<group>"; };
@@ -173,12 +145,8 @@
 		5962598D2066032C00DD7CAA /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				596259892065F98F00DD7CAA /* CardHighlightCell.swift */,
-				5962598A2065F98F00DD7CAA /* CardHighlightCell.xib */,
-				5962598E20660A7200DD7CAA /* CardArticleCell.swift */,
-				5962598F20660A7200DD7CAA /* CardArticleCell.xib */,
-				59C23B8F2077423500B21E0B /* ContactCardCell.swift */,
-				59C23B902077423500B21E0B /* ContactCardCell.xib */,
+				5927679723BFEE1F00C81F51 /* ContactCardCell.swift */,
+				5927679823BFEE1F00C81F51 /* ContactCardCell.xib */,
 				59CB80EE231F9C430085B696 /* FullPhotoTableViewCell.swift */,
 				59CB80EF231F9C430085B696 /* FullPhotoTableViewCell.xib */,
 			);
@@ -189,7 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				595AA089205C5AA6009D3D09 /* Fonts */,
-				597950A8205B1B9700807FD1 /* Cards */,
 				5979507C205B1B0000807FD1 /* SSUAkron */,
 				5979507B205B1B0000807FD1 /* Products */,
 				DDDA260D33CC0AA93F12BFF4 /* Pods */,
@@ -225,24 +192,6 @@
 				5944555D2383853B001A9F4F /* LoadingView.swift */,
 			);
 			path = SSUAkron;
-			sourceTree = "<group>";
-		};
-		597950A8205B1B9700807FD1 /* Cards */ = {
-			isa = PBXGroup;
-			children = (
-				597950A6205B1B9300807FD1 /* Player_by_Patric_Piemonte.swift */,
-				59795094205B1B7F00807FD1 /* Animator.swift */,
-				59795098205B1B8100807FD1 /* Card.swift */,
-				5979509C205B1B8300807FD1 /* CardArticle.swift */,
-				5979509A205B1B8200807FD1 /* CardGroup.swift */,
-				59795095205B1B8000807FD1 /* CardGroupSliding.swift */,
-				59795099205B1B8100807FD1 /* CardHighlight.swift */,
-				5979509B205B1B8200807FD1 /* CardPlayer.swift */,
-				59795096205B1B8000807FD1 /* DetailViewController.swift */,
-				59795097205B1B8000807FD1 /* LayoutHelper.swift */,
-			);
-			name = Cards;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		59980B8320871EE1000B8871 /* Chat */ = {
@@ -377,13 +326,11 @@
 				595AA08C205C7ECA009D3D09 /* NotoKufiArabic-Bold.ttf in Resources */,
 				59E7B11B231922BD00C170D2 /* Main.storyboard in Resources */,
 				59E24C32206372A800B04928 /* GoogleService-Info.plist in Resources */,
-				5962599120660A7200DD7CAA /* CardArticleCell.xib in Resources */,
-				59C23B922077423500B21E0B /* ContactCardCell.xib in Resources */,
+				5927679A23BFEE1F00C81F51 /* ContactCardCell.xib in Resources */,
 				59CB80F7232066560085B696 /* Assets.xcassets in Resources */,
 				59BE991820721FEC00EB00BA /* StoreInformation.xib in Resources */,
 				595AA08D205C7ECA009D3D09 /* NotoKufiArabic-Regular.ttf in Resources */,
 				59CB80F1231F9C430085B696 /* FullPhotoTableViewCell.xib in Resources */,
-				5962598C2065F98F00DD7CAA /* CardHighlightCell.xib in Resources */,
 				5979508B205B1B0000807FD1 /* LaunchScreen.storyboard in Resources */,
 				59795083205B1B0000807FD1 /* kk.storyboard in Resources */,
 			);
@@ -415,49 +362,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/ImageRow/ImageRow.framework",
-				"${BUILT_PRODUCTS_DIR}/MKRingProgressView/MKRingProgressView.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework",
-				"${PODS_ROOT}/SendBirdSDK/SendBirdSDK.framework.dSYM",
-				"${BUILT_PRODUCTS_DIR}/SkeletonView/SkeletonView.framework",
-				"${BUILT_PRODUCTS_DIR}/TransitionButton/TransitionButton.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
-				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMOAuth2.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageRow.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MKRingProgressView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SendBirdSDK.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/SendBirdSDK.framework.dSYM",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SkeletonView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TransitionButton.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -469,19 +379,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseUI/FirebaseAuthUI.bundle",
-				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
-				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FirebaseAuthUI.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SSUAkron/Pods-SSUAkron-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -495,33 +398,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5962599020660A7200DD7CAA /* CardArticleCell.swift in Sources */,
-				597950A7205B1B9400807FD1 /* Player_by_Patric_Piemonte.swift in Sources */,
 				59C23B95207757CF00B21E0B /* User.swift in Sources */,
-				5979509D205B1B8300807FD1 /* Animator.swift in Sources */,
 				5987BF6C2073DE4F00D36360 /* MapPin.swift in Sources */,
-				5979509E205B1B8300807FD1 /* CardGroupSliding.swift in Sources */,
-				5979509F205B1B8300807FD1 /* DetailViewController.swift in Sources */,
-				59C23B912077423500B21E0B /* ContactCardCell.swift in Sources */,
-				597950A0205B1B8300807FD1 /* LayoutHelper.swift in Sources */,
 				59BE991720721FEC00EB00BA /* StoreInformation.swift in Sources */,
-				597950A1205B1B8300807FD1 /* Card.swift in Sources */,
 				59F791A3207A133800A4DA20 /* Profile.swift in Sources */,
 				592453B92075E05000D0A1A9 /* CustomCells.swift in Sources */,
-				597950A2205B1B8300807FD1 /* CardHighlight.swift in Sources */,
-				597950A3205B1B8300807FD1 /* CardGroup.swift in Sources */,
-				597950A4205B1B8300807FD1 /* CardPlayer.swift in Sources */,
 				59B261FE2068C92A00F1E9E7 /* StorePost.swift in Sources */,
 				5944555E2383853B001A9F4F /* LoadingView.swift in Sources */,
 				592453BD2075E7A000D0A1A9 /* EventPost.swift in Sources */,
 				590B23782083C75E00270381 /* NewMessage.swift in Sources */,
 				590B23742082A69000270381 /* Chat.swift in Sources */,
 				595AA091205CA4AE009D3D09 /* Coutner.swift in Sources */,
+				5927679923BFEE1F00C81F51 /* ContactCardCell.swift in Sources */,
 				596CDA7F206C29D40043A157 /* Login.swift in Sources */,
 				596259852063CAED00DD7CAA /* Store.swift in Sources */,
 				5925AEB8207828AA00EF6D8D /* SignupForm.swift in Sources */,
-				597950A5205B1B8300807FD1 /* CardArticle.swift in Sources */,
-				5962598B2065F98F00DD7CAA /* CardHighlightCell.swift in Sources */,
 				59CB80F0231F9C430085B696 /* FullPhotoTableViewCell.swift in Sources */,
 				590B23762082BA7400270381 /* Message.swift in Sources */,
 				59E664AB237A194C00646272 /* MainTabBarViewController.swift in Sources */,
@@ -676,7 +567,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SSUAkron/SSUAkron.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = WXT8YUFTMG;
 				INFOPLIST_FILE = SSUAkron/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
@@ -699,7 +590,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SSUAkron/SSUAkron.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = WXT8YUFTMG;
 				INFOPLIST_FILE = SSUAkron/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;

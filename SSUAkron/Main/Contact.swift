@@ -98,7 +98,8 @@ class ContactViewController: UICollectionViewController{
             try Auth.auth().signOut()
             let userDefault = UserDefaults.standard
             userDefault.set(false, forKey: "loggedIn")
-            let vc = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.login)
+//            let vc = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.login)
+            let vc = LoginViewController()
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
             justLoggedOut = true

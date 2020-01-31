@@ -135,7 +135,6 @@ PODS:
     - SDWebImage/Core (= 5.0.6)
   - SDWebImage/Core (5.0.6)
   - SendBirdSDK (3.0.149)
-  - SkeletonView (1.8.2)
   - TransitionButton (0.4.0)
 
 DEPENDENCIES:
@@ -151,7 +150,6 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - MKRingProgressView
   - SendBirdSDK
-  - SkeletonView
   - TransitionButton
 
 SPEC REPOS:
@@ -184,8 +182,6 @@ SPEC REPOS:
     - SDWebImage
     - SendBirdSDK
     - TransitionButton
-  trunk:
-    - SkeletonView
 
 SPEC CHECKSUMS:
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
@@ -215,9 +211,8 @@ SPEC CHECKSUMS:
   Protobuf: 1097ca58584c8d9be81bfbf2c5ff5975648dd87a
   SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
   SendBirdSDK: 9afafc0b44bb3ccbaf437cc83a7aeaf39c25ad8d
-  SkeletonView: bb27c39857e5492136f02ee8a3aa78de55d12ecd
   TransitionButton: d271030914c84a00b54b4d983446944d2875e7ba
 
-PODFILE CHECKSUM: 0506e620b2481bc011d1cc353d3e472d3054332e
+PODFILE CHECKSUM: 08853d143456242d33154594ecfd2bfb12157a4f
 
 COCOAPODS: 1.8.4
