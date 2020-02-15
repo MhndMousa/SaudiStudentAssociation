@@ -207,8 +207,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDel
     
     fileprivate func performSegueToMainViewController(){
         DispatchQueue.main.async {
-//            let secondVC = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.main)
-            let secondVC = MainTabBarViewController()
+            let secondVC = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.main)
+//            let secondVC = MainTabBarViewController()
             secondVC.modalPresentationStyle = .fullScreen
             self.present(secondVC, animated: true, completion: nil)
         }

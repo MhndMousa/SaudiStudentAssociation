@@ -217,7 +217,7 @@
         <!--Main Tab Bar View Controller-->
         <scene sceneID="gEa-BI-Iuw">
             <objects>
-                <tabBarController storyboardIdentifier="main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R8h-xr-yqY" customClass="MainTabBarViewController" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="main" useStoryboardIdentifierAsRestorationIdentifier="YES" id="R8h-xr-yqY" customClass="MainTabBarViewController" customModule="SSUAkron" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wby-6b-zly">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -235,25 +235,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MrT-Fg-iwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2012" y="3144"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="19o-kh-1b1">
-            <objects>
-                <viewController id="smh-dZ-aK3" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0zM-oh-KIa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="zOP-RS-rW9"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="" image="info_black" id="zk8-Hr-Pyd">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
-                        <inset key="largeContentSizeImageInsets" minX="0.0" minY="1" maxX="0.0" maxY="1"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lFF-J2-20J" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2012" y="3995"/>
         </scene>
         <!--السوق-->
         <scene sceneID="daa-T8-Ya9">
@@ -705,7 +686,7 @@
                     </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="tBg-sy-Qsr">
-                        <rect key="frame" x="0.0" y="44.000000000000007" width="375" height="108.66666666666669"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="117"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.070183776319026947" green="0.47544276714324951" blue="0.67418622970581055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -781,7 +762,6 @@
         <image name="ic_date_range" width="24" height="24"/>
         <image name="ic_message" width="24" height="24"/>
         <image name="ic_store_mall_directory" width="24" height="24"/>
-        <image name="info_black" width="18" height="18"/>
         <image name="info_outlined" width="18" height="18"/>
     </resources>
     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
