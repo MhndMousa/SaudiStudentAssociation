@@ -10,12 +10,6 @@ import UIKit
 import Firebase
 
 var currentUser = SaudiUser()
-
-class SegueTo {
-    static var EventPost = "segueToEventPost"
-    static var PersonalProfile = "SegueToPersonalProfile"
-}
-
 class EventViewController: UITableViewController {
     
     @IBAction func infoButtonTapped(_ sender: Any) {
@@ -129,8 +123,7 @@ class EventViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let event = EventInformation()
-        event.eventInfo = self.events[indexPath.row]
+        let event = EventInformation(event: self.events[indexPath.row])
         self.navigationController?.pushViewController(event, animated: true)
         tableView.deselectRow(at: indexPath, animated: false)
     }

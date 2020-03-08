@@ -12,16 +12,24 @@ import MKRingProgressView
 
 
 class CounterViewController: UIViewController {
+    // MARK: Properties
+    
+
     @IBOutlet weak var ringView: MKRingProgressView!
     @IBOutlet weak var dateCounter: UILabel!
     @IBOutlet weak var daysLabel: UILabel!
-    
     @IBOutlet weak var stackView: UIStackView!
-    
     @IBOutlet weak var circle: UIView!
     @IBOutlet weak var imageView: UIImageView!
     var daysLeft : Int = 0
     var isSalaryUpdated: Bool = false
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
+    
+    // MARK: Life Cycle
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,11 +61,16 @@ class CounterViewController: UIViewController {
         
     }
 
+    // MARK: handlers
+    
+
     @objc func animateCircle(){
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
             self.updateCircle()
         })
     }
+    
+    // MARK: Helpers
 
     // converts number of a range of two numbers into another range of  two numbers
     func map(minRange:Float, maxRange:Float, minDomain:Float, maxDomain:Float, value:Float) -> Double {
@@ -75,9 +88,6 @@ class CounterViewController: UIViewController {
         self.ringView?.progress = self.map(minRange: 0, maxRange: 30, minDomain: 0, maxDomain: 1, value: Float(30 - self.daysLeft))
         CATransaction.commit()
         isSalaryUpdated = false
-    }
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
     }
     
     func updateSalary() {
@@ -109,20 +119,6 @@ class CounterViewController: UIViewController {
         }
         */
  }
-}
-
-
-extension Date {
-    // Get how many (ofComponent) between two dates provided
-    // How to use: Date().interval(ofComponent: .day or .month or .year,  formDate: Date())
-    func interval(ofComponent comp: Calendar.Component, fromDate date: Date) -> Int {
-        let currentCalendar = Calendar.current
-
-        guard let start = currentCalendar.ordinality(of: comp, in: .era, for: date) else { return 0 }
-        guard let end = currentCalendar.ordinality(of: comp, in: .era, for: self) else { return 0 }
-
-        return end - start
-    }
 }
 
 

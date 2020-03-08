@@ -8,7 +8,9 @@
 
 import UIKit
 
-class StoreInformation: UIViewController,UIScrollViewDelegate {
+class StoreInformationViewController: UIViewController,UIScrollViewDelegate {
+
+    // MARK: Properties
 
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var photoCarouselScrollView: UIScrollView!
@@ -23,6 +25,18 @@ class StoreInformation: UIViewController,UIScrollViewDelegate {
     var imageArray : [UIImage] = []
     var whatsAppNumber :String?
     
+    // MARK: Life Cycle
+    
+    override func viewDidLoad() {
+       super.viewDidLoad()
+       updateInfo()
+       messageButton.layer.cornerRadius = messageButton.frame.height / 2
+       photoCarouselScrollView.backgroundColor = UIColor(white: 0.94, alpha: 1)
+       pageControl.numberOfPages = imageArray.count
+   }
+
+    // MARK: Handlers
+
     @IBAction func messageTapped(_ sender: UIButton) {
         // Open a new message with uid of the item poster
         sender.tap()
@@ -38,6 +52,8 @@ class StoreInformation: UIViewController,UIScrollViewDelegate {
         
     }
 
+    // MARK: Helpers
+
     func updateInfo() {
         print(costString)
         costLabel.text = costString
@@ -52,19 +68,5 @@ class StoreInformation: UIViewController,UIScrollViewDelegate {
             photoCarouselScrollView.contentSize.width = photoCarouselScrollView.frame.width * CGFloat(i + 1)
             photoCarouselScrollView.addSubview(imageview)
         }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        updateInfo()
-        messageButton.layer.cornerRadius = messageButton.frame.height / 2
-        photoCarouselScrollView.backgroundColor = UIColor(white: 0.94, alpha: 1)
-        pageControl.numberOfPages = imageArray.count
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let pageIndex = round(scrollView.contentOffset.x/view.frame.width)
-        pageControl.currentPage = Int(pageIndex)
-    
     }
 }

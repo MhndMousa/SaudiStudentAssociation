@@ -12,10 +12,6 @@ import Firebase
 import GoogleSignIn
 import SendBirdSDK
 
- struct StorybaordID {
-    static var main = "main"
-    static var login = "login"
- }
 
 var justLoggedOut = false
 class LoginViewController: UIViewController, UITextFieldDelegate, GIDSignInUIDelegate {

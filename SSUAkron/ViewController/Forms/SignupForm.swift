@@ -13,56 +13,11 @@ import Eureka
 import UIKit
 
 class SignupForm: FormViewController {
+    // MARK: Properties
     @IBOutlet weak var submitButton: UIBarButtonItem!
+
     
-    
-    
-    func login(email :String , password: String){
-        
-        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            if error != nil{
-             print(error)
-            }else{
-                let userDefault = UserDefaults.standard
-                userDefault.setValue(email, forKey: "email")
-                userDefault.setValue(password, forKey: "password")
-                let secondVC = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.main)
-//                let secondVC = MainTabBarViewController()
-                secondVC.modalPresentationStyle = .fullScreen
-                self.present(secondVC, animated: true, completion: nil)
-            }
-        }
-    }
-    
-    @IBAction func submitTapped(_ sender: Any) {
-        let valuesDictionary = form.values()
-        showSpinner(onView: view)
-        print(valuesDictionary)
-        for i in valuesDictionary {
-            if i.value == nil{
-                self.showAlert(title: "Error", message: "Please make sure all feilds are filled")
-                removeSpinner()
-                return
-            }
-        }
-        let email = valuesDictionary["email"] as! String
-        let password = valuesDictionary["password"] as! String
-        Auth.auth().createUser(withEmail: email, password: password, completion: { user, error in
-            if error != nil{
-                self.removeSpinner()
-                self.showAlert(title: "Error", message: "\(error!.localizedDescription)")
-            } else{
-                self.removeSpinner()
-                print("User is created:\(String(describing: user))")
-                self.login(email: email, password: password)
-            }
-        })
-    }
-    
-    @IBAction func dismissTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
+    // MARK: Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -110,5 +65,55 @@ class SignupForm: FormViewController {
                     cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
                 })
     }
+    
+    // MARK: Helpers
+
+    func login(email :String , password: String){
+        
+        Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
+            if error != nil{
+             print(error)
+            }else{
+                let userDefault = UserDefaults.standard
+                userDefault.setValue(email, forKey: "email")
+                userDefault.setValue(password, forKey: "password")
+                let secondVC = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.main)
+                secondVC.modalPresentationStyle = .fullScreen
+                self.present(secondVC, animated: true, completion: nil)
+            }
+        }
+    }
+    
+    // MARK: Handlers
+
+    @IBAction func submitTapped(_ sender: Any) {
+        let valuesDictionary = form.values()
+        showSpinner(onView: view)
+        for i in valuesDictionary {
+            if i.value == nil{
+                self.showAlert(title: "Error", message: "Please make sure all feilds are filled")
+                removeSpinner()
+                return
+            }
+        }
+        let email = valuesDictionary["email"] as! String
+        let password = valuesDictionary["password"] as! String
+        Auth.auth().createUser(withEmail: email, password: password, completion: { user, error in
+            if error != nil{
+                self.removeSpinner()
+                self.showAlert(title: "Error", message: "\(error!.localizedDescription)")
+            }else{
+                self.removeSpinner()
+                print("User is created:\(String(describing: user))")
+                self.login(email: email, password: password)
+            }
+        })
+    }
+    
+    @IBAction func dismissTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
     
 }

@@ -13,30 +13,23 @@ import FirebaseUI
 
 class StoreTableViewController: UITableViewController {
 
-    @IBAction func infoButtonTapped(_ sender: Any) {
-        showAlert(title: "ما غرض هذه الصفحة؟", message: "هذه الصفحة متاحة لجميع من يريد عرض ممتلكاته الخاصة للبيع")
-    }
-    // MARK:  Variables
-
+    // MARK:  Properties
+    @IBOutlet weak var costLabel: UILabel!
     private let cellId = "cell"
     var fetchedInformation = [StoreInformationModel]()
     var imageArray = [UIImage]()
-    @IBOutlet weak var costLabel: UILabel!
-
-    
-    lazy var timer : Timer = {
-        let timer = Timer()
-        return timer
-    }()
-    
+    lazy var timer  = Timer()
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = .white
         refreshControl.addTarget(self, action: #selector(requestStoreData), for: .valueChanged)
-        
         return refreshControl
-        
     }()
+    
+    // MARK:  Hanlders
+    @IBAction func infoButtonTapped(_ sender: Any) {
+        showAlert(title: "ما غرض هذه الصفحة؟", message: "هذه الصفحة متاحة لجميع من يريد عرض ممتلكاته الخاصة للبيع")
+    }
     
     // MARK:  Networking
 
@@ -84,9 +77,12 @@ class StoreTableViewController: UITableViewController {
         return cell
     }
     
+    
     override var preferredStatusBarStyle: UIStatusBarStyle{
         return .lightContent
     }
+    
+    // MARK:  TableView Delegates
     // Row count
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedInformation.count
@@ -98,7 +94,7 @@ class StoreTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = StoreInformation()
+        let vc = StoreInformationViewController()
         let info = self.fetchedInformation[indexPath.row]
         vc.title = info.title
         vc.costString = info.cost
@@ -109,7 +105,7 @@ class StoreTableViewController: UITableViewController {
     }
     
     
-    // MARK:  ViewController methogs
+    // MARK:  ViewController Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()

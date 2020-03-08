@@ -13,31 +13,10 @@ import Firebase
 
 class ProfileViewContoller: FormViewController {
     
-    @IBAction func submitTapped(_ sender: Any) {
-        let values = form.values()
-        let db = ref.child("users").child(currentUser.uid!)
-        db.updateChildValues(values) { (error, ref) in
-            print(error)
-        }
-        refreshCurrentUserInfo()
-        
-    }
+    // MARK: View Controler Life Cycle
     
-    @IBAction func cancelTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
-    
- 
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
         form +++ Section()
 //            <<< ImageRow(){ row in
 //                row.title = "صورة شخصية"
@@ -49,7 +28,7 @@ class ProfileViewContoller: FormViewController {
 //                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
 //                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
 //                })
-            
+
 //            +++ Section("معلومات شخصية")
 //            <<< TextRow(){row in
 //                row.title = "الاسم"
@@ -119,30 +98,36 @@ class ProfileViewContoller: FormViewController {
 //                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
 //                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
 //                })
-        
             <<< ButtonRow(){row in
                 row.title = "تسجيل الخروج"
-                }.onCellSelection({ (_, _) in
-                    do{
-                        try Auth.auth().signOut()
-                        let userDefault = UserDefaults.standard
-                        userDefault.set(false, forKey: "loggedIn")
-                        let vc = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.login)
-//                        let vc = LoginViewController()
-                        vc.modalPresentationStyle = .fullScreen
-                        self.present(vc, animated: true, completion: nil)
-                        justLoggedOut = true
-                        
-                    }catch let error as NSError{
-                        print(error)
-                    }
-                }).cellSetup({ (cell, row) in
-                    cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-                    cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
-                })
-
+            }.onCellSelection({ (_, _) in
+                do{
+                    try Auth.auth().signOut()
+                    let userDefault = UserDefaults.standard
+                    userDefault.set(false, forKey: "loggedIn")
+                    let vc = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.login)
+                    vc.modalPresentationStyle = .fullScreen
+                    self.present(vc, animated: true, completion: nil)
+                    justLoggedOut = true
+                }catch let error as NSError{
+                    print(error)
+                }
+            }).cellSetup({ (cell, row) in
+                cell.textLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+                cell.detailTextLabel?.font = UIFont(name: "NotoKufiArabic", size: 12)
+            })
     }
     
-    
-    
+    // MARK: Hanlders
+    @IBAction func submitTapped(_ sender: Any) {
+        let values = form.values()
+        let db = ref.child("users").child(currentUser.uid!)
+        db.updateChildValues(values) { (error, ref) in
+            print(error)
+        }
+        refreshCurrentUserInfo()
+    }
+    @IBAction func cancelTapped(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }

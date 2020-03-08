@@ -11,36 +11,72 @@ import MapKit
 import FirebaseFirestore
 import FirebaseUI
 
-
-
-
 class ContactViewController: UICollectionViewController{
-    @IBAction func infoButtonTapped(_ sender: Any) {
-            showAlert(title: "ما غرض هذه الصفحة؟", message: "كثير منا ما يعرف مين هم القائمين على النادي السعودي، هذه الصفحة غرضها معرفة لائحة النادي وطريقة التواصل معاهم")
-    }
     
+    // MARK: Properties
+    
+    lazy var cellWidth :CGFloat = (self.view.bounds.width / 2) - 20
+    lazy var timer = Timer()
+    var roaster = [SaudiUser]()
+    override var preferredStatusBarStyle: UIStatusBarStyle{
+        return .lightContent
+    }
     lazy var refresher: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = UIColor.blueSSA
         refreshControl.addTarget(self, action: #selector(requestMembersData), for: .valueChanged)
-        
         return refreshControl
         
     }()
     
-    lazy var timer : Timer = {
-        let timer = Timer()
-        return timer
-    }()
+    
+    // MARK: ViewControlelr Life Cycle
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        collectionView?.register(UINib(nibName: "ContactCardCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+        collectionView?.refreshControl = refresher
+        requestMembersData()
+        updateNavBar()
+        
+        let rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "outline_account_circle_black_18dp"), style: .plain, target: self, action: #selector(segueToPersonalProfile))
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+        
+        
+        let button = UIButton(type: .system)
+        button.setTitle("IUPUI", for: .normal)
+        button.titleLabel?.font = .notoKufiBoldArabicMedium
+        button.setImage(#imageLiteral(resourceName: "icons8-expand-arrow-96-2"), for: .normal)
+        button.imageView?.anchor(trailing: button.titleLabel?.leadingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 2), size: .init(width: 17, height: 17))
+        button.addTarget(self, action: #selector(selectUniversity), for: .touchUpInside)
+        
+        let stackview = UIStackView(arrangedSubviews:  [button])
+        stackview.axis = .horizontal
+        stackview.distribution = .fill
+        stackview.alignment = .center
+        stackview.spacing = 4
+        
+        self.navigationItem.titleView = stackview
+        
+      
+
+    }
+    
+
+    
+    // MARK: Handlers
+    
+
+    @IBAction func infoButtonTapped(_ sender: Any) {
+            showAlert(title: "ما غرض هذه الصفحة؟", message: "كثير منا ما يعرف مين هم القائمين على النادي السعودي، هذه الصفحة غرضها معرفة لائحة النادي وطريقة التواصل معاهم")
+    }
     
     
     @objc func requestMembersData() {
         addReloadingIndicator(for: 1)
         
         roaster.removeAll()
-        
-        
-        
         Firestore.firestore().collection("SSA").whereField("name", isEqualTo: "ssa").getDocuments { (snapshot, err) in
             guard let dictionary = snapshot?.documents.first?.data() else {return}
             
@@ -81,11 +117,6 @@ class ContactViewController: UICollectionViewController{
         })
     }
     
-    var roaster = [SaudiUser]()
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle{
-        return .lightContent
-    }
     
     @objc func selectUniversity(){
         showAlert(title: "هذه الخاصية محدودة حالياًَ", message: "نوادي سعودية اخرى ستضاف مع الوقت .. خبروا جماعتكم")
@@ -98,7 +129,6 @@ class ContactViewController: UICollectionViewController{
             try Auth.auth().signOut()
             let userDefault = UserDefaults.standard
             userDefault.set(false, forKey: "loggedIn")
-//            let vc = self.storyboard!.instantiateViewController(withIdentifier: StorybaordID.login)
             let vc = LoginViewController()
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
@@ -108,40 +138,11 @@ class ContactViewController: UICollectionViewController{
             print(error)
         }
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        collectionView?.register(UINib(nibName: "ContactCardCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-        collectionView?.refreshControl = refresher
-//        collectionView?.backgroundColor = .blueSSA
-        requestMembersData()
-        updateNavBar()
-        
-        let rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "outline_account_circle_black_18dp"), style: .plain, target: self, action: #selector(segueToPersonalProfile))
-//        let rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "outline_account_circle_black_18dp"), style: .plain, target: self, action: #selector(handleLogOut))
-        navigationItem.rightBarButtonItem = rightBarButtonItem
-        
-        
-        let button = UIButton(type: .system)
-        button.setTitle("IUPUI", for: .normal)
-        button.titleLabel?.font = .notoKufiBoldArabicMedium
-        button.setImage(#imageLiteral(resourceName: "icons8-expand-arrow-96-2"), for: .normal)
-        button.imageView?.anchor(trailing: button.titleLabel?.leadingAnchor, padding: UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 2), size: .init(width: 17, height: 17))
-        button.addTarget(self, action: #selector(selectUniversity), for: .touchUpInside)
-        
-        let stackview = UIStackView(arrangedSubviews:  [button])
-        stackview.axis = .horizontal
-        stackview.distribution = .fill
-        stackview.alignment = .center
-        stackview.spacing = 4
-        
-        self.navigationItem.titleView = stackview
-        
-      
-
-    }
-    lazy var cellWidth :CGFloat = (self.view.bounds.width / 2) - 20
 }
+
+
+// MARK: - CollectionView Delegate
+
 
 
 extension ContactViewController: UICollectionViewDelegateFlowLayout{
